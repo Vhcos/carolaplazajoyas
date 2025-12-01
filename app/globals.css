@@ -24,3 +24,20 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* === Overrides para Carolina Plaza Joyas (tema claro fijo) === */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  /* Fondo gris muy clarito */
+  background-color: #f8fafc !important; /* tailwind: bg-slate-50 */
+  color: #020617 !important;            /* tailwind: text-slate-900 */
+}
+
+/* Aseguramos que el contenedor raíz también herede la altura */
+#__next,
+body > div:first-child {
+  min-height: 100%;
+}
