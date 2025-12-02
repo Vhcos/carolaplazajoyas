@@ -4,7 +4,7 @@ import { PRODUCTS } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 
 export const metadata: Metadata = {
-  title: "Series limitadas en plata 950 | Carolina Plaza Joyas",
+  title: "Series limitadas en plata 950 | Carola Plaza Joyas",
   description:
     "Colecciones pequeñas de joyería en plata 950 hechas a mano en Chile. Series numeradas x/y con variaciones sutiles y certificado de autenticidad.",
 };

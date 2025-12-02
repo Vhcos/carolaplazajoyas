@@ -4,7 +4,7 @@ import { PRODUCTS } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 
 export const metadata: Metadata = {
-  title: "Piezas únicas 1/1 en plata 950 | Carolina Plaza Joyas",
+  title: "Piezas únicas 1/1 en plata 950 | Carola Plaza Joyas",
   description:
     "Joyas de autor en plata 950, piezas únicas 1/1 hechas a mano en Chile. Diseños irrepetibles con certificado de autenticidad.",
 };

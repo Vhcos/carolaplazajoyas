@@ -42,7 +42,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           </Link>
           <Link
             href={`https://wa.me/56996397495?text=${encodeURIComponent(
-              `Hola Carolina, vi la joya "${product.nombre}" en tu web y me gustaría saber si está disponible.`
+              `Hola Carola, vi la joya "${product.nombre}" en tu web y me gustaría saber si está disponible.`
             )}`}
             target="_blank"
             className="inline-flex items-center justify-center rounded-full border border-emerald-200 px-3 py-2 text-xs font-medium text-emerald-700 hover:bg-emerald-50 transition-colors"

@@ -111,9 +111,9 @@ export const PRODUCTS: Product[] = [
   nombre: "Colgante Alma Rosa",
   precio: 70000,
   descripcionCorta:
-    "Colgante de plata 950 con gran piedra rosa veteada, hojas doradas y lágrima de cuarzo rosa.",
+    "Colgante de bronce con gran piedra rosa rodocrita, hojas doradas y lágrima de cuarzo rosa.",
   descripcionLarga:
-    "Colgante de plata 950 trabajado a mano con una piedra central oval rosa veteada en suaves tonos marmoleados, enmarcada por un bisel liso que sigue su contorno orgánico. Bajo la piedra se disponen tres pequeñas hojas de plata con acabado dorado que aportan movimiento y un guiño botánico. Desde el centro cuelga una segunda piedra rosa en forma de triángulo suave, que alarga la silueta sobre el pecho. El collar se completa con una cadena de eslabones finos en tono dorado que acompaña la calidez de las piedras. Cada pieza se corta, suelda y engasta a pulso, por lo que las vetas del mineral y el gesto de las hojas cambian levemente en cada colgante.",
+    "Colgante de bronce trabajado a mano con una piedra central oval rosa veteada rodocrita en suaves tonos marmoleados, enmarcada por un bisel liso que sigue su contorno orgánico. Bajo la piedra se disponen tres pequeñas hojas de plata con acabado dorado que aportan movimiento y un guiño botánico. Desde el centro cuelga una segunda piedra rosa en forma de triángulo suave, que alarga la silueta sobre el pecho. El collar se completa con una cadena de eslabones finos en tono dorado que acompaña la calidez de las piedras. Cada pieza se corta, suelda y engasta a pulso, por lo que las vetas del mineral y el gesto de las hojas cambian levemente en cada colgante.",
   fotos: [
     "/joyas/colgante-alma-rosa-70000-1.jpg",
     "/joyas/colgante-alma-rosa-70000-2.jpg",

@@ -28,7 +28,7 @@ export default function Footer() {
               Plata 950 · Piezas únicas y series limitadas.
             </p>
             <p className="text-[11px] text-slate-400">
-              © {year} Carolina Plaza. Todos los derechos reservados.
+              © {year} Carola Plaza. Todos los derechos reservados.
             </p>
           </div>
         </div>

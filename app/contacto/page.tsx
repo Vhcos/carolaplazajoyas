@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contacto — Carolina Plaza Joyas",
+  title: "Contacto — Carola Plaza Joyas",
   description:
-    "Conversa directamente con Carolina Plaza para ver disponibilidad de joyas, encargos personalizados y envíos.",
+    "Conversa directamente con Carola Plaza para ver disponibilidad de joyas, encargos personalizados y envíos.",
 };
 
 export default function ContactPage() {
@@ -30,7 +30,7 @@ export default function ContactPage() {
       <div className="space-y-4">
         <Link
           href={`${whatsapp}?text=${encodeURIComponent(
-            "Hola Carolina, me gustaría saber más sobre tus joyas."
+            "Hola Carola, me gustaría saber más sobre tus joyas."
           )}`}
           target="_blank"
           className="inline-flex w-full items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white hover:bg-slate-800 transition-colors"

@@ -49,7 +49,7 @@ export default function HomePage() {
         <div className="relative w-full max-w-xl lg:max-w-[520px] mx-auto aspect-[16/10] rounded-3xl overflow-hidden border border-rose-100 bg-slate-100">
           <Image
             src="/joyas/prendedor-ginko-bronce.jpg"
-            alt="Joyas de autor Carolina Plaza"
+            alt="Joyas de autor Carola Plaza"
             fill
             className="object-cover object-center"
             sizes="(min-width: 1024px) 480px, 100vw"
