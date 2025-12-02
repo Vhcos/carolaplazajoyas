@@ -48,7 +48,7 @@ export default function HomePage() {
         {/* Imagen hero centrada */}
         <div className="relative w-full max-w-xl lg:max-w-[520px] mx-auto aspect-[16/10] rounded-3xl overflow-hidden border border-rose-100 bg-slate-100">
           <Image
-            src="/joyas/anillo-cuarzo-rosa-1.jpg"
+            src="/joyas/prendedor-ginko-bronce.jpg"
             alt="Joyas de autor Carolina Plaza"
             fill
             className="object-cover object-center"
