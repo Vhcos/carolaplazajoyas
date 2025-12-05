@@ -5,7 +5,6 @@ import { Inter, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -40,7 +39,6 @@ export const metadata: Metadata = {
       "Joyas de autor en plata 950 hechas a mano en Chile por Carola Plaza. Piezas únicas y series limitadas con piedras naturales y certificado de autenticidad.",
     images: [
       {
-        // imagen que se usará al compartir la home
         url: "/joyas/prendedor-ginko-bronce.jpg",
         width: 1200,
         height: 630,
@@ -68,10 +66,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     url: SITE_URL,
     description:
       "Joyas de autor en plata 950 hechas a mano en Chile por Carola Plaza.",
-    sameAs: [
-      // reemplaza por el Instagram real si cambia
-      "https://www.instagram.com/carolaplazajoyas",
-    ],
+    sameAs: ["https://www.instagram.com/carolaplazajoyas"],
     address: {
       "@type": "PostalAddress",
       addressCountry: "CL",
@@ -80,15 +75,20 @@ export default function RootLayout({ children }: RootLayoutProps) {
   };
 
   return (
-    <html lang="es" className={`${inter.variable} ${playfair.variable}`}>
+    <html
+      lang="es"
+      className={`${inter.variable} ${playfair.variable} bg-rose-50`}
+    >
       <head>
         <script
           type="application/ld+json"
-          // importante: JSON.stringify para que sea JSON válido
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen bg-slate-50 text-slate-900 flex flex-col">
+      <body
+        className="min-h-screen text-slate-900 flex flex-col bg-rose-200"
+        style={{ backgroundColor: "#fff1f2" }} // rosado claro seguro
+      >
         <Navbar />
         <main className="flex-1">
           <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">

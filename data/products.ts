@@ -10,6 +10,7 @@ export type Product = {
   destacado?: boolean; // para mostrar en la Home
   tipo: "unica" | "serie"; // pieza única 1/1 o serie limitada
   serieTotal?: number; // solo para series: total de piezas (y en No. x/y)
+  categoria: "anillos" | "aros" | "collares" | "colgantes" | "pulseras-esclavas";
 };
 
 export const PRODUCTS: Product[] = [
@@ -27,6 +28,7 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: true,
   tipo: "unica",
+  categoria: "anillos",
 },
 
 {
@@ -43,6 +45,7 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: true,
   tipo: "unica",
+  categoria: "anillos",
 },
 
 {
@@ -59,6 +62,7 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: true,
   tipo: "unica",
+  categoria: "anillos",
 },
 
  {
@@ -72,6 +76,7 @@ export const PRODUCTS: Product[] = [
   fotos: ["/joyas/anillo-aurora-boreal-1.jpg"],
   destacado: true,
   tipo: "unica",
+  categoria: "anillos",
 },
 
 {
@@ -88,6 +93,7 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: true,
   tipo: "unica",
+  categoria: "anillos",
 },
 
 {
@@ -105,6 +111,7 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: true,
   tipo: "unica",
+  categoria: "aros",
 },
 {
   id: "colgante-alma-rosa",
@@ -120,6 +127,7 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: true,
   tipo: "unica",
+  categoria: "colgantes",
 },
 {
   id: "colgante-amatista-verde",
@@ -132,6 +140,7 @@ export const PRODUCTS: Product[] = [
   fotos: ["/joyas/colgante-amatista-verde-45000-1.jpg"],
   destacado: true,
   tipo: "unica",
+  categoria: "colgantes",
 },
 {
   id: "colgante-luz-de-agua",
@@ -147,6 +156,7 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: true,
   tipo: "unica",
+  categoria: "colgantes",
 },
 {
   id: "collar-perlas-inicial-g",
@@ -162,6 +172,7 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: true,
   tipo: "unica",
+  categoria: "collares",
 },
 {
   id: "collar-piedras-inicial",
@@ -179,6 +190,7 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: true,
   tipo: "unica",
+  categoria: "collares",
 },
 {
   id: "collar-talisman",
@@ -195,6 +207,7 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: true,
   tipo: "unica",
+  categoria: "collares",
 },
 {
   id: "esclava-aventurina-duo",
@@ -210,6 +223,7 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: true,
   tipo: "unica",
+  categoria: "pulseras-esclavas",
 },
 {
   id: "esclava-dualidad",
@@ -225,6 +239,7 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: true,
   tipo: "unica",
+  categoria: "pulseras-esclavas",
 },
 {
   id: "colgante-inicial-colibri",
@@ -240,6 +255,7 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: true,
   tipo: "unica",
+  categoria: "colgantes",
 },
 {
   id: "colgante-inicial-flor",
@@ -256,6 +272,7 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: true,
   tipo: "unica",
+  categoria: "colgantes",
 },
   {
     id: "pulsera-eslabones-prehnita",
@@ -271,6 +288,7 @@ export const PRODUCTS: Product[] = [
     ],
     destacado: true,
     tipo: "unica",
+    categoria: "pulseras-esclavas",
   },
 {
     id: "anillo-granate-facetado",
@@ -286,6 +304,7 @@ export const PRODUCTS: Product[] = [
     ],
     destacado: true,
     tipo: "unica",
+    categoria: "anillos",
   },
 {
   id: "colgante-corazon-alado-granate",
@@ -301,6 +320,7 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: false,
   tipo: "unica",
+  categoria: "colgantes",
 },
 
 {
@@ -317,5 +337,6 @@ fotos: [
 ],
 destacado: false,
 tipo: "unica",
+categoria: "colgantes"
 },
 ];

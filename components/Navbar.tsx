@@ -1,4 +1,3 @@
-// components/Navbar.tsx
 "use client";
 
 import Link from "next/link";
@@ -15,12 +14,11 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-slate-50/80 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        {/* Marca con logo grande */}
+    <header className="sticky top-0 z-40 border-b border-slate-200 bg-slate-50 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
+        {/* Marca con logo */}
         <Link href="/" className="flex items-center gap-3 sm:gap-4">
-          <div className="relative h-25 w-25 sm:h-27 sm:w-27 rounded-lg bg-white border border-slate-300 overflow-hidden">
-            {/* usa /public/logo-carola-plaza.svg o .png */}
+          <div className="relative h-20 w-30 sm:h-30 sm:w-30 rounded-lg bg-white border border-slate-300 overflow-hidden">
             <Image
               src="/logo-carola-plaza.svg"
               alt="Carola Plaza Joyas"
@@ -29,19 +27,13 @@ export default function Navbar() {
               priority
             />
           </div>
-          <div className="flex flex-col leading-tight">
-            <span className="text-[11px] sm:text-xs font-medium tracking-[0.28em] text-slate-500 uppercase">
-              Carola Plaza
-            </span>
-            <span className="text-[11px] sm:text-xs text-slate-600">
-              Joyas de autor · Plata 950
-            </span>
-          </div>
+          <span className="sr-only">Carola Plaza Joyas</span>
         </Link>
 
         {/* Navegación + Instagram */}
-        <nav className="flex items-center gap-4 sm:gap-6">
-          <ul className="hidden items-center gap-4 text-xs sm:flex sm:text-sm">
+        <nav className="flex items-center gap-3 sm:gap-6">
+          {/* AHORA visible también en móvil */}
+          <ul className="flex items-center gap-3 text-[11px] sm:gap-4 sm:text-sm">
             {navItems.map((item) => {
               const active = pathname === item.href;
               return (

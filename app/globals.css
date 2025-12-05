@@ -31,10 +31,11 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  /* Fondo gris muy clarito */
-  background-color: #f8fafc !important; /* tailwind: bg-slate-50 */
-  color: #020617 !important;            /* tailwind: text-slate-900 */
+  /* Fondo rosado claro */
+  background-color: #dedede !important; /* similar a tailwind: bg-rose-50 */
+  color: #020617 !important;            /* texto oscuro */
 }
+
 
 /* Aseguramos que el contenedor raíz también herede la altura */
 #__next,
