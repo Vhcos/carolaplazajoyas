@@ -204,3 +204,49 @@ Cada entrada incluye:
 
    ```txt
    google-site-verification=XXXXXXXXXXXX...
+
+# Carola Plaza Joyas – Sitio oficial
+
+E-commerce minimalista para **Carola Plaza**, orfebre chilena especializada en joyas de autor en **plata 950** y piezas con piedras naturales.  
+Proyecto construido con **Next.js (App Router)**, desplegado en **Vercel**.
+
+---
+
+## 1. Tech stack
+
+- **Framework:** Next.js (App Router)
+- **Lenguaje:** TypeScript
+- **Estilos:** Tailwind CSS (v3, vía `@import "tailwindcss";`)
+- **Fuentes:** Inter + Playfair Display (Google Fonts)
+- **Hosting:** Vercel
+- **Imágenes:** carpeta `/public/joyas` (importadas con `next/image`)
+
+---
+
+## 2. Estructura principal
+
+```text
+app/
+  layout.tsx        # Layout global, metadata y JSON-LD
+  page.tsx          # Home (hero, destacados, categorías, proceso a medida, taller)
+  producto/
+    page.tsx        # Catálogo con filtros por categoría y tipo de pieza
+  producto/[slug]/
+    page.tsx        # Ficha de producto (detalle)
+  contacto/
+    page.tsx        # Formulario / CTA a WhatsApp
+
+components/
+  Navbar.tsx        # Navegación sticky, logo + links + Instagram
+  Footer.tsx        # Footer con datos del taller y confianza
+  ProductCard.tsx   # Tarjeta reutilizable de producto (imagen, nombre, precio, CTAs)
+
+data/
+  products.ts       # Catálogo en memoria (array de `Product`)
+
+lib/
+  config.ts         # SITE_URL y otros helpers (si aplica)
+
+public/
+  joyas/            # Fotografías optimizadas de todas las piezas
+  logo-carola-plaza.svg
