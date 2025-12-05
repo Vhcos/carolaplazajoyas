@@ -9,6 +9,35 @@ export default function HomePage() {
 
   return (
     <div className="space-y-16">
+      {/* Joyas destacadas justo debajo del hero */}
+      {destacados.length > 0 && (
+        <section className="space-y-4">
+          <div className="flex items-center justify-between gap-2">
+            <h2 className="text-base font-semibold text-slate-900">
+              Joyas destacadas
+            </h2>
+            <Link
+              href="/producto"
+              className="text-xs font-medium text-slate-500 hover:text-slate-700"
+            >
+              Ver catálogo completo →
+            </Link>
+          </div>
+
+          <div className="-mx-2 overflow-x-auto pb-4">
+            <div className="flex gap-4 px-2">
+              {destacados.map((product) => (
+                <div
+                  key={product.id}
+                  className="min-w-[220px] max-w-[230px] md:min-w-[240px] md:max-w-[260px] flex-shrink-0"
+                >
+                  <ProductCard product={product} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
       {/* Hero principal centrado */}
       <section className="flex flex-col items-center gap-8 text-center">
         <div className="space-y-6 max-w-2xl">
@@ -63,36 +92,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Joyas destacadas justo debajo del hero */}
-      {destacados.length > 0 && (
-        <section className="space-y-4">
-          <div className="flex items-center justify-between gap-2">
-            <h2 className="text-base font-semibold text-slate-900">
-              Joyas destacadas
-            </h2>
-            <Link
-              href="/producto"
-              className="text-xs font-medium text-slate-500 hover:text-slate-700"
-            >
-              Ver catálogo completo →
-            </Link>
-          </div>
-
-          <div className="-mx-2 overflow-x-auto pb-4">
-            <div className="flex gap-4 px-2">
-              {destacados.map((product) => (
-                <div
-                  key={product.id}
-                  className="min-w-[220px] max-w-[230px] md:min-w-[240px] md:max-w-[260px] flex-shrink-0"
-                >
-                  <ProductCard product={product} />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Franja de confianza */}
       <section className="border-y border-slate-200 py-4">
