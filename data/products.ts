@@ -303,4 +303,19 @@ export const PRODUCTS: Product[] = [
   tipo: "unica",
 },
 
+{
+id: "colgante-cruz-martillado",
+nombre: "Colgante Cruz Martillado",
+precio: 65000,
+descripcionCorta:
+"Colgante de plata 950 con cruz de líneas rectas y textura martillada a mano, diseñado para ser usado por mujeres y hombre, que refleja la luz con destellos irregulares.",
+descripcionLarga:
+"Colgante de plata 950 con forma de cruz clásica, construida a partir de una lámina gruesa que le da presencia y peso agradable al usarla. Toda la superficie frontal se trabaja con martillo de bola, creando una textura irregular que captura la luz en pequeños destellos y le da un carácter más contemporáneo que una cruz lisa tradicional. Los bordes se pulen para mantener un contorno limpio y definido, mientras que el enganche superior se suelda a mano para que la pieza quede bien centrada en la cadena. Cada cruz se corta, lima, martilla y pule de manera artesanal, por lo que el patrón de golpes y brillo puede variar levemente en cada pieza.",
+fotos: [
+"/joyas/colgante-cruz-martillado-65000-1.jpeg",
+"/joyas/colgante-cruz-martillado-65000-2.jpeg",
+],
+destacado: false,
+tipo: "unica",
+},
 ];
