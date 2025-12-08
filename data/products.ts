@@ -15,15 +15,67 @@ export type Product = {
 
 export const PRODUCTS: Product[] = [
   {
+  id: "anillo-prisma-amatista",
+  nombre: "Anillo Prisma Amatista",
+  precio: 65000,
+  descripcionCorta:
+    "Anillo Nº17 de plata 950 de líneas geométricas con amatista oval central, ideal como pieza protagonista.",
+  descripcionLarga:
+    "Anillo Nº17 de plata 950 trabajado a mano con un cuerpo ancho y recto que se asienta como un pequeño prisma sobre el dedo. La parte superior tiene una textura sutilmente rayada que suaviza el brillo del metal y en el centro se monta una amatista oval facetada en engaste biselado, protegida pero muy visible. El volumen del anillo le da carácter y presencia, pero el interior se trabaja para que resulte cómodo en el uso diario. Al ser hecho completamente a pulso, cada prisma y cada piedra se asientan de forma única en cada pieza.",
+  fotos: [
+    "/joyas/anillo-prisma-amatista-3.jpeg",
+    "/joyas/anillo-prisma-amatista-1.jpg",
+    "/joyas/anillo-prisma-amatista-2.jpg",
+  ],
+  destacado: true,
+  tipo: "unica",
+  categoria: "anillos",
+},
+{
+  id: "colgante-luz-de-agua",
+  nombre: "Collar Luz de Agua",
+  precio: 65000,
+  descripcionCorta:
+    "Colgante de plata 950 con dos piedras azuladas y un granate central, de caída vertical y delicada.",
+  descripcionLarga:
+    "Colgante de plata 950 trabajado a mano con una composición vertical de tres piedras engastadas en bisel. Arriba y abajo se disponen dos gemas azuladas de brillo lechoso, con formas orgánicas que recuerdan pequeñas gotas de agua. En el centro se ubica un granate oval de tono vino profundo, rodeado por pequeños puntos de plata que le dan protagonismo. La pieza cuelga de una cadena de eslabones alargados que acompaña bien la forma alargada del colgante. Cada piedra se selecciona y se engasta a pulso, por lo que las vetas, inclusiones y el gesto del metal varían sutilmente en cada joya.",
+  fotos: [
+    "/joyas/colgante-luz-de-agua-3.jpeg",   
+    "/joyas/colgante-luz-de-agua-1.jpeg",
+    "/joyas/colgante-luz-de-agua-2.jpg",
+
+  ],
+  destacado: true,
+  tipo: "unica",
+  categoria: "collares",
+},
+{
+  id: "esclava-aventurina-duo",
+  nombre: "Esclava Aventurina Dúo",
+  precio: 85000,
+  descripcionCorta:
+    "Esclava abierta de plata 950 con dos aventurinas verdes en extremos asimétricos, delicada y contemporánea.",
+  descripcionLarga:
+    "Esclava de plata 950 trabajada a mano con un perfil delgado y rígido que se abre en la parte frontal, permitiendo calzarla con suavidad sobre la muñeca. En cada extremo se montan aventurinas verdes en engaste biselado, una más grande y otra más pequeña, que generan un juego asimétrico muy sutil. El acabado del metal combina superficies pulidas con leves marcas de trabajo, para que se note el gesto manual sin perder elegancia. Es una pieza pensada para usar sola como protagonista o acompañada de otras pulseras finas. Al hacerse a pulso, la forma de las piedras y la curvatura de la esclava pueden variar levemente en cada unidad.",
+  fotos: [
+    "/joyas/esclava-aventurina-duo-1.jpg",
+    "/joyas/esclava-aventurina-duo-2.jpg",
+  ],
+  destacado: true,
+  tipo: "unica",
+  categoria: "pulseras-esclavas",
+},
+  {
   id: "anillo-cuarzo-rosa",
   nombre: "Anillo Cuarzo Rosa Austral",
   precio: 60000,
   descripcionCorta:
-    "Anillo ancho de plata 950 con cuarzo rosa facetado y detalles de bolitas laterales, suave y luminoso.",
+    "Anillo Nº14 ancho de plata 950 con cuarzo rosa facetado y detalles de bolitas laterales, suave y luminoso.",
   descripcionLarga:
-    "Anillo de plata 950 trabajado a mano con un cuerpo ancho y levemente curvado que envuelve el dedo de forma cómoda. Al centro se monta un cuarzo rosa redondo facetado en engaste biselado, que da un brillo suave y lechoso. A ambos lados de la piedra se agrupan pequeñas bolitas de plata, hechas y soldadas una a una, que aportan textura y un aire orgánico. La superficie del aro se pule a alto brillo, generando contraste con los relieves laterales. Cada pieza se corta, curva, suelda y se termina a pulso, por lo que las formas y reflejos pueden variar sutilmente de un anillo a otro.",
+    "Anillo Nº14 de plata 950 trabajado a mano con un cuerpo ancho y levemente curvado que envuelve el dedo de forma cómoda. Al centro se monta un cuarzo rosa redondo facetado en engaste biselado, que da un brillo suave y lechoso. A ambos lados de la piedra se agrupan pequeñas bolitas de plata, hechas y soldadas una a una, que aportan textura y un aire orgánico. La superficie del aro se pule a alto brillo, generando contraste con los relieves laterales. Cada pieza se corta, curva, suelda y se termina a pulso, por lo que las formas y reflejos pueden variar sutilmente de un anillo a otro.",
   fotos: [
     "/joyas/anillo-cuarzo-rosa-1.jpg",
+    "/joyas/anillo-cuarzo-rosa-3.jpeg",
     "/joyas/anillo-cuarzo-rosa-2.jpg",
   ],
   destacado: true,
@@ -36,10 +88,11 @@ export const PRODUCTS: Product[] = [
   nombre: "Anillo Círcón Austral",
   precio: 60000,
   descripcionCorta:
-    "Anillo ancho de plata 950 con textura martillada y circonita oval central, pensado como pieza de carácter para uso diario.",
+    "Anillo Nº15 ancho de plata 950 con textura martillada y circonita oval central, pensado como pieza de carácter para uso diario.",
   descripcionLarga:
-    "Anillo de plata 950 trabajado a mano con un cuerpo ancho y ligeramente curvado que abraza el dedo de forma cómoda. La superficie presenta una textura martillada que rompe la luz en pequeños destellos y al centro se monta una circonita oval en engaste biselado, que queda protegida pero visible. Cada pieza se construye a partir de una lámina de plata que se corta, curva, suelda y se trabaja a pulso, por lo que la textura y las marcas del metal cambian sutilmente de un anillo a otro.",
+    "Anillo Nº15 de plata 950 trabajado a mano con un cuerpo ancho y ligeramente curvado que abraza el dedo de forma cómoda. La superficie presenta una textura martillada que rompe la luz en pequeños destellos y al centro se monta una circonita oval en engaste biselado, que queda protegida pero visible. Cada pieza se construye a partir de una lámina de plata que se corta, curva, suelda y se trabaja a pulso, por lo que la textura y las marcas del metal cambian sutilmente de un anillo a otro.",
   fotos: [
+    "/joyas/anillo-circon-austral-3.jpeg",
     "/joyas/anillo-circon-austral-1.jpg",
     "/joyas/anillo-circon-austral-2.jpg",
   ],
@@ -48,32 +101,21 @@ export const PRODUCTS: Product[] = [
   categoria: "anillos",
 },
 
-{
-  id: "anillo-prisma-amatista",
-  nombre: "Anillo Prisma Amatista",
-  precio: 65000,
-  descripcionCorta:
-    "Anillo de plata 950 de líneas geométricas con amatista oval central, ideal como pieza protagonista.",
-  descripcionLarga:
-    "Anillo de plata 950 trabajado a mano con un cuerpo ancho y recto que se asienta como un pequeño prisma sobre el dedo. La parte superior tiene una textura sutilmente rayada que suaviza el brillo del metal y en el centro se monta una amatista oval facetada en engaste biselado, protegida pero muy visible. El volumen del anillo le da carácter y presencia, pero el interior se trabaja para que resulte cómodo en el uso diario. Al ser hecho completamente a pulso, cada prisma y cada piedra se asientan de forma única en cada pieza.",
-  fotos: [
-    "/joyas/anillo-prisma-amatista-1.jpg",
-    "/joyas/anillo-prisma-amatista-2.jpg",
-  ],
-  destacado: true,
-  tipo: "unica",
-  categoria: "anillos",
-},
+
 
  {
   id: "anillo-aurora-boreal",
   nombre: "Anillo Aurora Boreal",
   precio: 65000,
   descripcionCorta:
-    "Anillo ancho de plata 950 con cuarzo místico oval, lleno de destellos verdes y violetas.",
+    "Anillo Nº 10 ancho de plata 950 con cuarzo místico oval, lleno de destellos verdes y violetas.",
   descripcionLarga:
-    "Anillo de plata 950 trabajado a mano con un cuerpo ancho que abraza el dedo como un pequeño brazal, pensado para quienes buscan una pieza protagonista. La superficie presenta un acabado orgánico con pequeños relieves y detalles que enmarcan la piedra central. En el frente se monta un cuarzo místico oval facetado en engaste biselado, que refleja tonos verdes, violetas y rosados según la luz. El interior se suaviza para que, pese a su presencia, resulte cómodo en el uso diario. Cada anillo se construye y se texturiza a pulso, por lo que las marcas y los reflejos del metal cambian sutilmente de una pieza a otra.",
-  fotos: ["/joyas/anillo-aurora-boreal-1.jpg"],
+    "Anillo Nº 10 de plata 950 trabajado a mano con un cuerpo ancho que abraza el dedo como un pequeño brazal, pensado para quienes buscan una pieza protagonista. La superficie presenta un acabado orgánico con pequeños relieves y detalles que enmarcan la piedra central. En el frente se monta un cuarzo místico oval facetado en engaste biselado, que refleja tonos verdes, violetas y rosados según la luz. El interior se suaviza para que, pese a su presencia, resulte cómodo en el uso diario. Cada anillo se construye y se texturiza a pulso, por lo que las marcas y los reflejos del metal cambian sutilmente de una pieza a otra.",
+  fotos: [
+    "/joyas/anillo-aurora-boreal-2.jpeg",
+    "/joyas/anillo-aurora-boreal-1.jpg",
+    "/joyas/anillo-aurora-boreal-3.jpeg", 
+  ],
   destacado: true,
   tipo: "unica",
   categoria: "anillos",
@@ -84,9 +126,9 @@ export const PRODUCTS: Product[] = [
   nombre: "Anillo Pirita Triangular",
   precio: 70000,
   descripcionCorta:
-    "Anillo XL de plata 950 con pirita en bruto en marco triangular, una pieza escultural y poderosa.",
+    "Anillo ajustable de plata 950 con pirita en bruto en marco triangular, una pieza escultural y poderosa.",
   descripcionLarga:
-    "Anillo de plata 950 trabajado a mano con una copa amplia y triangular que cubre buena parte del dorso de la mano, pensado como una pieza de autor para quienes aman los formatos grandes. La pirita en bruto se monta al centro, respetando su forma orgánica y sus destellos dorados, enmarcada por un borde de plata y un fondo oscuro que realza el contraste. El cuerpo del anillo se construye sólido pero se ajusta para que apoye cómodo sobre el dedo pese a su tamaño. Cada piedra se selecciona y se engasta a pulso, por lo que las formas y brillos de la pirita varían sutilmente en cada pieza.",
+    "Anillo ajustable de plata 950 trabajado a mano con una copa amplia y triangular que cubre buena parte del dorso de la mano, pensado como una pieza de autor para quienes aman los formatos grandes. La pirita en bruto se monta al centro, respetando su forma orgánica y sus destellos dorados, enmarcada por un borde de plata y un fondo oscuro que realza el contraste. El cuerpo del anillo se construye sólido pero se ajusta para que apoye cómodo sobre el dedo pese a su tamaño. Cada piedra se selecciona y se engasta a pulso, por lo que las formas y brillos de la pirita varían sutilmente en cada pieza.",
   fotos: [
     "/joyas/anillo-pirita-triangular-1.jpg",
    
@@ -115,7 +157,7 @@ export const PRODUCTS: Product[] = [
 },
 {
   id: "colgante-alma-rosa",
-  nombre: "Colgante Alma Rosa",
+  nombre: "Collar Alma Rosa",
   precio: 70000,
   descripcionCorta:
     "Colgante de bronce con gran piedra rosa rodocrita, hojas doradas y lágrima de cuarzo rosa.",
@@ -127,11 +169,11 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: true,
   tipo: "unica",
-  categoria: "colgantes",
+  categoria: "collares",
 },
 {
   id: "colgante-amatista-verde",
-  nombre: "Colgante Amatista Verde",
+  nombre: "Collar Amatista Verde",
   precio: 45000,
   descripcionCorta:
     "Colgante de plata 950 con amatista verde oval facetada y pequeños detalles de bolitas y circonita.",
@@ -140,28 +182,13 @@ export const PRODUCTS: Product[] = [
   fotos: ["/joyas/colgante-amatista-verde-45000-1.jpg"],
   destacado: true,
   tipo: "unica",
-  categoria: "colgantes",
+  categoria: "collares",
 },
-{
-  id: "colgante-luz-de-agua",
-  nombre: "Colgante Luz de Agua",
-  precio: 65000,
-  descripcionCorta:
-    "Colgante de plata 950 con dos piedras azuladas y un granate central, de caída vertical y delicada.",
-  descripcionLarga:
-    "Colgante de plata 950 trabajado a mano con una composición vertical de tres piedras engastadas en bisel. Arriba y abajo se disponen dos gemas azuladas de brillo lechoso, con formas orgánicas que recuerdan pequeñas gotas de agua. En el centro se ubica un granate oval de tono vino profundo, rodeado por pequeños puntos de plata que le dan protagonismo. La pieza cuelga de una cadena de eslabones alargados que acompaña bien la forma alargada del colgante. Cada piedra se selecciona y se engasta a pulso, por lo que las vetas, inclusiones y el gesto del metal varían sutilmente en cada joya.",
-  fotos: [
-    "/joyas/colgante-luz-de-agua-1.jpg",
-    "/joyas/colgante-luz-de-agua-2.jpg",
-  ],
-  destacado: true,
-  tipo: "unica",
-  categoria: "colgantes",
-},
+
 {
   id: "collar-perlas-inicial-g",
   nombre: "Collar Perlas Inicial G",
-  precio: 45000,
+  precio: 55000,
   descripcionCorta:
     "Collar de perlas de río con cierre frontal en plata 950 y dije con la letra G.",
   descripcionLarga:
@@ -186,7 +213,6 @@ export const PRODUCTS: Product[] = [
     "/joyas/collar-piedras-inicial-1.jpg",
     "/joyas/collar-piedras-inicial-2.jpg",
     "/joyas/collar-piedras-inicial-3.jpg",
-    "/joyas/collar-piedras-inicial-4.jpg",
   ],
   destacado: true,
   tipo: "unica",
@@ -201,30 +227,16 @@ export const PRODUCTS: Product[] = [
   descripcionLarga:
     "Collar trabajado a mano con cuentas de piedra natural en distintos tonos —rojos intensos, azules profundos o combinados con perlas de río— que se engarzan una a una. El diseño se cierra al frente con un broche circular de plata 950 del que cuelga un dije protagonista: puede ser un corazón texturizado, un rayo alargado o un medallón redondo martillado. El cierre visible convierte el broche en parte del diseño y permite que el collar luzca bien solo o combinado con otras cadenas. Cada pieza se ensambla y se suelda a pulso, por lo que la disposición del color en las piedras y los pequeños detalles del metal varían levemente en cada collar.",
   fotos: [
+    "/joyas/collar-piedra-natural-y-dije-3.jpg",
     "/joyas/collar-piedra-natural-y-dije-1.jpg",
     "/joyas/collar-piedra-natural-y-dije-2.jpg",
-    "/joyas/collar-piedra-natural-y-dije-3.jpg",
+    
   ],
   destacado: true,
   tipo: "unica",
   categoria: "collares",
 },
-{
-  id: "esclava-aventurina-duo",
-  nombre: "Esclava Aventurina Dúo",
-  precio: 85000,
-  descripcionCorta:
-    "Esclava abierta de plata 950 con dos aventurinas verdes en extremos asimétricos, delicada y contemporánea.",
-  descripcionLarga:
-    "Esclava de plata 950 trabajada a mano con un perfil delgado y rígido que se abre en la parte frontal, permitiendo calzarla con suavidad sobre la muñeca. En cada extremo se montan aventurinas verdes en engaste biselado, una más grande y otra más pequeña, que generan un juego asimétrico muy sutil. El acabado del metal combina superficies pulidas con leves marcas de trabajo, para que se note el gesto manual sin perder elegancia. Es una pieza pensada para usar sola como protagonista o acompañada de otras pulseras finas. Al hacerse a pulso, la forma de las piedras y la curvatura de la esclava pueden variar levemente en cada unidad.",
-  fotos: [
-    "/joyas/esclava-aventurina-duo-1.jpg",
-    "/joyas/esclava-aventurina-duo-2.jpg",
-  ],
-  destacado: true,
-  tipo: "unica",
-  categoria: "pulseras-esclavas",
-},
+
 {
   id: "esclava-dualidad",
   nombre: "Esclava Dualidad",
@@ -255,7 +267,7 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: true,
   tipo: "unica",
-  categoria: "colgantes",
+  categoria: "collares",
 },
 {
   id: "colgante-inicial-flor",
@@ -272,7 +284,7 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: true,
   tipo: "unica",
-  categoria: "colgantes",
+  categoria: "collares",
 },
   {
     id: "pulsera-eslabones-prehnita",
@@ -283,8 +295,8 @@ export const PRODUCTS: Product[] = [
     descripcionLarga:
       "Pulsera de plata 950 con eslabones irregulares martillados uno a uno y un cabujón de prehnita verde montado al frente. El cierre en forma de S también está trabajado a mano, lo que la hace ajustable y cómoda para uso diario. Pieza única que mezcla textura orgánica y piedra natural translúcida.",
     fotos: [
-      "/joyas/pulsera-eslabones-prehnita-85000-1.jpg",
-      "/joyas/pulsera-eslabones-prehnita-85000-2.jpg",
+      "/joyas/pulsera-eslabon-prenhita-2.jpeg",
+      "/joyas/pulsera-eslabon.prenhita-1.jpeg",
     ],
     destacado: true,
     tipo: "unica",
@@ -295,10 +307,11 @@ export const PRODUCTS: Product[] = [
     nombre: "Anillo Granate Facetado",
     precio: 60000,
     descripcionCorta:
-      "Anillo de plata 950 de banda ancha con granate rojo facetado al frente y detalles arquitectónicos en el cuerpo.",
+      "Anillo Nº 16 de plata 950 de banda ancha con granate rojo facetado al frente y detalles arquitectónicos en el cuerpo.",
     descripcionLarga:
-      "Anillo de plata 950 trabajado a mano con una banda ancha y recta que abraza el dedo con presencia. En el centro, un granate rojo facetado se engasta en un bisel elevado, creando un punto de luz profundo y vino tinto que contrasta con el brillo frío de la plata. El cuerpo del anillo presenta planos y pequeños volúmenes verticales que le dan un aire moderno y arquitectónico, mientras que el interior se mantiene liso y pulido para un uso cómodo. Es una pieza sólida, pensada para quienes buscan un anillo protagonista que pueda acompañar tanto looks cotidianos como ocasiones especiales. Cada anillo se corta, suelda y pule a mano, por lo que las texturas y proporciones pueden variar levemente en cada ejemplar.",
+      "Anillo Nº 16 de plata 950 trabajado a mano con una banda ancha y recta que abraza el dedo con presencia. En el centro, un granate rojo facetado se engasta en un bisel elevado, creando un punto de luz profundo y vino tinto que contrasta con el brillo frío de la plata. El cuerpo del anillo presenta planos y pequeños volúmenes verticales que le dan un aire moderno y arquitectónico, mientras que el interior se mantiene liso y pulido para un uso cómodo. Es una pieza sólida, pensada para quienes buscan un anillo protagonista que pueda acompañar tanto looks cotidianos como ocasiones especiales. Cada anillo se corta, suelda y pule a mano, por lo que las texturas y proporciones pueden variar levemente en cada ejemplar.",
     fotos: [
+     "/joyas/anillo-granate-facetado-3.jpeg",
      "/joyas/anillo-granate-facetado-1.jpg",
      "/joyas/anillo-granate-facetado-2.jpg",
     ],
@@ -308,7 +321,7 @@ export const PRODUCTS: Product[] = [
   },
 {
   id: "colgante-corazon-alado-granate",
-  nombre: "Colgante Corazón Alado Granate",
+  nombre: "Collar Corazón Alado Granate",
   precio: 55000,
   descripcionCorta:
     "Colgante de plata 950 con corazón alado y gota de granate tallado colgando al centro.",
@@ -320,7 +333,7 @@ export const PRODUCTS: Product[] = [
   ],
   destacado: false,
   tipo: "unica",
-  categoria: "colgantes",
+  categoria: "collares",
 },
 
 {
@@ -337,6 +350,264 @@ fotos: [
 ],
 destacado: false,
 tipo: "unica",
-categoria: "colgantes"
+categoria: "collares"
 },
+{
+  id: "colgante-corazon-drusa-amatista",
+  nombre: "Collar Corazón Drusa de Amatista",
+  precio: 50000,
+  descripcionCorta:
+    "Colgante enchapado en oro con corazón de drusa de amatista en tonos lavanda y violeta, incluye cadena.",
+  descripcionLarga:
+    "Colgante enchapado en oro con un corazón de drusa de amatista, donde los cristales se abren en distintas alturas y brillos, creando una superficie viva y llena de destellos lilas y violetas. El borde metálico enmarca la piedra y resalta su volumen orgánico, mientras el aro superior permite pasarlo por cadenas finas o gruesas según el estilo de quien lo use. Es una pieza ligera pero protagonista, ideal para darle color a looks neutros o acompañar otros colgantes en capas. incluye cadena, para que puedas combinarlo con la que más te guste.",
+  fotos: [
+    "/joyas/corazon-purpura-1.jpeg",
+    "/joyas/corazon-purpura-2.jpeg",
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "collares",
+},
+{
+  id: "aros-ginko-oro",
+  nombre: "Aros Hoja Orgánica",
+  precio: 35000,
+  descripcionCorta:
+    "Aros colgantes enchapados en oro con silueta orgánica tipo hoja, ligeros y con terminación mate.",
+  descripcionLarga:
+    "Aros colgantes enchapados en oro trabajados a mano, con una placa superior redonda y una pieza principal inspirada en hojas orgánicas recortadas. La superficie presenta un acabado mate y levemente texturado que suaviza el brillo del metal, haciendo que se vean elegantes pero no exagerados. Son livianos y cómodos de usar durante todo el día, ideales para dar movimiento y un toque dorado a looks simples o acompañar otras joyas minimalistas.",
+  fotos: [
+    "/joyas/aros-ginko-1.jpeg",
+    "/joyas/aros-ginko-2.jpeg",
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "aros",
+},
+{
+  id: "aros-parra-asimetricos",
+  nombre: "Aros Parra Asimétricos",
+  precio: 50000,
+  descripcionCorta:
+    "Aros enchapados en oro con hojas de parra caladas y modeladas en volumen, diseño asimétrico con tres hojas en una oreja y una en la otra.",
+  descripcionLarga:
+    "Aros enchapados en oro inspirados en la forma orgánica de las hojas de parra, recortadas y texturizadas a mano para resaltar sus nervaduras y bordes irregulares. El diseño es asimétrico: en una oreja se agrupan tres hojas que caen en cascada, creando un efecto más protagonista, mientras que en la otra una sola hoja se convierte en un acento sutil. El acabado satinado con ligeros brillos refleja la luz de manera suave y aporta calidez al rostro. Son livianos y cómodos para usar durante todo el día, ideales para quienes buscan un toque diferente sin dejar de lado la elegancia.",
+  fotos: [
+    "/joyas/aros-parra-1.jpeg",
+    "/joyas/aros-parra-2.jpeg",
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "aros",
+},
+{
+  id: "collar-rayo-plata",
+  nombre: "Conjunto Collar y Aros Rayo de Plata",
+  precio: 65000,
+  descripcionCorta:
+    "Collar de plata 950 con dije de rayo alargado, de líneas limpias y acabado pulido, acompañado de pequeños aros rayo a juego.",
+  descripcionLarga:
+    "Collar de plata 950 con un dije de rayo alargado, de diseño minimalista y bordes definidos, que cuelga desde una cadena fina y resistente. El rayo, trabajado a mano, tiene un acabado pulido que refleja la luz y marca un gesto moderno, perfecto para usar solo o combinar con otros collares. El conjunto incluye un par de aros tipo stud en forma de rayo, pensados para completar el look con un guiño rockero y cotidiano a la vez. Cada pieza se corta, lima y pule a pulso, por lo que pueden existir pequeñas variaciones que hacen único cada collar.",
+  fotos: [
+    "/joyas/conjunto-rayo-1.jpeg",
+    "/joyas/conjunto-rayo-2.jpeg",
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "collares",
+},
+{
+  id: "collar-corazon-alado-amatista",
+  nombre: "Collar Corazón Alado con Amatista",
+  precio: 55000,
+  descripcionCorta:
+    "Collar de plata 950 con corazón alado al centro y amatista en cabujón colgando como detalle de color.",
+  descripcionLarga:
+    "Collar de plata 950 trabajado a mano con un corazón alado al centro, cuyas plumas se marcan con delicados grabados que aportan textura y movimiento. Desde la parte inferior del corazón cuelga una amatista en cabujón redondo, que aporta un toque de color violeta profundo y un brillo sutil al mover el cuello. La pieza va integrada a una cadena fina de plata, que equilibra el protagonismo del dije y la hace cómoda para usar a diario o en ocasiones especiales. Cada collar se corta, suelda y pule de manera artesanal, por lo que los detalles del corazón, las alas y el engaste de la piedra pueden variar levemente en cada ejemplar.",
+  fotos: [
+    "/joyas/colgante-corazon-1.jpeg",
+    "/joyas/colgante-corazon-2.jpeg",
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "collares",
+},
+{
+  id: "anillo-trenza-bola",
+  nombre: "Anillo Trenza y Bola",
+  precio: 35000,
+  descripcionCorta:
+    "Anillo Nº13 de plata 950 de aro ancho con detalle de trenza central y bolita en relieve.",
+  descripcionLarga:
+    "Anillo Nº13  de plata 950 de banda ancha, trabajado a mano con una trenza central soldada sobre la superficie y una bolita pulida que se posa como punto de luz. El contraste entre el volumen de la bola y la línea trenzada crea un diseño sencillo pero con carácter, ideal para usar solo o acompañado de otros anillos más delgados. Cada pieza se corta, suelda, lima y pule manualmente, por lo que las texturas y el acabado pueden presentar pequeñas variaciones propias de la joyería de autor.",
+  fotos: [
+    "/joyas/anillo-trenza-bola-1.jpeg",
+    "/joyas/anillo-trenza-bola-2.jpeg",
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "anillos",
+},
+{
+  id: "collar-triangulo-granate",
+  nombre: "Collar Triángulo Granate",
+  precio: 45000,
+  descripcionCorta:
+    "Collar de plata 950 con colgante triangular de granate facetado en tono rojo vino.",
+  descripcionLarga:
+    "Collar de plata 950 con un pequeño colgante de granate facetado en forma triangular, de tono rojo vino profundo. La piedra se engasta en un marco limpio de plata que sigue la geometría del triángulo, dejando pasar la luz para realzar sus destellos internos. La cadena fina acompaña el tamaño del dije y permite que se apoye justo sobre el pecho, ideal para usar a diario o combinar en capas con otros collares. Cada pieza se corta, suelda y pule a mano, por lo que el grosor del marco y las facetas visibles de la piedra pueden variar levemente, haciendo que cada collar sea único.",
+  fotos: [
+    "/joyas/collar-triangulo-1.jpeg",
+    "/joyas/collar-triangulo-2.jpeg",
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "collares",
+},
+{
+  id: "collar-corazon-alas-gota",
+  nombre: "Collar Corazón Alado Cuarzo Rosa",
+  precio: 55000,
+  descripcionCorta:
+    "Collar de plata 950 con corazón alado al centro y gota de piedra cuarzo rosa translúcida colgante.",
+  descripcionLarga:
+    "Collar de plata 950 con un corazón liso al centro del pecho, flanqueado por dos alas grabadas a mano que le dan movimiento y textura al diseño. Desde la parte inferior del corazón cuelga una pequeña gota de piedra cuarzo rosa translúcida, engastada con alambre de plata, que aporta luz suave y un detalle delicado al colgante. La cadena fina en plata acompaña el diseño sin restarle protagonismo y permite usarlo solo o combinado con otros collares en capas. Cada pieza se corta, suelda y pule de manera artesanal, por lo que las plumas de las alas y la forma de la gota pueden presentar ligeras variaciones.",
+  fotos: [
+    "/joyas/collar-corazon-gota-2.jpeg",
+    "/joyas/collar-corazon-gota-1.jpeg",
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "collares",
+},
+{
+  id: "anillo-corazon-pirita-ajustable",
+  nombre: "Anillo Corazón de Pirita Ajustable",
+  precio: 65000,
+  descripcionCorta:
+    "Anillo de plata 950 ajustable con corazón grande de pirita en bruto, de brillo metálico y volumen protagonista.",
+  descripcionLarga:
+    "Anillo de plata 950 con un corazón protagonista al centro, relleno de cristales de pirita en bruto que reflejan la luz con destellos metálicos plateados. El corazón va enmarcado por un segundo contorno que le da profundidad y hace que la piedra parezca flotar sobre el dedo. El aro es ajustable, pensado para adaptarse cómodamente a distintas tallas y permitir usarlo en diferentes dedos según el estilo de cada persona. Cada pieza se arma, suelda y ajusta a mano, por lo que la forma de los cristales y el acabado del corazón pueden variar levemente, haciendo que cada anillo sea único.",
+  fotos: [
+    "/joyas/anillo-pirita-corazon-1.jpeg",
+    "/joyas/anillo-pirita-corazon-2.jpeg",
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "anillos",
+},
+{
+id: "anillo-citrino-ovalado",
+nombre: "Anillo Citrino Ovalado",
+precio: 35000,
+descripcionCorta:
+"Anillo Nº17 de plata 950 con banda ancha y citrino oval facetado en tono amarillo miel.",
+descripcionLarga:
+"Anillo Nº17 de plata 950 con banda ancha y líneas limpias, diseñado para lucir un citrino oval facetado en un tono amarillo miel que aporta brillo y calidez a la mano. La piedra va engastada en un bisel alto que la protege y resalta a la vez, creando un contraste elegante con el metal pulido. La forma recta pero suavemente curvada de la banda lo hace cómodo para el uso diario, mientras que el tamaño del citrino lo convierte en una pieza protagonista, ideal para quienes disfrutan de un estilo contemporáneo con un toque de color.",
+fotos: [
+"/joyas/anillo-citrino-3.jpeg",
+"/joyas/anillo-citrino-2.jpeg",  
+"/joyas/anillo-citrino-1.jpeg",
+
+],
+destacado: false,
+tipo: "unica",
+categoria: "anillos",
+},
+{
+  id: "anillo-agua-marina-redonda",
+  nombre: "Anillo Agua Marina Redonda",
+  precio: 55000,
+  descripcionCorta:
+    "Anillo Nº19 de plata con piedra agua marina redonda facetada y pequeñas bolitas de plata decorativos a los lados.",
+  descripcionLarga:
+    "Anillo Nº19 de plata trabajado a mano con una piedra agua marina redonda facetada al centro, montada en un engaste liso que resalta su brillo azul claro. A cada lado del engaste se agrupan pequeñas bolitas de metal que aportan textura y volumen, dando un aire orgánico a la pieza. El aro es de línea sencilla y cómoda para el uso diario, pero el tamaño de la piedra lo convierte en un anillo protagónico que ilumina la mano. Ideal para usar solo o acompañado de otras argollas finas.",
+  fotos: [
+    "/joyas/anillo-agua-marina-redonda-1.jpeg",
+    "/joyas/anillo-agua-marina-redonda-3.jpeg",
+    "/joyas/anillo-agua-marina-redonda-2.jpeg",
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "anillos",
+},
+{
+  id: "anillo-amatista-solitario",
+  nombre: "Anillo Amatista Solitario",
+  precio: 35000,
+  descripcionCorta:
+    "Anillo Nº10 de plata con amatista redonda facetada en montaje tipo solitario.",
+  descripcionLarga:
+    "Anillo Nº10 de plata de línea sencilla con una amatista redonda facetada al centro, montada en un engaste liso que rodea completamente la piedra. El aro es delgado y recto, cómodo para usar todos los días, mientras el violeta intenso de la amatista aporta un toque de color elegante y discreto. Es una pieza perfecta para quienes prefieren joyas minimalistas pero con un detalle de luz y personalidad, ideal para usar sola o combinada con otros anillos finos.",
+  fotos: ["/joyas/anillo-amatista-solitario-1.jpeg"],
+  destacado: false,
+  tipo: "unica",
+  categoria: "anillos",
+},
+{
+  id: "anillo-granate-enchapado",
+  nombre: "Anillo Granate Enchapado",
+  precio: 45000,
+  descripcionCorta:
+    "Anillo Nº18  enchapado en oro con piedra granate oval facetada.",
+  descripcionLarga:
+    "Anillo Nº18 enchapado en oro, con una piedra granate oval facetada al centro. Su diseño de banda ancha y estructura sólida aporta presencia y elegancia, mientras que el tono rojo profundo del granate contrasta con el dorado cálido del metal. El engaste biselado protege la piedra y resalta su brillo interno. Ideal para quienes buscan una pieza sofisticada y contemporánea, con un aire artesanal y carácter propio.",
+  fotos: [
+    "/joyas/anillo-granate-enchapado-2.jpeg",
+    "/joyas/anillo-granate-enchapado-1.jpeg",
+    
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "anillos",
+},
+{
+  id: "anillo-tres-piedras-amatista-citrino-cianita",
+  nombre: "Anillo Tres Piedras Amatista, Citrino y Cianita",
+  precio: 7000,
+  descripcionCorta:
+    "Anillo de plata 950 ajustable con tres piedras naturales: amatista, citrino y cianita, ideal para quienes aman llevar color y energía en la mano.",
+  descripcionLarga:
+    "Anillo de plata 950 con diseño abierto que abraza el dedo con tres piedras naturales protagonistas: amatista en tono violeta profundo, citrino dorado y cianita azul intensa. Cada engaste está trabajado a mano para resaltar la forma y brillo de las gemas, que se distribuyen en distintos niveles generando volumen y movimiento. Es un anillo cómodo y regulable, ajustable aproximadamente entre las tallas 15 y 19, perfecto para usarlo solo como pieza central o combinado con otros anillos más finos.",
+  fotos: [
+    "/joyas/anillo-trespiedras-3.jpeg",
+    "/joyas/anillo-trespiedras-1.jpeg",
+    "/joyas/anillo-trespiedras-2.jpeg",
+    
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "anillos"
+},
+{
+  id: "anillo-pirita-triangular-ajustable",
+  nombre: "Anillo Pirita Triangular Ajustable",
+  precio: 70000,
+  descripcionCorta:
+    "Anillo ajustable en plata con pirita cruda en forma triangular, diseño protagonista y geométrico.",
+  descripcionLarga:
+    "Anillo ajustable en plata con una drusa de pirita montada en un triángulo alargado, enmarcado por un segundo triángulo metálico que le da volumen y presencia. La pirita aparece en pequeños cubos y destellos dorados que contrastan con el fondo más oscuro, creando un efecto de textura mineral muy marcado. El aro es cómodo y regulable, pensado para adaptarse desde tallas medias a grandes, ideal para usarlo como anillo protagonista en una mano casi desnuda o combinado con sortijas más finas.",
+  fotos: [
+    "/joyas/anillo-pirita-triangulob-2.jpeg",
+    "/joyas/anillo-pirita-triangulob-3.jpeg",
+    "/joyas/anillo-pirita-triangulob-1.jpeg",
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "anillos"
+},
+{
+  id: "collar-cuarzo-rojo-perlas",
+  nombre: "Collar Cuarzo Rojo y Perlas",
+  precio: 40000,
+  descripcionCorta:
+    "Collar de cuarzo rojo y perlas blancas con cierre frontal dorado tipo argolla marinera.",
+  descripcionLarga:
+    "Collar de cuentas de cuarzo rojo combinadas con perlas blancas irregulares, armado a mano y terminado en un cierre frontal dorado tipo argolla marinera que se convierte en el centro del diseño. El contraste entre el rojo profundo del cuarzo y el brillo suave de las perlas crea una pieza elegante pero muy fácil de usar a diario. Queda al ras del cuello, ideal para lucir con escotes rectos o capas de collares más largos.",
+  fotos: ["/joyas/collar-cuarzo-rojoperla-1.jpeg"],
+  destacado: false,
+  tipo: "unica",
+  categoria: "colgantes"
+},
+
 ];

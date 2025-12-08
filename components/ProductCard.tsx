@@ -14,13 +14,13 @@ export default function ProductCard({ product }: ProductCardProps) {
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-rose-100 bg-white shadow-sm/50 hover:shadow-md transition-shadow">
       <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
         <Image
-          src={mainImage}
-          alt={product.nombre}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-          sizes="(min-width: 1024px) 250px, (min-width: 640px) 45vw, 90vw"
-        />
-      </div>
+        src={mainImage}
+        alt={product.nombre}
+        fill
+        className="object-cover transition-transform duration-500 group-hover:scale-105"
+        sizes="(min-width: 1024px) 250px, (min-width: 640px) 45vw, 90vw"
+       />
+     </div>
 
       <div className="flex flex-1 flex-col gap-2 p-4">
         <h3 className="font-medium text-slate-900">

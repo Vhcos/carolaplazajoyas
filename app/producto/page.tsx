@@ -41,7 +41,7 @@ const CATEGORY_FILTERS = [
   { key: "anillos", label: "Anillos" },
   { key: "aros", label: "Aros" },
   { key: "collares", label: "Collares" },
-  { key: "colgantes", label: "Colgantes" },
+  { key: "colgantes", label: "Collar de Piedras" },
   { key: "pulseras-esclavas", label: "Pulseras y esclavas" },
 ];
 

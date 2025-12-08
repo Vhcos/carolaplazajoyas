@@ -38,19 +38,29 @@ export default function HomePage() {
           </div>
         </section>
       )}
+
       {/* Hero principal centrado */}
       <section className="flex flex-col items-center gap-8 text-center">
         <div className="space-y-6 max-w-2xl">
-          <p className="text-xs tracking-[0.25em] uppercase text-rose-500">
-            Hecho a mano en Chile
+          {/* Badge navideño */}
+          <p className="text-[11px] tracking-[0.25em] uppercase text-rose-500">
+            Navidad 2025 · Hecho a mano en Chile
           </p>
+
           <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight">
-            Piezas únicas de plata 950
+            Joyas de plata 950 para regalar esta Navidad
           </h1>
+
           <p className="text-sm sm:text-base text-slate-700">
-            Plata 950 trabajada a pulso en Chile. Piezas únicas y series
-            limitadas con certificado de autenticidad, pensadas para usarse y
-            heredarse.
+            Piezas únicas y series limitadas trabajadas a pulso en Chile, pensadas
+            para convertirse en ese regalo especial que se queda muchos años.
+            Del 8 al 13 de diciembre tienes un{" "}
+            <span className="font-semibold">15% de descuento</span> en compras
+            anticipadas de Navidad mencionando el código{" "}
+            <span className="font-mono bg-rose-100 px-1 rounded-sm">
+              NAVIDAD15
+            </span>{" "}
+            al escribir por WhatsApp.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3">
@@ -69,8 +79,9 @@ export default function HomePage() {
           </div>
 
           <div className="border-l-2 border-rose-200 pl-4 text-xs sm:text-sm text-slate-600 max-w-md mx-auto text-left">
-            Cada joya se hace en pequeñas series o como pieza única. Si te
-            enamoras de un diseño, conversemos la mejor forma de adaptarlo a ti.
+            Si quieres asegurar un regalo de Navidad hecho a mano, podemos
+            adaptar largo, talla o piedra para que llegue perfecto. Escríbeme y
+            lo vemos juntas con tiempo.
           </div>
         </div>
 
@@ -85,7 +96,7 @@ export default function HomePage() {
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent" />
           <div className="absolute bottom-4 left-4 text-xs text-slate-100 space-y-1">
-            <p className="font-medium">Colección Verano 2025</p>
+            <p className="font-medium">Colección Navidad 2025</p>
             <p className="text-[11px] text-slate-200">
               Plata 950 · Hecho a mano en Chile
             </p>
@@ -190,7 +201,8 @@ export default function HomePage() {
               <div className="px-4 pb-5 pt-4 space-y-2">
                 <h3 className="font-serif text-lg text-slate-900">Colgantes</h3>
                 <p className="text-xs sm:text-sm text-slate-600">
-                 Colgantes con significado, diseñados para llevar cerca del corazón
+                  Colgantes con significado, diseñados para llevar cerca del
+                  corazón
                 </p>
                 <p className="pt-1 text-xs font-medium text-rose-700 group-hover:underline">
                   Ver colgantes
@@ -269,37 +281,34 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Paso 2: imagen izquierda en desktop, pero TEXTO → FOTO en móvil */}
-<div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:items-center md:gap-8">
-  {/* TEXTO VA PRIMERO EN EL DOM (para móvil) */}
-  <div className="space-y-3 md:order-2">
-    <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-emerald-800 shadow-sm">
-      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-700 text-[11px] text-white">
-        2
-      </span>
-      Diseñamos juntas
-    </div>
-    <p className="text-sm text-slate-700">
-      Definimos forma, tamaño, textura y posibles piedras. Te envío ideas,
-      bocetos y referencias hasta que encontramos el diseño que se siente
-      realmente tuyo.
-    </p>
-  </div>
+            {/* Paso 2 */}
+            <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:items-center md:gap-8">
+              <div className="space-y-3 md:order-2">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-emerald-800 shadow-sm">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-700 text-[11px] text-white">
+                    2
+                  </span>
+                  Diseñamos juntas
+                </div>
+                <p className="text-sm text-slate-700">
+                  Definimos forma, tamaño, textura y posibles piedras. Te envío
+                  ideas, bocetos y referencias hasta que encontramos el diseño
+                  que se siente realmente tuyo.
+                </p>
+              </div>
 
-  {/* IMAGEN VA SEGUNDA EN EL DOM (para móvil) */}
-  <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-emerald-100 bg-emerald-100/60 md:order-1">
-    <Image
-      src="/joyas/prendedor-ginko-bronce.jpg"
-      alt="Detalle de joya en proceso en el taller"
-      fill
-      className="object-cover"
-      sizes="(min-width: 1024px) 480px, 100vw"
-    />
-  </div>
-</div>
+              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-emerald-100 bg-emerald-100/60 md:order-1">
+                <Image
+                  src="/joyas/prendedor-ginko-bronce.jpg"
+                  alt="Detalle de joya en proceso en el taller"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 480px, 100vw"
+                />
+              </div>
+            </div>
 
-
-            {/* Paso 3: texto izquierda, imagen derecha */}
+            {/* Paso 3 */}
             <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:items-center">
               <div className="space-y-3">
                 <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-emerald-800 shadow-sm">

@@ -1,4 +1,3 @@
-// components/ProductGallery.tsx
 import Image from "next/image";
 
 type ProductGalleryProps = {
@@ -13,12 +12,12 @@ export default function ProductGallery({ fotos, nombre }: ProductGalleryProps) {
   return (
     <div className="space-y-3">
       {/* Foto principal */}
-      <div className="relative aspect-square w-full overflow-hidden rounded-3xl border border-rose-100 bg-slate-100">
+      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-rose-100 bg-slate-100">
         <Image
           src={main}
           alt={nombre}
           fill
-          className="object-cover"
+          className="object-contain"
           sizes="(min-width: 1024px) 420px, 90vw"
         />
       </div>
@@ -29,13 +28,13 @@ export default function ProductGallery({ fotos, nombre }: ProductGalleryProps) {
           {secondary.map((src, idx) => (
             <div
               key={idx}
-              className="relative aspect-square overflow-hidden rounded-2xl border border-slate-100 bg-slate-100"
+              className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-slate-100 bg-slate-100"
             >
               <Image
                 src={src}
                 alt={`${nombre} vista ${idx + 2}`}
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="(min-width: 1024px) 200px, 45vw"
               />
             </div>

@@ -42,3 +42,35 @@ body {
 body > div:first-child {
   min-height: 100%;
 }
+@keyframes snow-fall {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 120vh, 0);
+  }
+}
+.snowflake {
+  position: fixed;
+  top: -10%;
+  z-index: 9999;
+  user-select: none;
+  pointer-events: none;
+  animation-name: snow-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes xmas-glow {
+  0% {
+    box-shadow: 0 0 10px rgba(248, 113, 113, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(248, 113, 113, 0.85);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(248, 113, 113, 0.3);
+  }
+}
+.xmas-glow {
+  animation: xmas-glow 2s infinite;
+}

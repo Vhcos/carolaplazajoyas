@@ -250,3 +250,239 @@ lib/
 public/
   joyas/            # Fotografías optimizadas de todas las piezas
   logo-carola-plaza.svg
+Entiendo perfecto: quieres un **PROMPT MAESTRO** que resuma *todo lo que hicimos con Webpay en Carola Plaza* para pegarlo en una nueva conversación y, desde ahí, generar un README específico de esta etapa de integración.
+
+Aquí va el prompt listo para copiar/pegar 👇
+
+---
+
+## PROMPT MAESTRO — README integración Webpay (Carola Plaza Joyas)
+
+Quiero que me ayudes a escribir un **README en Markdown** que documente la integración de **Webpay REST** en el proyecto `carolaplazajoyas` (Next.js).
+
+### 0) Contexto del proyecto
+
+* Sitio: **Carola Plaza Joyas**, joyas de autor en plata 950.
+* Stack:
+
+  * Next.js (App Router) + TypeScript.
+  * Tailwind CSS.
+  * Despliegue en Vercel (prod será `https://www.carolaplazajoyas.cl`).
+* Ya existe un README general de la fase anterior (SEO, catálogo, productos, etc.).
+* Este nuevo README es **solo para la etapa Webpay**: cómo está hecha la integración, variables de entorno, endpoints, pruebas, y cómo pasar a producción.
+
+### 1) Estado actual de la integración Webpay
+
+Toma como dado que ya está implementado lo siguiente (NO inventes nada nuevo, solo organiza y nómbralo bien):
+
+1. **Librería Webpay**
+   Archivo `lib/webpay.ts` (nombre puede variar, pero la idea es esta):
+
+   * Función `webpayCreateTransaction({ buyOrder, sessionId, amount, returnUrl })`
+   * Función `webpayCommitTransaction(token)`
+   * Usa Webpay REST v1.2 con `fetch` a:
+
+     * Integración: `https://webpay3gint.transbank.cl/rswebpaytransaction/api/webpay/v1.2`
+     * Producción: `https://webpay3g.transbank.cl/rswebpaytransaction/api/webpay/v1.2`
+   * Lee estas env vars:
+
+     * `TBK_ENV` (`integration` | `production`)
+     * `TBK_COMMERCE_CODE`
+     * `TBK_API_KEY`
+   * Loguea errores así: `"[Webpay] Error create ..."` y `"[Webpay] Error commit ..."`.
+
+2. **Endpoint para crear la transacción**
+   Archivo `app/api/webpay/create/route.ts`:
+
+   * Método: `POST`.
+   * Recibe JSON `{ productId }`.
+   * Busca el producto en `PRODUCTS` (`@/data/products`).
+   * Valida que tenga `precio` > 0 y arma:
+
+     * `amount` = precio del producto.
+     * `shortSlug` = primeros 10 caracteres de `product.id`.
+     * `timePart` = últimos 6 dígitos de `Date.now()`.
+     * `buyOrder` = `CP-${shortSlug}-${timePart}` (máx 26 caracteres, compatible TBK).
+     * `sessionId` = `crypto.randomUUID()`.
+     * `returnUrl` = `process.env.WEBPAY_RETURN_URL || \`${SITE_URL}/api/webpay/commit``.
+   * Llama `webpayCreateTransaction` y responde JSON:
+
+     * `{ ok: true, url, token }`.
+   * En error: responde 500 con `{ ok: false, error: "Error interno al crear la transacción" }`.
+
+3. **Endpoint para el `commit` / retorno Webpay**
+   Archivo `app/api/webpay/commit/route.ts`:
+
+   * Exporta `POST` y `GET` y ambos llaman a una función común `handleCommit`.
+   * Extrae el token en este orden:
+
+     * Si `POST` con `application/x-www-form-urlencoded`: `token_ws` o `token`.
+     * Si `POST` JSON: `token_ws` o `token` del body.
+     * Fallback: query params `token_ws` o `token`.
+   * Si **NO hay `token_ws`**:
+
+     * NO llama a `webpayCommitTransaction`.
+     * Redirige a `WEBPAY_FINAL_URL || \`${SITE_URL}/webpay/resultado`` con:
+
+       * `?status=fail&error=missing_token`
+     * Esto cubre el caso “Anular compra y volver al comercio” usando `TBK_TOKEN`, `TBK_ORDEN_COMPRA` y `TBK_ID_SESION`.
+   * Si hay `token_ws`:
+
+     * Llama `webpayCommitTransaction(token)`.
+     * Lee de la respuesta:
+
+       * `status`
+       * `response_code` (o `responseCode`)
+       * `buy_order`
+       * `amount`
+     * Considera **aprobado** si:
+
+       * `status === "AUTHORIZED"` o `status === "Aceptado"` o `response_code === 0`.
+     * Redirige a `WEBPAY_FINAL_URL || .../webpay/resultado` con query:
+
+       * `status=success|fail`
+       * `buyOrder`
+       * `amount`.
+
+4. **Página de resultado Webpay**
+   Archivo `app/webpay/resultado/page.tsx`:
+
+   * Componente **client** (`"use client"`).
+   * Usa `useSearchParams` para leer:
+
+     * `status`
+     * `buyOrder`
+     * `amount`
+   * Muestra dos estados:
+
+     * `status === "success"` → “¡Pago recibido con éxito! Tu compra fue autorizada…” + monto y orden.
+     * En otro caso → mensaje de error genérico (“No se pudo confirmar tu pago…”) + sugerencia de contactar por WhatsApp.
+   * Botón “Volver al inicio” (link a `/`).
+
+5. **Botón Webpay en la ficha de producto**
+
+   * Componente `WebpayButton.tsx`:
+
+     * Recibe `productId`.
+     * Hace `fetch("/api/webpay/create", { method: "POST", body: JSON.stringify({ productId }) })`.
+     * Maneja estado de carga: texto “Redirigiendo…” mientras espera.
+     * Si la respuesta es `ok`, lee `data.url` y hace `window.location.href = data.url`.
+     * Si falla, muestra `alert("Hubo un problema al iniciar el pago con Webpay.")`.
+     * El botón es rojo, con texto “Pagar con Webpay” + logo SVG de Webpay.
+   * En `app/producto/[slug]/page.tsx`:
+
+     * Se llama `<WebpayButton productId={product.id} />` sobre la descripción.
+     * Debajo están los otros botones:
+
+       * WhatsApp (icono verde, sin texto largo).
+       * Instagram (igual que antes).
+
+6. **Variables de entorno**
+
+Para **desarrollo / integración (local)**:
+
+```env
+# Webpay integración
+TBK_ENV=integration
+TBK_COMMERCE_CODE=597055555532
+TBK_API_KEY=579B532A7440BB0C9079DED94D31EA1615BACEB56610332264630D42D0A36B1C
+
+SITE_URL=http://localhost:3001
+WEBPAY_RETURN_URL=http://localhost:3001/api/webpay/commit
+WEBPAY_FINAL_URL=http://localhost:3001/webpay/resultado
+```
+
+Para **producción** (cuando se suba a Vercel):
+
+```env
+# Webpay producción (código real Carola Plaza)
+TBK_ENV=production
+TBK_COMMERCE_CODE=597051440056
+TBK_API_KEY=<LLAVE_SECRETA_PRODUCCION_REAL>
+
+SITE_URL=https://www.carolaplazajoyas.cl
+WEBPAY_RETURN_URL=https://www.carolaplazajoyas.cl/api/webpay/commit
+WEBPAY_FINAL_URL=https://www.carolaplazajoyas.cl/webpay/resultado
+```
+
+> Importante:
+>
+> * En local usamos el **código de integración Webpay Plus** (`597055555532`).
+> * En producción se usará el **código real 597051440056** que ya fue validado por Transbank.
+> * No implementamos **refunds/anulaciones** vía API (solo anulaciones del usuario en Webpay).
+
+7. **Validación de Transbank**
+
+* El comercio **597051440056** ya tiene un correo de Transbank indicando:
+  “**Proceso de validación aprobado automáticamente**”, con todas las pruebas obligatorias OK.
+* Las pruebas adicionales de **anulaciones (refunds)** figuran como opcionales y no se implementaron.
+
+### 2) Objetivo del README
+
+Quiero que generes un README nuevo (o sección nueva) titulado algo tipo:
+
+> `Integración Webpay REST — Carola Plaza Joyas`
+
+y que:
+
+1. Explique en lenguaje claro **qué hace la integración** y su alcance:
+
+   * Compra por producto individual.
+   * Sin carro de compras.
+   * Sin refunds por ahora.
+2. Documente:
+
+   * Variables de entorno y ejemplos para integración y producción.
+   * Cómo funciona el flujo:
+
+     1. Usuario hace click en “Pagar con Webpay”.
+     2. `/api/webpay/create` crea la transacción.
+     3. Redirección a Webpay.
+     4. Pago aprobado / rechazado / anulado.
+     5. Webpay llama a `/api/webpay/commit`.
+     6. Redirección a `/webpay/resultado`.
+   * Qué archivos tocan este flujo y para qué sirve cada uno.
+3. Incluya una sección **“Cómo probar en integración”** con pasos concretos:
+
+   * Levantar `npm run dev`.
+   * Configurar `.env.local`.
+   * Hacer compra aprobada (tarjeta de prueba).
+   * Hacer compra rechazada.
+   * Hacer “Anular compra y volver”.
+   * Mencionar que los `token_ws` y `TBK_TOKEN` se ven en los logs del servidor (`[TBK] ...`).
+4. Incluya una sección **“Cómo pasar a producción”**:
+
+   * Configurar env vars en Vercel para el entorno `production`.
+   * Poner `TBK_ENV=production`, código real, llave secreta real.
+   * Hacer una compra real pequeña para verificar.
+5. Tenga una sección corta de **“Limitaciones actuales / futuro”**:
+
+   * No hay refunds vía API implementados.
+   * No hay carro de compras (una joya por transacción).
+   * Futuro: agregar refunds, carro de compras básico, registro de órdenes y email al comprador.
+
+### 3) Estilo del README
+
+* Lenguaje: **español**, tono profesional pero cercano, como documentación para un dev futuro (o para mí misma en 6 meses).
+
+* Formato: Markdown con secciones jerarquizadas:
+
+  * `# Integración Webpay REST`
+  * `## Arquitectura`
+  * `## Variables de entorno`
+  * `## Flujo de pago`
+  * `## Archivos relevantes`
+  * `## Pruebas en ambiente de integración`
+  * `## Paso a producción`
+  * `## Limitaciones y próximos pasos`
+
+* Evita jerga innecesaria. Explica lo justo para que otro dev pueda:
+
+  * Clonar el repo,
+  * Configurar `.env.local`,
+  * Probar Webpay,
+  * Preparar la app para producción.
+
+No inventes endpoints ni features que no describí arriba. Si algo no está claro, acláralo como “pendiente de definir” en vez de asumir.
+
+Con todo lo anterior, genera el **README completo en Markdown** listo para pegar en `README-webpay.md` o como sección nueva del README principal.

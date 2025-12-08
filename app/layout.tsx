@@ -4,6 +4,8 @@ import "./globals.css";
 import { Inter, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { PromoNavidad } from "@/components/PromoNavidad";
+import { SnowOverlay } from "@/components/SnowOverlay";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -92,6 +94,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <Navbar />
         <main className="flex-1">
           <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+            <PromoNavidad />
+             <SnowOverlay />
             {children}
           </div>
         </main>

@@ -1,8 +1,9 @@
 // app/producto/[slug]/page.tsx
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
+import { WebpayButton } from "@/components/WebpayButton";
 import { PRODUCTS } from "@/data/products";
 import ProductGallery from "@/components/ProductGallery";
 import { SITE_URL } from "@/lib/config";
@@ -126,9 +127,11 @@ export default async function ProductPage(props: ProductPageProps) {
     },
   };
 
-  const whatsappUrl = `https://wa.me/56996937495?text=${encodeURIComponent(
+  const whatsappUrl = `https://wa.me/56996397495?text=${encodeURIComponent(
     `Hola Carola, vi la joya "${product.nombre}" en tu web y me gustaría saber si está disponible.`
   )}`;
+  const WEBPAY_ENABLED =
+    process.env.NEXT_PUBLIC_WEBPAY_ENABLED === "true";
 
   return (
     <>
@@ -177,36 +180,58 @@ export default async function ProductPage(props: ProductPageProps) {
                 ))}
             </div>
 
-            {/* Descripción + texto adicional */}
-            <div className="space-y-3 text-sm text-slate-600">
-              {product.descripcionLarga ? (
-                <p>{product.descripcionLarga}</p>
-              ) : (
-                <p>{product.descripcionCorta}</p>
-              )}
-              <p>
-                Al ser una pieza hecha a mano, pueden existir pequeñas
-                variaciones respecto a la foto. Si necesitas ajustar talla o
-                largo, conversemos por WhatsApp.
-              </p>
-            </div>
+           {/* Descripción + texto adicional */}
+<div className="space-y-4">
+  <div className="space-y-3 text-sm text-slate-600">
+    {product.descripcionLarga ? (
+      <p>{product.descripcionLarga}</p>
+    ) : (
+      <p>{product.descripcionCorta}</p>
+    )}
+    <p>
+      Al ser una pieza hecha a mano, pueden existir pequeñas variaciones
+      respecto a la foto. Si necesitas ajustar talla o largo, conversemos
+      por WhatsApp.
+    </p>
+  </div>
 
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href={whatsappUrl}
-                target="_blank"
-                className="inline-flex items-center rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-slate-800"
-              >
-                Comprar por WhatsApp
-              </Link>
-              <Link
-                href="https://www.instagram.com/carolaplazajoyas/"
-                target="_blank"
-                className="inline-flex items-center rounded-full border border-rose-200 px-6 py-3 text-sm font-medium text-rose-700 transition-colors hover:bg-rose-50"
-              >
-                Ver más en Instagram
-              </Link>
-            </div>
+  {/* Botón Webpay (principal) */}
+  {WEBPAY_ENABLED ? (
+    <WebpayButton productId={product.id} />
+  ) : (
+    <p className="text-xs text-slate-500">
+      Muy pronto podrás pagar con Webpay directamente desde la web.
+    </p>
+  )}
+
+  {/* Botones secundarios: WhatsApp + Instagram */}
+  <div className="flex flex-wrap items-center gap-3">
+    <Link
+      href={whatsappUrl}
+      target="_blank"
+      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#25D366] text-white shadow-md transition hover:bg-[#1ebe5d]"
+      aria-label="WhatsApp"
+    >
+      <Image
+        src="/whatsapp.svg"
+        alt="WhatsApp"
+        width={22}
+        height={22}
+        className="h-12 w-12"
+      />
+    </Link>
+
+    <Link
+      href="https://www.instagram.com/carolaplazajoyas/"
+      target="_blank"
+      className="inline-flex items-center rounded-full border border-rose-200 px-6 py-3 text-sm font-medium text-rose-700 transition-colors hover:bg-rose-50"
+    >
+      Ver más en Instagram
+    </Link>
+  </div>
+</div>
+
+
 
             <div className="space-y-1 rounded-2xl border border-slate-100 bg-white p-4 text-xs text-slate-500">
               <p className="font-medium text-slate-700">
