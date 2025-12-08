@@ -564,7 +564,7 @@ categoria: "anillos",
 {
   id: "anillo-tres-piedras-amatista-citrino-cianita",
   nombre: "Anillo Tres Piedras Amatista, Citrino y Cianita",
-  precio: 7000,
+  precio: 70000,
   descripcionCorta:
     "Anillo de plata 950 ajustable con tres piedras naturales: amatista, citrino y cianita, ideal para quienes aman llevar color y energía en la mano.",
   descripcionLarga:
