@@ -166,7 +166,7 @@ export default function HomePage() {
             <article className="group h-full rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
               <div className="relative w-full aspect-[4/5] overflow-hidden">
                 <Image
-                  src="/joyas/collar-piedras-inicial-1.jpg"
+                  src="/joyas/colgante-granate-1.jpg"
                   alt="Collar de plata 950 con piedras naturales"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -191,7 +191,7 @@ export default function HomePage() {
             <article className="group h-full rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
               <div className="relative w-full aspect-[4/5] overflow-hidden">
                 <Image
-                  src="/joyas/colgante-cruz-martillado-65000-1.jpeg"
+                  src="/joyas/collar-rodocrosita-dorado-1.jpeg"
                   alt="colgante plata cruz martillado"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -199,9 +199,9 @@ export default function HomePage() {
                 />
               </div>
               <div className="px-4 pb-5 pt-4 space-y-2">
-                <h3 className="font-serif text-lg text-slate-900">Colgantes</h3>
+                <h3 className="font-serif text-lg text-slate-900">Collar de Piedras</h3>
                 <p className="text-xs sm:text-sm text-slate-600">
-                  Colgantes con significado, diseñados para llevar cerca del
+                  Collares con piedras naturales, cada uno con propiedades únicas que acompañan tu
                   corazón
                 </p>
                 <p className="pt-1 text-xs font-medium text-rose-700 group-hover:underline">
@@ -216,7 +216,7 @@ export default function HomePage() {
             <article className="group h-full rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
               <div className="relative w-full aspect-[4/5] overflow-hidden">
                 <Image
-                  src="/joyas/anillo-cuarzo-rosa-1.jpg"
+                  src="/joyas/anillo-agua-marina-redonda-1.jpeg"
                   alt="Anillo de plata 950 con cuarzo rosa"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"

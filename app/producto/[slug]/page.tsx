@@ -7,6 +7,7 @@ import { WebpayButton } from "@/components/WebpayButton";
 import { PRODUCTS } from "@/data/products";
 import ProductGallery from "@/components/ProductGallery";
 import { SITE_URL } from "@/lib/config";
+import { getNavidadPrice, isNavidadPromoActive } from "@/lib/promo";
 
 // En Next 16 params viene como *Promise*
 type ProductPageParams = {
@@ -95,6 +96,10 @@ export default async function ProductPage(props: ProductPageProps) {
       foto.startsWith("http") ? foto : `${SITE_URL}${foto}`
     ) ?? [`${SITE_URL}/joyas/prendedor-ginko-bronce.jpg`];
 
+  // Promo Navidad
+  const promoActive = isNavidadPromoActive();
+  const finalPrice = getNavidadPrice(product.precio);
+
   // Para poder leer campos opcionales sin pelear con TS
   const p: any = product;
 
@@ -122,7 +127,7 @@ export default async function ProductPage(props: ProductPageProps) {
       "@type": "Offer",
       url,
       priceCurrency: "CLP",
-      price: String(product.precio),
+      price: String(finalPrice),
       availability: "https://schema.org/InStock",
     },
   };
@@ -130,6 +135,7 @@ export default async function ProductPage(props: ProductPageProps) {
   const whatsappUrl = `https://wa.me/56996397495?text=${encodeURIComponent(
     `Hola Carola, vi la joya "${product.nombre}" en tu web y me gustaría saber si está disponible.`
   )}`;
+
   const WEBPAY_ENABLED =
     process.env.NEXT_PUBLIC_WEBPAY_ENABLED === "true";
 
@@ -163,8 +169,15 @@ export default async function ProductPage(props: ProductPageProps) {
               <h1 className="text-2xl sm:text-3xl font-semibold text-slate-900">
                 {product.nombre}
               </h1>
-              <p className="text-lg font-semibold text-rose-700">
-                ${product.precio.toLocaleString("es-CL")} CLP
+              <p className="text-lg font-semibold text-rose-700 flex items-baseline gap-2">
+                {promoActive && (
+                  <span className="text-xs text-slate-400 line-through">
+                    ${product.precio.toLocaleString("es-CL")} CLP
+                  </span>
+                )}
+                <span>
+                  ${finalPrice.toLocaleString("es-CL")} CLP
+                </span>
               </p>
             </div>
 
@@ -180,58 +193,56 @@ export default async function ProductPage(props: ProductPageProps) {
                 ))}
             </div>
 
-           {/* Descripción + texto adicional */}
-<div className="space-y-4">
-  <div className="space-y-3 text-sm text-slate-600">
-    {product.descripcionLarga ? (
-      <p>{product.descripcionLarga}</p>
-    ) : (
-      <p>{product.descripcionCorta}</p>
-    )}
-    <p>
-      Al ser una pieza hecha a mano, pueden existir pequeñas variaciones
-      respecto a la foto. Si necesitas ajustar talla o largo, conversemos
-      por WhatsApp.
-    </p>
-  </div>
+            {/* Descripción + texto adicional */}
+            <div className="space-y-4">
+              <div className="space-y-3 text-sm text-slate-600">
+                {product.descripcionLarga ? (
+                  <p>{product.descripcionLarga}</p>
+                ) : (
+                  <p>{product.descripcionCorta}</p>
+                )}
+                <p>
+                  Al ser una pieza hecha a mano, pueden existir pequeñas
+                  variaciones respecto a la foto. Si necesitas ajustar talla o
+                  largo, conversemos por WhatsApp.
+                </p>
+              </div>
 
-  {/* Botón Webpay (principal) */}
-  {WEBPAY_ENABLED ? (
-    <WebpayButton productId={product.id} />
-  ) : (
-    <p className="text-xs text-slate-500">
-      Muy pronto podrás pagar con Webpay directamente desde la web.
-    </p>
-  )}
+              {/* Botón Webpay (principal) */}
+              {WEBPAY_ENABLED ? (
+                <WebpayButton productId={product.id} />
+              ) : (
+                <p className="text-xs text-slate-500">
+                  Muy pronto podrás pagar con Webpay directamente desde la web.
+                </p>
+              )}
 
-  {/* Botones secundarios: WhatsApp + Instagram */}
-  <div className="flex flex-wrap items-center gap-3">
-    <Link
-      href={whatsappUrl}
-      target="_blank"
-      className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#25D366] text-white shadow-md transition hover:bg-[#1ebe5d]"
-      aria-label="WhatsApp"
-    >
-      <Image
-        src="/whatsapp.svg"
-        alt="WhatsApp"
-        width={22}
-        height={22}
-        className="h-12 w-12"
-      />
-    </Link>
+              {/* Botones secundarios: WhatsApp + Instagram */}
+              <div className="flex flex-wrap items-center gap-3">
+                <Link
+                  href={whatsappUrl}
+                  target="_blank"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#25D366] text-white shadow-md transition hover:bg-[#1ebe5d]"
+                  aria-label="WhatsApp"
+                >
+                  <Image
+                    src="/whatsapp.svg"
+                    alt="WhatsApp"
+                    width={22}
+                    height={22}
+                    className="h-12 w-12"
+                  />
+                </Link>
 
-    <Link
-      href="https://www.instagram.com/carolaplazajoyas/"
-      target="_blank"
-      className="inline-flex items-center rounded-full border border-rose-200 px-6 py-3 text-sm font-medium text-rose-700 transition-colors hover:bg-rose-50"
-    >
-      Ver más en Instagram
-    </Link>
-  </div>
-</div>
-
-
+                <Link
+                  href="https://www.instagram.com/carolaplazajoyas/"
+                  target="_blank"
+                  className="inline-flex items-center rounded-full border border-rose-200 px-6 py-3 text-sm font-medium text-rose-700 transition-colors hover:bg-rose-50"
+                >
+                  Ver más en Instagram
+                </Link>
+              </div>
+            </div>
 
             <div className="space-y-1 rounded-2xl border border-slate-100 bg-white p-4 text-xs text-slate-500">
               <p className="font-medium text-slate-700">

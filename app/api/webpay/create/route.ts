@@ -5,6 +5,8 @@ import { NextResponse } from "next/server";
 import { webpayCreateTransaction } from "@/lib/webpay";
 import { PRODUCTS } from "@/data/products";
 import { SITE_URL } from "@/lib/config";
+import { getNavidadPrice } from "@/lib/promo";
+
 
 export async function POST(req: Request) {
   try {
@@ -27,13 +29,19 @@ export async function POST(req: Request) {
       );
     }
 
-    const amount = Number(product.precio || 0);
-    if (!amount || amount <= 0) {
-      return NextResponse.json(
-        { ok: false, error: "Monto inválido para el producto" },
-        { status: 400 }
-      );
-    }
+    // Precio base desde el producto
+const baseAmount = Number(product.precio || 0);
+
+if (!baseAmount || baseAmount <= 0) {
+  return NextResponse.json(
+    { ok: false, error: "Monto inválido para el producto" },
+    { status: 400 }
+  );
+}
+
+// Aplica promo de Navidad si corresponde (15% menos)
+const amount = getNavidadPrice(baseAmount);
+
     const WEBPAY_RETURN_URL =
          process.env.WEBPAY_RETURN_URL || `${SITE_URL}/webpay/resultado`;
 

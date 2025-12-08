@@ -668,12 +668,28 @@ categoria: "colgantes"
   descripcionLarga:
     "Colgante de plata 950 con un gran cabujón de ámbar miel en la parte inferior de una figura orgánica de cuatro aros. Va montado en un cordón de cuero suave que se ajusta y permite usarlo ceñido al cuello tipo choker o más suelto y largo sobre el pecho. Es una pieza llamativa pero ligera, perfecta para dar un toque bohemio y luminoso a vestidos lisos o looks de verano.",
   fotos: [
-    "/joyas/collar-plata-ambar -y-cuero-1.jpeg",
+    "/joyas/collar-plata-ambar-y-cuero-1.jpeg",
     "/joyas/collar-plata-ambar-y-cuero-2.jpeg"
   ],
   destacado: false,
   tipo: "unica",
   categoria: "colgantes"
+},
+{
+  id: "anillo-agua-marina-ovalada",
+  nombre: "Anillo Agua Marina Ovalada",
+  precio: 65000,
+  descripcionCorta:
+    "Anillo de plata 950 con agua marina ovalada engastada al centro y grabados orgánicos en los laterales.",
+  descripcionLarga:
+    "Anillo de diseño cuadrado en plata 950 con una agua marina ovalada de tono celeste suave engastada en bisel. Los laterales del aro llevan grabados de inspiración vegetal que le dan un aire artesanal y único. Es una pieza sólida y con presencia, ideal para quienes buscan un anillo diferente pero muy combinable para uso diario o como anillo de firma.",
+  fotos: [
+    "/joyas/anillo-agua-marina-ovalada-1.jpeg",
+    "/joyas/anillo-agua-marina-ovalada-2.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "anillos"
 },
 
 ];

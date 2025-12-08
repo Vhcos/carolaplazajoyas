@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Product } from "@/data/products";
+import { getNavidadPrice, isNavidadPromoActive } from "@/lib/promo";
 
 type ProductCardProps = {
   product: Product;
@@ -10,27 +11,39 @@ type ProductCardProps = {
 export default function ProductCard({ product }: ProductCardProps) {
   const mainImage = product.fotos[0] ?? "/joyas/placeholder.jpg";
 
+  const promoActive = isNavidadPromoActive();
+  const finalPrice = getNavidadPrice(product.precio);
+
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-rose-100 bg-white shadow-sm/50 hover:shadow-md transition-shadow">
       <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
         <Image
-        src={mainImage}
-        alt={product.nombre}
-        fill
-        className="object-cover transition-transform duration-500 group-hover:scale-105"
-        sizes="(min-width: 1024px) 250px, (min-width: 640px) 45vw, 90vw"
-       />
-     </div>
+          src={mainImage}
+          alt={product.nombre}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(min-width: 1024px) 250px, (min-width: 640px) 45vw, 90vw"
+        />
+      </div>
 
       <div className="flex flex-1 flex-col gap-2 p-4">
         <h3 className="font-medium text-slate-900">
           {product.nombre}
         </h3>
+
         <p className="text-sm text-slate-500 line-clamp-2">
           {product.descripcionCorta}
         </p>
-        <p className="mt-1 text-sm font-semibold text-rose-700">
-          ${product.precio.toLocaleString("es-CL")} CLP
+
+        <p className="mt-1 text-sm font-semibold text-rose-700 flex items-baseline gap-2">
+          {promoActive && (
+            <span className="text-xs text-slate-400 line-through">
+              ${product.precio.toLocaleString("es-CL")} CLP
+            </span>
+          )}
+          <span>
+            ${finalPrice.toLocaleString("es-CL")} CLP
+          </span>
         </p>
 
         <div className="mt-3 flex gap-2">
