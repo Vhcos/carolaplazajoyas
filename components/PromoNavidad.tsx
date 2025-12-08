@@ -22,10 +22,10 @@ export function PromoNavidad() {
 
             <span>
               Del 8 al 13 de diciembre:{" "}
-              <span className="font-semibold">15% de descuento</span> en compras
+              <span className="font-semibold">10% de descuento</span> en compras
               anticipadas de Navidad. Menciona el código{" "}
               <span className="font-mono bg-rose-700/80 px-1 rounded">
-                NAVIDAD15
+                NAVIDAD10
               </span>{" "}
               al escribir por WhatsApp.
             </span>

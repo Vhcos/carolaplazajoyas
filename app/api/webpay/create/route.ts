@@ -39,7 +39,7 @@ if (!baseAmount || baseAmount <= 0) {
   );
 }
 
-// Aplica promo de Navidad si corresponde (15% menos)
+// Aplica promo de Navidad si corresponde (10% menos)
 const amount = getNavidadPrice(baseAmount);
 
     const WEBPAY_RETURN_URL =

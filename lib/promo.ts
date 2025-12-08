@@ -8,8 +8,8 @@ export function isNavidadPromoActive(date = new Date()) {
   return date >= start && date <= end;
 }
 
-// Devuelve el precio final (con 15% de descuento si aplica)
+// Devuelve el precio final (con 10% de descuento si aplica)
 export function getNavidadPrice(basePrice: number, date = new Date()) {
   if (!isNavidadPromoActive(date)) return basePrice;
-  return Math.round(basePrice * 0.85); // 15% descuento
+  return Math.round(basePrice * 0.90); // 10% descuento
 }

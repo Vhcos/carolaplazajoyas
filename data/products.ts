@@ -662,7 +662,7 @@ categoria: "colgantes"
 {
   id: "collar-ambar-plata-cuero",
   nombre: "Collar Ámbar Plata y Cuero",
-  precio: 40000,
+  precio: 55000,
   descripcionCorta:
     "Colgante de plata 950 con cabujón de ámbar y cordón de cuero ajustable, para usar corto tipo choker o más largo.",
   descripcionLarga:

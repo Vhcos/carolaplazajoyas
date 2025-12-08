@@ -55,7 +55,7 @@ export default function HomePage() {
             Piezas únicas y series limitadas trabajadas a pulso en Chile, pensadas
             para convertirse en ese regalo especial que se queda muchos años.
             Del 8 al 13 de diciembre tienes un{" "}
-            <span className="font-semibold">15% de descuento</span> en compras
+            <span className="font-semibold">10% de descuento</span> en compras
             anticipadas de Navidad mencionando el código{" "}
             <span className="font-mono bg-rose-100 px-1 rounded-sm">
               NAVIDAD15
