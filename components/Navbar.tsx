@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { href: "/", label: "Inicio" },
   { href: "/producto", label: "Catálogo" },
+  { href: "/guia-anillos", label: "Guía anillos" },
   { href: "/contacto", label: "Contacto" },
 ];
 
