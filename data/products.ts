@@ -609,5 +609,71 @@ categoria: "anillos",
   tipo: "unica",
   categoria: "colgantes"
 },
+{
+  id: "collar-rodocrosita-dorado",
+  nombre: "Collar Rodocrosita y Broche Dorado",
+  precio: 40000,
+  descripcionCorta:
+    "Collar corto de rodocrosita en tonos rosados con broche frontal dorado protagonista.",
+  descripcionLarga:
+    "Collar de cuentas redondas de rodocrosita en distintas vetas rosadas, armado a mano y terminado en un broche frontal dorado que se convierte en el centro del diseño. Es una pieza tipo choker que se luce al ras del cuello, perfecta para usar sola como toque de color suave o combinada con cadenas más largas para un look en capas.",
+  fotos: [
+    "/joyas/collar-rodocrosita-dorado-1.jpeg",
+    "/joyas/collar-rodocrosita-dorado-2.jpeg",
+    "/joyas/collar-rodocrosita-dorado-3.jpeg"
+  
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "colgantes"
+},
+{
+id: "collar-obsidiana-negra",
+nombre: "Collar Obsidiana Negra",
+precio: 40000,
+descripcionCorta:
+"Collar de obsidiana negra con cuentas redondas y cierre frontal de plata tipo argolla.",
+descripcionLarga:
+"Collar corto de obsidiana negra con cuentas redondas pulidas, armado a mano y terminado en un cierre frontal de plata tipo argolla que se convierte en el centro del diseño. El negro profundo de la piedra lo hace muy combinable y le da un aire elegante pero moderno, perfecto para usar solo o acompañado de collares más finos. Ideal para resaltar sobre prendas de color o para completar un look totalmente negro.",
+fotos: [
+  "/joyas/collar-obsidiana-1.jpeg",
+  "/joyas/collar-obsidiana-2.jpeg",
+],
+destacado: false,
+tipo: "unica",
+categoria: "colgantes"
+},
+{
+id: "collar-minicuarzo-facetadoazul",
+nombre: "Collar Mini Cuarzo Azul",
+precio: 40000,
+descripcionCorta:
+"Collar corto de mini cuentas de cuarzo azul facetado con detalle central de tres esferas azules y acentos dorados.",
+descripcionLarga:
+"Collar delicado de mini cuentas de cuarzo azul facetado, armado a mano y diseñado para quedar muy cerca del cuello. En el centro, tres esferas azules se combinan con pequeños detalles dorados que aportan brillo sutil sin recargar. Es una pieza ligera y cómoda, perfecta para usar sola todos los días o para combinar en capas con otros collares más largos.",
+fotos: [
+"/joyas/collar-minicuarzo-facetadoazul-1.jpeg",
+"/joyas/collar-minicuarzo-facetadoazul-2.jpeg"
+],
+destacado: false,
+tipo: "unica",
+categoria: "colgantes"
+},
+{
+  id: "collar-ambar-plata-cuero",
+  nombre: "Collar Ámbar Plata y Cuero",
+  precio: 40000,
+  descripcionCorta:
+    "Colgante de plata 950 con cabujón de ámbar y cordón de cuero ajustable, para usar corto tipo choker o más largo.",
+  descripcionLarga:
+    "Colgante de plata 950 con un gran cabujón de ámbar miel en la parte inferior de una figura orgánica de cuatro aros. Va montado en un cordón de cuero suave que se ajusta y permite usarlo ceñido al cuello tipo choker o más suelto y largo sobre el pecho. Es una pieza llamativa pero ligera, perfecta para dar un toque bohemio y luminoso a vestidos lisos o looks de verano.",
+  fotos: [
+    "/joyas/collar-plata-ambar -y-cuero-1.jpeg",
+    "/joyas/collar-plata-ambar-y-cuero-2.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "colgantes"
+},
 
 ];
