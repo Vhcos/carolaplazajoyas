@@ -58,7 +58,7 @@ export default function HomePage() {
             <span className="font-semibold">10% de descuento</span> en compras
             anticipadas de Navidad mencionando el código{" "}
             <span className="font-mono bg-rose-100 px-1 rounded-sm">
-              NAVIDAD15
+              NAVIDAD10
             </span>{" "}
             al escribir por WhatsApp.
           </p>

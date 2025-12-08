@@ -680,9 +680,9 @@ categoria: "colgantes"
   nombre: "Anillo Agua Marina Ovalada",
   precio: 65000,
   descripcionCorta:
-    "Anillo de plata 950 con agua marina ovalada engastada al centro y grabados orgánicos en los laterales.",
+    "Anillo Nº15 de plata 950 con agua marina ovalada engastada al centro y grabados orgánicos en los laterales.",
   descripcionLarga:
-    "Anillo de diseño cuadrado en plata 950 con una agua marina ovalada de tono celeste suave engastada en bisel. Los laterales del aro llevan grabados de inspiración vegetal que le dan un aire artesanal y único. Es una pieza sólida y con presencia, ideal para quienes buscan un anillo diferente pero muy combinable para uso diario o como anillo de firma.",
+    "Anillo Nº15 de diseño cuadrado en plata 950 con una agua marina ovalada de tono celeste suave engastada en bisel. Los laterales del aro llevan grabados de inspiración vegetal que le dan un aire artesanal y único. Es una pieza sólida y con presencia, ideal para quienes buscan un anillo diferente pero muy combinable para uso diario o como anillo de firma.",
   fotos: [
     "/joyas/anillo-agua-marina-ovalada-1.jpeg",
     "/joyas/anillo-agua-marina-ovalada-2.jpeg"
