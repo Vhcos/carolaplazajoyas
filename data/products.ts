@@ -17,7 +17,7 @@ export const PRODUCTS: Product[] = [
   {
   id: "anillo-prisma-amatista",
   nombre: "Anillo Prisma Amatista",
-  precio: 55,
+  precio: 65000,
   descripcionCorta:
     "Anillo Nº17 de plata 950 de líneas geométricas con amatista oval central, ideal como pieza protagonista.",
   descripcionLarga:
