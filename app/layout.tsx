@@ -23,22 +23,31 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "Carola Plaza | Joyas de autor en plata 950 hechas a mano en Chile",
-    template: "%s | Carola Plaza",
+      "Joyas de plata 950 hechas a mano en Chile | Carola Plaza Joyas",
+    template: "%s | Carola Plaza Joyas",
   },
   description:
     "Joyas de autor en plata 950 hechas a mano en Chile por Carola Plaza. Piezas únicas y series limitadas con piedras naturales y certificado de autenticidad.",
+  keywords: [
+    "joyas de plata 950",
+    "joyería de autor",
+    "joyas artesanales Chile",
+    "anillos de plata 950",
+    "colgantes de plata 950",
+    "joyas hechas a mano",
+    "Carola Plaza Joyas",
+  ],
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
     type: "website",
     url: SITE_URL,
-    siteName: "Carola Plaza",
+    siteName: "Carola Plaza Joyas",
     title:
-      "Carola Plaza | Joyas de autor en plata 950 hechas a mano en Chile",
+      "Joyas de plata 950 hechas a mano en Chile | Carola Plaza Joyas",
     description:
-      "Joyas de autor en plata 950 hechas a mano en Chile por Carola Plaza. Piezas únicas y series limitadas con piedras naturales y certificado de autenticidad.",
+      "Joyas de autor en plata 950 trabajadas a mano en Chile. Piezas únicas y series limitadas con piedras naturales y certificado de autenticidad.",
     images: [
       {
         url: "/joyas/prendedor-ginko-bronce.jpg",
@@ -50,11 +59,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Carola Plaza | Joyas de autor en plata 950",
+    title: "Joyas de plata 950 hechas a mano en Chile | Carola Plaza Joyas",
     description:
       "Piezas únicas de plata 950 hechas a mano en Chile por Carola Plaza.",
   },
 };
+
 
 type RootLayoutProps = {
   children: React.ReactNode;
