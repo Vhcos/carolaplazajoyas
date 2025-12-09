@@ -361,6 +361,50 @@ export default function HomePage() {
           aquí en Chile.
         </p>
       </section>
+       
+       {/* Guías para ayudarte a elegir */}
+<section className="max-w-4xl mx-auto w-full px-2 mt-8">
+  <div className="rounded-3xl border border-rose-100 bg-white/80 shadow-md backdrop-blur-sm px-5 py-6 sm:px-8 sm:py-7 space-y-4">
+    <div className="space-y-1">
+      <h2 className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-slate-500">
+        Guías para ayudarte a elegir
+      </h2>
+      <p className="text-xs sm:text-sm text-slate-700 max-w-xl">
+        Si tienes dudas con tu talla, cómo cuidar la plata 950 o qué pieza elegir
+        para un regalo especial, estas guías te pueden orientar antes de escribirme.
+      </p>
+    </div>
+
+    <div className="flex flex-wrap gap-3">
+      {/* Botón 1 */}
+      <Link
+        href="/guia-anillos"
+        className="inline-flex items-center gap-2 rounded-full border border-rose-200 bg-rose-600 px-4 py-2 text-[11px] sm:text-xs font-medium text-white shadow-sm transition-colors hover:bg-rose-700 hover:border-rose-400"
+      >
+        <span className="h-1.5 w-1.5 rounded-full bg-rose-200" />
+        <span>Cómo medir tu dedo para anillos</span>
+      </Link>
+
+      {/* Botón 2 */}
+      <Link
+        href="/guia-cuidado-plata"
+        className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-[11px] sm:text-xs font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-900 hover:text-white hover:border-slate-900"
+      >
+        <span className="h-1.5 w-1.5 rounded-full bg-slate-300" />
+        <span>Cuidado de joyas de plata 950</span>
+      </Link>
+
+      {/* Botón 3 */}
+      <Link
+        href="/guia-regalos"
+        className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-2 text-[11px] sm:text-xs font-medium text-emerald-700 shadow-sm transition-colors hover:bg-emerald-600 hover:text-white hover:border-emerald-500"
+      >
+        <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
+        <span>Elegir una joya para regalo</span>
+      </Link>
+    </div>
+  </div>
+</section>
 
       {/* Nota de confianza */}
       <section className="border-t border-slate-200 pt-6 text-xs sm:text-sm text-slate-600">
