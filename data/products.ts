@@ -676,6 +676,23 @@ categoria: "colgantes"
   categoria: "colgantes"
 },
 {
+  id: "aros-amatista-ovalos",
+  nombre: "Aros óvalo martillado con amatista",
+  precio: 30000,
+  descripcionCorta:
+    "Aros de plata martillada en forma de óvalo con gota de amatista facetada.",
+  descripcionLarga:
+    "Aros colgantes en plata 950 con óvalo martillado de textura orgánica y una gota de amatista facetada suspendida en la parte inferior, envuelta en delicado alambre dorado. Livianos pero muy vistosos, aportan un toque de color profundo y elegante, perfectos para usar tanto de día como de noche.",
+  fotos: [
+    "/joyas/aros-amatista-1.jpeg",
+    "/joyas/aros-amatista-2.jpeg",
+    "/joyas/aros-amatista-3.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "aros",
+},
+{
   id: "anillo-agua-marina-ovalada",
   nombre: "Anillo Agua Marina Ovalada",
   precio: 65000,
@@ -691,5 +708,6 @@ categoria: "colgantes"
   tipo: "unica",
   categoria: "anillos"
 },
+
 
 ];
