@@ -4,7 +4,7 @@ export function PromoNavidad() {
 
   // Del 8 al 13 de diciembre (mes 11 porque Date usa 0 = enero)
   const start = new Date(2025, 11, 8);
-  const end = new Date(2025, 11, 13, 23, 59, 59);
+  const end = new Date(2025, 11, 12, 23, 59, 59);
 
   const isActive = today >= start && today <= end;
 
