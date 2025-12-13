@@ -21,7 +21,7 @@ export function PromoNavidad() {
             </span>
 
             <span>
-              Del 8 al 13 de diciembre:{" "}
+              Del 8 al 12 de diciembre:{" "}
               <span className="font-semibold">10% de descuento</span> en compras
               anticipadas de Navidad. Menciona el código{" "}
               <span className="font-mono bg-rose-700/80 px-1 rounded">

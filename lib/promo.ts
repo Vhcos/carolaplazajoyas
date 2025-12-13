@@ -1,15 +1,37 @@
 // lib/promo.ts
 
-// Período de promo Navidad 2025: 8 al 13 de diciembre
-export function isNavidadPromoActive(date = new Date()) {
-  const start = new Date(2025, 11, 8); // mes 11 = diciembre
-  const end = new Date(2025, 11, 13, 23, 59, 59);
+type PromoConfig = {
+  name: string;
+  discountPercent: number;
+  start: Date;
+  end: Date;
+};
 
+const NAVIDAD_PROMO: PromoConfig = {
+  name: "Navidad 2025",
+  discountPercent: 10,
+  // Ojo: meses base 0 (11 = diciembre)
+  start: new Date(2025, 11, 8, 0, 0, 0),
+  end: new Date(2025, 11, 12, 23, 59, 59),
+};
+
+export function isNavidadPromoActive(date = new Date()): boolean {
+  const { start, end } = NAVIDAD_PROMO;
   return date >= start && date <= end;
 }
 
-// Devuelve el precio final (con 10% de descuento si aplica)
-export function getNavidadPrice(basePrice: number, date = new Date()) {
+export function getNavidadPrice(
+  basePrice: number,
+  date = new Date()
+): number {
   if (!isNavidadPromoActive(date)) return basePrice;
-  return Math.round(basePrice * 0.90); // 10% descuento
+
+  const discount = (basePrice * NAVIDAD_PROMO.discountPercent) / 100;
+  // Redondeo a entero CLP
+  return Math.round(basePrice - discount);
+}
+
+// Útil para mostrar textos en el banner
+export function getNavidadPromoInfo() {
+  return NAVIDAD_PROMO;
 }
