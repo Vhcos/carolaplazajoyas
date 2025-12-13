@@ -10,6 +10,7 @@ export type Product = {
   destacado?: boolean; // para mostrar en la Home
   tipo: "unica" | "serie"; // pieza única 1/1 o serie limitada
   serieTotal?: number; // solo para series: total de piezas (y en No. x/y)
+  vendido?: boolean; // solo para series: si ya se vendió
   categoria: "anillos" | "aros" | "collares" | "colgantes" | "pulseras-esclavas";
 };
 
@@ -30,6 +31,7 @@ export const PRODUCTS: Product[] = [
   destacado: true,
   tipo: "unica",
   categoria: "anillos",
+  vendido: false,
 },
 {
   id: "colgante-luz-de-agua",
@@ -48,6 +50,7 @@ export const PRODUCTS: Product[] = [
   destacado: true,
   tipo: "unica",
   categoria: "collares",
+  vendido: false,
 },
 {
   id: "esclava-aventurina-duo",
@@ -64,6 +67,7 @@ export const PRODUCTS: Product[] = [
   destacado: true,
   tipo: "unica",
   categoria: "pulseras-esclavas",
+  vendido: false,
 },
   {
   id: "anillo-cuarzo-rosa",
@@ -81,6 +85,7 @@ export const PRODUCTS: Product[] = [
   destacado: true,
   tipo: "unica",
   categoria: "anillos",
+  vendido: true,
 },
 
 {
@@ -99,6 +104,7 @@ export const PRODUCTS: Product[] = [
   destacado: true,
   tipo: "unica",
   categoria: "anillos",
+  vendido: false,
 },
 
 
@@ -119,6 +125,7 @@ export const PRODUCTS: Product[] = [
   destacado: true,
   tipo: "unica",
   categoria: "anillos",
+  vendido: false,
 },
 
 {
@@ -136,6 +143,7 @@ export const PRODUCTS: Product[] = [
   destacado: true,
   tipo: "unica",
   categoria: "anillos",
+  vendido: false,
 },
 
 {
@@ -154,6 +162,7 @@ export const PRODUCTS: Product[] = [
   destacado: true,
   tipo: "unica",
   categoria: "aros",
+  vendido: false,
 },
 {
   id: "colgante-alma-rosa",
@@ -170,6 +179,7 @@ export const PRODUCTS: Product[] = [
   destacado: true,
   tipo: "unica",
   categoria: "collares",
+  vendido: false,
 },
 {
   id: "colgante-amatista-verde",
@@ -183,6 +193,7 @@ export const PRODUCTS: Product[] = [
   destacado: true,
   tipo: "unica",
   categoria: "collares",
+  vendido: false,
 },
 
 {
@@ -200,6 +211,7 @@ export const PRODUCTS: Product[] = [
   destacado: true,
   tipo: "unica",
   categoria: "collares",
+  vendido: false,
 },
 {
   id: "collar-piedras-inicial",
@@ -217,6 +229,7 @@ export const PRODUCTS: Product[] = [
   destacado: true,
   tipo: "unica",
   categoria: "collares",
+  vendido: false,
 },
 {
   id: "collar-talisman",
@@ -235,6 +248,7 @@ export const PRODUCTS: Product[] = [
   destacado: true,
   tipo: "unica",
   categoria: "collares",
+  vendido: false,
 },
 
 {
@@ -252,6 +266,7 @@ export const PRODUCTS: Product[] = [
   destacado: true,
   tipo: "unica",
   categoria: "pulseras-esclavas",
+  vendido: false,
 },
 {
   id: "colgante-inicial-colibri",
@@ -268,6 +283,7 @@ export const PRODUCTS: Product[] = [
   destacado: true,
   tipo: "unica",
   categoria: "collares",
+  vendido: false,
 },
 {
   id: "colgante-inicial-flor",
@@ -285,6 +301,7 @@ export const PRODUCTS: Product[] = [
   destacado: true,
   tipo: "unica",
   categoria: "collares",
+  vendido: false,
 },
   {
     id: "pulsera-eslabones-prehnita",
@@ -301,6 +318,7 @@ export const PRODUCTS: Product[] = [
     destacado: true,
     tipo: "unica",
     categoria: "pulseras-esclavas",
+    vendido: false,
   },
 {
     id: "anillo-granate-facetado",
@@ -318,6 +336,7 @@ export const PRODUCTS: Product[] = [
     destacado: true,
     tipo: "unica",
     categoria: "anillos",
+    vendido: false,
   },
 {
   id: "colgante-corazon-alado-granate",
@@ -334,6 +353,7 @@ export const PRODUCTS: Product[] = [
   destacado: false,
   tipo: "unica",
   categoria: "collares",
+  vendido: true,
 },
 
 {
@@ -350,7 +370,8 @@ fotos: [
 ],
 destacado: false,
 tipo: "unica",
-categoria: "collares"
+categoria: "collares",
+vendido: false,
 },
 {
   id: "colgante-corazon-drusa-amatista",
@@ -367,6 +388,7 @@ categoria: "collares"
   destacado: false,
   tipo: "unica",
   categoria: "collares",
+  vendido: false,
 },
 {
   id: "aros-ginko-oro",
@@ -383,6 +405,7 @@ categoria: "collares"
   destacado: false,
   tipo: "unica",
   categoria: "aros",
+  vendido: false,
 },
 {
   id: "aros-parra-asimetricos",
@@ -399,6 +422,7 @@ categoria: "collares"
   destacado: false,
   tipo: "unica",
   categoria: "aros",
+  vendido: false,
 },
 {
   id: "collar-rayo-plata",
@@ -415,6 +439,7 @@ categoria: "collares"
   destacado: false,
   tipo: "unica",
   categoria: "collares",
+  vendido: false,
 },
 {
   id: "collar-corazon-alado-amatista",
@@ -431,6 +456,7 @@ categoria: "collares"
   destacado: false,
   tipo: "unica",
   categoria: "collares",
+  vendido: false,
 },
 {
   id: "anillo-trenza-bola",
@@ -447,6 +473,7 @@ categoria: "collares"
   destacado: false,
   tipo: "unica",
   categoria: "anillos",
+  vendido: false,
 },
 {
   id: "collar-triangulo-granate",
@@ -463,6 +490,7 @@ categoria: "collares"
   destacado: false,
   tipo: "unica",
   categoria: "collares",
+  vendido: false,
 },
 {
   id: "collar-corazon-alas-gota",
@@ -479,6 +507,7 @@ categoria: "collares"
   destacado: false,
   tipo: "unica",
   categoria: "collares",
+  vendido: false,
 },
 {
   id: "anillo-corazon-pirita-ajustable",
@@ -495,6 +524,7 @@ categoria: "collares"
   destacado: false,
   tipo: "unica",
   categoria: "anillos",
+  vendido: false,
 },
 {
 id: "anillo-citrino-ovalado",
@@ -513,6 +543,7 @@ fotos: [
 destacado: false,
 tipo: "unica",
 categoria: "anillos",
+vendido: false,
 },
 {
   id: "anillo-agua-marina-redonda",
@@ -530,6 +561,7 @@ categoria: "anillos",
   destacado: false,
   tipo: "unica",
   categoria: "anillos",
+  vendido: false,
 },
 {
   id: "anillo-amatista-solitario",
@@ -543,6 +575,7 @@ categoria: "anillos",
   destacado: false,
   tipo: "unica",
   categoria: "anillos",
+  vendido: false,
 },
 {
   id: "anillo-granate-enchapado",
@@ -560,6 +593,7 @@ categoria: "anillos",
   destacado: false,
   tipo: "unica",
   categoria: "anillos",
+  vendido: false,
 },
 {
   id: "anillo-tres-piedras-amatista-citrino-cianita",
@@ -577,7 +611,8 @@ categoria: "anillos",
   ],
   destacado: false,
   tipo: "unica",
-  categoria: "anillos"
+  categoria: "anillos",
+  vendido: false,
 },
 {
   id: "anillo-pirita-triangular-ajustable",
@@ -594,7 +629,8 @@ categoria: "anillos",
   ],
   destacado: false,
   tipo: "unica",
-  categoria: "anillos"
+  categoria: "anillos",
+  vendido: false,
 },
 {
   id: "collar-cuarzo-rojo-perlas",
@@ -607,7 +643,8 @@ categoria: "anillos",
   fotos: ["/joyas/collar-cuarzo-rojoperla-1.jpeg"],
   destacado: false,
   tipo: "unica",
-  categoria: "colgantes"
+  categoria: "colgantes",
+  vendido: false,
 },
 {
   id: "collar-rodocrosita-dorado",
@@ -625,7 +662,8 @@ categoria: "anillos",
   ],
   destacado: false,
   tipo: "unica",
-  categoria: "colgantes"
+  categoria: "colgantes",
+  vendido: false,
 },
 {
 id: "collar-obsidiana-negra",
@@ -641,7 +679,8 @@ fotos: [
 ],
 destacado: false,
 tipo: "unica",
-categoria: "colgantes"
+categoria: "colgantes",
+vendido: false,
 },
 {
 id: "collar-minicuarzo-facetadoazul",
@@ -657,7 +696,8 @@ fotos: [
 ],
 destacado: false,
 tipo: "unica",
-categoria: "colgantes"
+categoria: "colgantes",
+vendido: false,
 },
 {
   id: "collar-ambar-plata-cuero",
@@ -673,7 +713,8 @@ categoria: "colgantes"
   ],
   destacado: false,
   tipo: "unica",
-  categoria: "colgantes"
+  categoria: "colgantes",
+  vendido: false,
 },
 {
   id: "aros-amatista-ovalos",
@@ -691,6 +732,7 @@ categoria: "colgantes"
   destacado: false,
   tipo: "unica",
   categoria: "aros",
+  vendido: false,
 },
 {
   id: "anillo-agua-marina-ovalada",
@@ -706,7 +748,8 @@ categoria: "colgantes"
   ],
   destacado: false,
   tipo: "unica",
-  categoria: "anillos"
+  categoria: "anillos",
+  vendido: false,
 },
 
 

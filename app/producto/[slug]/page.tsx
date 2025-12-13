@@ -195,6 +195,20 @@ export default async function ProductPage(props: ProductPageProps) {
 
             {/* Descripción + texto adicional */}
             <div className="space-y-4">
+{product.vendido && (
+  <div className="pointer-events-none absolute -right-6 top-10 rotate-[-25deg]">
+    <div className="bg-rose-700 px-8 py-1.5 shadow-lg">
+      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-rose-50 text-center">
+        VENDIDO
+      </p>
+      <p className="text-[10px] text-rose-100 text-center">
+        si te gusta, encárgamelo
+      </p>
+    </div>
+  </div>
+)}
+
+
               <div className="space-y-3 text-sm text-slate-600">
                 {product.descripcionLarga ? (
                   <p>{product.descripcionLarga}</p>
