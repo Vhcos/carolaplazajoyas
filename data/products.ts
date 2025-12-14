@@ -193,7 +193,7 @@ export const PRODUCTS: Product[] = [
   destacado: true,
   tipo: "unica",
   categoria: "collares",
-  vendido: false,
+  vendido: true,
 },
 
 {
