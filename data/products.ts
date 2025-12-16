@@ -769,23 +769,6 @@ vendido: false,
   vendido: false,
 },
 {
-  id: "collar-corazon-cuarzonegro",
-  nombre: "Collar Corazón Cuarzo Negro",
-  precio: 40000,
-  descripcionCorta:
-    "Collar de cuarzo negro con detalles dorados y dije de corazón estilo exvoto con brillo de circonitas.",
-  descripcionLarga:
-    "Collar armado a mano con cuentas de cuarzo negro en distintos tamaños, intercaladas con pequeños separadores dorados. Al centro lleva un cierre frontal dorado tipo argolla marinera desde donde cuelga un dije de corazón estilo exvoto con borde de circonitas que aporta luz y movimiento. Es una pieza llamativa pero muy combinable, perfecta para levantar un look negro total o usar como protagonista con blusas y vestidos escotados.",
-  fotos: [
-    "/joyas/collar-corazon-cuarzonegro-1.jpeg",
-    "/joyas/collar-corazon-cuarzonegro-2.jpeg"
-  ],
-  destacado: false,
-  tipo: "unica",
-  categoria: "colgantes",
-  vendido: false,
-},
-{
   id: "collar-corazon-onix-cielo",
   nombre: "Collar Corazón Ónix Cielo",
   precio: 45000,
