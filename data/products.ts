@@ -561,7 +561,7 @@ vendido: false,
   destacado: false,
   tipo: "unica",
   categoria: "anillos",
-  vendido: false,
+  vendido: true,
 },
 {
   id: "anillo-amatista-solitario",
@@ -750,6 +750,108 @@ vendido: false,
   tipo: "unica",
   categoria: "anillos",
   vendido: false,
+},
+{
+  id: "collar-corazon-cuarzonegro",
+  nombre: "Collar Corazón Cuarzo Negro",
+  precio: 40000,
+  descripcionCorta:
+    "Collar de cuarzo negro con detalles dorados y dije de corazón estilo exvoto con brillo de circonitas.",
+  descripcionLarga:
+    "Collar armado a mano con cuentas de cuarzo negro en distintos tamaños, intercaladas con pequeños separadores dorados. Al centro lleva un cierre frontal dorado tipo argolla marinera desde donde cuelga un dije de corazón estilo exvoto con borde de circonitas que aporta luz y movimiento. Es una pieza llamativa pero muy combinable, perfecta para levantar un look negro total o usar como protagonista con blusas y vestidos escotados.",
+  fotos: [
+    "/joyas/collar-corazon-cuarzonegro-1.jpeg",
+    "/joyas/collar-corazon-cuarzonegro-2.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "colgantes",
+  vendido: false,
+},
+{
+  id: "collar-corazon-cuarzonegro",
+  nombre: "Collar Corazón Cuarzo Negro",
+  precio: 40000,
+  descripcionCorta:
+    "Collar de cuarzo negro con detalles dorados y dije de corazón estilo exvoto con brillo de circonitas.",
+  descripcionLarga:
+    "Collar armado a mano con cuentas de cuarzo negro en distintos tamaños, intercaladas con pequeños separadores dorados. Al centro lleva un cierre frontal dorado tipo argolla marinera desde donde cuelga un dije de corazón estilo exvoto con borde de circonitas que aporta luz y movimiento. Es una pieza llamativa pero muy combinable, perfecta para levantar un look negro total o usar como protagonista con blusas y vestidos escotados.",
+  fotos: [
+    "/joyas/collar-corazon-cuarzonegro-1.jpeg",
+    "/joyas/collar-corazon-cuarzonegro-2.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "colgantes",
+  vendido: false,
+},
+{
+  id: "collar-corazon-onix-cielo",
+  nombre: "Collar Corazón Ónix Cielo",
+  precio: 45000,
+  descripcionCorta:
+    "Collar de plata con dije corazón de ónix azul cielo y detalles en plata y bronce, en cadena fina plateada.",
+  descripcionLarga:
+    "Collar con dije en forma de corazón de ónix azul cielo, engastado en plata con pequeños granos decorativos en la parte superior y argolla mixta en tonos plata y bronce. La piedra muestra vetas naturales en distintos matices de celeste que le dan profundidad y carácter a la pieza. Colgando de una cadena fina plateada, es un collar delicado pero con presencia, perfecto para usar solo como protagonista o combinado en capas con otros collares.",
+  fotos: [
+    "/joyas/collar-corazon-onix-cielo-1.jpeg",
+    "/joyas/collar-corazon-onix-cielo-2.jpeg",
+    "/joyas/collar-corazon-onix-cielo-3.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "collares",
+  vendido: false
+},
+{
+id: "collar-cuarzo-burdeo",
+nombre: "Collar Cuarzo Burdeo",
+precio: 40000,
+descripcionCorta:
+"Collar corto de cuentas de cuarzo burdeo facetado con cierre dorado.",
+descripcionLarga:
+"Collar de cuarzo burdeo facetado, armado a mano con cuentas redondas que van de un tamaño más pequeño en la parte posterior a un tamaño ligeramente mayor al frente. El tono vino profundo del cuarzo le da un aire elegante y fácil de combinar, perfecto para levantar un look simple o acompañar otras cadenas doradas. Terminado en un cierre mosquetón dorado que aporta un toque moderno y seguro.",
+fotos: [
+"/joyas/collar-cuarzoburdeo-1.jpeg",
+"/joyas/collar-cuarzoburdeo-2.jpeg"
+],
+destacado: false,
+tipo: "unica",
+categoria: "colgantes"
+},
+{
+id: "collar-cuarzo-negro-rosa",
+nombre: "Collar Cuarzo Negro y Rosa",
+precio: 40000,
+descripcionCorta:
+"Collar de cuentas negras y rosadas con detalles dorados, ideal para dar un toque de color a cualquier look.",
+descripcionLarga:
+"Collar de cuentas pequeñas en tono negro profundo combinadas con cuentas redondas rosadas veteadas y separadores dorados. El diseño se concentra al frente con un juego de volúmenes que resalta sobre el escote, mientras que la parte posterior se mantiene más fina y delicada para que sea cómodo de llevar todo el día. Es un collar versátil que puedes usar solo como protagonista o en capas con colgantes más largos.",
+fotos: [
+"/joyas/collar-cuarzonegrorosa-1.jpeg",
+"/joyas/collar-cuarzonegrorosa-2.jpeg"
+],
+destacado: false,
+tipo: "unica",
+categoria: "colgantes",
+vendido: false
+},
+{
+  id: "collar-lapizlasuli",
+  nombre: "Collar Lapislázuli Azul Oscuro",
+  precio: 50000,
+  descripcionCorta:
+    "Collar de lapislázuli azul intenso combinado con cuentas negras facetadas y cierre frontal dorado tipo argolla.",
+  descripcionLarga:
+    "Collar corto armado a mano con piedras de lapislázuli de formas irregulares en el centro, intercaladas con cuentas negras facetadas y pequeños separadores dorados. Termina en un cierre frontal dorado tipo argolla marinera que se vuelve protagonista del diseño. Los tonos azules profundos, con vetas doradas naturales del lapislázuli, lo convierten en una pieza elegante y muy versátil para levantar desde un look sencillo hasta uno más nocturno.",
+  fotos: [
+    "/joyas/collar-lapizlasuli-1.jpeg",
+    "/joyas/collar-lapizlasuli-2.jpeg",
+    "/joyas/collar-lapizlasuli-3.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "colgantes"
 },
 
 
