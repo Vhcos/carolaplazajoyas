@@ -784,7 +784,7 @@ vendido: false,
   destacado: false,
   tipo: "unica",
   categoria: "collares",
-  vendido: false
+  vendido: true
 },
 {
 id: "collar-cuarzo-burdeo",
