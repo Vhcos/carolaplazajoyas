@@ -836,6 +836,23 @@ vendido: false
   tipo: "unica",
   categoria: "colgantes"
 },
-
+{
+id: "anillo-pirita-bronce-oval",
+nombre: "Anillo Pirita en Bronce Oval",
+precio: 65000,
+descripcionCorta:
+"Anillo de bronce con gran cabujón de pirita natural en formato oval, montado sobre doble marco con acabado envejecido.",
+descripcionLarga:
+"Anillo de diseño escultórico en bronce con una pieza de pirita natural en bruto, de forma ovalada y brillo metálico intenso. La piedra está montada sobre una base negra y enmarcada por un óvalo de bronce que aporta volumen y presencia. Es una pieza llamativa, perfecta para quienes aman los anillos grandes y con personalidad, ideal para usar como protagonista de cualquier look.",
+fotos: [
+"/joyas/anillo-piritabronce-1.jpeg",
+"/joyas/anillo-piritabronce-2.jpeg",
+"/joyas/anillo-piritabronce-3.jpeg"
+],
+destacado: false,
+tipo: "unica",
+categoria: "anillos",
+vendido: false
+},
 
 ];
