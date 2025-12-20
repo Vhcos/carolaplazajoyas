@@ -612,7 +612,7 @@ vendido: false,
   destacado: false,
   tipo: "unica",
   categoria: "anillos",
-  vendido: false,
+  vendido: true,
 },
 {
   id: "anillo-pirita-triangular-ajustable",
@@ -852,7 +852,25 @@ fotos: [
 destacado: false,
 tipo: "unica",
 categoria: "anillos",
-vendido: false
+vendido: true
+},
+{
+  id: "anillo-nombres-personalizado",
+  nombre: "Anillo Nombres Personalizado",
+  precio: 110000,
+  descripcionCorta:
+    "Anillo ancho de plata con tres aros giratorios en cobre, bronce y plata para personalizar con nombres o palabras.",
+  descripcionLarga:
+    "Anillo de plata de cuerpo ancho que lleva tres delgados aros giratorios en cobre, bronce y plata, pensados para grabar nombres, fechas o palabras significativas. Cada cinta metálica gira sobre la base, creando un diseño dinámico y muy simbólico. Incluye pequeño detalle de estrella en cobre que aporta un toque lúdico y único. Ideal como anillo de mamá, para celebrar vínculos importantes o como pieza totalmente personalizada.",
+  fotos: [
+    "/joyas/anillo-personalizado-110000-1.jpeg",
+    "/joyas/anillo-personalizado-110000-2.jpeg",
+    "/joyas/anillo-personalizado-110000-3.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "anillos",
+  vendido: false
 },
 
 ];
