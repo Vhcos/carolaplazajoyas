@@ -5,7 +5,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { PromoNavidad } from "@/components/PromoNavidad";
-import { SnowOverlay } from "@/components/SnowOverlay";
+import SnowOverlay from "@/components/SnowOverlay";
 
 const inter = Inter({
   subsets: ["latin"],

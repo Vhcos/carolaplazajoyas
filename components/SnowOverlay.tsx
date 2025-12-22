@@ -1,27 +1,39 @@
-// components/SnowOverlay.tsx
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 
-const SNOWFLAKES = 40;
+type Flake = {
+  id: number;
+  left: string;      // "12.3%"
+  sizePx: number;    // 4..12
+  durationS: number; // 10..20
+  delayS: number;    // 0..10 (lo usamos negativo)
+};
 
-export function SnowOverlay() {
-  const now = new Date();
+function makeFlakes(count: number): Flake[] {
+  return Array.from({ length: count }).map((_, i) => {
+    const size = 4 + Math.random() * 8;       // 4..12
+    const duration = 10 + Math.random() * 10; // 10..20
+    const delay = Math.random() * 10;         // 0..10
+    const left = `${Math.random() * 100}%`;
 
-  // Solo diciembre
-  if (now.getMonth() !== 11) return null;
+    return {
+      id: i + 1,
+      left,
+      sizePx: size,
+      durationS: duration,
+      delayS: delay,
+    };
+  });
+}
 
-  const flakes = useMemo(
-    () =>
-      Array.from({ length: SNOWFLAKES }, (_, i) => ({
-        id: i,
-        left: Math.random() * 100,
-        duration: 10 + Math.random() * 10,
-        delay: Math.random() * -10,
-        size: 4 + Math.random() * 8,
-      })),
-    []
-  );
+export default function SnowOverlay() {
+  // IMPORTANTE: SSR y primer render del cliente deben ser iguales -> empezamos vacío.
+  const [flakes, setFlakes] = useState<Flake[]>([]);
+
+  useEffect(() => {
+    setFlakes(makeFlakes(26));
+  }, []);
 
   return (
     <div className="pointer-events-none fixed inset-0 z-40 overflow-hidden">
@@ -30,12 +42,12 @@ export function SnowOverlay() {
           key={f.id}
           className="absolute rounded-full bg-white/80 shadow-sm"
           style={{
-            left: `${f.left}%`,
-            width: f.size,
-            height: f.size,
+            left: f.left,
+            width: `${f.sizePx}px`,
+            height: `${f.sizePx}px`,
             top: "-10%",
-            animation: `snow-fall ${f.duration}s linear infinite`,
-            animationDelay: `${f.delay}s`,
+            animation: `snow-fall ${f.durationS}s linear infinite`,
+            animationDelay: `-${f.delayS}s`,
           }}
         />
       ))}
