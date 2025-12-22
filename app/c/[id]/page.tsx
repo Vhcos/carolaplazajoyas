@@ -208,9 +208,12 @@ export default async function CertificatePage({ params }: PageProps) {
         .avoid-break {
           break-inside: avoid;
         }
-
         /* Logo dentro del certificado */
-        $1
+        .logo {
+          position: absolute;
+          top: 14px;
+          left: 14px;
+        }
 
         .logoImg {
           width: clamp(44px, 10vw, 78px);
