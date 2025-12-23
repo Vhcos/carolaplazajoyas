@@ -125,7 +125,7 @@ export const PRODUCTS: Product[] = [
   destacado: true,
   tipo: "unica",
   categoria: "anillos",
-  vendido: false,
+  vendido: true,
 },
 
 {
