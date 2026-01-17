@@ -15,7 +15,7 @@ export type Product = {
 };
 
 export const PRODUCTS: Product[] = [
-  {
+{
   id: "anillo-prisma-amatista",
   nombre: "Anillo Prisma Amatista",
   precio: 65000,
@@ -32,6 +32,24 @@ export const PRODUCTS: Product[] = [
   tipo: "unica",
   categoria: "anillos",
   vendido: false,
+},
+{
+  id: "anillo-nombres-personalizado",
+  nombre: "Anillo Personalizado",
+  precio: 110000,
+  descripcionCorta:
+    "Anillo ancho de plata con tres aros giratorios en cobre, bronce y plata para personalizar con nombres o palabras.",
+  descripcionLarga:
+    "Anillo de plata de cuerpo ancho que lleva tres delgados aros giratorios en cobre, bronce y plata, pensados para grabar nombres, fechas o palabras significativas. Cada cinta metálica gira sobre la base, creando un diseño dinámico y muy simbólico. Incluye pequeño detalle de estrella en cobre que aporta un toque lúdico y único. Ideal como anillo de mamá, para celebrar vínculos importantes o como pieza totalmente personalizada.",
+  fotos: [
+    "/joyas/anillo-personalizado-110000-1.jpeg",
+    "/joyas/anillo-personalizado-110000-2.jpeg",
+    "/joyas/anillo-personalizado-110000-3.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "anillos",
+  vendido: false
 },
 {
   id: "colgante-luz-de-agua",
@@ -51,41 +69,6 @@ export const PRODUCTS: Product[] = [
   tipo: "unica",
   categoria: "collares",
   vendido: false,
-},
-{
-  id: "esclava-aventurina-duo",
-  nombre: "Esclava Aventurina Dúo",
-  precio: 85000,
-  descripcionCorta:
-    "Esclava abierta de plata 950 con dos aventurinas verdes en extremos asimétricos, delicada y contemporánea.",
-  descripcionLarga:
-    "Esclava de plata 950 trabajada a mano con un perfil delgado y rígido que se abre en la parte frontal, permitiendo calzarla con suavidad sobre la muñeca. En cada extremo se montan aventurinas verdes en engaste biselado, una más grande y otra más pequeña, que generan un juego asimétrico muy sutil. El acabado del metal combina superficies pulidas con leves marcas de trabajo, para que se note el gesto manual sin perder elegancia. Es una pieza pensada para usar sola como protagonista o acompañada de otras pulseras finas. Al hacerse a pulso, la forma de las piedras y la curvatura de la esclava pueden variar levemente en cada unidad.",
-  fotos: [
-    "/joyas/esclava-aventurina-duo-1.jpg",
-    "/joyas/esclava-aventurina-duo-2.jpg",
-  ],
-  destacado: true,
-  tipo: "unica",
-  categoria: "pulseras-esclavas",
-  vendido: false,
-},
-  {
-  id: "anillo-cuarzo-rosa",
-  nombre: "Anillo Cuarzo Rosa Austral",
-  precio: 60000,
-  descripcionCorta:
-    "Anillo Nº14 ancho de plata 950 con cuarzo rosa facetado y detalles de bolitas laterales, suave y luminoso.",
-  descripcionLarga:
-    "Anillo Nº14 de plata 950 trabajado a mano con un cuerpo ancho y levemente curvado que envuelve el dedo de forma cómoda. Al centro se monta un cuarzo rosa redondo facetado en engaste biselado, que da un brillo suave y lechoso. A ambos lados de la piedra se agrupan pequeñas bolitas de plata, hechas y soldadas una a una, que aportan textura y un aire orgánico. La superficie del aro se pule a alto brillo, generando contraste con los relieves laterales. Cada pieza se corta, curva, suelda y se termina a pulso, por lo que las formas y reflejos pueden variar sutilmente de un anillo a otro.",
-  fotos: [
-    "/joyas/anillo-cuarzo-rosa-1.jpg",
-    "/joyas/anillo-cuarzo-rosa-3.jpeg",
-    "/joyas/anillo-cuarzo-rosa-2.jpg",
-  ],
-  destacado: true,
-  tipo: "unica",
-  categoria: "anillos",
-  vendido: true,
 },
 
 {
@@ -820,23 +803,6 @@ categoria: "colgantes",
 vendido: false
 },
 {
-  id: "collar-lapizlasuli",
-  nombre: "Collar Lapislázuli Azul Oscuro",
-  precio: 50000,
-  descripcionCorta:
-    "Collar de lapislázuli azul intenso combinado con cuentas negras facetadas y cierre frontal dorado tipo argolla.",
-  descripcionLarga:
-    "Collar corto armado a mano con piedras de lapislázuli de formas irregulares en el centro, intercaladas con cuentas negras facetadas y pequeños separadores dorados. Termina en un cierre frontal dorado tipo argolla marinera que se vuelve protagonista del diseño. Los tonos azules profundos, con vetas doradas naturales del lapislázuli, lo convierten en una pieza elegante y muy versátil para levantar desde un look sencillo hasta uno más nocturno.",
-  fotos: [
-    "/joyas/collar-lapizlasuli-1.jpeg",
-    "/joyas/collar-lapizlasuli-2.jpeg",
-    "/joyas/collar-lapizlasuli-3.jpeg"
-  ],
-  destacado: false,
-  tipo: "unica",
-  categoria: "colgantes"
-},
-{
 id: "anillo-pirita-bronce-oval",
 nombre: "Anillo Pirita en Bronce Oval",
 precio: 65000,
@@ -854,23 +820,185 @@ tipo: "unica",
 categoria: "anillos",
 vendido: true
 },
+
 {
-  id: "anillo-nombres-personalizado",
-  nombre: "Anillo Nombres Personalizado",
-  precio: 110000,
+  id: "collar-corazon-nieve-howlita",
+  nombre: "Collar Corazón de Nieve (Howlita)",
+  precio: 45000,
   descripcionCorta:
-    "Anillo ancho de plata con tres aros giratorios en cobre, bronce y plata para personalizar con nombres o palabras.",
+    "Collar de howlita blanca con dije de corazón de plata pulida al centro.",
   descripcionLarga:
-    "Anillo de plata de cuerpo ancho que lleva tres delgados aros giratorios en cobre, bronce y plata, pensados para grabar nombres, fechas o palabras significativas. Cada cinta metálica gira sobre la base, creando un diseño dinámico y muy simbólico. Incluye pequeño detalle de estrella en cobre que aporta un toque lúdico y único. Ideal como anillo de mamá, para celebrar vínculos importantes o como pieza totalmente personalizada.",
+    "Collar de cuentas redondas de howlita blanca con vetas grises, armado a mano y terminado en un gran corazón de plata pulida que se roba toda la atención. La combinación del blanco marmolado con el brillo del metal crea una pieza fresca y luminosa, ideal para levantar looks básicos o acompañar tenidas más elegantes. Queda a la altura de la clavícula, perfecto para usar solo como protagonista o sumarlo a capas de collares más finos.",
   fotos: [
-    "/joyas/anillo-personalizado-110000-1.jpeg",
-    "/joyas/anillo-personalizado-110000-2.jpeg",
-    "/joyas/anillo-personalizado-110000-3.jpeg"
+    "/joyas/collar-corazon-nieve-howlita-1.jpeg",
+    "/joyas/collar-corazon-nieve-howlita-2.jpeg",
+    "/joyas/collar-corazon-nieve-howlita-3.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "colgantes",
+  vendido: false,
+},
+{
+id: "collar-dama-oscura",
+nombre: "Collar Dama Oscura",
+precio: 40000,
+descripcionCorta:
+"Collar de cuentas negras con perlas y acentos dorados, terminado en dije de corazón negro con cierre frontal.",
+descripcionLarga:
+"Collar delicado compuesto por pequeñas cuentas negras facetadas combinadas con perlas blancas irregulares y separadores dorados. Al centro lleva un cierre frontal redondo enchapado en dorado del que cuelga un dije de corazón negro con detalles de bolitas doradas, que se convierte en el protagonista del diseño. Es una pieza elegante pero ligera, ideal para usar sola como punto focal o en capas con otros collares finos.",
+fotos: [
+"/joyas/Collar Dama Oscura 1.jpeg",
+"/joyas/Collar Dama Oscura 2.jpeg",
+"/joyas/Collar Dama Oscura 3.jpeg"
+],
+destacado: false,
+tipo: "unica",
+categoria: "colgantes",
+vendido: false,
+},
+
+{
+  id: "collar-noche-rose",
+  nombre: "Collar Noche Rosé",
+  precio: 40000,
+  descripcionCorta:
+    "Collar de cuentas negras con detalle asimétrico en piedras rosa y acentos dorados.",
+  descripcionLarga:
+    "Collar de diseño delicado armado con cuentas pequeñas de piedra negra y un tramo frontal de piedras rosa moteadas, intercaladas con separadores dorados. El contraste entre el negro profundo y los tonos rosados crea una pieza elegante pero fácil de combinar, ideal para usar sola o en capas con otros collares finos. Cierra con mosquetón dorado y queda al ras del cuello o ligeramente más abajo, según el contorno.",
+  fotos: [
+    "/joyas/collar-noche-rose-1.jpeg",
+    "/joyas/collar-noche-rose-2.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "colgantes",
+  vendido: false,
+},
+{
+  id: "collar-obsidiana-glam",
+  nombre: "Collar Obsidiana Glam",
+  precio: 55000,
+  descripcionCorta:
+    "Collar de obsidiana negra con cierre frontal T de plata 950 y pequeño dije de corazón pulido.",
+  descripcionLarga:
+    "Collar de cuentas redondas de obsidiana negra engarzadas a mano, con detalles en plata y cierre frontal tipo T de plata 950 del que cuelga un corazón liso y volumétrico. Es una pieza elegante y versátil que entrega un toque de brillo minimalista, perfecta para usar sola como protagonista o en capas con otros collares.",
+  fotos: [
+    "/joyas/collar-obsidiana-glam-2.jpeg",
+    "/joyas/collar-obsidiana-glam-1.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "colgantes",
+  vendido: false
+},
+{
+id: "collar-dama-noir",
+nombre: "Collar Dama Noir",
+precio: 55000,
+descripcionCorta:
+"Collar largo tipo lazo con cuentas negras facetadas, tonos azulados y terminaciones de perlas barrocas blancas.",
+descripcionLarga:
+"Collar largo de diseño lazo compuesto por hileras de cuentas negras facetadas combinadas con detalles en tonos azulados y pequeños cubos metálicos. En el extremo caen perlas barrocas blancas que aportan movimiento y luz al diseño. Se puede ajustar y anudar a distintas alturas sobre el pecho, por lo que funciona tanto solo como acompañado de otros collares más cortos. Una pieza versátil y elegante para dar un toque diferente a vestidos simples o camisas abiertas.",
+fotos: [
+"/joyas/collar-dama-noir-3.jpeg",
+"/joyas/collar-dama-noir-1.jpeg",
+"/joyas/collar-dama-noir-2.jpeg"
+],
+destacado: false,
+tipo: "unica",
+categoria: "colgantes",
+vendido: false
+},
+{
+id: "collar-azul-imperio",
+nombre: "Collar Azul Imperio",
+precio: 70000,
+descripcionCorta:
+"Collar de piedras azules y negras con colgante redondo dorado calado y cabujón central azul.",
+descripcionLarga:
+"Collar armado a mano con cuentas azules irregulares y cuentas negras facetadas que enmarcan un gran colgante redondo dorado calado, con un cabujón azul al centro. Es una pieza de presencia fuerte y muy elegante, ideal para levantar un look sencillo o acompañar prendas lisas en tonos neutros. El cierre frontal tipo argolla permite que el colgante se luzca como protagonista.",
+fotos: [
+"/joyas/Collar Azul Imperio 2.jpeg",
+"/joyas/Collar Azul Imperio 1.jpeg",
+"/joyas/Collar Azul Imperio 3.jpeg"
+],
+destacado: false,
+tipo: "unica",
+categoria: "colgantes",
+vendido: false,
+},
+{
+  id: "collar-jade-fuego",
+  nombre: "Collar Jade Fuego",
+  precio: 45000,
+  descripcionCorta:
+    "Collar de jade rojo en cuentas brillantes con delicados detalles dorados.",
+  descripcionLarga:
+    "Collar de jade rojo intenso, armado con cuentas redondas de acabado brillante y separadores dorados que le dan un toque luminoso. Lleva broche tipo langosta con cadena de extensión para ajustar la caída a tu gusto. Es perfecto para usarlo solo como protagonista o en capas con cadenas finas. Queda precioso con básicos neutros, escotes simples y looks de noche cuando quieres un acento de color.",
+  fotos: [
+    "/joyas/Collar jade fuego 2.jpeg",
+    "/joyas/Collar jade fuego 1.jpeg",
+    "/joyas/Collar jade fuego 3.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "colgantes",
+  vendido: false,
+},
+{
+  id: "collar-jade-menta",
+  nombre: "Collar Jade Menta",
+  precio: 45000,
+  descripcionCorta:
+    "Collar de jade en tonos verde menta con cuentas brillantes y detalles dorados.",
+  descripcionLarga:
+    "Collar de jade en una paleta de verdes menta y agua, con cuentas redondas de brillo suave que se ven frescas y luminosas. Está armado con separadores dorados y broche tipo langosta con cadena de extensión para ajustarlo a la altura que más te acomode. Es un básico elegante para todos los días, ideal para sumar color sin recargar. Queda perfecto con camisas blancas, tejidos claros y también con vestidos neutros en capas junto a cadenas finas.",
+  fotos: [
+    "/joyas/Collar Jade Menta  2.jpeg",
+    "/joyas/Collar Jade Menta  1.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "colgantes",
+  vendido: false,
+},
+{
+  id: "collar-pirita-gota",
+  nombre: "Collar Pirita Gota",
+  precio: 75000,
+  descripcionCorta:
+    "Collar de cadena dorada con colgante en forma de gota de pirita natural con brillo metálico.",
+  descripcionLarga:
+    "Collar con cadena de eslabones alargados en tono dorado y un colgante protagonista en forma de gota, con pirita natural de destellos plateados. El marco y el contraste oscuro realzan la textura de la piedra, dándole un look elegante y con carácter. Se usa perfecto al centro del pecho y queda increíble tanto con un top negro como con una camisa blanca abierta. Ideal para elevar un outfit simple y también para un look nocturno más pulido.",
+  fotos: [
+    "/joyas/Collar pirita gota 2.jpeg",
+    "/joyas/Collar pirita gota 1.jpeg",
+    "/joyas/Collar pirita gota 3.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "collares",
+  vendido: false,
+},
+{
+  id: "anillo-pirita-gota",
+  nombre: "Anillo Pirita Gota",
+  precio: 65000,
+  descripcionCorta:
+    "Anillo con pirita natural en forma de gota, de brillo metálico, en un marco elegante con contraste oscuro.",
+  descripcionLarga:
+    "Anillo protagonista con pirita natural en forma de gota, llena de destellos plateados que cambian con la luz. El marco y el contorno oscuro realzan la piedra y le dan un aire moderno y sofisticado. Es una pieza perfecta para usar sola y que se robe todas las miradas, tanto de día como de noche. Combina increíble con looks en negro, blanco, denim y tenidas minimalistas donde quieras un detalle potente.",
+  fotos: [
+    "/joyas/Anillo pirita gota 1.jpeg",
+    "/joyas/Anillo pirita gota 2.jpeg",
+    "/joyas/Anillo pirita gota 3.jpeg"
   ],
   destacado: false,
   tipo: "unica",
   categoria: "anillos",
-  vendido: false
+  vendido: false,
 },
+
 
 ];

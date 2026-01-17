@@ -1,56 +1,117 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useMemo } from "react";
 
-type Flake = {
-  id: number;
-  left: string;      // "12.3%"
-  sizePx: number;    // 4..12
-  durationS: number; // 10..20
-  delayS: number;    // 0..10 (lo usamos negativo)
+type Heart = {
+  left: string;
+  delay: string;
+  duration: string;
+  size: string;
+  opacity: number;
+  drift: string;
 };
 
-function makeFlakes(count: number): Flake[] {
-  return Array.from({ length: count }).map((_, i) => {
-    const size = 4 + Math.random() * 8;       // 4..12
-    const duration = 10 + Math.random() * 10; // 10..20
-    const delay = Math.random() * 10;         // 0..10
-    const left = `${Math.random() * 100}%`;
-
-    return {
-      id: i + 1,
-      left,
-      sizePx: size,
-      durationS: duration,
-      delayS: delay,
-    };
-  });
+function isHeartsActive(date = new Date()) {
+  // corazones: 10 enero 2026 -> 14 febrero 2026
+  const start = new Date(2026, 0, 10, 0, 0, 0);
+  const end = new Date(2026, 1, 14, 23, 59, 59);
+  return date >= start && date <= end;
 }
 
 export default function SnowOverlay() {
-  // IMPORTANTE: SSR y primer render del cliente deben ser iguales -> empezamos vacío.
-  const [flakes, setFlakes] = useState<Flake[]>([]);
+  const active = isHeartsActive();
 
-  useEffect(() => {
-    setFlakes(makeFlakes(26));
+  const prefersReduced =
+    typeof window !== "undefined" &&
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const hearts: Heart[] = useMemo(() => {
+    // Más densidad para que sea obvio
+    const base: Heart[] = [];
+    const cols = 26;
+
+    for (let i = 0; i < cols; i++) {
+      const left = `${Math.round((i / (cols - 1)) * 98) + 1}vw`;
+      const delay = `${(i % 7) * 0.6}s`;
+      const duration = `${9 + (i % 6) * 1.2}s`;
+      const size = `${12 + (i % 5) * 4}px`;
+      const opacity = 0.18 + ((i % 6) * 0.03);
+      const drift = `${10 + (i % 6) * 6}px`;
+      base.push({ left, delay, duration, size, opacity, drift });
+    }
+
+    return base;
   }, []);
 
+  if (!active || prefersReduced) return null;
+
   return (
-    <div className="pointer-events-none fixed inset-0 z-40 overflow-hidden">
-      {flakes.map((f) => (
-        <div
-          key={f.id}
-          className="absolute rounded-full bg-white/80 shadow-sm"
-          style={{
-            left: f.left,
-            width: `${f.sizePx}px`,
-            height: `${f.sizePx}px`,
-            top: "-10%",
-            animation: `snow-fall ${f.durationS}s linear infinite`,
-            animationDelay: `-${f.delayS}s`,
-          }}
-        />
-      ))}
-    </div>
+    <>
+      <style>{`
+        .cp-hearts {
+          position: fixed;
+          inset: 0;
+          pointer-events: none;
+          z-index: 9999; /* arriba de todo */
+          overflow: hidden;
+        }
+
+        .cp-heart {
+          position: absolute;
+          top: -30px;
+          left: var(--left);
+          font-size: var(--size);
+          opacity: var(--opacity);
+          color: #e11d48; /* rojo fijo */
+          text-shadow: 0 1px 0 rgba(0,0,0,0.08);
+          animation:
+            cp-fall var(--duration) linear infinite,
+            cp-drift calc(var(--duration) * 0.7) ease-in-out infinite,
+            cp-spin calc(var(--duration) * 0.55) ease-in-out infinite;
+          animation-delay: var(--delay);
+          will-change: transform;
+          user-select: none;
+        }
+
+        @keyframes cp-fall {
+          from { transform: translateY(-20px); }
+          to   { transform: translateY(calc(100vh + 80px)); }
+        }
+
+        @keyframes cp-drift {
+          0%   { margin-left: 0; }
+          50%  { margin-left: var(--drift); }
+          100% { margin-left: 0; }
+        }
+
+        @keyframes cp-spin {
+          0%   { filter: none; }
+          50%  { filter: drop-shadow(0 2px 2px rgba(0,0,0,0.08)); }
+          100% { filter: none; }
+        }
+      `}</style>
+
+      <div className="cp-hearts" aria-hidden="true" data-cp-hearts="on">
+        {hearts.map((h, i) => (
+          <span
+            key={i}
+            className="cp-heart"
+            style={
+              {
+                ["--left" as any]: h.left,
+                ["--delay" as any]: h.delay,
+                ["--duration" as any]: h.duration,
+                ["--size" as any]: h.size,
+                ["--opacity" as any]: h.opacity,
+                ["--drift" as any]: h.drift,
+              } as React.CSSProperties
+            }
+          >
+            ❤
+          </span>
+        ))}
+      </div>
+    </>
   );
 }

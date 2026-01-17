@@ -7,7 +7,8 @@ import { WebpayButton } from "@/components/WebpayButton";
 import { PRODUCTS } from "@/data/products";
 import ProductGallery from "@/components/ProductGallery";
 import { SITE_URL } from "@/lib/config";
-import { getNavidadPrice, isNavidadPromoActive } from "@/lib/promo";
+import { getAmorPrice, isAmorPromoActive } from "@/lib/promo";
+
 
 // En Next 16 params viene como *Promise*
 type ProductPageParams = {
@@ -97,8 +98,8 @@ export default async function ProductPage(props: ProductPageProps) {
     ) ?? [`${SITE_URL}/joyas/prendedor-ginko-bronce.jpg`];
 
   // Promo Navidad
-  const promoActive = isNavidadPromoActive();
-  const finalPrice = getNavidadPrice(product.precio);
+  const promoActive = isAmorPromoActive();
+  const finalPrice = getAmorPrice(product.precio);
 
   // Para poder leer campos opcionales sin pelear con TS
   const p: any = product;

@@ -5,8 +5,7 @@ import { NextResponse } from "next/server";
 import { webpayCreateTransaction } from "@/lib/webpay";
 import { PRODUCTS } from "@/data/products";
 import { SITE_URL } from "@/lib/config";
-import { getNavidadPrice } from "@/lib/promo";
-
+import { getAmorPrice } from "@/lib/promo";
 
 export async function POST(req: Request) {
   try {
@@ -30,28 +29,26 @@ export async function POST(req: Request) {
     }
 
     // Precio base desde el producto
-const baseAmount = Number(product.precio || 0);
+    const baseAmount = Number(product.precio || 0);
 
-if (!baseAmount || baseAmount <= 0) {
-  return NextResponse.json(
-    { ok: false, error: "Monto inválido para el producto" },
-    { status: 400 }
-  );
-}
+    if (!baseAmount || baseAmount <= 0) {
+      return NextResponse.json(
+        { ok: false, error: "Monto inválido para el producto" },
+        { status: 400 }
+      );
+    }
 
-// Aplica promo de Navidad si corresponde (10% menos)
-const amount = getNavidadPrice(baseAmount);
+    // Aplica promo Día del Amor si corresponde (según rango en lib/promo.ts)
+    const amount = getAmorPrice(baseAmount);
 
     const WEBPAY_RETURN_URL =
-         process.env.WEBPAY_RETURN_URL || `${SITE_URL}/webpay/resultado`;
-
+      process.env.WEBPAY_RETURN_URL || `${SITE_URL}/webpay/resultado`;
 
     const shortSlug = product.id.slice(0, 10); // recorto el id para que no se pase
     const timePart = Date.now().toString().slice(-6); // últimos 6 dígitos del timestamp
     const buyOrder = `CP-${shortSlug}-${timePart}`;
 
     const sessionId = crypto.randomUUID();
-
     const returnUrl = WEBPAY_RETURN_URL;
 
     const tx = await webpayCreateTransaction({
@@ -60,10 +57,11 @@ const amount = getNavidadPrice(baseAmount);
       amount,
       returnUrl,
     });
+
     console.log("[TBK] create tx:", {
-    buyOrder,
-    token: tx.token,
-    amount,
+      buyOrder,
+      token: tx.token,
+      amount,
     });
 
     return NextResponse.json({

@@ -1,4 +1,3 @@
-// app/page.tsx
 import Image from "next/image";
 import Link from "next/link";
 import { PRODUCTS } from "@/data/products";
@@ -44,21 +43,20 @@ export default function HomePage() {
         <div className="space-y-6 max-w-2xl">
           {/* Badge navideño */}
           <p className="text-[11px] tracking-[0.25em] uppercase text-rose-500">
-            Navidad 2025 · Hecho a mano en Chile
+            Día del Amor 2026 · Hecho a mano en Chile
           </p>
 
           <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight">
-            Joyas de plata 950 para regalar esta Navidad
+            Joyas de plata 950 para regalar este Día del Amor
           </h1>
 
           <p className="text-sm sm:text-base text-slate-700">
             Piezas únicas y series limitadas trabajadas a pulso en Chile, pensadas
             para convertirse en ese regalo especial que se queda muchos años.
-            Del 8 al 13 de diciembre tienes un{" "}
-            <span className="font-semibold">10% de descuento</span> en compras
-            anticipadas de Navidad mencionando el código{" "}
+            Del 10 de enero al 14 de febrero tienes un{" "}
+            <span className="font-semibold">10% de descuento</span> mencionando el código{" "}
             <span className="font-mono bg-rose-100 px-1 rounded-sm">
-              NAVIDAD10
+              AMOR10
             </span>{" "}
             al escribir por WhatsApp.
           </p>
@@ -79,7 +77,7 @@ export default function HomePage() {
           </div>
 
           <div className="border-l-2 border-rose-200 pl-4 text-xs sm:text-sm text-slate-600 max-w-md mx-auto text-left">
-            Si quieres asegurar un regalo de Navidad hecho a mano, podemos
+            Si quieres asegurar un regalo del Día del Amor hecho a mano, podemos
             adaptar largo, talla o piedra para que llegue perfecto. Escríbeme y
             lo vemos juntas con tiempo.
           </div>
@@ -96,7 +94,7 @@ export default function HomePage() {
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent" />
           <div className="absolute bottom-4 left-4 text-xs text-slate-100 space-y-1">
-            <p className="font-medium">Colección Navidad 2025</p>
+            <p className="font-medium">Colección Día del Amor 2026</p>
             <p className="text-[11px] text-slate-200">
               Plata 950 · Hecho a mano en Chile
             </p>
@@ -139,7 +137,7 @@ export default function HomePage() {
             <article className="group h-full rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
               <div className="relative w-full aspect-[4/5] overflow-hidden">
                 <Image
-                  src="/joyas/esclava-aventurina-duo-1.jpg"
+                  src= "/joyas/pulsera-eslabon.prenhita-1.jpeg"
                   alt="Pulsera y esclava de plata 950"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -166,7 +164,7 @@ export default function HomePage() {
             <article className="group h-full rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
               <div className="relative w-full aspect-[4/5] overflow-hidden">
                 <Image
-                  src="/joyas/colgante-granate-1.jpg"
+                  src=  "/joyas/colgante-luz-de-agua-1.jpeg"
                   alt="Collar de plata 950 con piedras naturales"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -191,7 +189,7 @@ export default function HomePage() {
             <article className="group h-full rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
               <div className="relative w-full aspect-[4/5] overflow-hidden">
                 <Image
-                  src="/joyas/collar-rodocrosita-dorado-1.jpeg"
+                  src="/joyas/collar-corazon-nieve-howlita-1.jpeg"
                   alt="colgante plata cruz martillado"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -216,7 +214,7 @@ export default function HomePage() {
             <article className="group h-full rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
               <div className="relative w-full aspect-[4/5] overflow-hidden">
                 <Image
-                  src="/joyas/anillo-agua-marina-redonda-1.jpeg"
+                  src="/joyas/anillo-personalizado-110000-3.jpeg"
                   alt="Anillo de plata 950 con cuarzo rosa"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -362,49 +360,49 @@ export default function HomePage() {
         </p>
       </section>
        
-       {/* Guías para ayudarte a elegir */}
-<section className="max-w-4xl mx-auto w-full px-2 mt-8">
-  <div className="rounded-3xl border border-rose-100 bg-white/80 shadow-md backdrop-blur-sm px-5 py-6 sm:px-8 sm:py-7 space-y-4">
-    <div className="space-y-1">
-      <h2 className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-slate-500">
-        Guías para ayudarte a elegir
-      </h2>
-      <p className="text-xs sm:text-sm text-slate-700 max-w-xl">
-        Si tienes dudas con tu talla, cómo cuidar la plata 950 o qué pieza elegir
-        para un regalo especial, estas guías te pueden orientar antes de escribirme.
-      </p>
-    </div>
+      {/* Guías para ayudarte a elegir */}
+      <section className="max-w-4xl mx-auto w-full px-2 mt-8">
+        <div className="rounded-3xl border border-rose-100 bg-white/80 shadow-md backdrop-blur-sm px-5 py-6 sm:px-8 sm:py-7 space-y-4">
+          <div className="space-y-1">
+            <h2 className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-slate-500">
+              Guías para ayudarte a elegir
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-700 max-w-xl">
+              Si tienes dudas con tu talla, cómo cuidar la plata 950 o qué pieza elegir
+              para un regalo especial, estas guías te pueden orientar antes de escribirme.
+            </p>
+          </div>
 
-    <div className="flex flex-wrap gap-3">
-      {/* Botón 1 */}
-      <Link
-        href="/guia-anillos"
-        className="inline-flex items-center gap-2 rounded-full border border-rose-200 bg-rose-600 px-4 py-2 text-[11px] sm:text-xs font-medium text-white shadow-sm transition-colors hover:bg-rose-700 hover:border-rose-400"
-      >
-        <span className="h-1.5 w-1.5 rounded-full bg-rose-200" />
-        <span>Cómo medir tu dedo para anillos</span>
-      </Link>
+          <div className="flex flex-wrap gap-3">
+            {/* Botón 1 */}
+            <Link
+              href="/guia-anillos"
+              className="inline-flex items-center gap-2 rounded-full border border-rose-200 bg-rose-600 px-4 py-2 text-[11px] sm:text-xs font-medium text-white shadow-sm transition-colors hover:bg-rose-700 hover:border-rose-400"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-rose-200" />
+              <span>Cómo medir tu dedo para anillos</span>
+            </Link>
 
-      {/* Botón 2 */}
-      <Link
-        href="/guia-cuidado-plata"
-        className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-[11px] sm:text-xs font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-900 hover:text-white hover:border-slate-900"
-      >
-        <span className="h-1.5 w-1.5 rounded-full bg-slate-300" />
-        <span>Cuidado de joyas de plata 950</span>
-      </Link>
+            {/* Botón 2 */}
+            <Link
+              href="/guia-cuidado-plata"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-[11px] sm:text-xs font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-900 hover:text-white hover:border-slate-900"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-slate-300" />
+              <span>Cuidado de joyas de plata 950</span>
+            </Link>
 
-      {/* Botón 3 */}
-      <Link
-        href="/guia-regalos"
-        className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-2 text-[11px] sm:text-xs font-medium text-emerald-700 shadow-sm transition-colors hover:bg-emerald-600 hover:text-white hover:border-emerald-500"
-      >
-        <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
-        <span>Elegir una joya para regalo</span>
-      </Link>
-    </div>
-  </div>
-</section>
+            {/* Botón 3 */}
+            <Link
+              href="/guia-regalos"
+              className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-2 text-[11px] sm:text-xs font-medium text-emerald-700 shadow-sm transition-colors hover:bg-emerald-600 hover:text-white hover:border-emerald-500"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
+              <span>Elegir una joya para regalo</span>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Nota de confianza */}
       <section className="border-t border-slate-200 pt-6 text-xs sm:text-sm text-slate-600">

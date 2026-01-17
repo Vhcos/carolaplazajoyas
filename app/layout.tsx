@@ -22,8 +22,7 @@ export const SITE_URL = "https://www.carolaplazajoyas.cl";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default:
-      "Joyas de plata 950 hechas a mano en Chile | Carola Plaza Joyas",
+    default: "Joyas de plata 950 hechas a mano en Chile | Carola Plaza Joyas",
     template: "%s | Carola Plaza Joyas",
   },
   description:
@@ -37,15 +36,12 @@ export const metadata: Metadata = {
     "joyas hechas a mano",
     "Carola Plaza Joyas",
   ],
-  alternates: {
-    canonical: SITE_URL,
-  },
+  alternates: { canonical: SITE_URL },
   openGraph: {
     type: "website",
     url: SITE_URL,
     siteName: "Carola Plaza Joyas",
-    title:
-      "Joyas de plata 950 hechas a mano en Chile | Carola Plaza Joyas",
+    title: "Joyas de plata 950 hechas a mano en Chile | Carola Plaza Joyas",
     description:
       "Joyas de autor en plata 950 trabajadas a mano en Chile. Piezas únicas y series limitadas con piedras naturales y certificado de autenticidad.",
     images: [
@@ -60,15 +56,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Joyas de plata 950 hechas a mano en Chile | Carola Plaza Joyas",
-    description:
-      "Piezas únicas de plata 950 hechas a mano en Chile por Carola Plaza.",
+    description: "Piezas únicas de plata 950 hechas a mano en Chile por Carola Plaza.",
   },
 };
 
-
-type RootLayoutProps = {
-  children: React.ReactNode;
-};
+type RootLayoutProps = { children: React.ReactNode };
 
 export default function RootLayout({ children }: RootLayoutProps) {
   const jsonLd = {
@@ -76,8 +68,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     "@type": "JewelryStore",
     name: "Carola Plaza",
     url: SITE_URL,
-    description:
-      "Joyas de autor en plata 950 hechas a mano en Chile por Carola Plaza.",
+    description: "Joyas de autor en plata 950 hechas a mano en Chile por Carola Plaza.",
     sameAs: ["https://www.instagram.com/carolaplazajoyas"],
     address: {
       "@type": "PostalAddress",
@@ -87,10 +78,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   };
 
   return (
-    <html
-      lang="es"
-      className={`${inter.variable} ${playfair.variable} bg-rose-50`}
-    >
+    <html lang="es" className={`${inter.variable} ${playfair.variable} bg-rose-50`}>
       <head>
         <script
           type="application/ld+json"
@@ -99,13 +87,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body
         className="min-h-screen text-slate-900 flex flex-col bg-rose-200"
-        style={{ backgroundColor: "#fff1f2" }} // rosado claro seguro
+        style={{ backgroundColor: "#fff1f2" }}
       >
+        {/* Overlay global (corazones) */}
+        <SnowOverlay />
+
         <Navbar />
         <main className="flex-1">
           <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
             <PromoNavidad />
-             <SnowOverlay />
             {children}
           </div>
         </main>
