@@ -90,8 +90,6 @@ export const PRODUCTS: Product[] = [
   vendido: false,
 },
 
-
-
  {
   id: "anillo-aurora-boreal",
   nombre: "Anillo Aurora Boreal",
@@ -321,23 +319,6 @@ export const PRODUCTS: Product[] = [
     categoria: "anillos",
     vendido: false,
   },
-{
-  id: "colgante-corazon-alado-granate",
-  nombre: "Collar Corazón Alado Granate",
-  precio: 55000,
-  descripcionCorta:
-    "Colgante de plata 950 con corazón alado y gota de granate tallado colgando al centro.",
-  descripcionLarga:
-    "Colgante de plata 950 trabajado a mano con un corazón liso del que se abren dos alas grabadas con plumas en relieve. Desde la parte inferior cuelga una piedra granate tallada en forma triangular, que aporta un toque profundo de color rojo vino y se mueve con cada paso. La pieza se cuelga de una cadena fina que equilibra el volumen del dije sin restarle protagonismo. Cada corazón se corta, suelda, graba y pule de manera artesanal, por lo que las líneas de las alas y el tono del granate pueden variar levemente en cada colgante.",
-  fotos: [
-    "/joyas/colgante-granate-1.jpg",
-    "/joyas/colgante-granate-2.jpg",
-  ],
-  destacado: false,
-  tipo: "unica",
-  categoria: "collares",
-  vendido: true,
-},
 
 {
 id: "colgante-cruz-martillado",
@@ -492,23 +473,7 @@ vendido: false,
   categoria: "collares",
   vendido: false,
 },
-{
-  id: "anillo-corazon-pirita-ajustable",
-  nombre: "Anillo Corazón de Pirita Ajustable",
-  precio: 65000,
-  descripcionCorta:
-    "Anillo de plata 950 ajustable con corazón grande de pirita en bruto, de brillo metálico y volumen protagonista.",
-  descripcionLarga:
-    "Anillo de plata 950 con un corazón protagonista al centro, relleno de cristales de pirita en bruto que reflejan la luz con destellos metálicos plateados. El corazón va enmarcado por un segundo contorno que le da profundidad y hace que la piedra parezca flotar sobre el dedo. El aro es ajustable, pensado para adaptarse cómodamente a distintas tallas y permitir usarlo en diferentes dedos según el estilo de cada persona. Cada pieza se arma, suelda y ajusta a mano, por lo que la forma de los cristales y el acabado del corazón pueden variar levemente, haciendo que cada anillo sea único.",
-  fotos: [
-    "/joyas/anillo-pirita-corazon-1.jpeg",
-    "/joyas/anillo-pirita-corazon-2.jpeg",
-  ],
-  destacado: false,
-  tipo: "unica",
-  categoria: "anillos",
-  vendido: false,
-},
+
 {
 id: "anillo-citrino-ovalado",
 nombre: "Anillo Citrino Ovalado",
@@ -528,24 +493,7 @@ tipo: "unica",
 categoria: "anillos",
 vendido: false,
 },
-{
-  id: "anillo-agua-marina-redonda",
-  nombre: "Anillo Agua Marina Redonda",
-  precio: 55000,
-  descripcionCorta:
-    "Anillo Nº19 de plata con piedra agua marina redonda facetada y pequeñas bolitas de plata decorativos a los lados.",
-  descripcionLarga:
-    "Anillo Nº19 de plata trabajado a mano con una piedra agua marina redonda facetada al centro, montada en un engaste liso que resalta su brillo azul claro. A cada lado del engaste se agrupan pequeñas bolitas de metal que aportan textura y volumen, dando un aire orgánico a la pieza. El aro es de línea sencilla y cómoda para el uso diario, pero el tamaño de la piedra lo convierte en un anillo protagónico que ilumina la mano. Ideal para usar solo o acompañado de otras argollas finas.",
-  fotos: [
-    "/joyas/anillo-agua-marina-redonda-1.jpeg",
-    "/joyas/anillo-agua-marina-redonda-3.jpeg",
-    "/joyas/anillo-agua-marina-redonda-2.jpeg",
-  ],
-  destacado: false,
-  tipo: "unica",
-  categoria: "anillos",
-  vendido: true,
-},
+
 {
   id: "anillo-amatista-solitario",
   nombre: "Anillo Amatista Solitario",
@@ -665,23 +613,7 @@ tipo: "unica",
 categoria: "colgantes",
 vendido: false,
 },
-{
-id: "collar-minicuarzo-facetadoazul",
-nombre: "Collar Mini Cuarzo Azul",
-precio: 40000,
-descripcionCorta:
-"Collar corto de mini cuentas de cuarzo azul facetado con detalle central de tres esferas azules y acentos dorados.",
-descripcionLarga:
-"Collar delicado de mini cuentas de cuarzo azul facetado, armado a mano y diseñado para quedar muy cerca del cuello. En el centro, tres esferas azules se combinan con pequeños detalles dorados que aportan brillo sutil sin recargar. Es una pieza ligera y cómoda, perfecta para usar sola todos los días o para combinar en capas con otros collares más largos.",
-fotos: [
-"/joyas/collar-minicuarzo-facetadoazul-1.jpeg",
-"/joyas/collar-minicuarzo-facetadoazul-2.jpeg"
-],
-destacado: false,
-tipo: "unica",
-categoria: "colgantes",
-vendido: false,
-},
+
 {
   id: "collar-ambar-plata-cuero",
   nombre: "Collar Ámbar Plata y Cuero",
@@ -751,24 +683,7 @@ vendido: false,
   categoria: "colgantes",
   vendido: false,
 },
-{
-  id: "collar-corazon-onix-cielo",
-  nombre: "Collar Corazón Ónix Cielo",
-  precio: 45000,
-  descripcionCorta:
-    "Collar de plata con dije corazón de ónix azul cielo y detalles en plata y bronce, en cadena fina plateada.",
-  descripcionLarga:
-    "Collar con dije en forma de corazón de ónix azul cielo, engastado en plata con pequeños granos decorativos en la parte superior y argolla mixta en tonos plata y bronce. La piedra muestra vetas naturales en distintos matices de celeste que le dan profundidad y carácter a la pieza. Colgando de una cadena fina plateada, es un collar delicado pero con presencia, perfecto para usar solo como protagonista o combinado en capas con otros collares.",
-  fotos: [
-    "/joyas/collar-corazon-onix-cielo-1.jpeg",
-    "/joyas/collar-corazon-onix-cielo-2.jpeg",
-    "/joyas/collar-corazon-onix-cielo-3.jpeg"
-  ],
-  destacado: false,
-  tipo: "unica",
-  categoria: "collares",
-  vendido: true
-},
+
 {
 id: "collar-cuarzo-burdeo",
 nombre: "Collar Cuarzo Burdeo",

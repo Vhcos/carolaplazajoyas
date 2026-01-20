@@ -16,9 +16,14 @@ export default function ProductCard({ product }: ProductCardProps) {
   const finalPrice = getAmorPrice(product.precio);
   const promo = getAmorPromoInfo();
 
+  const isSold = Boolean(product.vendido);
+
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-rose-100 bg-white shadow-sm/50 hover:shadow-md transition-shadow">
-      <Link href={`/producto/${product.id}`} className="relative aspect-square w-full overflow-hidden bg-slate-100">
+      <Link
+        href={`/producto/${product.id}`}
+        className="relative aspect-square w-full overflow-hidden bg-slate-100"
+      >
         <Image
           src={mainImage}
           alt={product.nombre}
@@ -28,8 +33,22 @@ export default function ProductCard({ product }: ProductCardProps) {
         />
 
         {promoActive && (
-          <div className="absolute left-3 top-3 rounded-full bg-rose-700 px-3 py-1 text-[11px] font-semibold text-white shadow-sm">
+          <div className="absolute left-3 top-3 z-10 rounded-full bg-rose-700 px-3 py-1 text-[11px] font-semibold text-white shadow-sm">
             -{promo.discountPercent}%
+          </div>
+        )}
+
+        {/* ✅ Sello VENDIDO */}
+        {isSold && (
+          <div className="pointer-events-none absolute right-3 top-3 z-20 rotate-[8deg]">
+            <div className="rounded-md bg-rose-700 px-4 py-2 shadow-lg">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-rose-50 text-center">
+                VENDIDO
+              </p>
+              <p className="text-[10px] text-rose-100 text-center">
+                si te gusta, encárgamelo
+              </p>
+            </div>
           </div>
         )}
       </Link>

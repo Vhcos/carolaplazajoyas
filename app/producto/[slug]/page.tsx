@@ -1,4 +1,3 @@
-// app/producto/[slug]/page.tsx
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,7 +7,6 @@ import { PRODUCTS } from "@/data/products";
 import ProductGallery from "@/components/ProductGallery";
 import { SITE_URL } from "@/lib/config";
 import { getAmorPrice, isAmorPromoActive } from "@/lib/promo";
-
 
 // En Next 16 params viene como *Promise*
 type ProductPageParams = {
@@ -22,11 +20,7 @@ type ProductPageProps = {
 // --- Helper: buscar producto por slug (id) ---
 function getProductFromSlug(slug: string) {
   const clean = decodeURIComponent(slug).trim().toLowerCase();
-
-  const product = PRODUCTS.find(
-    (p) => p.id.trim().toLowerCase() === clean
-  );
-
+  const product = PRODUCTS.find((p) => p.id.trim().toLowerCase() === clean);
   return product ?? null;
 }
 
@@ -50,15 +44,12 @@ export async function generateMetadata(
     product.descripcionCorta ||
     "Joyas de autor hechas a mano en plata 950 por Carola Plaza.";
 
-  const imageUrl =
-    product.fotos?.[0] ?? "/joyas/prendedor-ginko-bronce.jpg";
+  const imageUrl = product.fotos?.[0] ?? "/joyas/prendedor-ginko-bronce.jpg";
 
   return {
     title,
     description,
-    alternates: {
-      canonical: url,
-    },
+    alternates: { canonical: url },
     openGraph: {
       type: "website",
       url,
@@ -86,9 +77,10 @@ export default async function ProductPage(props: ProductPageProps) {
   const { slug } = await props.params;
   const product = getProductFromSlug(slug);
 
-  if (!product) {
-    notFound();
-  }
+  if (!product) notFound();
+
+  const p: any = product;
+  const isSold = Boolean(p.vendido);
 
   const url = `${SITE_URL}/producto/${product.id}`;
 
@@ -97,18 +89,15 @@ export default async function ProductPage(props: ProductPageProps) {
       foto.startsWith("http") ? foto : `${SITE_URL}${foto}`
     ) ?? [`${SITE_URL}/joyas/prendedor-ginko-bronce.jpg`];
 
-  // Promo Navidad
+  // Promo Amor
   const promoActive = isAmorPromoActive();
   const finalPrice = getAmorPrice(product.precio);
-
-  // Para poder leer campos opcionales sin pelear con TS
-  const p: any = product;
 
   const detalles: { label: string; value?: string }[] = [
     { label: "Metal", value: p.metal ?? "Plata 950" },
     { label: "Piedra", value: p.piedra },
     { label: "Colección", value: p.coleccion },
-    { label: "Estado", value: p.estado ?? "Disponible" },
+    { label: "Estado", value: isSold ? "Vendido" : p.estado ?? "Disponible" },
   ];
 
   const productJsonLd = {
@@ -120,33 +109,33 @@ export default async function ProductPage(props: ProductPageProps) {
       product.descripcionLarga ||
       product.descripcionCorta ||
       "Joya de autor en plata 950 hecha a mano en Chile por Carola Plaza.",
-    brand: {
-      "@type": "Brand",
-      name: "Carola Plaza",
-    },
+    brand: { "@type": "Brand", name: "Carola Plaza" },
     offers: {
       "@type": "Offer",
       url,
       priceCurrency: "CLP",
       price: String(finalPrice),
-      availability: "https://schema.org/InStock",
+      availability: isSold
+        ? "https://schema.org/OutOfStock"
+        : "https://schema.org/InStock",
     },
   };
 
+  const whatsappText = isSold
+    ? `Hola Carola, vi la joya "${product.nombre}" en tu web. ¿Está vendida? Si se puede encargar o hacer una similar, me interesa.`
+    : `Hola Carola, vi la joya "${product.nombre}" en tu web y me gustaría saber si está disponible.`;
+
   const whatsappUrl = `https://wa.me/56996397495?text=${encodeURIComponent(
-    `Hola Carola, vi la joya "${product.nombre}" en tu web y me gustaría saber si está disponible.`
+    whatsappText
   )}`;
 
-  const WEBPAY_ENABLED =
-    process.env.NEXT_PUBLIC_WEBPAY_ENABLED === "true";
+  const WEBPAY_ENABLED = process.env.NEXT_PUBLIC_WEBPAY_ENABLED === "true";
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(productJsonLd),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
 
       <div className="space-y-10">
@@ -162,27 +151,41 @@ export default async function ProductPage(props: ProductPageProps) {
           <ProductGallery fotos={product.fotos ?? []} nombre={product.nombre} />
 
           {/* Info producto */}
-          <section className="space-y-6">
+          <section className="relative space-y-6">
+            {/* ✅ Sello VENDIDO (ahora sí queda anclado a esta sección) */}
+            {isSold && (
+              <div className="pointer-events-none absolute right-0 top-0 z-20 rotate-[-10deg]">
+                <div className="rounded-md bg-rose-700 px-6 py-2 shadow-lg">
+                  <p className="text-xs font-semibold uppercase tracking-[0.25em] text-rose-50 text-center">
+                    VENDIDO
+                  </p>
+                  <p className="text-[10px] text-rose-100 text-center">
+                    si te gusta, encárgamelo
+                  </p>
+                </div>
+              </div>
+            )}
+
             <div className="space-y-2">
               <p className="text-xs tracking-[0.25em] uppercase text-rose-500">
                 Joya de autor
               </p>
+
               <h1 className="text-2xl sm:text-3xl font-semibold text-slate-900">
                 {product.nombre}
               </h1>
+
               <p className="text-lg font-semibold text-rose-700 flex items-baseline gap-2">
                 {promoActive && (
                   <span className="text-xs text-slate-400 line-through">
                     ${product.precio.toLocaleString("es-CL")} CLP
                   </span>
                 )}
-                <span>
-                  ${finalPrice.toLocaleString("es-CL")} CLP
-                </span>
+                <span>${finalPrice.toLocaleString("es-CL")} CLP</span>
               </p>
             </div>
 
-            {/* 🔹 Bloque de detalles técnicos + estado */}
+            {/* Detalles técnicos */}
             <div className="rounded-2xl border border-slate-100 bg-white p-4 text-xs text-slate-700 space-y-1">
               {detalles
                 .filter((d) => d.value)
@@ -194,22 +197,8 @@ export default async function ProductPage(props: ProductPageProps) {
                 ))}
             </div>
 
-            {/* Descripción + texto adicional */}
+            {/* Descripción */}
             <div className="space-y-4">
-{product.vendido && (
-  <div className="pointer-events-none absolute -right-6 top-10 rotate-[-25deg]">
-    <div className="bg-rose-700 px-8 py-1.5 shadow-lg">
-      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-rose-50 text-center">
-        VENDIDO
-      </p>
-      <p className="text-[10px] text-rose-100 text-center">
-        si te gusta, encárgamelo
-      </p>
-    </div>
-  </div>
-)}
-
-
               <div className="space-y-3 text-sm text-slate-600">
                 {product.descripcionLarga ? (
                   <p>{product.descripcionLarga}</p>
@@ -217,14 +206,19 @@ export default async function ProductPage(props: ProductPageProps) {
                   <p>{product.descripcionCorta}</p>
                 )}
                 <p>
-                  Al ser una pieza hecha a mano, pueden existir pequeñas
-                  variaciones respecto a la foto. Si necesitas ajustar talla o
-                  largo, conversemos por WhatsApp.
+                  Al ser una pieza hecha a mano, pueden existir pequeñas variaciones
+                  respecto a la foto. Si necesitas ajustar talla o largo, conversemos
+                  por WhatsApp.
                 </p>
               </div>
 
-              {/* Botón Webpay (principal) */}
-              {WEBPAY_ENABLED ? (
+              {/* ✅ Botón Webpay: si está vendido, no lo mostramos */}
+              {isSold ? (
+                <p className="text-sm text-slate-600">
+                  Esta pieza ya fue vendida. Si quieres, puedo hacer una similar o un encargo
+                  inspirado en este diseño. Escríbeme por WhatsApp.
+                </p>
+              ) : WEBPAY_ENABLED ? (
                 <WebpayButton productId={product.id} />
               ) : (
                 <p className="text-xs text-slate-500">
@@ -232,7 +226,7 @@ export default async function ProductPage(props: ProductPageProps) {
                 </p>
               )}
 
-              {/* Botones secundarios: WhatsApp + Instagram */}
+              {/* WhatsApp + Instagram */}
               <div className="flex flex-wrap items-center gap-3">
                 <Link
                   href={whatsappUrl}
@@ -260,13 +254,11 @@ export default async function ProductPage(props: ProductPageProps) {
             </div>
 
             <div className="space-y-1 rounded-2xl border border-slate-100 bg-white p-4 text-xs text-slate-500">
-              <p className="font-medium text-slate-700">
-                Tiempo de elaboración y envío
-              </p>
+              <p className="font-medium text-slate-700">Tiempo de elaboración y envío</p>
               <p>
-                Si la pieza está disponible, el envío se realiza en 3–5 días
-                hábiles dentro de Chile. Para encargos personalizados, el
-                tiempo puede ser mayor según el diseño.
+                Si la pieza está disponible, el envío se realiza en 3–5 días hábiles
+                dentro de Chile. Para encargos personalizados, el tiempo puede ser mayor
+                según el diseño.
               </p>
             </div>
           </section>
