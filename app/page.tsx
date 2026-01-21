@@ -98,23 +98,24 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Imagen hero centrada */}
-        <div className="relative w-full max-w-xl lg:max-w-[520px] mx-auto aspect-[16/10] rounded-3xl overflow-hidden border border-rose-100 bg-slate-100">
-          <Image
-            src="/joyas/prendedor-ginko-bronce.jpg"
-            alt="Joyas de autor Carola Plaza"
-            fill
-            className="object-cover object-center"
-            sizes="(min-width: 1024px) 480px, 100vw"
-          />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent" />
-          <div className="absolute bottom-4 left-4 text-xs text-slate-100 space-y-1">
-            <p className="font-medium">Colección Día del Amor 2026</p>
-            <p className="text-[11px] text-slate-200">
-              Plata 950 · Hecho a mano en Chile
-            </p>
-          </div>
-        </div>
+       {/* Imagen hero centrada */}
+<div className="relative w-full max-w-xl lg:max-w-[520px] mx-auto aspect-square rounded-3xl overflow-hidden border border-rose-100 bg-white">
+  <Image
+    src="/joyas/anillo-granate-facetado-3.jpeg"
+    alt="Joyas de autor Carola Plaza"
+    fill
+    className="object-contain object-center p-2"
+    sizes="(min-width: 1024px) 480px, 100vw"
+  />
+  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent" />
+  <div className="absolute bottom-4 left-4 text-xs text-slate-100 space-y-1">
+    <p className="font-medium">Colección Día del Amor 2026</p>
+    <p className="text-[11px] text-slate-200">
+      Plata 950 · Hecho a mano en Chile
+    </p>
+  </div>
+</div>
+
       </section>
 
       {/* Franja de confianza */}

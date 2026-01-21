@@ -12,7 +12,7 @@ const AMOR_PROMO: PromoConfig = {
   discountPercent: 10,
   // meses base 0 (0 = enero, 1 = febrero)
   start: new Date(2026, 0, 10, 0, 0, 0),
-  end: new Date(2026, 0, 30, 23, 59, 59),
+  end: new Date(2026, 0, 20, 23, 59, 59),
 };
 
 export function isAmorPromoActive(date = new Date()): boolean {

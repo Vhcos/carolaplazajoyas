@@ -34,6 +34,71 @@ export const PRODUCTS: Product[] = [
   vendido: false,
 },
 {
+  id: "collar-corazon-amor",
+  nombre: "Collar Corazón Amor",
+  precio: 55000,
+  descripcionCorta:
+    "Collar de plata con eslabones finos y cierre tipo T con corazón grabado “AMOR”.",
+  descripcionLarga:
+    "Collar de plata de estilo minimalista, armado con cadena de eslabones alargados y un broche tipo T que se luce al frente. El colgante corazón pulido lleva el grabado “AMOR”, simple y directo, como un amuleto cotidiano. Es perfecto para usarlo solo, pegadito al cuello, o en capas con otros collares más finos. Queda precioso con poleras básicas, camisas abiertas y looks más elegantes cuando quieres un detalle con intención.",
+  fotos: [
+    "/joyas/Collar Corazon de  Plata.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "collares",
+  vendido: false,
+},
+{
+  id: "collar-corazon-rubi",
+  nombre: "Collar Corazón Rubí",
+  precio: 45000,
+  descripcionCorta:
+    "Colgante corazón de rubí en tono rojo profundo, enmarcado en plata y montado en cadena fina.",
+  descripcionLarga:
+    "Colgante en forma de corazón con rubí de color rojo intenso y brillo facetado que atrapa la luz al moverse. Está enmarcado en plata, con un acabado artesanal que le da carácter y calidez, y cuelga de una cadena delgada y cómoda. Es una pieza romántica pero moderna, perfecta para usar todos los días o para un toque especial en la noche. Queda precioso con escotes simples, camisas abiertas y tenidas en negro, blanco o tonos neutros.",
+  fotos: [
+    "/joyas/Collar corazon raiz de rubi.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "collares",
+  vendido: false,
+},
+{
+  id: "anillo-circonia-gran",
+  nombre: "Anillo Gran Circonia",
+  precio: 65000,
+  descripcionCorta:
+    "Anillo de plata con gran circonia ovalada de brillo cristalino en un diseño moderno y firme ajustable del Nº10 al Nº12.",
+  descripcionLarga:
+    "Anillo de plata con una circonia ovalada grande, transparente y muy luminosa, que refleja destellos con cada movimiento. La montura es limpia y contemporánea, pensada para que la piedra sea la protagonista, y el aro tiene un calce cómodo y sólido. Es perfecto para darle un toque elegante a un look diario y también para ocasiones especiales. Queda increíble con tenidas minimalistas, negro total, blanco, o cualquier outfit donde quieras un brillo protagónico.ajustable del Nº10 al Nº12.",
+  fotos: [
+    "/joyas/Anillo gran circonia.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "anillos",
+  vendido: false,
+},
+
+{
+  id: "anillo-corazon-bronce",
+  nombre: "Anillo Corazón Bronce",
+  precio: 55000,
+  descripcionCorta:
+    "Anillo de plata con textura martillada y un delicado corazón de bronce al centro.",
+  descripcionLarga:
+    "Anillo de plata con acabado martillado que refleja la luz con un brillo suave y artesanal. Al centro lleva un corazón de bronce que le da un contraste cálido y romántico, con una línea fina que cruza como detalle moderno. Es cómodo para usar todos los días y se ve precioso tanto solo como combinado con otros anillos. Queda increíble con looks casuales, denim, tejidos y también con tenidas más elegantes cuando quieres un detalle sutil pero con carácter.",
+  fotos: [
+    "/joyas/Anillo plata corazon bronce.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "anillos",
+  vendido: false,
+},
+{
   id: "anillo-nombres-personalizado",
   nombre: "Anillo Personalizado",
   precio: 110000,

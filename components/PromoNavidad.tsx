@@ -2,7 +2,7 @@ export function PromoNavidad() {
   const today = new Date();
 
   const start = new Date(2026, 0, 10);
-  const end = new Date(2026, 0, 30, 23, 59, 59);
+  const end = new Date(2026, 1, 15, 23, 59, 59);
 
   const isActive = today >= start && today <= end;
   if (!isActive) return null;
@@ -17,13 +17,13 @@ export function PromoNavidad() {
             </span>
 
             <span>
-              Del 10 al 30 de enero:{" "}
-              <span className="font-semibold">10% de descuento</span> en piezas seleccionadas.
-              Menciona el código{" "}
+              Colección “Llévame contigo”:{" "}
+              <span className="font-semibold">joyas hechas a mano</span> para acompañar tu historia.
+              Escríbeme por WhatsApp.{" "}
               <span className="font-mono bg-rose-700/80 px-1 rounded">
-                AMOR10
+            Piezas únicas para regalar algo que se queda
               </span>{" "}
-              al escribir por WhatsApp.
+              
             </span>
           </div>
         </div>

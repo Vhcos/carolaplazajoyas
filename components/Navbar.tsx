@@ -25,7 +25,7 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:px-6 lg:px-8">
         {/* Marca con logo + Rodolfo */}
         <Link href="/" className="flex items-center gap-2 sm:gap-3">
-          <div className="relative h-14 w-24 sm:h-16 sm:w-28 rounded-lg bg-white border border-slate-300 overflow-hidden">
+          <div className="relative h-14 w-24 sm:h-52 sm:w-80 rounded-lg bg-white border border-slate-300 overflow-hidden">
             <Image
               src="/logo-carola-plaza.svg"
               alt="Carola Plaza Joyas"
