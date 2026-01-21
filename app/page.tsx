@@ -3,6 +3,8 @@ import Link from "next/link";
 import { PRODUCTS } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 
+const VIDEO_ID = "TU_VIDEO_ID_AQUI"; // 👈 pega el ID del video de YouTube
+
 export default function HomePage() {
   const destacados = PRODUCTS.filter((p) => p.destacado);
 
@@ -41,6 +43,19 @@ export default function HomePage() {
       {/* Hero principal centrado */}
       <section className="flex flex-col items-center gap-8 text-center">
         <div className="space-y-6 max-w-2xl">
+          {/* ✅ Video (YouTube Shorts) antes del badge */}
+<div className="mx-auto w-full max-w-2xl">
+  <div className="relative aspect-[9/16] overflow-hidden rounded-3xl border border-rose-100 bg-slate-100 shadow-sm">
+    <iframe
+      className="absolute inset-0 h-full w-full"
+      src="https://www.youtube-nocookie.com/embed/cfGeJ_KhF40?rel=0"
+      title="Video Carola Plaza Joyas"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerPolicy="strict-origin-when-cross-origin"
+      allowFullScreen
+    />
+  </div>
+</div>
           {/* Badge navideño */}
           <p className="text-[11px] tracking-[0.25em] uppercase text-rose-500">
             Día del Amor 2026 · Hecho a mano en Chile
@@ -137,7 +152,7 @@ export default function HomePage() {
             <article className="group h-full rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
               <div className="relative w-full aspect-[4/5] overflow-hidden">
                 <Image
-                  src= "/joyas/pulsera-eslabon.prenhita-1.jpeg"
+                  src="/joyas/pulsera-eslabon.prenhita-1.jpeg"
                   alt="Pulsera y esclava de plata 950"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -164,7 +179,7 @@ export default function HomePage() {
             <article className="group h-full rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
               <div className="relative w-full aspect-[4/5] overflow-hidden">
                 <Image
-                  src=  "/joyas/colgante-luz-de-agua-1.jpeg"
+                  src="/joyas/colgante-luz-de-agua-1.jpeg"
                   alt="Collar de plata 950 con piedras naturales"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -253,7 +268,6 @@ export default function HomePage() {
           </div>
 
           <div className="space-y-6">
-            {/* Paso 1: texto izquierda, imagen derecha */}
             <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:items-center">
               <div className="space-y-3">
                 <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-emerald-800 shadow-sm">
@@ -279,7 +293,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Paso 2 */}
             <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:items-center md:gap-8">
               <div className="space-y-3 md:order-2">
                 <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-emerald-800 shadow-sm">
@@ -306,7 +319,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Paso 3 */}
             <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:items-center">
               <div className="space-y-3">
                 <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-emerald-800 shadow-sm">
@@ -359,7 +371,7 @@ export default function HomePage() {
           aquí en Chile.
         </p>
       </section>
-       
+
       {/* Guías para ayudarte a elegir */}
       <section className="max-w-4xl mx-auto w-full px-2 mt-8">
         <div className="rounded-3xl border border-rose-100 bg-white/80 shadow-md backdrop-blur-sm px-5 py-6 sm:px-8 sm:py-7 space-y-4">
@@ -374,7 +386,6 @@ export default function HomePage() {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            {/* Botón 1 */}
             <Link
               href="/guia-anillos"
               className="inline-flex items-center gap-2 rounded-full border border-rose-200 bg-rose-600 px-4 py-2 text-[11px] sm:text-xs font-medium text-white shadow-sm transition-colors hover:bg-rose-700 hover:border-rose-400"
@@ -383,7 +394,6 @@ export default function HomePage() {
               <span>Cómo medir tu dedo para anillos</span>
             </Link>
 
-            {/* Botón 2 */}
             <Link
               href="/guia-cuidado-plata"
               className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-[11px] sm:text-xs font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-900 hover:text-white hover:border-slate-900"
@@ -392,7 +402,6 @@ export default function HomePage() {
               <span>Cuidado de joyas de plata 950</span>
             </Link>
 
-            {/* Botón 3 */}
             <Link
               href="/guia-regalos"
               className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-2 text-[11px] sm:text-xs font-medium text-emerald-700 shadow-sm transition-colors hover:bg-emerald-600 hover:text-white hover:border-emerald-500"
