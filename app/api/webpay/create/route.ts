@@ -38,7 +38,7 @@ export async function POST(req: Request) {
       );
     }
 
-    // Aplica promo Día del Amor si corresponde (según rango en lib/promo.ts)
+    // Aplica promo Colección Piscis si corresponde (según rango en lib/promo.ts)
     const amount = getAmorPrice(baseAmount);
 
     const WEBPAY_RETURN_URL =

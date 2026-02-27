@@ -8,7 +8,7 @@ type PromoConfig = {
 };
 
 const AMOR_PROMO: PromoConfig = {
-  name: "Día del Amor 2026",
+  name: "Colección Piscis 2026",
   discountPercent: 10,
   // meses base 0 (0 = enero, 1 = febrero)
   start: new Date(2026, 0, 10, 0, 0, 0),

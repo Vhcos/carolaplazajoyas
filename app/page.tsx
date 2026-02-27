@@ -48,7 +48,7 @@ export default function HomePage() {
   <div className="relative aspect-[9/16] overflow-hidden rounded-3xl border border-rose-100 bg-slate-100 shadow-sm">
     <iframe
       className="absolute inset-0 h-full w-full"
-      src="https://www.youtube-nocookie.com/embed/cfGeJ_KhF40?rel=0"
+      src="https://www.youtube-nocookie.com/embed/aOjLIqjwAbE?rel=0"
       title="Video Carola Plaza Joyas"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerPolicy="strict-origin-when-cross-origin"
@@ -58,22 +58,18 @@ export default function HomePage() {
 </div>
           {/* Badge navideño */}
           <p className="text-[11px] tracking-[0.25em] uppercase text-rose-500">
-            Día del Amor 2026 · Hecho a mano en Chile
+            Nueva colección Piscis · Hecho a mano en Chile
           </p>
 
           <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight">
-            Joyas de plata 950 para regalar este Día del Amor
+            Anillos de plata 950 en mi nueva colección Piscis
           </h1>
 
           <p className="text-sm sm:text-base text-slate-700">
             Piezas únicas y series limitadas trabajadas a pulso en Chile, pensadas
             para convertirse en ese regalo especial que se queda muchos años.
-            Del 10 de enero al 14 de febrero tienes un{" "}
-            <span className="font-semibold">10% de descuento</span> mencionando el código{" "}
-            <span className="font-mono bg-rose-100 px-1 rounded-sm">
-              AMOR10
-            </span>{" "}
-            al escribir por WhatsApp.
+            Esta temporada te presento la Colección Piscis: formas suaves, textura
+            y brillo en plata 950.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3">
@@ -92,9 +88,8 @@ export default function HomePage() {
           </div>
 
           <div className="border-l-2 border-rose-200 pl-4 text-xs sm:text-sm text-slate-600 max-w-md mx-auto text-left">
-            Si quieres asegurar un regalo del Día del Amor hecho a mano, podemos
-            adaptar largo, talla o piedra para que llegue perfecto. Escríbeme y
-            lo vemos juntas con tiempo.
+            Si quieres asegurar la tuya o encargar una similar, escríbeme por
+            WhatsApp y lo vemos juntas con tiempo.
           </div>
         </div>
 
@@ -109,7 +104,7 @@ export default function HomePage() {
   />
   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent" />
   <div className="absolute bottom-4 left-4 text-xs text-slate-100 space-y-1">
-    <p className="font-medium">Colección Día del Amor 2026</p>
+    <p className="font-medium">Colección Piscis 2026</p>
     <p className="text-[11px] text-slate-200">
       Plata 950 · Hecho a mano en Chile
     </p>

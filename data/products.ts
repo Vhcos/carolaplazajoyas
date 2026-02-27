@@ -18,7 +18,7 @@ export const PRODUCTS: Product[] = [
 {
   id: "anillo-prisma-amatista",
   nombre: "Anillo Prisma Amatista",
-  precio: 65000,
+  precio: 71900,
   descripcionCorta:
     "Anillo Nº17 de plata 950 de líneas geométricas con amatista oval central, ideal como pieza protagonista.",
   descripcionLarga:
@@ -36,7 +36,7 @@ export const PRODUCTS: Product[] = [
 {
   id: "collar-corazon-amor",
   nombre: "Collar Corazón Amor",
-  precio: 55000,
+  precio: 60900,
   descripcionCorta:
     "Collar de plata con eslabones finos y cierre tipo T con corazón grabado “AMOR”.",
   descripcionLarga:
@@ -52,7 +52,7 @@ export const PRODUCTS: Product[] = [
 {
   id: "collar-corazon-rubi",
   nombre: "Collar Corazón Rubí",
-  precio: 45000,
+  precio: 49900,
   descripcionCorta:
     "Colgante corazón de rubí en tono rojo profundo, enmarcado en plata y montado en cadena fina.",
   descripcionLarga:
@@ -68,7 +68,7 @@ export const PRODUCTS: Product[] = [
 {
   id: "anillo-circonia-gran",
   nombre: "Anillo Gran Circonia",
-  precio: 65000,
+  precio: 71900,
   descripcionCorta:
     "Anillo de plata con gran circonia ovalada de brillo cristalino en un diseño moderno y firme ajustable del Nº10 al Nº12.",
   descripcionLarga:
@@ -79,13 +79,13 @@ export const PRODUCTS: Product[] = [
   destacado: false,
   tipo: "unica",
   categoria: "anillos",
-  vendido: false,
+  vendido: true,
 },
 
 {
   id: "anillo-corazon-bronce",
   nombre: "Anillo Corazón Bronce",
-  precio: 55000,
+  precio: 60900,
   descripcionCorta:
     "Anillo de plata con textura martillada y un delicado corazón de bronce al centro.",
   descripcionLarga:
@@ -101,7 +101,7 @@ export const PRODUCTS: Product[] = [
 {
   id: "anillo-nombres-personalizado",
   nombre: "Anillo Personalizado",
-  precio: 110000,
+  precio: 120900,
   descripcionCorta:
     "Anillo ancho de plata con tres aros giratorios en cobre, bronce y plata para personalizar con nombres o palabras.",
   descripcionLarga:
@@ -119,7 +119,7 @@ export const PRODUCTS: Product[] = [
 {
   id: "colgante-luz-de-agua",
   nombre: "Collar Luz de Agua",
-  precio: 65000,
+  precio: 71900,
   descripcionCorta:
     "Colgante de plata 950 con dos piedras azuladas y un granate central, de caída vertical y delicada.",
   descripcionLarga:
@@ -139,7 +139,7 @@ export const PRODUCTS: Product[] = [
 {
   id: "anillo-circon-austral",
   nombre: "Anillo Círcón Austral",
-  precio: 60000,
+  precio: 65900,
   descripcionCorta:
     "Anillo Nº15 ancho de plata 950 con textura martillada y circonita oval central, pensado como pieza de carácter para uso diario.",
   descripcionLarga:
@@ -158,7 +158,7 @@ export const PRODUCTS: Product[] = [
  {
   id: "anillo-aurora-boreal",
   nombre: "Anillo Aurora Boreal",
-  precio: 65000,
+  precio: 71900,
   descripcionCorta:
     "Anillo Nº 10 ancho de plata 950 con cuarzo místico oval, lleno de destellos verdes y violetas.",
   descripcionLarga:
@@ -177,7 +177,7 @@ export const PRODUCTS: Product[] = [
 {
   id: "anillo-pirita-triangular",
   nombre: "Anillo Pirita Triangular",
-  precio: 70000,
+  precio: 76900,
   descripcionCorta:
     "Anillo ajustable de plata 950 con pirita en bruto en marco triangular, una pieza escultural y poderosa.",
   descripcionLarga:
@@ -195,7 +195,7 @@ export const PRODUCTS: Product[] = [
 {
   id: "aros-pirita-bronce",
   nombre: "Aros Pirita Bronce",
-  precio: 50000,
+  precio: 54900,
   descripcionCorta:
     "Aros largos en bronce con discos martillados y pirita en bruto central, llenos de brillo dorado.",
   descripcionLarga:
@@ -213,7 +213,7 @@ export const PRODUCTS: Product[] = [
 {
   id: "colgante-alma-rosa",
   nombre: "Collar Alma Rosa",
-  precio: 70000,
+  precio: 76900,
   descripcionCorta:
     "Colgante de bronce con gran piedra rosa rodocrita, hojas doradas y lágrima de cuarzo rosa.",
   descripcionLarga:
@@ -230,7 +230,7 @@ export const PRODUCTS: Product[] = [
 {
   id: "colgante-amatista-verde",
   nombre: "Collar Amatista Verde",
-  precio: 45000,
+  precio: 49900,
   descripcionCorta:
     "Colgante de plata 950 con amatista verde oval facetada y pequeños detalles de bolitas y circonita.",
   descripcionLarga:
@@ -245,7 +245,7 @@ export const PRODUCTS: Product[] = [
 {
   id: "collar-perlas-inicial-g",
   nombre: "Collar Perlas Inicial G",
-  precio: 55000,
+  precio: 60900,
   descripcionCorta:
     "Collar de perlas de río con cierre frontal en plata 950 y dije con la letra G.",
   descripcionLarga:
@@ -262,7 +262,7 @@ export const PRODUCTS: Product[] = [
 {
   id: "collar-piedras-inicial",
   nombre: "Collar Piedras Inicial",
-  precio: 45000,
+  precio: 49900,
   descripcionCorta:
     "Collar de piedras naturales facetadas con dije de letra grande en plata 950 y cierre frontal.",
   descripcionLarga:
@@ -280,7 +280,7 @@ export const PRODUCTS: Product[] = [
 {
   id: "collar-talisman",
   nombre: "Collar Talismán",
-  precio: 45000,
+  precio: 49900,
   descripcionCorta:
     "Collar de piedras naturales con cierre frontal y dije en plata 950, pensado como amuleto cotidiano.",
   descripcionLarga:
@@ -300,7 +300,7 @@ export const PRODUCTS: Product[] = [
 {
   id: "esclava-dualidad",
   nombre: "Esclava Dualidad",
-  precio: 75000,
+  precio: 82900,
   descripcionCorta:
     "Esclava abierta de plata 950 con cuarzo rutilado dorado y piedra azul profunda en un extremo.",
   descripcionLarga:
@@ -317,7 +317,7 @@ export const PRODUCTS: Product[] = [
 {
   id: "colgante-inicial-colibri",
   nombre: "Colgante Inicial Colibrí",
-  precio: 85000,
+  precio: 93900,
   descripcionCorta:
     "Colgante de plata 950 con inicial grande y colibrí aplicado en relieve, montado en cadena de eslabones.",
   descripcionLarga:
@@ -334,7 +334,7 @@ export const PRODUCTS: Product[] = [
 {
   id: "colgante-inicial-flor",
   nombre: "Colgante Inicial Flor",
-  precio: 65000,
+  precio: 71900,
   descripcionCorta:
     "Colgante de plata 950 con inicial grande y flor aplicada con piedra amarilla, en cadena de eslabones alargados.",
   descripcionLarga:
@@ -352,7 +352,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "pulsera-eslabones-prehnita",
     nombre: "Pulsera Eslabones de Prehnita",
-    precio: 85000,
+    precio: 93900,
     descripcionCorta:
       "Pulsera de plata 950 con eslabones martillados y cabujón de prehnita verde, hecha a mano.",
     descripcionLarga:
@@ -369,7 +369,7 @@ export const PRODUCTS: Product[] = [
 {
     id: "anillo-granate-facetado",
     nombre: "Anillo Granate Facetado",
-    precio: 60000,
+    precio: 65900,
     descripcionCorta:
       "Anillo Nº 16 de plata 950 de banda ancha con granate rojo facetado al frente y detalles arquitectónicos en el cuerpo.",
     descripcionLarga:
@@ -388,7 +388,7 @@ export const PRODUCTS: Product[] = [
 {
 id: "colgante-cruz-martillado",
 nombre: "Colgante Cruz Martillado",
-precio: 65000,
+precio: 71900,
 descripcionCorta:
 "Colgante de plata 950 con cruz de líneas rectas y textura martillada a mano, diseñado para ser usado por mujeres y hombre, que refleja la luz con destellos irregulares.",
 descripcionLarga:
@@ -405,7 +405,7 @@ vendido: false,
 {
   id: "colgante-corazon-drusa-amatista",
   nombre: "Collar Corazón Drusa de Amatista",
-  precio: 50000,
+  precio: 54900,
   descripcionCorta:
     "Colgante enchapado en oro con corazón de drusa de amatista en tonos lavanda y violeta, incluye cadena.",
   descripcionLarga:
@@ -422,7 +422,7 @@ vendido: false,
 {
   id: "aros-ginko-oro",
   nombre: "Aros Hoja Orgánica",
-  precio: 35000,
+  precio: 38900,
   descripcionCorta:
     "Aros colgantes enchapados en oro con silueta orgánica tipo hoja, ligeros y con terminación mate.",
   descripcionLarga:
@@ -439,7 +439,7 @@ vendido: false,
 {
   id: "aros-parra-asimetricos",
   nombre: "Aros Parra Asimétricos",
-  precio: 50000,
+  precio: 54900,
   descripcionCorta:
     "Aros enchapados en oro con hojas de parra caladas y modeladas en volumen, diseño asimétrico con tres hojas en una oreja y una en la otra.",
   descripcionLarga:
@@ -456,7 +456,7 @@ vendido: false,
 {
   id: "collar-rayo-plata",
   nombre: "Conjunto Collar y Aros Rayo de Plata",
-  precio: 65000,
+  precio: 71900,
   descripcionCorta:
     "Collar de plata 950 con dije de rayo alargado, de líneas limpias y acabado pulido, acompañado de pequeños aros rayo a juego.",
   descripcionLarga:
@@ -473,7 +473,7 @@ vendido: false,
 {
   id: "collar-corazon-alado-amatista",
   nombre: "Collar Corazón Alado con Amatista",
-  precio: 55000,
+  precio: 60900,
   descripcionCorta:
     "Collar de plata 950 con corazón alado al centro y amatista en cabujón colgando como detalle de color.",
   descripcionLarga:
@@ -490,7 +490,7 @@ vendido: false,
 {
   id: "anillo-trenza-bola",
   nombre: "Anillo Trenza y Bola",
-  precio: 35000,
+  precio: 38900,
   descripcionCorta:
     "Anillo Nº13 de plata 950 de aro ancho con detalle de trenza central y bolita en relieve.",
   descripcionLarga:
@@ -507,7 +507,7 @@ vendido: false,
 {
   id: "collar-triangulo-granate",
   nombre: "Collar Triángulo Granate",
-  precio: 45000,
+  precio: 49900,
   descripcionCorta:
     "Collar de plata 950 con colgante triangular de granate facetado en tono rojo vino.",
   descripcionLarga:
@@ -524,7 +524,7 @@ vendido: false,
 {
   id: "collar-corazon-alas-gota",
   nombre: "Collar Corazón Alado Cuarzo Rosa",
-  precio: 55000,
+  precio: 60900,
   descripcionCorta:
     "Collar de plata 950 con corazón alado al centro y gota de piedra cuarzo rosa translúcida colgante.",
   descripcionLarga:
@@ -542,7 +542,7 @@ vendido: false,
 {
 id: "anillo-citrino-ovalado",
 nombre: "Anillo Citrino Ovalado",
-precio: 35000,
+precio: 38900,
 descripcionCorta:
 "Anillo Nº17 de plata 950 con banda ancha y citrino oval facetado en tono amarillo miel.",
 descripcionLarga:
@@ -562,7 +562,7 @@ vendido: false,
 {
   id: "anillo-amatista-solitario",
   nombre: "Anillo Amatista Solitario",
-  precio: 35000,
+  precio: 38900,
   descripcionCorta:
     "Anillo Nº10 de plata con amatista redonda facetada en montaje tipo solitario.",
   descripcionLarga:
@@ -576,7 +576,7 @@ vendido: false,
 {
   id: "anillo-granate-enchapado",
   nombre: "Anillo Granate Enchapado",
-  precio: 45000,
+  precio: 49900,
   descripcionCorta:
     "Anillo Nº18  enchapado en oro con piedra granate oval facetada.",
   descripcionLarga:
@@ -594,7 +594,7 @@ vendido: false,
 {
   id: "anillo-tres-piedras-amatista-citrino-cianita",
   nombre: "Anillo Tres Piedras Amatista, Citrino y Cianita",
-  precio: 70000,
+  precio: 76900,
   descripcionCorta:
     "Anillo de plata 950 ajustable con tres piedras naturales: amatista, citrino y cianita, ideal para quienes aman llevar color y energía en la mano.",
   descripcionLarga:
@@ -613,7 +613,7 @@ vendido: false,
 {
   id: "anillo-pirita-triangular-ajustable",
   nombre: "Anillo Pirita Triangular Ajustable",
-  precio: 70000,
+  precio: 76900,
   descripcionCorta:
     "Anillo ajustable en plata con pirita cruda en forma triangular, diseño protagonista y geométrico.",
   descripcionLarga:
@@ -631,7 +631,7 @@ vendido: false,
 {
   id: "collar-cuarzo-rojo-perlas",
   nombre: "Collar Cuarzo Rojo y Perlas",
-  precio: 40000,
+  precio: 43900,
   descripcionCorta:
     "Collar de cuarzo rojo y perlas blancas con cierre frontal dorado tipo argolla marinera.",
   descripcionLarga:
@@ -645,7 +645,7 @@ vendido: false,
 {
   id: "collar-rodocrosita-dorado",
   nombre: "Collar Rodocrosita y Broche Dorado",
-  precio: 40000,
+  precio: 43900,
   descripcionCorta:
     "Collar corto de rodocrosita en tonos rosados con broche frontal dorado protagonista.",
   descripcionLarga:
@@ -659,12 +659,12 @@ vendido: false,
   destacado: false,
   tipo: "unica",
   categoria: "colgantes",
-  vendido: false,
+  vendido: true,
 },
 {
 id: "collar-obsidiana-negra",
 nombre: "Collar Obsidiana Negra",
-precio: 40000,
+precio: 43900,
 descripcionCorta:
 "Collar de obsidiana negra con cuentas redondas y cierre frontal de plata tipo argolla.",
 descripcionLarga:
@@ -676,13 +676,13 @@ fotos: [
 destacado: false,
 tipo: "unica",
 categoria: "colgantes",
-vendido: false,
+vendido: true,
 },
 
 {
   id: "collar-ambar-plata-cuero",
   nombre: "Collar Ámbar Plata y Cuero",
-  precio: 55000,
+  precio: 60900,
   descripcionCorta:
     "Colgante de plata 950 con cabujón de ámbar y cordón de cuero ajustable, para usar corto tipo choker o más largo.",
   descripcionLarga:
@@ -699,7 +699,7 @@ vendido: false,
 {
   id: "aros-amatista-ovalos",
   nombre: "Aros óvalo martillado con amatista",
-  precio: 30000,
+  precio: 32900,
   descripcionCorta:
     "Aros de plata martillada en forma de óvalo con gota de amatista facetada.",
   descripcionLarga:
@@ -717,7 +717,7 @@ vendido: false,
 {
   id: "anillo-agua-marina-ovalada",
   nombre: "Anillo Agua Marina Ovalada",
-  precio: 65000,
+  precio: 71900,
   descripcionCorta:
     "Anillo Nº15 de plata 950 con agua marina ovalada engastada al centro y grabados orgánicos en los laterales.",
   descripcionLarga:
@@ -729,12 +729,12 @@ vendido: false,
   destacado: false,
   tipo: "unica",
   categoria: "anillos",
-  vendido: false,
+  vendido: true,
 },
 {
   id: "collar-corazon-cuarzonegro",
   nombre: "Collar Corazón Cuarzo Negro",
-  precio: 40000,
+  precio: 43900,
   descripcionCorta:
     "Collar de cuarzo negro con detalles dorados y dije de corazón estilo exvoto con brillo de circonitas.",
   descripcionLarga:
@@ -752,7 +752,7 @@ vendido: false,
 {
 id: "collar-cuarzo-burdeo",
 nombre: "Collar Cuarzo Burdeo",
-precio: 40000,
+precio: 43900,
 descripcionCorta:
 "Collar corto de cuentas de cuarzo burdeo facetado con cierre dorado.",
 descripcionLarga:
@@ -768,7 +768,7 @@ categoria: "colgantes"
 {
 id: "collar-cuarzo-negro-rosa",
 nombre: "Collar Cuarzo Negro y Rosa",
-precio: 40000,
+precio: 43900,
 descripcionCorta:
 "Collar de cuentas negras y rosadas con detalles dorados, ideal para dar un toque de color a cualquier look.",
 descripcionLarga:
@@ -785,7 +785,7 @@ vendido: false
 {
 id: "anillo-pirita-bronce-oval",
 nombre: "Anillo Pirita en Bronce Oval",
-precio: 65000,
+precio: 71900,
 descripcionCorta:
 "Anillo de bronce con gran cabujón de pirita natural en formato oval, montado sobre doble marco con acabado envejecido.",
 descripcionLarga:
@@ -804,7 +804,7 @@ vendido: true
 {
   id: "collar-corazon-nieve-howlita",
   nombre: "Collar Corazón de Nieve (Howlita)",
-  precio: 45000,
+  precio: 49900,
   descripcionCorta:
     "Collar de howlita blanca con dije de corazón de plata pulida al centro.",
   descripcionLarga:
@@ -822,7 +822,7 @@ vendido: true
 {
 id: "collar-dama-oscura",
 nombre: "Collar Dama Oscura",
-precio: 40000,
+precio: 43900,
 descripcionCorta:
 "Collar de cuentas negras con perlas y acentos dorados, terminado en dije de corazón negro con cierre frontal.",
 descripcionLarga:
@@ -841,7 +841,7 @@ vendido: false,
 {
   id: "collar-noche-rose",
   nombre: "Collar Noche Rosé",
-  precio: 40000,
+  precio: 43900,
   descripcionCorta:
     "Collar de cuentas negras con detalle asimétrico en piedras rosa y acentos dorados.",
   descripcionLarga:
@@ -858,7 +858,7 @@ vendido: false,
 {
   id: "collar-obsidiana-glam",
   nombre: "Collar Obsidiana Glam",
-  precio: 55000,
+  precio: 60900,
   descripcionCorta:
     "Collar de obsidiana negra con cierre frontal T de plata 950 y pequeño dije de corazón pulido.",
   descripcionLarga:
@@ -870,12 +870,12 @@ vendido: false,
   destacado: false,
   tipo: "unica",
   categoria: "colgantes",
-  vendido: false
+  vendido: true
 },
 {
 id: "collar-dama-noir",
 nombre: "Collar Dama Noir",
-precio: 55000,
+precio: 60900,
 descripcionCorta:
 "Collar largo tipo lazo con cuentas negras facetadas, tonos azulados y terminaciones de perlas barrocas blancas.",
 descripcionLarga:
@@ -893,7 +893,7 @@ vendido: false
 {
 id: "collar-azul-imperio",
 nombre: "Collar Azul Imperio",
-precio: 70000,
+precio: 76900,
 descripcionCorta:
 "Collar de piedras azules y negras con colgante redondo dorado calado y cabujón central azul.",
 descripcionLarga:
@@ -911,7 +911,7 @@ vendido: false,
 {
   id: "collar-jade-fuego",
   nombre: "Collar Jade Fuego",
-  precio: 45000,
+  precio: 49900,
   descripcionCorta:
     "Collar de jade rojo en cuentas brillantes con delicados detalles dorados.",
   descripcionLarga:
@@ -929,7 +929,7 @@ vendido: false,
 {
   id: "collar-jade-menta",
   nombre: "Collar Jade Menta",
-  precio: 45000,
+  precio: 49900,
   descripcionCorta:
     "Collar de jade en tonos verde menta con cuentas brillantes y detalles dorados.",
   descripcionLarga:
@@ -946,7 +946,7 @@ vendido: false,
 {
   id: "collar-pirita-gota",
   nombre: "Collar Pirita Gota",
-  precio: 75000,
+  precio: 82900,
   descripcionCorta:
     "Collar de cadena dorada con colgante en forma de gota de pirita natural con brillo metálico.",
   descripcionLarga:
@@ -964,7 +964,7 @@ vendido: false,
 {
   id: "anillo-pirita-gota",
   nombre: "Anillo Pirita Gota",
-  precio: 65000,
+  precio: 71900,
   descripcionCorta:
     "Anillo con pirita natural en forma de gota, de brillo metálico, en un marco elegante con contraste oscuro.",
   descripcionLarga:
@@ -977,7 +977,7 @@ vendido: false,
   destacado: false,
   tipo: "unica",
   categoria: "anillos",
-  vendido: false,
+  vendido: true,
 },
 
 
