@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PRODUCTS, type Product } from "@/data/products";
 
-const HERO_VIDEO_URL = "https://www.youtube-nocookie.com/embed/aOjLIqjwAbE?rel=0";
+const HERO_VIDEO_URL = "https://www.youtube-nocookie.com/embed/7BlmzJUWNic?rel=0";
 const PISCIS_IDS = ["anillo-sirena", "anillo-glaciar", "anillo-duo-luz"] as const;
 const WHATSAPP_HOME_URL =
   "https://wa.me/56996397495?text=Hola%20Carola,%20quiero%20asegurar%20una%20pieza%20o%20encargar%20una%20similar.%20%C2%BFLo%20vemos%20por%20aqu%C3%AD%3F";
