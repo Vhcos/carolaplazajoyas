@@ -6,7 +6,7 @@ import ProductCard from "@/components/ProductCard";
 export const metadata: Metadata = {
   title: "Series limitadas en plata 950 | Carola Plaza Joyas",
   description:
-    "Colecciones pequeñas de joyería en plata 950 hechas a mano en Chile. Series numeradas x/y con variaciones sutiles y certificado de autenticidad.",
+    "Colecciones pequeñas de joyería en plata 950 hechas a mano en Chile, con variaciones sutiles y certificado de autenticidad.",
 };
 
 export default function SeriesLimitadasPage() {
@@ -16,17 +16,16 @@ export default function SeriesLimitadasPage() {
     <div className="space-y-6">
       <header className="space-y-3">
         <p className="text-xs tracking-[0.25em] uppercase text-rose-500">
-          Series limitadas · x/y
+          Series limitadas
         </p>
-        <h1 className="text-2xl sm:text-3xl font-semibold text-slate-900">
+        <h1 className="text-2xl font-semibold tracking-[-0.04em] text-slate-900 sm:text-3xl">
           Series limitadas en plata 950
         </h1>
         <p className="text-sm sm:text-base text-slate-700 max-w-3xl">
           Colecciones pequeñas que nacen de una misma idea de diseño. Comparten
           una estructura base, pero cada pieza se termina a mano, con variaciones
-          en textura, pulido o piedra. Cada joya se numera como{" "}
-          <span className="font-mono">No. x/y</span> y se entrega con certificado
-          de autenticidad.
+          en textura, pulido o piedra, y se entrega con certificado de
+          autenticidad.
         </p>
       </header>
 

@@ -54,7 +54,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       </Link>
 
       <div className="flex flex-1 flex-col gap-2 p-4">
-        <h3 className="font-serif text-base text-slate-900 leading-snug">
+        <h3 className="text-base font-semibold leading-snug tracking-[-0.02em] text-slate-900">
           {product.nombre}
         </h3>
 

@@ -1,416 +1,514 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PRODUCTS } from "@/data/products";
-import ProductCard from "@/components/ProductCard";
+import { PRODUCTS, type Product } from "@/data/products";
 
-const VIDEO_ID = "TU_VIDEO_ID_AQUI"; // 👈 pega el ID del video de YouTube
+const HERO_VIDEO_URL = "https://www.youtube-nocookie.com/embed/aOjLIqjwAbE?rel=0";
+const PISCIS_IDS = ["anillo-sirena", "anillo-glaciar", "anillo-duo-luz"] as const;
+const WHATSAPP_HOME_URL =
+  "https://wa.me/56996397495?text=Hola%20Carola,%20quiero%20asegurar%20una%20pieza%20o%20encargar%20una%20similar.%20%C2%BFLo%20vemos%20por%20aqu%C3%AD%3F";
+
+const trustPoints = [
+  "Plata 950 trabajada a mano",
+  "Piezas unicas y series limitadas",
+  "Envios a todo Chile",
+];
+
+const categoryTiles = [
+  {
+    title: "Anillos",
+    href: "/producto?categoria=anillos",
+    image: "/joyas/anillo-glaciar-2.jpeg",
+    alt: "Anillo de plata 950 con piedra azul",
+    description:
+      "Piezas protagonistas, curvas organicas y anillos pensados para quedarse en la mano todos los dias.",
+    className: "lg:col-span-5",
+  },
+  {
+    title: "Collares",
+    href: "/producto?categoria=collares",
+    image: "/joyas/colgante-luz-de-agua-1.jpeg",
+    alt: "Collar de plata 950 con piedras naturales",
+    description:
+      "Colgantes, cadenas y piezas de pecho que funcionan como amuletos cotidianos.",
+    className: "lg:col-span-4",
+  },
+  {
+    title: "Aros",
+    href: "/producto?categoria=aros",
+    image: "/joyas/aros-ginko-1.jpeg",
+    alt: "Aros de plata y metal trabajado a mano",
+    description:
+      "Piezas ligeras o protagonistas, siempre trabajadas a mano para acompanar el rostro con movimiento.",
+    className: "lg:col-span-3",
+  },
+  {
+    title: "Colgantes",
+    href: "/producto?categoria=colgantes",
+    image: "/joyas/collar-corazon-nieve-howlita-1.jpeg",
+    alt: "Collar de piedras naturales en tonos claros",
+    description:
+      "Piedras naturales, tonos intensos y collares con presencia para construir capas.",
+    className: "lg:col-span-4",
+  },
+  {
+    title: "Pulseras y esclavas",
+    href: "/producto?categoria=pulseras-esclavas",
+    image: "/joyas/pulsera-eslabon.prenhita-1.jpeg",
+    alt: "Pulsera de plata 950 con piedra verde",
+    description:
+      "Plata 950 que acompana cada gesto con volumen, textura y un calce comodo.",
+    className: "lg:col-span-8",
+  },
+];
+
+const formatCLP = (amount: number) => `$${amount.toLocaleString("es-CL")}`;
+
+function CollectionCard({ product }: { product: Product }) {
+  return (
+    <Link
+      href={`/producto/${product.id}`}
+      className="group cp-surface flex h-full flex-col overflow-hidden rounded-[1.75rem] transition-transform duration-300 hover:-translate-y-1"
+    >
+      <div className="relative aspect-[4/5] overflow-hidden bg-[#edf0f2]">
+        <Image
+          src={product.fotos[0] ?? "/joyas/placeholder.jpg"}
+          alt={product.nombre}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
+        />
+      </div>
+
+      <div className="flex flex-1 flex-col gap-3 px-5 py-5">
+        <div className="space-y-1">
+          <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-[var(--cp-accent)]">
+            Coleccion Piscis
+          </p>
+          <h3 className="text-2xl font-semibold leading-tight tracking-[-0.03em] text-slate-900">
+            {product.nombre}
+          </h3>
+        </div>
+
+        <p className="text-sm leading-6 text-slate-600">{product.descripcionCorta}</p>
+
+        <div className="mt-auto flex items-center justify-between gap-3 pt-2">
+          <span className="text-base font-semibold text-slate-900">
+            {formatCLP(product.precio)}
+          </span>
+          <span className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--cp-deep)]">
+            Ver pieza
+          </span>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+function FeaturedCard({ product }: { product: Product }) {
+  return (
+    <Link
+      href={`/producto/${product.id}`}
+      className="group cp-surface flex h-full flex-col overflow-hidden rounded-[1.75rem] transition-transform duration-300 hover:-translate-y-1"
+    >
+      <div className="relative aspect-[4/5] overflow-hidden bg-[#edf0f2]">
+        <Image
+          src={product.fotos[0] ?? "/joyas/placeholder.jpg"}
+          alt={product.nombre}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(min-width: 1024px) 260px, (min-width: 640px) 50vw, 100vw"
+        />
+      </div>
+
+      <div className="flex flex-1 flex-col gap-3 px-5 py-5">
+        <div className="space-y-1">
+          <h3 className="text-xl font-semibold leading-tight tracking-[-0.02em] text-slate-900">
+            {product.nombre}
+          </h3>
+          <p className="text-sm leading-6 text-slate-600">{product.descripcionCorta}</p>
+        </div>
+
+        <div className="mt-auto flex items-center justify-between gap-3 pt-2">
+          <span className="text-base font-semibold text-slate-900">
+            {formatCLP(product.precio)}
+          </span>
+          <span className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--cp-accent)]">
+            Ver pieza
+          </span>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+function CategoryTile({
+  title,
+  href,
+  image,
+  alt,
+  description,
+  className,
+}: (typeof categoryTiles)[number]) {
+  return (
+    <Link href={href} className={`group block ${className}`}>
+      <article className="cp-surface flex h-full flex-col overflow-hidden rounded-[1.9rem]">
+        <div className="relative aspect-[4/5] overflow-hidden bg-[#edf0f2] lg:min-h-[320px]">
+          <Image
+            src={image}
+            alt={alt}
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+            sizes="(min-width: 1024px) 33vw, 100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/8 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+            <p className="cp-kicker text-white/80">Categoria</p>
+            <h3 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-white sm:text-[2rem]">
+              {title}
+            </h3>
+          </div>
+        </div>
+
+        <div className="flex flex-1 items-end justify-between gap-4 px-5 py-5 sm:px-6">
+          <p className="max-w-xl text-sm leading-6 text-slate-600">{description}</p>
+          <span className="shrink-0 text-xs font-medium uppercase tracking-[0.18em] text-[var(--cp-deep)]">
+            Explorar
+          </span>
+        </div>
+      </article>
+    </Link>
+  );
+}
 
 export default function HomePage() {
-  const destacados = PRODUCTS.filter((p) => p.destacado);
+  const piscisPieces = PISCIS_IDS.map((id) => PRODUCTS.find((product) => product.id === id)).filter(
+    (product): product is Product => Boolean(product)
+  );
+
+  const destacados = PRODUCTS.filter(
+    (product) => product.destacado && !product.vendido && !PISCIS_IDS.includes(product.id as (typeof PISCIS_IDS)[number])
+  ).slice(0, 4);
 
   return (
-    <div className="space-y-16">
-      {/* Joyas destacadas justo debajo del hero */}
-      {destacados.length > 0 && (
-        <section className="space-y-4">
-          <div className="flex items-center justify-between gap-2">
-            <h2 className="text-base font-semibold text-slate-900">
-              Joyas destacadas
-            </h2>
-            <Link
-              href="/producto"
-              className="text-xs font-medium text-slate-500 hover:text-slate-700"
-            >
-              Ver catálogo completo →
-            </Link>
-          </div>
+    <div className="space-y-16 pb-10 sm:space-y-20">
+      <section className="cp-surface relative overflow-hidden rounded-[2.25rem] px-6 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+        <div className="absolute -left-24 top-0 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(122,151,167,0.22),transparent_72%)]" />
+        <div className="absolute -right-16 bottom-0 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(176,143,90,0.18),transparent_72%)]" />
 
-          <div className="-mx-2 overflow-x-auto pb-4">
-            <div className="flex gap-4 px-2">
-              {destacados.map((product) => (
+        <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.95fr)] lg:items-center">
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <p className="cp-kicker">Nueva coleccion Piscis</p>
+              <h1 className="max-w-3xl text-4xl font-semibold leading-[0.95] tracking-[-0.045em] text-slate-900 sm:text-5xl lg:text-6xl">
+                Anillos de plata 950 en mi nueva coleccion Piscis
+              </h1>
+              <p className="max-w-2xl text-base leading-7 text-slate-700 sm:text-lg">
+                Piezas unicas y series limitadas trabajadas a pulso en Chile,
+                pensadas para convertirse en ese regalo especial que se queda
+                muchos anos. Esta temporada te presento la Coleccion Piscis:
+                formas suaves, textura y brillo en plata 950.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/producto?categoria=anillos"
+                className="inline-flex items-center rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-slate-800"
+              >
+                Ver anillos
+              </Link>
+              <Link
+                href="/contacto"
+                className="inline-flex items-center rounded-full border border-[var(--cp-line)] bg-white/70 px-6 py-3 text-sm font-medium text-[var(--cp-deep)] transition-colors hover:bg-white"
+              >
+                Encargar una pieza
+              </Link>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-3">
+              {trustPoints.map((point) => (
                 <div
-                  key={product.id}
-                  className="min-w-[220px] max-w-[230px] md:min-w-[240px] md:max-w-[260px] flex-shrink-0"
+                  key={point}
+                  className="rounded-[1.25rem] border border-white/60 bg-white/50 px-4 py-4 text-sm text-slate-700"
                 >
-                  <ProductCard product={product} />
+                  {point}
                 </div>
               ))}
             </div>
+
+            <div className="max-w-xl rounded-[1.4rem] border border-[var(--cp-line)] bg-[rgba(255,255,255,0.54)] px-5 py-4">
+              <p className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--cp-accent)]">
+                Encargos y ajustes
+              </p>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                Si quieres asegurar la tuya o encargar una similar, escribeme
+                por WhatsApp y lo vemos juntas con tiempo.
+              </p>
+              <Link
+                href={WHATSAPP_HOME_URL}
+                target="_blank"
+                className="mt-4 inline-flex items-center rounded-full bg-slate-900 px-4 py-2.5 text-xs font-medium text-white transition-colors hover:bg-slate-800"
+              >
+                Escribirme por WhatsApp
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="cp-ring relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#e9eef1]">
+              <Image
+                src="/joyas/anillo-glaciar-2.jpeg"
+                alt="Anillo de plata 950 de la coleccion Piscis"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 460px, 100vw"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/42 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-4 p-5 sm:p-6">
+                <div>
+                  <p className="cp-kicker text-white/80">Hecho a mano en Chile</p>
+                  <p className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-white">
+                    Plata 950, oro y piedras
+                  </p>
+                </div>
+                <span className="rounded-full border border-white/30 bg-black/15 px-3 py-2 text-xs uppercase tracking-[0.18em] text-white backdrop-blur-sm">
+                  Piscis 2026
+                </span>
+              </div>
+            </div>
+
+            <div className="cp-surface mt-4 overflow-hidden rounded-[1.6rem] lg:absolute lg:-bottom-10 lg:left-[-2.5rem] lg:mt-0 lg:w-[42%]">
+              <div className="border-b border-[var(--cp-line)] px-4 py-3">
+                <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-[var(--cp-accent)]">
+                  Taller en movimiento
+                </p>
+              </div>
+              <div className="relative aspect-[9/16] overflow-hidden bg-slate-100">
+                <iframe
+                  className="absolute inset-0 h-full w-full"
+                  src={HERO_VIDEO_URL}
+                  title="Video Carola Plaza Joyas"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {piscisPieces.length > 0 && (
+        <section className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div className="space-y-4">
+            <p className="cp-kicker">Capsula destacada</p>
+            <h2 className="text-3xl font-semibold leading-tight tracking-[-0.04em] text-slate-900 sm:text-4xl">
+              Tres anillos, una misma corriente
+            </h2>
+            <p className="max-w-xl text-base leading-7 text-slate-700">
+              Piscis se construye desde curvas suaves, volumen y piedras que
+              parecen moverse con la luz. Aqui conviven piezas escultoricas,
+              anillos abiertos y composiciones que se sienten liquidas sin
+              perder firmeza.
+            </p>
+            <Link
+              href="/producto?categoria=anillos"
+              className="inline-flex items-center rounded-full border border-[var(--cp-line)] bg-white/70 px-5 py-3 text-sm font-medium text-[var(--cp-deep)] transition-colors hover:bg-white"
+            >
+              Ver la coleccion de anillos
+            </Link>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            {piscisPieces.map((product) => (
+              <CollectionCard key={product.id} product={product} />
+            ))}
           </div>
         </section>
       )}
 
-      {/* Hero principal centrado */}
-      <section className="flex flex-col items-center gap-8 text-center">
-        <div className="space-y-6 max-w-2xl">
-          {/* ✅ Video (YouTube Shorts) antes del badge */}
-<div className="mx-auto w-full max-w-2xl">
-  <div className="relative aspect-[9/16] overflow-hidden rounded-3xl border border-rose-100 bg-slate-100 shadow-sm">
-    <iframe
-      className="absolute inset-0 h-full w-full"
-      src="https://www.youtube-nocookie.com/embed/aOjLIqjwAbE?rel=0"
-      title="Video Carola Plaza Joyas"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerPolicy="strict-origin-when-cross-origin"
-      allowFullScreen
-    />
-  </div>
-</div>
-          {/* Badge navideño */}
-          <p className="text-[11px] tracking-[0.25em] uppercase text-rose-500">
-            Nueva colección Piscis · Hecho a mano en Chile
-          </p>
+      {destacados.length > 0 && (
+        <section className="space-y-6">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div className="space-y-2">
+              <p className="cp-kicker">Joyas destacadas</p>
+              <h2 className="text-3xl font-semibold tracking-[-0.04em] text-slate-900 sm:text-4xl">
+                Otras piezas que sostienen la coleccion
+              </h2>
+            </div>
 
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight">
-            Anillos de plata 950 en mi nueva colección Piscis
-          </h1>
-
-          <p className="text-sm sm:text-base text-slate-700">
-            Piezas únicas y series limitadas trabajadas a pulso en Chile, pensadas
-            para convertirse en ese regalo especial que se queda muchos años.
-            Esta temporada te presento la Colección Piscis: formas suaves, textura
-            y brillo en plata 950.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-3">
             <Link
               href="/producto"
-              className="inline-flex items-center rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white hover:bg-slate-800 transition-colors"
+              className="text-sm font-medium text-[var(--cp-deep)] transition-colors hover:text-slate-900"
             >
-              Ver catálogo completo
-            </Link>
-            <Link
-              href="/contacto"
-              className="inline-flex items-center rounded-full border border-rose-200 px-6 py-3 text-sm font-medium text-rose-700 hover:bg-rose-50 transition-colors"
-            >
-              Encargar una pieza
+              Ver catalogo completo
             </Link>
           </div>
 
-          <div className="border-l-2 border-rose-200 pl-4 text-xs sm:text-sm text-slate-600 max-w-md mx-auto text-left">
-            Si quieres asegurar la tuya o encargar una similar, escríbeme por
-            WhatsApp y lo vemos juntas con tiempo.
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {destacados.map((product) => (
+              <FeaturedCard key={product.id} product={product} />
+            ))}
           </div>
-        </div>
+        </section>
+      )}
 
-       {/* Imagen hero centrada */}
-<div className="relative w-full max-w-xl lg:max-w-[520px] mx-auto aspect-square rounded-3xl overflow-hidden border border-rose-100 bg-white">
-  <Image
-    src="/joyas/anillo-granate-facetado-3.jpeg"
-    alt="Joyas de autor Carola Plaza"
-    fill
-    className="object-contain object-center p-2"
-    sizes="(min-width: 1024px) 480px, 100vw"
-  />
-  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent" />
-  <div className="absolute bottom-4 left-4 text-xs text-slate-100 space-y-1">
-    <p className="font-medium">Colección Piscis 2026</p>
-    <p className="text-[11px] text-slate-200">
-      Plata 950 · Hecho a mano en Chile
-    </p>
-  </div>
-</div>
-
-      </section>
-
-      {/* Franja de confianza */}
-      <section className="border-y border-slate-200 py-4">
-        <div className="mx-auto flex max-w-4xl flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-xs sm:text-sm text-slate-600 px-2">
-          <div className="flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-slate-900" />
-            <span>Plata 950 trabajada a mano</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-slate-900" />
-            <span>Piezas únicas y series limitadas</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-slate-900" />
-            <span>Envíos a todo Chile</span>
-          </div>
-        </div>
-      </section>
-
-      {/* Grid de categorías tipo Swarovski */}
-      <section className="max-w-6xl mx-auto px-2 space-y-6">
-        <div className="space-y-2 text-left sm:text-left">
-          <h2 className="text-sm font-semibold tracking-[0.25em] uppercase text-slate-500">
-            Explora por categoría
+      <section className="space-y-6">
+        <div className="space-y-2">
+          <p className="cp-kicker">Explora por categoria</p>
+          <h2 className="text-3xl font-semibold tracking-[-0.04em] text-slate-900 sm:text-4xl">
+            Un catalogo con distintas maneras de llevar la plata
           </h2>
-          <p className="font-serif text-xl sm:text-2xl text-slate-900">
-            Elige la pieza que quieres que cuente tu historia
+        </div>
+
+        <div className="grid gap-5 lg:grid-cols-12">
+          {categoryTiles.map((tile) => (
+            <CategoryTile key={tile.title} {...tile} />
+          ))}
+        </div>
+      </section>
+
+      <section className="cp-surface rounded-[2.2rem] px-6 py-8 sm:px-8 sm:py-10 lg:px-10">
+        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div className="space-y-4">
+            <p className="cp-kicker">Proceso a medida</p>
+            <h2 className="text-3xl font-semibold leading-tight tracking-[-0.04em] text-slate-900 sm:text-4xl">
+              Como encargar tu propia pieza
+            </h2>
+            <p className="max-w-xl text-base leading-7 text-slate-700">
+              Si tienes una idea en mente o quieres transformar un recuerdo en
+              joya, podemos disenarla juntas a ritmo humano: conversar, probar,
+              ajustar y construir.
+            </p>
+            <a
+              href="https://wa.me/56996397495?text=Hola%20Carolina,%20me%20gustaria%20encargar%20una%20pieza%20de%20plata%20950%20a%20medida.%20%C2%BFPodemos%20conversar%20los%20detalles?"
+              className="inline-flex items-center rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-slate-800"
+            >
+              Quiero encargar la mia
+            </a>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                number: "01",
+                title: "Conversemos tu idea",
+                copy:
+                  "Me escribes por WhatsApp y me cuentas a quien va dirigida la pieza o que quieres representar: un viaje, un comienzo o un recuerdo.",
+              },
+              {
+                number: "02",
+                title: "Definimos forma y materiales",
+                copy:
+                  "Revisamos tamano, textura, piedras y referencias hasta llegar a un diseno que se sienta realmente tuyo.",
+              },
+              {
+                number: "03",
+                title: "La construyo en el taller",
+                copy:
+                  "Trabajo la pieza a mano en plata 950 y te la envio con certificado de autenticidad a cualquier lugar de Chile.",
+              },
+            ].map((step) => (
+              <div
+                key={step.number}
+                className="rounded-[1.4rem] border border-white/60 bg-white/55 px-5 py-5"
+              >
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:gap-4">
+                  <span className="text-2xl font-semibold tracking-[-0.03em] text-[var(--cp-accent)]">
+                    {step.number}
+                  </span>
+                  <div className="space-y-2">
+                    <h3 className="text-base font-semibold text-slate-900">
+                      {step.title}
+                    </h3>
+                    <p className="text-sm leading-6 text-slate-600">{step.copy}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          {[
+            {
+              src: "/joyas/colgante-inicial-colibri-1.jpg",
+              alt: "Collares y piedras naturales en el taller",
+            },
+            {
+              src: "/joyas/prendedor-ginko-bronce.jpg",
+              alt: "Detalle de joya en proceso en el taller",
+            },
+            {
+              src: "/joyas/esclava-aventurina-duo-2.jpg",
+              alt: "Esclava de plata 950 terminada con piedras verdes",
+            },
+          ].map((image) => (
+            <div
+              key={image.src}
+              className="cp-ring relative aspect-[4/3] overflow-hidden rounded-[1.7rem] bg-[#edf0f2]"
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 320px, 100vw"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="cp-surface rounded-[2rem] px-6 py-7 sm:px-8">
+          <p className="cp-kicker">Taller</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-900 sm:text-4xl">
+            Oficio, tiempo y material
+          </h2>
+          <p className="mt-4 text-base leading-7 text-slate-700">
+            En el taller cada pieza se construye a ritmo humano: calentar,
+            martillar, limar y pulir. La plata guarda marcas minimas que no se
+            esconden; son parte del oficio. Trabajo en pequenas series y piezas
+            unicas, pensadas para acompanar historias reales.
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Pulseras y esclavas */}
-          <Link href="/producto?categoria=pulseras-esclavas">
-            <article className="group h-full rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-              <div className="relative w-full aspect-[4/5] overflow-hidden">
-                <Image
-                  src="/joyas/pulsera-eslabon.prenhita-1.jpeg"
-                  alt="Pulsera y esclava de plata 950"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(min-width: 1024px) 260px, (min-width: 640px) 50vw, 100vw"
-                />
-              </div>
-              <div className="px-4 pb-5 pt-4 space-y-2">
-                <h3 className="font-serif text-lg text-slate-900">
-                  Pulseras y esclavas
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600">
-                  Plata 950 que acompaña cada gesto, desde esclavas abiertas
-                  hasta pulseras con piedras naturales.
-                </p>
-                <p className="pt-1 text-xs font-medium text-rose-700 group-hover:underline">
-                  Ver pulseras y esclavas
-                </p>
-              </div>
-            </article>
-          </Link>
+        <div className="cp-surface rounded-[2rem] px-6 py-7 sm:px-8">
+          <p className="cp-kicker">Guias utiles</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-900 sm:text-4xl">
+            Antes de elegir, puedes mirar estas guias
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-slate-700">
+            Si tienes dudas con tu talla, el cuidado de la plata 950 o que tipo
+            de pieza regalar, estas paginas te orientan antes de escribirme.
+          </p>
 
-          {/* Collares */}
-          <Link href="/producto?categoria=collares">
-            <article className="group h-full rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-              <div className="relative w-full aspect-[4/5] overflow-hidden">
-                <Image
-                  src="/joyas/colgante-luz-de-agua-1.jpeg"
-                  alt="Collar de plata 950 con piedras naturales"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(min-width: 1024px) 260px, (min-width: 640px) 50vw, 100vw"
-                />
-              </div>
-              <div className="px-4 pb-5 pt-4 space-y-2">
-                <h3 className="font-serif text-lg text-slate-900">Collares</h3>
-                <p className="text-xs sm:text-sm text-slate-600">
-                  Desde cadenas finas hasta collares con iniciales y piedras,
-                  pensados para volverse tus amuletos diarios.
-                </p>
-                <p className="pt-1 text-xs font-medium text-rose-700 group-hover:underline">
-                  Ver collares
-                </p>
-              </div>
-            </article>
-          </Link>
-
-          {/* Colgantes */}
-          <Link href="/producto?categoria=colgantes">
-            <article className="group h-full rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-              <div className="relative w-full aspect-[4/5] overflow-hidden">
-                <Image
-                  src="/joyas/collar-corazon-nieve-howlita-1.jpeg"
-                  alt="colgante plata cruz martillado"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(min-width: 1024px) 260px, (min-width: 640px) 50vw, 100vw"
-                />
-              </div>
-              <div className="px-4 pb-5 pt-4 space-y-2">
-                <h3 className="font-serif text-lg text-slate-900">Collar de Piedras</h3>
-                <p className="text-xs sm:text-sm text-slate-600">
-                  Collares con piedras naturales, cada uno con propiedades únicas que acompañan tu
-                  corazón
-                </p>
-                <p className="pt-1 text-xs font-medium text-rose-700 group-hover:underline">
-                  Ver colgantes
-                </p>
-              </div>
-            </article>
-          </Link>
-
-          {/* Anillos */}
-          <Link href="/producto?categoria=anillos">
-            <article className="group h-full rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-              <div className="relative w-full aspect-[4/5] overflow-hidden">
-                <Image
-                  src="/joyas/anillo-personalizado-110000-3.jpeg"
-                  alt="Anillo de plata 950 con cuarzo rosa"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(min-width: 1024px) 260px, (min-width: 640px) 50vw, 100vw"
-                />
-              </div>
-              <div className="px-4 pb-5 pt-4 space-y-2">
-                <h3 className="font-serif text-lg text-slate-900">Anillos</h3>
-                <p className="text-xs sm:text-sm text-slate-600">
-                  Anillos anchos y protagonistas, diseñados para usarse todos
-                  los días, no para quedarse guardados en una caja.
-                </p>
-                <p className="pt-1 text-xs font-medium text-rose-700 group-hover:underline">
-                  Ver anillos
-                </p>
-              </div>
-            </article>
-          </Link>
-        </div>
-      </section>
-
-      {/* Proceso a medida con marco esmeralda e imágenes alternadas */}
-      <section className="max-w-6xl mx-auto px-2">
-        <div className="rounded-3xl border-4 border-emerald-200 bg-emerald-50/60 shadow-md px-4 py-6 sm:px-8 sm:py-8 space-y-8">
-          <div className="space-y-2 text-center">
-            <h2 className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-emerald-700">
-              Proceso a medida
-            </h2>
-            <p className="text-lg sm:text-2xl font-semibold text-slate-900">
-              Cómo encargar tu propia pieza
-            </p>
-            <p className="text-sm text-slate-700 max-w-xl mx-auto">
-              Si tienes una idea en mente o quieres transformar un recuerdo en
-              joya, podemos diseñarla juntas. Así funciona el proceso:
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:items-center">
-              <div className="space-y-3">
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-emerald-800 shadow-sm">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-700 text-[11px] text-white">
-                    1
-                  </span>
-                  Conversemos tu idea
-                </div>
-                <p className="text-sm text-slate-700">
-                  Me escribes por WhatsApp y me cuentas a quién va dirigida la
-                  pieza o qué quieres representar: un viaje, un comienzo, un
-                  recuerdo. A partir de eso empezamos a soñar juntas.
-                </p>
-              </div>
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-emerald-100 bg-emerald-100/60">
-                <Image
-                  src="/joyas/colgante-inicial-colibri-1.jpg"
-                  alt="Bandeja con collares y piedras naturales"
-                  fill
-                  className="object-cover object-bottom"
-                  sizes="(min-width: 1024px) 480px, 100vw"
-                />
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:items-center md:gap-8">
-              <div className="space-y-3 md:order-2">
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-emerald-800 shadow-sm">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-700 text-[11px] text-white">
-                    2
-                  </span>
-                  Diseñamos juntas
-                </div>
-                <p className="text-sm text-slate-700">
-                  Definimos forma, tamaño, textura y posibles piedras. Te envío
-                  ideas, bocetos y referencias hasta que encontramos el diseño
-                  que se siente realmente tuyo.
-                </p>
-              </div>
-
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-emerald-100 bg-emerald-100/60 md:order-1">
-                <Image
-                  src="/joyas/prendedor-ginko-bronce.jpg"
-                  alt="Detalle de joya en proceso en el taller"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 480px, 100vw"
-                />
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:items-center">
-              <div className="space-y-3">
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-emerald-800 shadow-sm">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-700 text-[11px] text-white">
-                    3
-                  </span>
-                  La creo en plata 950
-                </div>
-                <p className="text-sm text-slate-700">
-                  Trabajo la pieza a mano en el taller, cuidando cada textura y
-                  detalle. Cuando está lista, te la envío con certificado de
-                  autenticidad a cualquier lugar de Chile.
-                </p>
-              </div>
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-emerald-100 bg-emerald-100/60">
-                <Image
-                  src="/joyas/esclava-aventurina-duo-2.jpg"
-                  alt="Esclava de plata 950 terminada con piedras verdes"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 480px, 100vw"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="flex justify-center pt-2">
-            <a
-              href="https://wa.me/56996397495?text=Hola%20Carolina,%20me%20gustaría%20encargar%20una%20pieza%20de%20plata%20950%20a%20medida.%20%C2%BFPodemos%20conversar%20los%20detalles?"
-              className="inline-flex items-center rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white hover:bg-slate-800 transition-colors"
-            >
-              Quiero encargar la mía
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Taller al final */}
-      <section className="space-y-4 max-w-3xl mx-auto">
-        <h2 className="text-sm font-semibold tracking-[0.25em] uppercase text-slate-500">
-          Taller
-        </h2>
-        <p className="text-sm sm:text-base text-slate-700">
-          En el taller cada pieza se construye a ritmo humano: calentar,
-          martillar, limar, pulir. La plata guarda marcas mínimas que no se
-          esconden; son la firma del oficio. Trabajo en pequeñas series y piezas
-          únicas, pensadas para acompañar historias: anillos que celebran
-          comienzos, colgantes que recuerdan un viaje, aros que te hacen sentir
-          más tú. Todas comparten lo mismo: fueron hechas a mano, una por una,
-          aquí en Chile.
-        </p>
-      </section>
-
-      {/* Guías para ayudarte a elegir */}
-      <section className="max-w-4xl mx-auto w-full px-2 mt-8">
-        <div className="rounded-3xl border border-rose-100 bg-white/80 shadow-md backdrop-blur-sm px-5 py-6 sm:px-8 sm:py-7 space-y-4">
-          <div className="space-y-1">
-            <h2 className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-slate-500">
-              Guías para ayudarte a elegir
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-700 max-w-xl">
-              Si tienes dudas con tu talla, cómo cuidar la plata 950 o qué pieza elegir
-              para un regalo especial, estas guías te pueden orientar antes de escribirme.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-wrap gap-3">
             <Link
               href="/guia-anillos"
-              className="inline-flex items-center gap-2 rounded-full border border-rose-200 bg-rose-600 px-4 py-2 text-[11px] sm:text-xs font-medium text-white shadow-sm transition-colors hover:bg-rose-700 hover:border-rose-400"
+              className="inline-flex items-center rounded-full bg-slate-900 px-4 py-2.5 text-xs font-medium text-white transition-colors hover:bg-slate-800"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-rose-200" />
-              <span>Cómo medir tu dedo para anillos</span>
+              Como medir tu dedo para anillos
             </Link>
-
             <Link
               href="/guia-cuidado-plata"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-[11px] sm:text-xs font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-900 hover:text-white hover:border-slate-900"
+              className="inline-flex items-center rounded-full border border-[var(--cp-line)] bg-white/70 px-4 py-2.5 text-xs font-medium text-[var(--cp-deep)] transition-colors hover:bg-white"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-slate-300" />
-              <span>Cuidado de joyas de plata 950</span>
+              Cuidado de joyas de plata 950
             </Link>
-
             <Link
               href="/guia-regalos"
-              className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white px-4 py-2 text-[11px] sm:text-xs font-medium text-emerald-700 shadow-sm transition-colors hover:bg-emerald-600 hover:text-white hover:border-emerald-500"
+              className="inline-flex items-center rounded-full border border-[var(--cp-line)] bg-white/70 px-4 py-2.5 text-xs font-medium text-[var(--cp-deep)] transition-colors hover:bg-white"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
-              <span>Elegir una joya para regalo</span>
+              Elegir una joya para regalo
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Nota de confianza */}
-      <section className="border-t border-slate-200 pt-6 text-xs sm:text-sm text-slate-600">
+      <section className="border-t border-[var(--cp-line)] pt-6 text-sm text-slate-600">
         Hecho a mano en Chile · Plata 950 · Cada pieza incluye certificado de
         autenticidad.
       </section>

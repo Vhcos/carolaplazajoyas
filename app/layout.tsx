@@ -1,20 +1,14 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { PromoNavidad } from "@/components/PromoNavidad";
-import SnowOverlay from "@/components/SnowOverlay";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
 });
 
 export const SITE_URL = "https://www.carolaplazajoyas.cl";
@@ -78,23 +72,17 @@ export default function RootLayout({ children }: RootLayoutProps) {
   };
 
   return (
-    <html lang="es" className={`${inter.variable} ${playfair.variable} bg-rose-50`}>
+    <html lang="es" className={`${inter.variable} scroll-smooth`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body
-        className="min-h-screen text-slate-900 flex flex-col bg-rose-200"
-        style={{ backgroundColor: "#fff1f2" }}
-      >
-        {/* Overlay global (corazones) */}
-        <SnowOverlay />
-
+      <body className="flex min-h-screen flex-col text-slate-900 antialiased">
         <Navbar />
         <main className="flex-1">
-          <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1180px] px-4 py-6 sm:px-6 lg:px-8">
             <PromoNavidad />
             {children}
           </div>

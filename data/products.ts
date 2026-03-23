@@ -1018,7 +1018,7 @@ vendido: false,
 {
   id: "anillo-glaciar",
   nombre: "Anillo Glaciar",
-  precio: 180000,
+  precio: 320000,
   descripcionCorta:
     "Anillo de plata convexa con topacio azul oval y bisel de oro, de presencia escultorica y luminosa. Talla 11.",
   descripcionLarga:
