@@ -979,6 +979,24 @@ vendido: false,
   categoria: "anillos",
   vendido: true,
 },
+{
+  id: "anillo-sirena",
+  nombre: "Anillo Sirena",
+  precio: 75000,
+  descripcionCorta:
+    "Anillo de plata fina con diseño orgánico inspirado en la naturaleza y el movimiento suave del agua, con cianita musgo en tonos agua.",
+  descripcionLarga:
+    "Anillo de plata fina con diseño único inspirado en las formas orgánicas de la naturaleza y el movimiento suave del agua. Su piedra, una cianita musgo facetada en tonos agua, aporta profundidad, brillo y una belleza serena que cambia con la luz. Es una pieza especial y con carácter, pensada para quienes conectan con joyas de aire natural, fluido y protagónico.",
+  fotos: [
+    "/joyas/anillo-sirena-1.jpeg",
+    "/joyas/anillo-sirena-2.jpeg",
+    "/joyas/anillo-sirena-3.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "anillos",
+  vendido: false,
+},
 
 
 ];
