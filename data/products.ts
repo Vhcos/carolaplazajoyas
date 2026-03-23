@@ -997,6 +997,42 @@ vendido: false,
   categoria: "anillos",
   vendido: false,
 },
+{
+  id: "anillo-duo-luz",
+  nombre: "Anillo Duo Luz",
+  precio: 65000,
+  descripcionCorta:
+    "Anillo abierto de plata con dos circonias Swarovski redondas, de líneas limpias y brillo delicado.",
+  descripcionLarga:
+    "Anillo de plata de diseño abierto y envolvente, rematado por dos circonias Swarovski redondas que capturan la luz con un brillo limpio y elegante. Su forma curva abraza el dedo con un gesto moderno y liviano, logrando una pieza simple pero muy protagonista. Es perfecto para usar todos los días o para sumar un destello pulido a un look más especial.",
+  fotos: [
+    "/joyas/anillo-duo-luz-1.jpeg",
+    "/joyas/anillo-duo-luz-2.jpeg",
+    "/joyas/anillo-duo-luz-3.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "anillos",
+  vendido: false,
+},
+{
+  id: "anillo-glaciar",
+  nombre: "Anillo Glaciar",
+  precio: 180000,
+  descripcionCorta:
+    "Anillo de plata convexa con topacio azul oval y bisel de oro, de presencia escultorica y luminosa.",
+  descripcionLarga:
+    "Anillo de plata de cuerpo ancho y convexo, trabajado para abrazar el dedo con volumen y presencia. En el centro lleva un topacio azul oval facetado, montado en bisel de oro que realza el brillo frio y transparente de la piedra. A los lados, pequeños detalles metalicos acompañan la composicion y refuerzan su aire de joya de autor. Es una pieza protagonista, solida y elegante, ideal para quienes buscan un anillo con fuerza, luz y caracter.",
+  fotos: [
+    "/joyas/anillo-glaciar-1.jpeg",
+    "/joyas/anillo-glaciar-2.jpeg",
+    "/joyas/anillo-glaciar-3.jpeg"
+  ],
+  destacado: false,
+  tipo: "unica",
+  categoria: "anillos",
+  vendido: false,
+},
 
 
 ];
