@@ -7,10 +7,23 @@ import { PRODUCTS } from "@/data/products";
 import { SITE_URL } from "@/lib/config";
 import { getAmorPrice } from "@/lib/promo";
 
+type CreateTransactionBody = {
+  productId?: string;
+};
+
+function isCreateTransactionBody(value: unknown): value is CreateTransactionBody {
+  if (!value || typeof value !== "object") return false;
+  const candidate = value as Record<string, unknown>;
+  return (
+    candidate.productId === undefined || typeof candidate.productId === "string"
+  );
+}
+
 export async function POST(req: Request) {
   try {
-    const body = await req.json().catch(() => ({} as any));
-    const productId = body?.productId as string | undefined;
+    const rawBody: unknown = await req.json().catch(() => null);
+    const body = isCreateTransactionBody(rawBody) ? rawBody : {};
+    const productId = body.productId;
 
     if (!productId) {
       return NextResponse.json(

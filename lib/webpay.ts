@@ -29,6 +29,15 @@ type CreateTxResponse = {
   url: string;
 };
 
+type CommitTxResponse = {
+  amount?: number;
+  buy_order?: string;
+  response_code?: number;
+  responseCode?: number;
+  status?: string;
+  [key: string]: unknown;
+};
+
 export async function webpayCreateTransaction(
   input: CreateTxInput
 ): Promise<CreateTxResponse> {
@@ -57,7 +66,9 @@ if (!res.ok) {
   return data;
 }
 
-export async function webpayCommitTransaction(token: string): Promise<any> {
+export async function webpayCommitTransaction(
+  token: string
+): Promise<CommitTxResponse> {
   const url = `${TRANSACTIONS_URL}/${token}`;
 
   const res = await fetch(url, {
@@ -75,6 +86,6 @@ export async function webpayCommitTransaction(token: string): Promise<any> {
     throw new Error("No se pudo confirmar la transacción en Webpay");
   }
 
-  const data = await res.json();
+  const data = (await res.json()) as CommitTxResponse;
   return data;
 }

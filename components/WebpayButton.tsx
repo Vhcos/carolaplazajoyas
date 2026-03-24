@@ -2,10 +2,16 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 type Props = {
   productId: string;
+};
+
+type CreateTransactionResponse = {
+  ok?: boolean;
+  error?: string;
+  url?: string;
+  token?: string;
 };
 
 export function WebpayButton({ productId }: Props) {
@@ -21,7 +27,7 @@ export function WebpayButton({ productId }: Props) {
         body: JSON.stringify({ productId }),
       });
 
-      const data = await res.json();
+      const data = (await res.json()) as CreateTransactionResponse;
 
       if (!res.ok || !data?.ok || !data?.url || !data?.token) {
         throw new Error(data?.error || "Error al iniciar pago");

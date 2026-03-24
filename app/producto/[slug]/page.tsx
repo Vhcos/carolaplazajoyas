@@ -79,8 +79,7 @@ export default async function ProductPage(props: ProductPageProps) {
 
   if (!product) notFound();
 
-  const p: any = product;
-  const isSold = Boolean(p.vendido);
+  const isSold = Boolean(product.vendido);
 
   const url = `${SITE_URL}/producto/${product.id}`;
 
@@ -94,10 +93,13 @@ export default async function ProductPage(props: ProductPageProps) {
   const finalPrice = getAmorPrice(product.precio);
 
   const detalles: { label: string; value?: string }[] = [
-    { label: "Metal", value: p.metal ?? "Plata 950" },
-    { label: "Piedra", value: p.piedra },
-    { label: "Colección", value: p.coleccion },
-    { label: "Estado", value: isSold ? "Vendido" : p.estado ?? "Disponible" },
+    { label: "Metal", value: product.metal ?? "Plata 950" },
+    { label: "Piedra", value: product.piedra },
+    { label: "Colección", value: product.coleccion },
+    {
+      label: "Estado",
+      value: isSold ? "Vendido" : product.estado ?? "Disponible",
+    },
   ];
 
   const productJsonLd = {

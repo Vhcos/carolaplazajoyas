@@ -1,6 +1,7 @@
 // app/webpay/resultado/resultado-client.tsx
 "use client";
 
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
 export default function ResultadoClient() {
@@ -64,12 +65,12 @@ export default function ResultadoClient() {
           : "Escribir por WhatsApp"}
       </a>
 
-      <a
+      <Link
         href="/"
         className="mt-4 inline-flex rounded-full border border-zinc-900 px-5 py-2 text-sm font-medium hover:bg-zinc-900 hover:text-white transition"
       >
         Volver al inicio
-      </a>
+      </Link>
     </main>
   );
 }

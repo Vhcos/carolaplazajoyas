@@ -7,6 +7,10 @@ export type Product = {
   descripcionCorta: string;
   descripcionLarga?: string;
   fotos: string[]; // rutas en /public/joyas/...
+  metal?: string;
+  piedra?: string;
+  coleccion?: string;
+  estado?: string;
   destacado?: boolean; // para mostrar en la Home
   tipo: "unica" | "serie"; // pieza única 1/1 o serie limitada
   serieTotal?: number; // solo para series: total de piezas (y en No. x/y)
