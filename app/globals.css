@@ -121,3 +121,23 @@ body > div:first-child {
   background-position: left;
   color: #ffffff;
 }
+
+.cp-mothersday-card {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 22%, rgba(220, 117, 147, 0.26) 0%, transparent 42%),
+    radial-gradient(circle at 84% 76%, rgba(237, 188, 205, 0.25) 0%, transparent 46%),
+    radial-gradient(circle at 80% 14%, rgba(197, 160, 89, 0.16) 0%, transparent 36%),
+    linear-gradient(140deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 244, 247, 0.95) 58%, rgba(253, 246, 240, 0.97) 100%);
+}
+
+.cp-mothersday-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(174, 81, 117, 0.13) 1.2px, transparent 1.2px);
+  background-size: 18px 18px;
+  opacity: 0.35;
+  pointer-events: none;
+}

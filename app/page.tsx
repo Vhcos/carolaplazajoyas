@@ -217,24 +217,44 @@ export default async function HomePage() {
 
         <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.95fr)] lg:items-center">
           <div className="space-y-8">
-            <div className="space-y-5">
-              <div className="flex flex-wrap items-center gap-2">
-                <p className="cp-kicker">Día de la Madre · 11 de mayo</p>
-                <span className="rounded-full border border-[rgba(176,143,90,0.35)] bg-[rgba(176,143,90,0.08)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--cp-gold)]">
-                  {daysUntilMothersDay === 0
-                    ? "Hoy"
-                    : `${daysUntilMothersDay} ${daysUntilMothersDay === 1 ? "día" : "días"}`}
-                </span>
+            <div className="cp-mothersday-card rounded-[2rem] border border-[rgba(174,81,117,0.2)] px-5 py-6 sm:px-6 sm:py-7">
+              <div className="pointer-events-none absolute right-3 top-3 text-rose-300/70">
+                <svg viewBox="0 0 24 24" className="h-9 w-9" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M12 4c1.5 2.2 1.5 4.8 0 7-1.5-2.2-1.5-4.8 0-7Z" />
+                  <path d="M20 12c-2.2 1.5-4.8 1.5-7 0 2.2-1.5 4.8-1.5 7 0Z" />
+                  <path d="M12 20c-1.5-2.2-1.5-4.8 0-7 1.5 2.2 1.5 4.8 0 7Z" />
+                  <path d="M4 12c2.2-1.5 4.8-1.5 7 0-2.2 1.5-4.8 1.5-7 0Z" />
+                  <circle cx="12" cy="12" r="1.5" />
+                </svg>
               </div>
-              <h1 className="max-w-3xl text-4xl font-semibold leading-[1.05] text-slate-900 sm:text-5xl lg:text-6xl">
-                Joyas de plata 950 para regalar a mamá
-              </h1>
-              <p className="max-w-2xl text-base leading-7 text-slate-700 sm:text-lg">
-                Piezas únicas y series limitadas trabajadas a pulso en Chile,
-                pensadas para convertirse en ese regalo especial que se queda
-                muchos años. Collares, anillos e iniciales con alma artesanal
-                para la persona más importante.
-              </p>
+
+              <div className="pointer-events-none absolute bottom-2 left-3 text-rose-200/65">
+                <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.4">
+                  <path d="M12 3v18" />
+                  <path d="M12 8c2.5-2.5 5.2-2.5 7.5 0-2.3 2.5-5 2.5-7.5 0Z" />
+                  <path d="M12 12c-2.5-2.5-5.2-2.5-7.5 0 2.3 2.5 5 2.5 7.5 0Z" />
+                </svg>
+              </div>
+
+              <div className="relative z-10 space-y-5">
+                <div className="flex flex-wrap items-center gap-2">
+                  <p className="cp-kicker text-rose-700">Día de la Madre · 11 de mayo</p>
+                  <span className="rounded-full border border-[rgba(174,81,117,0.32)] bg-[rgba(255,255,255,0.75)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-rose-700">
+                    {daysUntilMothersDay === 0
+                      ? "Hoy"
+                      : `${daysUntilMothersDay} ${daysUntilMothersDay === 1 ? "día" : "días"}`}
+                  </span>
+                </div>
+                <h1 className="max-w-3xl text-4xl font-semibold leading-[1.05] text-slate-900 sm:text-5xl lg:text-6xl">
+                  Joyas de plata 950 para regalar a mamá
+                </h1>
+                <p className="max-w-2xl text-base leading-7 text-slate-700 sm:text-lg">
+                  Piezas únicas y series limitadas trabajadas a pulso en Chile,
+                  pensadas para convertirse en ese regalo especial que se queda
+                  muchos años. Collares, anillos e iniciales con alma artesanal
+                  para la persona más importante.
+                </p>
+              </div>
             </div>
 
             <div className="flex flex-wrap gap-3">
