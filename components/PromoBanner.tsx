@@ -27,12 +27,12 @@ export function PromoBanner() {
 
         <div className="relative grid gap-5 lg:grid-cols-[minmax(0,1fr)_260px] lg:items-center">
           <div className="space-y-3">
-            <p className="text-sm font-semibold italic tracking-[0.08em] text-rose-800 sm:text-base">
+            <p className="font-['Brush_Script_MT','Lucida_Handwriting','cursive'] text-2xl leading-none text-[#d95ac5] sm:text-[2.2rem]">
               {promo.name} · {promoDateLabel}
             </p>
 
             <div className="flex flex-wrap items-center gap-3">
-              <div className="min-w-[130px] rounded-2xl border border-rose-950/50 bg-rose-900 px-4 py-3 text-center shadow-sm">
+              <div className="min-w-[130px] rounded-2xl border border-[#8f1e25] bg-[#ce2b37] px-4 py-3 text-center shadow-sm">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/90">
                   Cuenta regresiva
                 </p>
