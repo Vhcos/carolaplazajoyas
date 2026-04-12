@@ -1,6 +1,7 @@
 // app/api/admin/products/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { put } from "@vercel/blob";
+import { revalidatePath } from "next/cache";
 import { isAdminAuthenticated } from "@/lib/admin-auth";
 import { getDynamicProducts } from "@/lib/products-store";
 import type { Product } from "@/data/products";
@@ -9,6 +10,19 @@ const PRODUCTS_BLOB_PATH = "data/products.json";
 
 async function getBlobToken() {
   return process.env.BLOB_READ_WRITE_TOKEN ?? "";
+}
+
+function normalizeId(id: string): string {
+  return id.trim().toLowerCase();
+}
+
+function revalidateCatalog(productId?: string) {
+  revalidatePath("/");
+  revalidatePath("/producto");
+  revalidatePath("/admin");
+  if (productId) {
+    revalidatePath(`/producto/${productId}`);
+  }
 }
 
 export async function GET() {
@@ -36,11 +50,12 @@ export async function POST(req: NextRequest) {
   const current = await getDynamicProducts();
 
   // Evitar duplicados de ID
-  const idx = current.findIndex((p) => p.id === newProduct.id);
+  const normalizedNewId = normalizeId(newProduct.id);
+  const idx = current.findIndex((p) => normalizeId(p.id) === normalizedNewId);
   let updated: Product[];
   if (idx >= 0) {
     updated = [...current];
-    updated[idx] = newProduct;
+    updated[idx] = { ...newProduct, id: current[idx].id };
   } else {
     updated = [newProduct, ...current];
   }
@@ -51,6 +66,8 @@ export async function POST(req: NextRequest) {
     token,
     addRandomSuffix: false,
   });
+
+  revalidateCatalog(newProduct.id);
 
   // Guardar la URL en env (se necesita hacer esto manualmente la primera vez)
   return NextResponse.json({ ok: true, total: updated.length });
@@ -64,8 +81,13 @@ export async function DELETE(req: NextRequest) {
   if (!token) return NextResponse.json({ error: "BLOB_READ_WRITE_TOKEN no configurado" }, { status: 500 });
 
   const { id } = await req.json();
+  const normalizedDeleteId = typeof id === "string" ? normalizeId(id) : "";
+  if (!normalizedDeleteId) {
+    return NextResponse.json({ error: "id inválido" }, { status: 400 });
+  }
+
   const current = await getDynamicProducts();
-  const updated = current.filter((p) => p.id !== id);
+  const updated = current.filter((p) => normalizeId(p.id) !== normalizedDeleteId);
 
   await put(PRODUCTS_BLOB_PATH, JSON.stringify(updated, null, 2), {
     access: "public",
@@ -73,6 +95,8 @@ export async function DELETE(req: NextRequest) {
     token,
     addRandomSuffix: false,
   });
+
+  revalidateCatalog(id);
 
   return NextResponse.json({ ok: true, total: updated.length });
 }

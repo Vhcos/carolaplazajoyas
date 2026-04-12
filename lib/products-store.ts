@@ -8,35 +8,27 @@ const PRODUCTS_BLOB_PATH = "data/products.json";
 const BLOB_PRODUCTS_URL = process.env.BLOB_PRODUCTS_URL?.trim() ?? "";
 const BLOB_READ_WRITE_TOKEN = process.env.BLOB_READ_WRITE_TOKEN?.trim() ?? "";
 
-let resolvedBlobProductsUrl: string | null = null;
-let blobUrlResolved = false;
-
 async function getBlobProductsUrl(): Promise<string | null> {
+  // Prioridad: resolver por token, para leer SIEMPRE el mismo store donde Admin escribe.
+  if (BLOB_READ_WRITE_TOKEN) {
+    try {
+      const metadata = await head(PRODUCTS_BLOB_PATH, { token: BLOB_READ_WRITE_TOKEN });
+      return metadata.url;
+    } catch (error) {
+      console.warn(
+        "[products-store] No se pudo resolver data/products.json en el store del token.",
+        error
+      );
+      return null;
+    }
+  }
+
   if (BLOB_PRODUCTS_URL) return BLOB_PRODUCTS_URL;
-  if (blobUrlResolved) return resolvedBlobProductsUrl;
 
-  blobUrlResolved = true;
-
-  if (!BLOB_READ_WRITE_TOKEN) {
-    console.warn(
-      "[products-store] BLOB_PRODUCTS_URL y BLOB_READ_WRITE_TOKEN no configurados. Usando catálogo estático."
-    );
-    resolvedBlobProductsUrl = null;
-    return null;
-  }
-
-  try {
-    const metadata = await head(PRODUCTS_BLOB_PATH, { token: BLOB_READ_WRITE_TOKEN });
-    resolvedBlobProductsUrl = metadata.url;
-    return metadata.url;
-  } catch (error) {
-    console.warn(
-      "[products-store] No se pudo resolver data/products.json en Blob. Usando fallback.",
-      error
-    );
-    resolvedBlobProductsUrl = null;
-    return null;
-  }
+  console.warn(
+    "[products-store] BLOB_READ_WRITE_TOKEN y BLOB_PRODUCTS_URL no configurados. Usando fallback."
+  );
+  return null;
 }
 
 function getNormalizedId(product: Product): string {
