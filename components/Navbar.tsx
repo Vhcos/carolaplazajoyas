@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 const navItems = [
   { href: "/", label: "Inicio" },
   { href: "/producto", label: "Catalogo" },
-  { href: "/guias", label: "Guias" },
+  { href: "/guias", label: "Cuidados" },
   { href: "/contacto", label: "Contacto" },
   { href: "/admin", label: "Admin" },
 ];
@@ -72,19 +72,19 @@ export default function Navbar() {
         </Link>
 
         <div className="flex flex-col gap-3 lg:items-end">
-          <nav className="flex flex-wrap items-center gap-3 lg:justify-end">
-            <ul className="flex flex-wrap items-center gap-2 rounded-full border border-[var(--cp-line)] bg-white/65 px-2 py-1 shadow-sm">
+          <nav className="flex w-full flex-wrap items-center gap-2 lg:w-auto lg:justify-end">
+            <ul className="no-scrollbar flex w-full flex-nowrap items-center gap-1 overflow-x-auto rounded-full border border-[var(--cp-line)] bg-white/65 px-1.5 py-1 shadow-sm sm:w-auto sm:overflow-visible">
               {navItems.map((item) => {
                 const active = pathname === item.href;
 
                 return (
-                  <li key={item.href}>
+                  <li key={item.href} className="shrink-0">
                     <Link
                       href={item.href}
                       className={
                         active
-                          ? "inline-flex rounded-full bg-slate-900 px-4 py-2 text-xs font-medium text-white"
-                          : "inline-flex rounded-full px-4 py-2 text-xs font-medium text-slate-600 transition-colors hover:bg-white hover:text-slate-900"
+                          ? "inline-flex rounded-full bg-slate-900 px-2.5 py-1.5 text-[11px] font-medium text-white sm:px-4 sm:py-2 sm:text-xs"
+                          : "inline-flex rounded-full px-2.5 py-1.5 text-[11px] font-medium text-slate-600 transition-colors hover:bg-white hover:text-slate-900 sm:px-4 sm:py-2 sm:text-xs"
                       }
                     >
                       {item.label}

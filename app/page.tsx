@@ -65,15 +65,6 @@ const categoryTiles = [
 
 const formatCLP = (amount: number) => `$${amount.toLocaleString("es-CL")}`;
 
-function getDaysUntilMothersDay(): number {
-  const now = new Date();
-  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  const currentYearTarget = new Date(now.getFullYear(), 4, 11);
-  const target = today > currentYearTarget ? new Date(now.getFullYear() + 1, 4, 11) : currentYearTarget;
-  const diffMs = target.getTime() - today.getTime();
-  return Math.max(0, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
-}
-
 function CollectionCard({ product }: { product: Product }) {
   return (
     <Link
@@ -199,7 +190,6 @@ function CategoryTile({
 
 export default async function HomePage() {
   const PRODUCTS = await getAllProducts();
-  const daysUntilMothersDay = getDaysUntilMothersDay();
 
   const diaMadrePieces = DIA_MADRE_IDS.map((id) => PRODUCTS.find((product) => product.id === id)).filter(
     (product): product is Product => Boolean(product)
@@ -226,25 +216,17 @@ export default async function HomePage() {
                 sizes="(min-width: 1024px) 560px, 100vw"
                 priority
               />
-              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.84)_0%,rgba(255,255,255,0.72)_45%,rgba(255,255,255,0.62)_100%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.5)_0%,rgba(255,255,255,0.5)_100%)]" />
 
               <div className="relative z-10 space-y-5 px-5 py-6 sm:px-6 sm:py-7">
                 <div className="flex flex-wrap items-center gap-2">
-                  <p className="cp-kicker text-rose-700">Día de la Madre · 11 de mayo</p>
-                  <span className="rounded-full border border-[rgba(174,81,117,0.32)] bg-[rgba(255,255,255,0.75)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-rose-700">
-                    {daysUntilMothersDay === 0
-                      ? "Hoy"
-                      : `${daysUntilMothersDay} ${daysUntilMothersDay === 1 ? "día" : "días"}`}
-                  </span>
+                  <p className="cp-kicker text-rose-700">Carola Plaza Joyas</p>
                 </div>
                 <h1 className="max-w-3xl text-4xl font-semibold leading-[1.05] text-slate-900 sm:text-5xl lg:text-6xl">
-                  Joyas de plata 950 para regalar a mamá
+                  Plata 950 hecha a mano en Chile
                 </h1>
                 <p className="max-w-2xl text-base leading-7 text-slate-700 sm:text-lg">
-                  Piezas únicas y series limitadas trabajadas a pulso en Chile,
-                  pensadas para convertirse en ese regalo especial que se queda
-                  muchos años. Collares, anillos e iniciales con alma artesanal
-                  para la persona más importante.
+                  En Carola Plaza Joyas cada pieza nace en el taller, a pulso y en series limitadas. Trabajo la plata 950 con piedras naturales, textura y proporción cuidada para que la joya acompañe tu historia por años.
                 </p>
               </div>
             </div>
@@ -305,20 +287,25 @@ export default async function HomePage() {
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/42 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-4 p-5 sm:p-6">
+              <div className="absolute bottom-0 left-0 right-0 hidden items-end justify-between gap-4 p-5 sm:flex sm:p-6">
                 <div className="rounded-2xl border border-white/20 bg-[rgba(8,8,8,0.18)] px-4 py-3 backdrop-blur-[10px]">
                   <p className="cp-kicker text-white/80">Hecho a mano en Chile</p>
-                  <p className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-white">
+                  <p className="mt-2 text-xl font-semibold tracking-[-0.03em] text-white lg:text-2xl">
                     Plata 950, para mamá
                   </p>
                 </div>
-                <span className="rounded-full border border-white/30 bg-[rgba(8,8,8,0.18)] px-3 py-2 text-xs uppercase tracking-[0.18em] text-white backdrop-blur-[10px]">
+                <span className="hidden rounded-full border border-white/30 bg-[rgba(8,8,8,0.18)] px-3 py-2 text-xs uppercase tracking-[0.18em] text-white backdrop-blur-[10px] sm:inline-flex">
                   Día de la Madre
                 </span>
               </div>
             </div>
 
-            <div className="cp-surface mt-4 overflow-hidden rounded-[1.6rem] lg:absolute lg:-bottom-10 lg:left-[-2.5rem] lg:mt-0 lg:w-[42%]">
+            <div className="mt-3 rounded-2xl border border-[var(--cp-line)] bg-white/80 px-4 py-3 sm:hidden">
+              <p className="cp-kicker text-[var(--cp-accent)]">Hecho a mano en Chile</p>
+              <p className="mt-1 text-base font-semibold text-slate-900">Plata 950, para mamá</p>
+            </div>
+
+            <div className="cp-surface mt-4 overflow-hidden rounded-[1.6rem] lg:ml-auto lg:mt-5 lg:w-[78%]">
               <div className="border-b border-[var(--cp-line)] px-4 py-3">
                 <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-[var(--cp-accent)]">
                   Taller en movimiento
@@ -515,9 +502,9 @@ export default async function HomePage() {
         </div>
 
         <div className="cp-surface rounded-[2rem] px-6 py-7 sm:px-8">
-          <p className="cp-kicker">Guías útiles</p>
+          <p className="cp-kicker">Cuidados útiles</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-900 sm:text-4xl">
-            Antes de elegir, puedes mirar estas guías
+            Antes de elegir, puedes mirar estos cuidados y guías
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-7 text-slate-700">
             Si tienes dudas con tu talla, el cuidado de la plata 950 o qué tipo

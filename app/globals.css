@@ -140,3 +140,12 @@ body > div:first-child {
   opacity: 0.55;
   pointer-events: none;
 }
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
