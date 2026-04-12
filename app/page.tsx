@@ -218,48 +218,18 @@ export default async function HomePage() {
         <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.95fr)] lg:items-center">
           <div className="space-y-8">
             <div className="cp-mothersday-card rounded-[2rem] border border-[rgba(174,81,117,0.2)] px-5 py-6 sm:px-6 sm:py-7">
-              <div className="pointer-events-none absolute -left-3 -top-3 h-24 w-28 overflow-hidden rounded-br-[2.25rem] sm:-left-5 sm:-top-5 sm:h-32 sm:w-40">
+              <div className="pointer-events-none absolute bottom-2 left-2 top-2 w-[68px] overflow-hidden rounded-[1.45rem] border border-white/75 shadow-[0_10px_26px_rgba(0,0,0,0.14)] sm:bottom-3 sm:left-3 sm:top-3 sm:w-[94px]">
                 <Image
-                  src="/decor/mothersday-flowers-a.jpg"
+                  src="/decor/mothersday-frame-left.jpeg"
                   alt=""
                   fill
                   aria-hidden
-                  className="object-cover object-center opacity-85 saturate-125"
-                  sizes="160px"
-                />
-              </div>
-              <div className="pointer-events-none absolute -right-3 -top-3 h-24 w-28 overflow-hidden rounded-bl-[2.25rem] sm:-right-5 sm:-top-5 sm:h-32 sm:w-40">
-                <Image
-                  src="/decor/mothersday-flowers-b.jpg"
-                  alt=""
-                  fill
-                  aria-hidden
-                  className="object-cover object-center opacity-85 saturate-125"
-                  sizes="160px"
-                />
-              </div>
-              <div className="pointer-events-none absolute -bottom-3 -left-3 h-24 w-28 overflow-hidden rounded-tr-[2.25rem] sm:-bottom-5 sm:-left-5 sm:h-32 sm:w-40">
-                <Image
-                  src="/decor/mothersday-flowers-b.jpg"
-                  alt=""
-                  fill
-                  aria-hidden
-                  className="object-cover object-center opacity-78 saturate-120"
-                  sizes="160px"
-                />
-              </div>
-              <div className="pointer-events-none absolute -bottom-3 -right-3 h-24 w-28 overflow-hidden rounded-tl-[2.25rem] sm:-bottom-5 sm:-right-5 sm:h-32 sm:w-40">
-                <Image
-                  src="/decor/mothersday-flowers-a.jpg"
-                  alt=""
-                  fill
-                  aria-hidden
-                  className="object-cover object-center opacity-78 saturate-120"
-                  sizes="160px"
+                  className="object-cover object-left opacity-95"
+                  sizes="94px"
                 />
               </div>
 
-              <div className="relative z-10 space-y-5">
+              <div className="relative z-10 space-y-5 pl-[74px] sm:pl-[106px]">
                 <div className="flex flex-wrap items-center gap-2">
                   <p className="cp-kicker text-rose-700">Día de la Madre · 11 de mayo</p>
                   <span className="rounded-full border border-[rgba(174,81,117,0.32)] bg-[rgba(255,255,255,0.75)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-rose-700">
