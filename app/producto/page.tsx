@@ -1,5 +1,6 @@
 // app/producto/page.tsx
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getAllProducts } from "@/lib/products-store";
 import ProductCard from "@/components/ProductCard";
 import { SITE_URL } from "@/lib/config";
@@ -129,7 +130,7 @@ export default async function CatalogPage({ searchParams }: CatalogPageProps) {
                 : `/producto?categoria=${filter.key}`;
 
             return (
-              <a
+              <Link
                 key={filter.key}
                 href={href}
                 className={
@@ -139,7 +140,7 @@ export default async function CatalogPage({ searchParams }: CatalogPageProps) {
                 }
               >
                 {filter.label}
-              </a>
+              </Link>
             );
           })}
         </div>

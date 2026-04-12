@@ -1,6 +1,6 @@
 // app/api/admin/products/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import { put, head } from "@vercel/blob";
+import { put } from "@vercel/blob";
 import { isAdminAuthenticated } from "@/lib/admin-auth";
 import { getDynamicProducts } from "@/lib/products-store";
 import type { Product } from "@/data/products";
