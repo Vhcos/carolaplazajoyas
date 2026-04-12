@@ -14,7 +14,11 @@ function getBlobHostFromEnv(): string | null {
 }
 
 const imageHosts = Array.from(
-  new Set([LEGACY_BLOB_HOST, getBlobHostFromEnv()].filter((host): host is string => Boolean(host)))
+  new Set(
+    ["*.public.blob.vercel-storage.com", LEGACY_BLOB_HOST, getBlobHostFromEnv()].filter(
+      (host): host is string => Boolean(host)
+    )
+  )
 );
 
 const nextConfig: NextConfig = {
