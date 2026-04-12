@@ -3,7 +3,9 @@
 
 import { PRODUCTS as STATIC_PRODUCTS, type Product } from "@/data/products";
 
-const BLOB_PRODUCTS_URL = process.env.BLOB_PRODUCTS_URL ?? "";
+const BLOB_PRODUCTS_URL =
+  process.env.BLOB_PRODUCTS_URL ??
+  "https://9sxkvs205ipfyljr.public.blob.vercel-storage.com/data/products.json";
 
 export async function getAllProducts(): Promise<Product[]> {
   if (!BLOB_PRODUCTS_URL) return STATIC_PRODUCTS;
