@@ -60,12 +60,19 @@ export async function POST(req: NextRequest) {
     updated = [newProduct, ...current];
   }
 
-  await put(PRODUCTS_BLOB_PATH, JSON.stringify(updated, null, 2), {
-    access: "public",
-    contentType: "application/json",
-    token,
-    addRandomSuffix: false,
-  });
+  try {
+    await put(PRODUCTS_BLOB_PATH, JSON.stringify(updated, null, 2), {
+      access: "public",
+      contentType: "application/json",
+      token,
+      addRandomSuffix: false,
+      allowOverwrite: true,
+      cacheControlMaxAge: 60,
+    });
+  } catch (error) {
+    console.error("[admin/products] Error guardando catálogo dinámico en Blob.", error);
+    return NextResponse.json({ error: "No se pudo guardar en Blob" }, { status: 500 });
+  }
 
   revalidateCatalog(newProduct.id);
 
@@ -89,12 +96,19 @@ export async function DELETE(req: NextRequest) {
   const current = await getDynamicProducts();
   const updated = current.filter((p) => normalizeId(p.id) !== normalizedDeleteId);
 
-  await put(PRODUCTS_BLOB_PATH, JSON.stringify(updated, null, 2), {
-    access: "public",
-    contentType: "application/json",
-    token,
-    addRandomSuffix: false,
-  });
+  try {
+    await put(PRODUCTS_BLOB_PATH, JSON.stringify(updated, null, 2), {
+      access: "public",
+      contentType: "application/json",
+      token,
+      addRandomSuffix: false,
+      allowOverwrite: true,
+      cacheControlMaxAge: 60,
+    });
+  } catch (error) {
+    console.error("[admin/products] Error eliminando producto dinámico en Blob.", error);
+    return NextResponse.json({ error: "No se pudo actualizar Blob" }, { status: 500 });
+  }
 
   revalidateCatalog(id);
 
