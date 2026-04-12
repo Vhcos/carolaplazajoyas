@@ -237,13 +237,13 @@ export default function GuiaRegalosPage() {
         </p>
         <p className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800">
           <span className="font-mono text-xs">
-            “Hola Carolina, quiero hacer un regalo con una joya y necesito ayuda
+            “Hola Carola, quiero hacer un regalo con una joya y necesito ayuda
             para elegir algo con significado. Te cuento un poco de la persona…”
           </span>
         </p>
 
         <a
-          href="https://wa.me/56996397495?text=Hola%20Carolina,%20quiero%20regalar%20una%20joya%20con%20significado%20y%20necesito%20ayuda%20para%20elegirla."
+          href="https://wa.me/56996397495?text=Hola%20Carola,%20quiero%20regalar%20una%20joya%20con%20significado%20y%20necesito%20ayuda%20para%20elegirla."
           target="_blank"
           className="inline-flex items-center rounded-full bg-emerald-600 px-6 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-emerald-500"
         >

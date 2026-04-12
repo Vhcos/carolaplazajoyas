@@ -240,13 +240,13 @@ export default function GuiaPiezaMedidaPage() {
         </p>
         <p className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800">
           <span className="font-mono text-xs">
-            “Hola Carolina, me gustaría encargar una pieza a medida. Te cuento
+            “Hola Carola, me gustaría encargar una pieza a medida. Te cuento
             un poco lo que tengo en mente…”
           </span>
         </p>
 
         <a
-          href="https://wa.me/56996397495?text=Hola%20Carolina,%20me%20gustar%C3%ADa%20encargar%20una%20joya%20de%20plata%20950%20a%20medida%20y%20tengo%20una%20idea%20que%20quiero%20contarte."
+          href="https://wa.me/56996397495?text=Hola%20Carola,%20me%20gustar%C3%ADa%20encargar%20una%20joya%20de%20plata%20950%20a%20medida%20y%20tengo%20una%20idea%20que%20quiero%20contarte."
           target="_blank"
           className="inline-flex items-center rounded-full bg-emerald-600 px-6 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-emerald-500"
         >

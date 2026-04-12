@@ -205,13 +205,13 @@ export default function GuiaCuidadoPlataPage() {
         </p>
         <p className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800">
           <span className="font-mono text-xs">
-            “Hola Carolina, tengo una joya de plata que me gustaría limpiar /
+            “Hola Carola, tengo una joya de plata que me gustaría limpiar /
             ajustar. ¿Te puedo enviar fotos para que la veamos?”
           </span>
         </p>
 
         <a
-          href="https://wa.me/56996397495?text=Hola%20Carolina,%20tengo%20una%20joya%20de%20plata%20950%20que%20quiero%20cuidar%20y%20me%20gustar%C3%ADa%20tu%20ayuda."
+          href="https://wa.me/56996397495?text=Hola%20Carola,%20tengo%20una%20joya%20de%20plata%20950%20que%20quiero%20cuidar%20y%20me%20gustar%C3%ADa%20tu%20ayuda."
           target="_blank"
           className="inline-flex items-center rounded-full bg-emerald-600 px-6 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-emerald-500"
         >

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Product } from "@/data/products";
-import { getAmorPrice, isAmorPromoActive, getAmorPromoInfo } from "@/lib/promo";
+import { getPromoInfo, getPromoPrice, isPromoActive } from "@/lib/promo";
 
 type ProductCardProps = {
   product: Product;
@@ -14,9 +14,9 @@ export default function ProductCard({ product }: ProductCardProps) {
   const secondaryImage = product.fotos[1] ?? mainImage;
   const hasSecondaryImage = secondaryImage !== mainImage;
 
-  const promoActive = isAmorPromoActive();
-  const finalPrice = getAmorPrice(product.precio);
-  const promo = getAmorPromoInfo();
+  const promoActive = isPromoActive();
+  const finalPrice = getPromoPrice(product.precio);
+  const promo = getPromoInfo();
 
   const isSold = Boolean(product.vendido);
 

@@ -11,7 +11,6 @@ const navItems = [
   { href: "/producto", label: "Catalogo" },
   { href: "/guias", label: "Cuidados" },
   { href: "/contacto", label: "Contacto" },
-  { href: "/admin", label: "Admin" },
 ];
 
 export default function Navbar() {

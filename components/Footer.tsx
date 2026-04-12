@@ -55,12 +55,6 @@ export default function Footer() {
             >
               Instagram
             </Link>
-            <Link
-              href="/admin"
-              className="inline-flex items-center rounded-full border border-[var(--cp-line)] bg-white/70 px-4 py-2 text-xs font-medium text-[var(--cp-deep)] transition-colors hover:bg-white"
-            >
-              Admin
-            </Link>
           </div>
 
           <p className="text-xs text-slate-500">

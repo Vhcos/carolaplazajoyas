@@ -23,7 +23,7 @@ export function WebpayResultadoClient() {
           <>
             Tu compra fue autorizada.
             <br />
-            Carolina se pondrá en contacto contigo para coordinar envío o
+            Carola se pondrá en contacto contigo para coordinar envío o
             entrega de tu joya.
           </>
         ) : (

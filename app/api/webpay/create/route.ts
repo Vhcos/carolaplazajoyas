@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 import { webpayCreateTransaction } from "@/lib/webpay";
 import { PRODUCTS } from "@/data/products";
 import { SITE_URL } from "@/lib/config";
-import { getAmorPrice } from "@/lib/promo";
+import { getPromoPrice } from "@/lib/promo";
 
 type CreateTransactionBody = {
   productId?: string;
@@ -51,8 +51,8 @@ export async function POST(req: Request) {
       );
     }
 
-    // Aplica promo Colección Piscis si corresponde (según rango en lib/promo.ts)
-    const amount = getAmorPrice(baseAmount);
+    // Aplica descuento activo de campaña (según rango en lib/promo.ts)
+    const amount = getPromoPrice(baseAmount);
 
     const WEBPAY_RETURN_URL =
       process.env.WEBPAY_RETURN_URL || `${SITE_URL}/webpay/resultado`;

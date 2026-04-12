@@ -225,7 +225,7 @@ export default function GuiaAnillosPage() {
         </p>
 
         <a
-          href="https://wa.me/56996397495?text=Hola%20Carolina,%20quiero%20encargar%20un%20anillo%20y%20tengo%20dudas%20con%20mi%20talla.%20Te%20comparto%20mis%20medidas."
+          href="https://wa.me/56996397495?text=Hola%20Carola,%20quiero%20encargar%20un%20anillo%20y%20tengo%20dudas%20con%20mi%20talla.%20Te%20comparto%20mis%20medidas."
           target="_blank"
           className="inline-flex items-center rounded-full bg-emerald-600 px-6 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-emerald-500"
         >

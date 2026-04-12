@@ -4,7 +4,7 @@ import "./globals.css";
 import { Montserrat, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { PromoNavidad } from "@/components/PromoNavidad";
+import { PromoBanner } from "@/components/PromoBanner";
 import AnnouncementBar from "@/components/AnnouncementBar";
 
 const montserrat = Montserrat({
@@ -92,7 +92,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <Navbar />
         <main className="flex-1">
           <div className="mx-auto max-w-[1180px] px-4 py-6 sm:px-6 lg:px-8">
-            <PromoNavidad />
+            <PromoBanner />
             {children}
           </div>
         </main>

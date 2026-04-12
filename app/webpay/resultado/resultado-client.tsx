@@ -14,10 +14,10 @@ export default function ResultadoClient() {
 
   // Mensaje para WhatsApp cuando el pago fue exitoso
   const whatsappText = isSuccess
-    ? `Hola Carolina, acabo de pagar una joya en tu web.\n\nOrden: ${
+    ? `Hola Carola, acabo de pagar una joya en tu web.\n\nOrden: ${
         buyOrder ?? "sin orden"
       }\nMonto: $${amount ?? ""}\n\nMi nombre es ______ y mis datos de envío son: ______.`
-    : `Hola Carolina, tuve un problema al pagar en la web. ¿Me puedes ayudar?`;
+    : `Hola Carola, tuve un problema al pagar en la web. ¿Me puedes ayudar?`;
 
   const whatsappUrl = `https://wa.me/56996397495?text=${encodeURIComponent(
     whatsappText
@@ -34,7 +34,7 @@ export default function ResultadoClient() {
           <>
             Tu compra fue autorizada.
             <br />
-            Carolina se pondrá en contacto contigo para coordinar envío o
+            Carola se pondrá en contacto contigo para coordinar envío o
             entrega de tu joya.
           </>
         ) : (

@@ -1,20 +1,25 @@
 "use client";
 import Link from "next/link";
+import { getPromoInfo, isPromoActive } from "@/lib/promo";
 
-function getDaysUntilMothersDay(): number {
+function getDaysUntilPromoEnd(endDate: Date): number {
   const now = new Date();
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  const currentYearTarget = new Date(now.getFullYear(), 4, 11);
-  const target = today > currentYearTarget ? new Date(now.getFullYear() + 1, 4, 11) : currentYearTarget;
-  const diff = Math.ceil((target.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+  const end = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate());
+  const diff = Math.ceil((end.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
   return Math.max(0, diff);
 }
 
-export function PromoNavidad() {
-  const days = getDaysUntilMothersDay();
-  const isOver = days === 0;
+export function PromoBanner() {
+  const promo = getPromoInfo();
+  const promoActive = isPromoActive();
+  const days = getDaysUntilPromoEnd(promo.end);
+  const promoDateLabel = promo.end.toLocaleDateString("es-CL", {
+    day: "numeric",
+    month: "long",
+  });
 
-  if (isOver) return null;
+  if (!promoActive) return null;
 
   return (
     <section className="mb-8">
@@ -25,7 +30,7 @@ export function PromoNavidad() {
         <div className="relative flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-1.5">
             <div className="flex flex-wrap items-center gap-2">
-              <p className="cp-kicker text-[var(--cp-gold)]">Día de la Madre · 11 de mayo</p>
+              <p className="cp-kicker text-[var(--cp-gold)]">{promo.name} · {promoDateLabel}</p>
               <span className="rounded-full border border-[rgba(176,143,90,0.28)] bg-white/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--cp-gold)]">
                 {days === 0 ? "Hoy" : `${days} ${days === 1 ? "día" : "días"}`}
               </span>

@@ -408,7 +408,7 @@ export default async function HomePage() {
               ajustar y construir.
             </p>
             <a
-              href="https://wa.me/56996397495?text=Hola%20Carolina,%20me%20gustaria%20encargar%20una%20pieza%20de%20plata%20950%20a%20medida.%20%C2%BFPodemos%20conversar%20los%20detalles?"
+              href="https://wa.me/56996397495?text=Hola%20Carola,%20me%20gustaria%20encargar%20una%20pieza%20de%20plata%20950%20a%20medida.%20%C2%BFPodemos%20conversar%20los%20detalles?"
               className="cp-btn-fill inline-flex items-center rounded-full px-6 py-3 text-sm font-medium"
             >
               Quiero encargar la mía

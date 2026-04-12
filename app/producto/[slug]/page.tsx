@@ -6,7 +6,7 @@ import { WebpayButton } from "@/components/WebpayButton";
 import { getAllProducts } from "@/lib/products-store";
 import ProductGallery from "@/components/ProductGallery";
 import { SITE_URL } from "@/lib/config";
-import { getAmorPrice, isAmorPromoActive } from "@/lib/promo";
+import { getPromoPrice, isPromoActive } from "@/lib/promo";
 
 // En Next 16 params viene como *Promise*
 type ProductPageParams = {
@@ -89,9 +89,9 @@ export default async function ProductPage(props: ProductPageProps) {
       foto.startsWith("http") ? foto : `${SITE_URL}${foto}`
     ) ?? [`${SITE_URL}/joyas/prendedor-ginko-bronce.jpg`];
 
-  // Promo Amor
-  const promoActive = isAmorPromoActive();
-  const finalPrice = getAmorPrice(product.precio);
+  // Promo Día de la Madre
+  const promoActive = isPromoActive();
+  const finalPrice = getPromoPrice(product.precio);
 
   const detalles: { label: string; value?: string }[] = [
     { label: "Metal", value: product.metal ?? "Plata 950" },
