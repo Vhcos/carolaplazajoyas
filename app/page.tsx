@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PRODUCTS, type Product } from "@/data/products";
 
 const HERO_VIDEO_URL = "https://www.youtube-nocookie.com/embed/7BlmzJUWNic?rel=0";
-const PISCIS_IDS = ["anillo-sirena", "anillo-glaciar", "anillo-duo-luz"] as const;
+const DIA_MADRE_IDS = ["collar-corazon-amor", "anillo-nombres-personalizado", "colgante-inicial-colibri"] as const;
 const WHATSAPP_HOME_URL =
   "https://wa.me/56996397495?text=Hola%20Carola,%20quiero%20asegurar%20una%20pieza%20o%20encargar%20una%20similar.%20%C2%BFLo%20vemos%20por%20aqu%C3%AD%3F";
 
@@ -82,7 +82,7 @@ function CollectionCard({ product }: { product: Product }) {
       <div className="flex flex-1 flex-col gap-3 px-5 py-5">
         <div className="space-y-1">
           <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-[var(--cp-accent)]">
-            Coleccion Piscis
+            Dia de la Madre
           </p>
           <h3 className="text-2xl font-semibold leading-tight tracking-[-0.03em] text-slate-900">
             {product.nombre}
@@ -181,12 +181,12 @@ function CategoryTile({
 }
 
 export default function HomePage() {
-  const piscisPieces = PISCIS_IDS.map((id) => PRODUCTS.find((product) => product.id === id)).filter(
+  const diaMadrePieces = DIA_MADRE_IDS.map((id) => PRODUCTS.find((product) => product.id === id)).filter(
     (product): product is Product => Boolean(product)
   );
 
   const destacados = PRODUCTS.filter(
-    (product) => product.destacado && !product.vendido && !PISCIS_IDS.includes(product.id as (typeof PISCIS_IDS)[number])
+    (product) => product.destacado && !product.vendido && !DIA_MADRE_IDS.includes(product.id as (typeof DIA_MADRE_IDS)[number])
   ).slice(0, 4);
 
   return (
@@ -198,24 +198,24 @@ export default function HomePage() {
         <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.95fr)] lg:items-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <p className="cp-kicker">Nueva coleccion Piscis</p>
+              <p className="cp-kicker">Dia de la Madre · 11 de mayo</p>
               <h1 className="max-w-3xl text-4xl font-semibold leading-[0.95] tracking-[-0.045em] text-slate-900 sm:text-5xl lg:text-6xl">
-                Anillos de plata 950 en mi nueva coleccion Piscis
+                Joyas de plata 950 para regalar a mama
               </h1>
               <p className="max-w-2xl text-base leading-7 text-slate-700 sm:text-lg">
                 Piezas unicas y series limitadas trabajadas a pulso en Chile,
                 pensadas para convertirse en ese regalo especial que se queda
-                muchos anos. Esta temporada te presento la Coleccion Piscis:
-                formas suaves, textura y brillo en plata 950.
+                muchos anos. Collares, anillos e iniciales con alma artesanal
+                para la persona mas importante.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/producto?categoria=anillos"
+                href="/producto"
                 className="inline-flex items-center rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-slate-800"
               >
-                Ver anillos
+                Ver regalos para mama
               </Link>
               <Link
                 href="/contacto"
@@ -257,8 +257,8 @@ export default function HomePage() {
           <div className="relative">
             <div className="cp-ring relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#e9eef1]">
               <Image
-                src="/joyas/anillo-glaciar-2.jpeg"
-                alt="Anillo de plata 950 de la coleccion Piscis"
+                src="/joyas/Collar Corazon de  Plata.jpeg"
+                alt="Collar Corazon de Plata 950, regalo Dia de la Madre"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 460px, 100vw"
@@ -269,11 +269,11 @@ export default function HomePage() {
                 <div>
                   <p className="cp-kicker text-white/80">Hecho a mano en Chile</p>
                   <p className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-white">
-                    Plata 950, oro y piedras
+                    Plata 950, para mama
                   </p>
                 </div>
                 <span className="rounded-full border border-white/30 bg-black/15 px-3 py-2 text-xs uppercase tracking-[0.18em] text-white backdrop-blur-sm">
-                  Piscis 2026
+                  Dia de la Madre
                 </span>
               </div>
             </div>
@@ -299,29 +299,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {piscisPieces.length > 0 && (
+      {diaMadrePieces.length > 0 && (
         <section className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="space-y-4">
-            <p className="cp-kicker">Capsula destacada</p>
+            <p className="cp-kicker">Seleccion Dia de la Madre</p>
             <h2 className="text-3xl font-semibold leading-tight tracking-[-0.04em] text-slate-900 sm:text-4xl">
-              Tres anillos, una misma corriente
+              Tres piezas pensadas para ella
             </h2>
             <p className="max-w-xl text-base leading-7 text-slate-700">
-              Piscis se construye desde curvas suaves, volumen y piedras que
-              parecen moverse con la luz. Aqui conviven piezas escultoricas,
-              anillos abiertos y composiciones que se sienten liquidas sin
-              perder firmeza.
+              Un collar con corazon grabado, un anillo con sus nombres y un
+              colgante con su inicial. Piezas de plata 950 hechas a mano que
+              se convierten en recuerdo para siempre.
             </p>
             <Link
-              href="/producto?categoria=anillos"
+              href="/producto"
               className="inline-flex items-center rounded-full border border-[var(--cp-line)] bg-white/70 px-5 py-3 text-sm font-medium text-[var(--cp-deep)] transition-colors hover:bg-white"
             >
-              Ver la coleccion de anillos
+              Ver catalogo completo
             </Link>
           </div>
 
           <div className="grid gap-4 md:grid-cols-3">
-            {piscisPieces.map((product) => (
+            {diaMadrePieces.map((product) => (
               <CollectionCard key={product.id} product={product} />
             ))}
           </div>
