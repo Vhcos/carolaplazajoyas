@@ -27,17 +27,19 @@ export function PromoBanner() {
 
         <div className="relative grid gap-5 lg:grid-cols-[minmax(0,1fr)_260px] lg:items-center">
           <div className="space-y-3">
-            <p className="cp-kicker text-[var(--cp-gold)]">{promo.name} · {promoDateLabel}</p>
+            <p className="text-sm font-semibold italic tracking-[0.08em] text-rose-800 sm:text-base">
+              {promo.name} · {promoDateLabel}
+            </p>
 
             <div className="flex flex-wrap items-center gap-3">
-              <div className="rounded-2xl border border-[rgba(176,143,90,0.28)] bg-white/85 px-4 py-3 shadow-sm">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+              <div className="min-w-[130px] rounded-2xl border border-rose-950/50 bg-rose-900 px-4 py-3 text-center shadow-sm">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/90">
                   Cuenta regresiva
                 </p>
-                <p className="mt-1 text-3xl font-semibold leading-none tracking-[-0.04em] text-[var(--cp-gold)]">
+                <p className="mt-1 text-4xl font-semibold leading-none tracking-[-0.04em] text-white">
                   {days === 0 ? "Hoy" : days}
                 </p>
-                <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.2em] text-slate-500">
+                <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.2em] text-white/90">
                   {days === 0 ? "día especial" : days === 1 ? "día" : "días"}
                 </p>
               </div>
@@ -81,7 +83,7 @@ export function PromoBanner() {
               />
             </div>
             <div className="border-t border-[rgba(176,143,90,0.22)] px-3 py-2 text-center">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--cp-accent)]">
+              <p className="text-xs font-semibold italic tracking-[0.08em] text-rose-700">
                 Día de la Madre
               </p>
             </div>
