@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PRODUCTS, type Product } from "@/data/products";
+import type { Product } from "@/data/products";
+import { getAllProducts } from "@/lib/products-store";
 
 const HERO_VIDEO_URL = "https://www.youtube-nocookie.com/embed/7BlmzJUWNic?rel=0";
 const DIA_MADRE_IDS = ["collar-corazon-amor", "anillo-nombres-personalizado", "colgante-inicial-colibri"] as const;
@@ -187,7 +188,9 @@ function CategoryTile({
   );
 }
 
-export default function HomePage() {
+export default async function HomePage() {
+  const PRODUCTS = await getAllProducts();
+
   const diaMadrePieces = DIA_MADRE_IDS.map((id) => PRODUCTS.find((product) => product.id === id)).filter(
     (product): product is Product => Boolean(product)
   );

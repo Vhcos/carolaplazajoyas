@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { WebpayButton } from "@/components/WebpayButton";
-import { PRODUCTS } from "@/data/products";
+import { getAllProducts } from "@/lib/products-store";
 import ProductGallery from "@/components/ProductGallery";
 import { SITE_URL } from "@/lib/config";
 import { getAmorPrice, isAmorPromoActive } from "@/lib/promo";
@@ -18,9 +18,10 @@ type ProductPageProps = {
 };
 
 // --- Helper: buscar producto por slug (id) ---
-function getProductFromSlug(slug: string) {
+async function getProductFromSlug(slug: string) {
+  const products = await getAllProducts();
   const clean = decodeURIComponent(slug).trim().toLowerCase();
-  const product = PRODUCTS.find((p) => p.id.trim().toLowerCase() === clean);
+  const product = products.find((p) => p.id.trim().toLowerCase() === clean);
   return product ?? null;
 }
 
@@ -29,7 +30,7 @@ export async function generateMetadata(
   props: ProductPageProps
 ): Promise<Metadata> {
   const { slug } = await props.params;
-  const product = getProductFromSlug(slug);
+  const product = await getProductFromSlug(slug);
 
   if (!product) {
     return {
@@ -75,7 +76,7 @@ export async function generateMetadata(
 // --- Página de producto ---
 export default async function ProductPage(props: ProductPageProps) {
   const { slug } = await props.params;
-  const product = getProductFromSlug(slug);
+  const product = await getProductFromSlug(slug);
 
   if (!product) notFound();
 
