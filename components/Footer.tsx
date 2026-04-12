@@ -26,8 +26,8 @@ export default function Footer() {
               Plata 950, oficio y piezas con historia
             </p>
             <p className="max-w-2xl text-sm leading-6 text-slate-600">
-              Joyas de autor hechas a mano en Chile. Piezas unicas, series
-              limitadas y encargos a medida para acompanar historias reales.
+              Joyas de autor hechas a mano en Chile. Piezas únicas, series
+              limitadas y encargos a medida para acompañar historias reales.
             </p>
             <p className="text-xs text-slate-500">
               © {year} Carola Plaza. Todos los derechos reservados.
@@ -37,7 +37,7 @@ export default function Footer() {
 
         <div className="flex flex-col gap-4 lg:items-end">
           <p className="text-sm text-slate-600">
-            Escribeme para ajustes, encargos o regalos de Dia de la Madre.
+            Escríbeme para ajustes, encargos o regalos de Día de la Madre.
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -58,7 +58,7 @@ export default function Footer() {
           </div>
 
           <p className="text-xs text-slate-500">
-            Hecho a mano en Chile · Cada pieza incluye certificado de autenticidad · Envios a todo Chile.
+            Hecho a mano en Chile · Cada pieza incluye certificado de autenticidad · Envíos a todo Chile.
           </p>
         </div>
       </div>

@@ -101,8 +101,8 @@ export default async function CatalogPage({ searchParams }: CatalogPageProps) {
             Encargos y ajustes
           </p>
           <p className="mt-2 text-sm leading-6 text-slate-600">
-            Si buscas otra talla, una version similar o una pieza a medida,
-            escribeme por WhatsApp y lo vemos juntas.
+            Si buscas otra talla, una versión similar o una pieza a medida,
+            escríbeme por WhatsApp y lo vemos juntas.
           </p>
           <a
             href={WHATSAPP_CATALOG_URL}

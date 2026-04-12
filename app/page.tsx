@@ -10,8 +10,8 @@ const WHATSAPP_HOME_URL =
 
 const trustPoints = [
   { icon: "✦", text: "Plata 950 trabajada a mano" },
-  { icon: "◈", text: "Piezas unicas y series limitadas" },
-  { icon: "→", text: "Envios a todo Chile" },
+  { icon: "◈", text: "Piezas únicas y series limitadas" },
+  { icon: "→", text: "Envíos a todo Chile" },
   { icon: "◉", text: "Certificado de autenticidad" },
 ];
 
@@ -40,7 +40,7 @@ const categoryTiles = [
     image: "/joyas/aros-ginko-1.jpeg",
     alt: "Aros de plata y metal trabajado a mano",
     description:
-      "Piezas ligeras o protagonistas, siempre trabajadas a mano para acompanar el rostro con movimiento.",
+      "Piezas ligeras o protagonistas, siempre trabajadas a mano para acompañar el rostro con movimiento.",
     className: "lg:col-span-3",
   },
   {
@@ -90,7 +90,7 @@ function CollectionCard({ product }: { product: Product }) {
       <div className="flex flex-1 flex-col gap-3 px-5 py-5">
         <div className="space-y-1">
           <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-[var(--cp-accent)]">
-            Dia de la Madre
+            Día de la Madre
           </p>
           <h3 className="text-xl font-semibold leading-tight tracking-[-0.03em] text-slate-900">
             {product.nombre}
@@ -209,19 +209,19 @@ export default async function HomePage() {
           <div className="space-y-8">
             <div className="space-y-4">
               <div className="flex flex-wrap items-center gap-2">
-                <p className="cp-kicker">Dia de la Madre · 11 de mayo</p>
+                <p className="cp-kicker">Día de la Madre · 11 de mayo</p>
                 <span className="rounded-full border border-[rgba(176,143,90,0.35)] bg-[rgba(176,143,90,0.08)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--cp-gold)]">
-                  Solo 30 dias
+                  Solo 30 días
                 </span>
               </div>
               <h1 className="max-w-3xl text-4xl font-semibold leading-[0.95] tracking-[-0.045em] text-slate-900 sm:text-5xl lg:text-6xl">
-                Joyas de plata 950 para regalar a mama
+                Joyas de plata 950 para regalar a mamá
               </h1>
               <p className="max-w-2xl text-base leading-7 text-slate-700 sm:text-lg">
-                Piezas unicas y series limitadas trabajadas a pulso en Chile,
+                Piezas únicas y series limitadas trabajadas a pulso en Chile,
                 pensadas para convertirse en ese regalo especial que se queda
-                muchos anos. Collares, anillos e iniciales con alma artesanal
-                para la persona mas importante.
+                muchos años. Collares, anillos e iniciales con alma artesanal
+                para la persona más importante.
               </p>
             </div>
 
@@ -230,7 +230,7 @@ export default async function HomePage() {
                 href="/producto"
                 className="inline-flex items-center rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-slate-800"
               >
-                Ver regalos para mama
+                Ver regalos para mamá
               </Link>
               <Link
                 href="/contacto"
@@ -257,7 +257,7 @@ export default async function HomePage() {
                 Encargos y ajustes
               </p>
               <p className="mt-2 text-sm leading-6 text-slate-600">
-                Si quieres asegurar la tuya o encargar una similar, escribeme
+                Si quieres asegurar la tuya o encargar una similar, escríbeme
                 por WhatsApp y lo vemos juntas con tiempo.
               </p>
               <Link
@@ -274,7 +274,7 @@ export default async function HomePage() {
             <div className="cp-ring relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#e9eef1]">
               <Image
                 src="/joyas/Collar Corazon de  Plata.jpeg"
-                alt="Collar Corazon de Plata 950, regalo Dia de la Madre"
+                alt="Collar Corazón de Plata 950, regalo Día de la Madre"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 460px, 100vw"
@@ -285,11 +285,11 @@ export default async function HomePage() {
                 <div>
                   <p className="cp-kicker text-white/80">Hecho a mano en Chile</p>
                   <p className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-white">
-                    Plata 950, para mama
+                    Plata 950, para mamá
                   </p>
                 </div>
                 <span className="rounded-full border border-white/30 bg-black/15 px-3 py-2 text-xs uppercase tracking-[0.18em] text-white backdrop-blur-sm">
-                  Dia de la Madre
+                  Día de la Madre
                 </span>
               </div>
             </div>
@@ -318,12 +318,12 @@ export default async function HomePage() {
       {diaMadrePieces.length > 0 && (
         <section className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="space-y-4">
-            <p className="cp-kicker">Seleccion Dia de la Madre</p>
+            <p className="cp-kicker">Selección Día de la Madre</p>
             <h2 className="text-3xl font-semibold leading-tight tracking-[-0.04em] text-slate-900 sm:text-4xl">
               Tres piezas pensadas para ella
             </h2>
             <p className="max-w-xl text-base leading-7 text-slate-700">
-              Un collar con corazon grabado, un anillo con sus nombres y un
+              Un collar con corazón grabado, un anillo con sus nombres y un
               colgante con su inicial. Piezas de plata 950 hechas a mano que
               se convierten en recuerdo para siempre.
             </p>
@@ -331,7 +331,7 @@ export default async function HomePage() {
               href="/producto"
               className="inline-flex items-center rounded-full border border-[var(--cp-line)] bg-white/70 px-5 py-3 text-sm font-medium text-[var(--cp-deep)] transition-colors hover:bg-white"
             >
-              Ver catalogo completo
+              Ver catálogo completo
             </Link>
           </div>
 
@@ -349,7 +349,7 @@ export default async function HomePage() {
             <div className="space-y-2">
               <p className="cp-kicker">Joyas destacadas</p>
               <h2 className="text-3xl font-semibold tracking-[-0.04em] text-slate-900 sm:text-4xl">
-                Otras piezas que sostienen la coleccion
+                Otras piezas que sostienen la colección
               </h2>
             </div>
 
@@ -357,7 +357,7 @@ export default async function HomePage() {
               href="/producto"
               className="text-sm font-medium text-[var(--cp-deep)] transition-colors hover:text-slate-900"
             >
-              Ver catalogo completo
+              Ver catálogo completo
             </Link>
           </div>
 
@@ -371,9 +371,9 @@ export default async function HomePage() {
 
       <section className="space-y-6">
         <div className="space-y-2">
-          <p className="cp-kicker">Explora por categoria</p>
+          <p className="cp-kicker">Explora por categoría</p>
           <h2 className="text-3xl font-semibold tracking-[-0.04em] text-slate-900 sm:text-4xl">
-            Un catalogo con distintas maneras de llevar la plata
+            Un catálogo con distintas maneras de llevar la plata
           </h2>
         </div>
 
@@ -389,18 +389,18 @@ export default async function HomePage() {
           <div className="space-y-4">
             <p className="cp-kicker">Proceso a medida</p>
             <h2 className="text-3xl font-semibold leading-tight tracking-[-0.04em] text-slate-900 sm:text-4xl">
-              Como encargar tu propia pieza
+              Cómo encargar tu propia pieza
             </h2>
             <p className="max-w-xl text-base leading-7 text-slate-700">
               Si tienes una idea en mente o quieres transformar un recuerdo en
-              joya, podemos disenarla juntas a ritmo humano: conversar, probar,
+              joya, podemos diseñarla juntas a ritmo humano: conversar, probar,
               ajustar y construir.
             </p>
             <a
               href="https://wa.me/56996397495?text=Hola%20Carolina,%20me%20gustaria%20encargar%20una%20pieza%20de%20plata%20950%20a%20medida.%20%C2%BFPodemos%20conversar%20los%20detalles?"
               className="inline-flex items-center rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-slate-800"
             >
-              Quiero encargar la mia
+              Quiero encargar la mía
             </a>
           </div>
 
@@ -410,19 +410,19 @@ export default async function HomePage() {
                 number: "01",
                 title: "Conversemos tu idea",
                 copy:
-                  "Me escribes por WhatsApp y me cuentas a quien va dirigida la pieza o que quieres representar: un viaje, un comienzo o un recuerdo.",
+                  "Me escribes por WhatsApp y me cuentas a quién va dirigida la pieza o qué quieres representar: un viaje, un comienzo o un recuerdo.",
               },
               {
                 number: "02",
                 title: "Definimos forma y materiales",
                 copy:
-                  "Revisamos tamano, textura, piedras y referencias hasta llegar a un diseno que se sienta realmente tuyo.",
+                  "Revisamos tamaño, textura, piedras y referencias hasta llegar a un diseño que se sienta realmente tuyo.",
               },
               {
                 number: "03",
                 title: "La construyo en el taller",
                 copy:
-                  "Trabajo la pieza a mano en plata 950 y te la envio con certificado de autenticidad a cualquier lugar de Chile.",
+                  "Trabajo la pieza a mano en plata 950 y te la envío con certificado de autenticidad a cualquier lugar de Chile.",
               },
             ].map((step) => (
               <div
@@ -484,20 +484,20 @@ export default async function HomePage() {
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-700">
             En el taller cada pieza se construye a ritmo humano: calentar,
-            martillar, limar y pulir. La plata guarda marcas minimas que no se
-            esconden; son parte del oficio. Trabajo en pequenas series y piezas
-            unicas, pensadas para acompanar historias reales.
+            martillar, limar y pulir. La plata guarda marcas mínimas que no se
+            esconden; son parte del oficio. Trabajo en pequeñas series y piezas
+            únicas, pensadas para acompañar historias reales.
           </p>
         </div>
 
         <div className="cp-surface rounded-[2rem] px-6 py-7 sm:px-8">
-          <p className="cp-kicker">Guias utiles</p>
+          <p className="cp-kicker">Guías útiles</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-900 sm:text-4xl">
-            Antes de elegir, puedes mirar estas guias
+            Antes de elegir, puedes mirar estas guías
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-7 text-slate-700">
-            Si tienes dudas con tu talla, el cuidado de la plata 950 o que tipo
-            de pieza regalar, estas paginas te orientan antes de escribirme.
+            Si tienes dudas con tu talla, el cuidado de la plata 950 o qué tipo
+            de pieza regalar, estas páginas te orientan antes de escribirme.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">

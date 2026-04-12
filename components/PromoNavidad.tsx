@@ -42,13 +42,13 @@ export function PromoNavidad() {
             )}
 
             <div className="space-y-1.5">
-              <p className="cp-kicker text-[var(--cp-gold)]">Dia de la Madre · 11 de mayo</p>
+              <p className="cp-kicker text-[var(--cp-gold)]">Día de la Madre · 11 de mayo</p>
               <p className="text-base font-semibold leading-snug tracking-[-0.02em] text-slate-900 sm:text-lg">
-                Joyas de plata 950 para regalar a mama
+                Joyas de plata 950 para regalar a mamá
               </p>
               <p className="max-w-xl text-sm leading-6 text-slate-600">
-                Piezas unicas hechas a mano en Chile. Collares, anillos e iniciales
-                con certificado de autenticidad. Envios a todo Chile.
+                Piezas únicas hechas a mano en Chile. Collares, anillos e iniciales
+                con certificado de autenticidad. Envíos a todo Chile.
               </p>
             </div>
           </div>
@@ -58,7 +58,7 @@ export function PromoNavidad() {
               href="/producto"
               className="inline-flex items-center rounded-full bg-slate-900 px-5 py-2.5 text-xs font-medium text-white transition-colors hover:bg-slate-800"
             >
-              Ver regalos para mama
+              Ver regalos para mamá
             </Link>
             <Link
               href="/contacto"
