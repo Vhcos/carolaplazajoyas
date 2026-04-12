@@ -201,20 +201,20 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-16 pb-10 sm:space-y-20">
-      <section className="cp-surface relative overflow-hidden rounded-[2.25rem] px-6 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+      <section className="cp-surface cp-reveal relative overflow-hidden rounded-[2.25rem] px-6 py-9 sm:px-8 sm:py-11 lg:px-12 lg:py-14">
         <div className="absolute -left-24 top-0 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(122,151,167,0.22),transparent_72%)]" />
         <div className="absolute -right-16 bottom-0 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(176,143,90,0.18),transparent_72%)]" />
 
         <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.95fr)] lg:items-center">
           <div className="space-y-8">
-            <div className="space-y-4">
+            <div className="space-y-5">
               <div className="flex flex-wrap items-center gap-2">
                 <p className="cp-kicker">Día de la Madre · 11 de mayo</p>
                 <span className="rounded-full border border-[rgba(176,143,90,0.35)] bg-[rgba(176,143,90,0.08)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--cp-gold)]">
                   Solo 30 días
                 </span>
               </div>
-              <h1 className="max-w-3xl text-4xl font-semibold leading-[0.95] tracking-[-0.045em] text-slate-900 sm:text-5xl lg:text-6xl">
+              <h1 className="max-w-3xl text-4xl font-semibold leading-[1.05] text-slate-900 sm:text-5xl lg:text-6xl">
                 Joyas de plata 950 para regalar a mamá
               </h1>
               <p className="max-w-2xl text-base leading-7 text-slate-700 sm:text-lg">
@@ -228,13 +228,13 @@ export default async function HomePage() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/producto"
-                className="inline-flex items-center rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-slate-800"
+                className="cp-btn-fill inline-flex items-center rounded-full px-6 py-3 text-sm font-medium"
               >
                 Ver regalos para mamá
               </Link>
               <Link
                 href="/contacto"
-                className="inline-flex items-center rounded-full border border-[var(--cp-line)] bg-white/70 px-6 py-3 text-sm font-medium text-[var(--cp-deep)] transition-colors hover:bg-white"
+                className="inline-flex items-center rounded-full border border-[var(--cp-line)] bg-white/78 px-6 py-3 text-sm font-medium text-[var(--cp-deep)] transition-colors hover:bg-white"
               >
                 Encargar una pieza
               </Link>
@@ -263,7 +263,7 @@ export default async function HomePage() {
               <Link
                 href={WHATSAPP_HOME_URL}
                 target="_blank"
-                className="mt-4 inline-flex items-center rounded-full bg-slate-900 px-4 py-2.5 text-xs font-medium text-white transition-colors hover:bg-slate-800"
+                className="cp-btn-fill mt-4 inline-flex items-center rounded-full px-4 py-2.5 text-xs font-medium"
               >
                 Escribirme por WhatsApp
               </Link>
@@ -282,13 +282,13 @@ export default async function HomePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/42 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-4 p-5 sm:p-6">
-                <div>
+                <div className="rounded-2xl border border-white/20 bg-[rgba(8,8,8,0.18)] px-4 py-3 backdrop-blur-[10px]">
                   <p className="cp-kicker text-white/80">Hecho a mano en Chile</p>
                   <p className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-white">
                     Plata 950, para mamá
                   </p>
                 </div>
-                <span className="rounded-full border border-white/30 bg-black/15 px-3 py-2 text-xs uppercase tracking-[0.18em] text-white backdrop-blur-sm">
+                <span className="rounded-full border border-white/30 bg-[rgba(8,8,8,0.18)] px-3 py-2 text-xs uppercase tracking-[0.18em] text-white backdrop-blur-[10px]">
                   Día de la Madre
                 </span>
               </div>
@@ -316,7 +316,7 @@ export default async function HomePage() {
       </section>
 
       {diaMadrePieces.length > 0 && (
-        <section className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <section className="cp-reveal grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="space-y-4">
             <p className="cp-kicker">Selección Día de la Madre</p>
             <h2 className="text-3xl font-semibold leading-tight tracking-[-0.04em] text-slate-900 sm:text-4xl">
@@ -344,7 +344,7 @@ export default async function HomePage() {
       )}
 
       {destacados.length > 0 && (
-        <section className="space-y-6">
+        <section className="cp-reveal space-y-6">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div className="space-y-2">
               <p className="cp-kicker">Joyas destacadas</p>
@@ -369,7 +369,7 @@ export default async function HomePage() {
         </section>
       )}
 
-      <section className="space-y-6">
+        <section className="cp-reveal space-y-6">
         <div className="space-y-2">
           <p className="cp-kicker">Explora por categoría</p>
           <h2 className="text-3xl font-semibold tracking-[-0.04em] text-slate-900 sm:text-4xl">
@@ -384,7 +384,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="cp-surface rounded-[2.2rem] px-6 py-8 sm:px-8 sm:py-10 lg:px-10">
+      <section className="cp-surface cp-reveal rounded-[2.2rem] px-6 py-8 sm:px-8 sm:py-10 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div className="space-y-4">
             <p className="cp-kicker">Proceso a medida</p>
@@ -398,7 +398,7 @@ export default async function HomePage() {
             </p>
             <a
               href="https://wa.me/56996397495?text=Hola%20Carolina,%20me%20gustaria%20encargar%20una%20pieza%20de%20plata%20950%20a%20medida.%20%C2%BFPodemos%20conversar%20los%20detalles?"
-              className="inline-flex items-center rounded-full bg-slate-900 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-slate-800"
+              className="cp-btn-fill inline-flex items-center rounded-full px-6 py-3 text-sm font-medium"
             >
               Quiero encargar la mía
             </a>
@@ -476,7 +476,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+      <section className="cp-reveal grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="cp-surface rounded-[2rem] px-6 py-7 sm:px-8">
           <p className="cp-kicker">Taller</p>
           <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-900 sm:text-4xl">
@@ -503,7 +503,7 @@ export default async function HomePage() {
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               href="/guia-anillos"
-              className="inline-flex items-center rounded-full bg-slate-900 px-4 py-2.5 text-xs font-medium text-white transition-colors hover:bg-slate-800"
+              className="cp-btn-fill inline-flex items-center rounded-full px-4 py-2.5 text-xs font-medium"
             >
               Como medir tu dedo para anillos
             </Link>

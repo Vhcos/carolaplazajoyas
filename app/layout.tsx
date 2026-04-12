@@ -1,15 +1,22 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Montserrat, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { PromoNavidad } from "@/components/PromoNavidad";
 import AnnouncementBar from "@/components/AnnouncementBar";
 
-const inter = Inter({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-montserrat",
+  weight: ["300", "400", "500", "600"],
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  weight: ["500", "600", "700"],
 });
 
 export const SITE_URL = "https://www.carolaplazajoyas.cl";
@@ -73,7 +80,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   };
 
   return (
-    <html lang="es" className={`${inter.variable} scroll-smooth`}>
+    <html lang="es" className={`${montserrat.variable} ${playfair.variable} scroll-smooth`}>
       <head>
         <script
           type="application/ld+json"
