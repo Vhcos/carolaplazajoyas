@@ -10,6 +10,7 @@ const navItems = [
   { href: "/producto", label: "Catalogo" },
   { href: "/guias", label: "Guias" },
   { href: "/contacto", label: "Contacto" },
+  { href: "/admin", label: "Admin" },
 ];
 
 export default function Navbar() {

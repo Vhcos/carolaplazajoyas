@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 function getDaysUntilMothersDay(): number {
   const now = new Date();
@@ -10,13 +9,8 @@ function getDaysUntilMothersDay(): number {
 }
 
 export function PromoNavidad() {
-  const [days, setDays] = useState<number | null>(null);
-
-  useEffect(() => {
-    setDays(getDaysUntilMothersDay());
-  }, []);
-
-  const isOver = days !== null && days === 0;
+  const days = getDaysUntilMothersDay();
+  const isOver = days === 0;
 
   if (isOver) return null;
 
@@ -30,7 +24,7 @@ export function PromoNavidad() {
         <div className="relative flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex items-start gap-4">
             {/* Cuenta regresiva */}
-            {days !== null && days > 0 && (
+            {days > 0 && (
               <div className="flex-shrink-0 rounded-2xl border border-[rgba(176,143,90,0.22)] bg-white/70 px-4 py-3 text-center shadow-sm">
                 <p className="text-2xl font-semibold leading-none tracking-[-0.04em] text-[var(--cp-gold)]">
                   {days}

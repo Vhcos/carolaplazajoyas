@@ -62,10 +62,16 @@ function Dashboard() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
+  async function fetchProducts(): Promise<Product[]> {
+    const res = await fetch("/api/admin/products");
+    if (!res.ok) return [];
+    return (await res.json()) as Product[];
+  }
+
   async function loadProducts() {
     setLoading(true);
-    const res = await fetch("/api/admin/products");
-    if (res.ok) setProducts(await res.json());
+    const items = await fetchProducts();
+    setProducts(items);
     setLoading(false);
   }
 
@@ -84,7 +90,23 @@ function Dashboard() {
     window.location.reload();
   }
 
-  useEffect(() => { loadProducts(); }, []);
+  useEffect(() => {
+    let cancelled = false;
+
+    fetchProducts()
+      .then((items) => {
+        if (cancelled) return;
+        setProducts(items);
+      })
+      .finally(() => {
+        if (cancelled) return;
+        setLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#f5f6f8] px-4 py-8">
