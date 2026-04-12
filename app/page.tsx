@@ -225,7 +225,7 @@ export default async function HomePage() {
                 <h1 className="max-w-3xl text-4xl font-semibold leading-[1.05] text-slate-900 sm:text-5xl lg:text-6xl">
                   Plata 950 hecha a mano en Chile
                 </h1>
-                <p className="max-w-2xl text-base leading-7 text-slate-700 sm:text-lg">
+                <p className="max-w-2xl text-base font-medium leading-7 text-slate-900 sm:text-lg">
                   En Carola Plaza Joyas cada pieza nace en el taller, a pulso y en series limitadas. Trabajo la plata 950 con piedras naturales, textura y proporción cuidada para que la joya acompañe tu historia por años.
                 </p>
               </div>
