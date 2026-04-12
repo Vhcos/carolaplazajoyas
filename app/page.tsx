@@ -201,6 +201,21 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-16 pb-10 sm:space-y-20">
+      <section className="cp-reveal space-y-6">
+        <div className="space-y-2">
+          <p className="cp-kicker">Explora por categoría</p>
+          <h2 className="text-3xl font-semibold tracking-[-0.04em] text-slate-900 sm:text-4xl">
+            Un catálogo con distintas maneras de llevar la plata
+          </h2>
+        </div>
+
+        <div className="grid gap-5 lg:grid-cols-12">
+          {categoryTiles.map((tile) => (
+            <CategoryTile key={tile.title} {...tile} />
+          ))}
+        </div>
+      </section>
+
       <section className="cp-surface cp-reveal relative overflow-hidden rounded-[2.25rem] px-6 py-9 sm:px-8 sm:py-11 lg:px-12 lg:py-14">
         <div className="absolute -left-24 top-0 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(122,151,167,0.22),transparent_72%)]" />
         <div className="absolute -right-16 bottom-0 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(176,143,90,0.18),transparent_72%)]" />
@@ -379,21 +394,6 @@ export default async function HomePage() {
           </div>
         </section>
       )}
-
-        <section className="cp-reveal space-y-6">
-        <div className="space-y-2">
-          <p className="cp-kicker">Explora por categoría</p>
-          <h2 className="text-3xl font-semibold tracking-[-0.04em] text-slate-900 sm:text-4xl">
-            Un catálogo con distintas maneras de llevar la plata
-          </h2>
-        </div>
-
-        <div className="grid gap-5 lg:grid-cols-12">
-          {categoryTiles.map((tile) => (
-            <CategoryTile key={tile.title} {...tile} />
-          ))}
-        </div>
-      </section>
 
       <section className="cp-surface cp-reveal rounded-[2.2rem] px-6 py-8 sm:px-8 sm:py-10 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
