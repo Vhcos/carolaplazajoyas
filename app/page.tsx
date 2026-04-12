@@ -74,28 +74,6 @@ function getDaysUntilMothersDay(): number {
   return Math.max(0, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
 }
 
-function FloralVineCorner({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 120 120"
-      aria-hidden
-      className={`pointer-events-none absolute ${className}`}
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M8 112C17 84 34 58 62 37C78 25 97 14 112 10" strokeWidth="1.8" />
-      <path d="M26 108C30 89 40 74 55 61" strokeWidth="1.6" />
-      <path d="M52 60C57 52 65 49 72 52C77 55 79 63 75 69C70 77 60 78 52 72" strokeWidth="1.6" />
-      <path d="M62 37C64 29 71 24 79 24C84 24 88 28 88 33C88 41 80 47 72 46" strokeWidth="1.6" />
-      <circle cx="80" cy="24" r="4.2" fill="currentColor" fillOpacity="0.18" strokeWidth="1.2" />
-      <circle cx="60" cy="54" r="3.6" fill="currentColor" fillOpacity="0.18" strokeWidth="1.2" />
-      <circle cx="42" cy="78" r="3.2" fill="currentColor" fillOpacity="0.18" strokeWidth="1.2" />
-    </svg>
-  );
-}
-
 function CollectionCard({ product }: { product: Product }) {
   return (
     <Link
@@ -240,10 +218,46 @@ export default async function HomePage() {
         <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.95fr)] lg:items-center">
           <div className="space-y-8">
             <div className="cp-mothersday-card rounded-[2rem] border border-[rgba(174,81,117,0.2)] px-5 py-6 sm:px-6 sm:py-7">
-              <FloralVineCorner className="left-1 top-1 h-20 w-20 text-rose-500/60 sm:h-24 sm:w-24" />
-              <FloralVineCorner className="right-1 top-1 h-20 w-20 -scale-x-100 text-rose-500/60 sm:h-24 sm:w-24" />
-              <FloralVineCorner className="left-1 bottom-1 h-20 w-20 -scale-y-100 text-rose-400/55 sm:h-24 sm:w-24" />
-              <FloralVineCorner className="right-1 bottom-1 h-20 w-20 -scale-x-100 -scale-y-100 text-rose-400/55 sm:h-24 sm:w-24" />
+              <div className="pointer-events-none absolute -left-3 -top-3 h-24 w-28 overflow-hidden rounded-br-[2.25rem] sm:-left-5 sm:-top-5 sm:h-32 sm:w-40">
+                <Image
+                  src="/decor/mothersday-flowers-a.jpg"
+                  alt=""
+                  fill
+                  aria-hidden
+                  className="object-cover object-center opacity-85 saturate-125"
+                  sizes="160px"
+                />
+              </div>
+              <div className="pointer-events-none absolute -right-3 -top-3 h-24 w-28 overflow-hidden rounded-bl-[2.25rem] sm:-right-5 sm:-top-5 sm:h-32 sm:w-40">
+                <Image
+                  src="/decor/mothersday-flowers-b.jpg"
+                  alt=""
+                  fill
+                  aria-hidden
+                  className="object-cover object-center opacity-85 saturate-125"
+                  sizes="160px"
+                />
+              </div>
+              <div className="pointer-events-none absolute -bottom-3 -left-3 h-24 w-28 overflow-hidden rounded-tr-[2.25rem] sm:-bottom-5 sm:-left-5 sm:h-32 sm:w-40">
+                <Image
+                  src="/decor/mothersday-flowers-b.jpg"
+                  alt=""
+                  fill
+                  aria-hidden
+                  className="object-cover object-center opacity-78 saturate-120"
+                  sizes="160px"
+                />
+              </div>
+              <div className="pointer-events-none absolute -bottom-3 -right-3 h-24 w-28 overflow-hidden rounded-tl-[2.25rem] sm:-bottom-5 sm:-right-5 sm:h-32 sm:w-40">
+                <Image
+                  src="/decor/mothersday-flowers-a.jpg"
+                  alt=""
+                  fill
+                  aria-hidden
+                  className="object-cover object-center opacity-78 saturate-120"
+                  sizes="160px"
+                />
+              </div>
 
               <div className="relative z-10 space-y-5">
                 <div className="flex flex-wrap items-center gap-2">

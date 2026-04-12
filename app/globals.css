@@ -136,8 +136,7 @@ body > div:first-child {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(174, 81, 117, 0.13) 1.2px, transparent 1.2px);
-  background-size: 18px 18px;
-  opacity: 0.35;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
+  opacity: 0.55;
   pointer-events: none;
 }
