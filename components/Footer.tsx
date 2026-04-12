@@ -37,16 +37,16 @@ export default function Footer() {
 
         <div className="flex flex-col gap-4 lg:items-end">
           <p className="text-sm text-slate-600">
-            Escribeme para ajustes, encargos o piezas a medida.
+            Escribeme para ajustes, encargos o regalos de Dia de la Madre.
           </p>
 
           <div className="flex flex-wrap gap-3">
             <Link
-              href="https://wa.me/56996397495"
+              href="https://wa.me/56996397495?text=Hola%20Carola%2C%20busco%20un%20regalo%20para%20el%20D%C3%ADa%20de%20la%20Madre.%20%C2%BFMe%20puedes%20orientar%3F"
               target="_blank"
-              className="inline-flex items-center rounded-full bg-slate-900 px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-slate-800"
+              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-slate-800"
             >
-              WhatsApp
+              Escribir por WhatsApp
             </Link>
             <Link
               href="https://www.instagram.com/carolaplazajoyas/"
@@ -58,8 +58,7 @@ export default function Footer() {
           </div>
 
           <p className="text-xs text-slate-500">
-            Hecho a mano en Chile · Cada pieza incluye certificado de
-            autenticidad.
+            Hecho a mano en Chile · Cada pieza incluye certificado de autenticidad · Envios a todo Chile.
           </p>
         </div>
       </div>

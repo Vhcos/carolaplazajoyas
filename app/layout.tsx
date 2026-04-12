@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { PromoNavidad } from "@/components/PromoNavidad";
+import AnnouncementBar from "@/components/AnnouncementBar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -80,6 +81,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <body className="flex min-h-screen flex-col text-slate-900 antialiased">
+        <AnnouncementBar />
         <Navbar />
         <main className="flex-1">
           <div className="mx-auto max-w-[1180px] px-4 py-6 sm:px-6 lg:px-8">

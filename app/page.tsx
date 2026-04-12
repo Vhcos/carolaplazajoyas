@@ -8,9 +8,10 @@ const WHATSAPP_HOME_URL =
   "https://wa.me/56996397495?text=Hola%20Carola,%20quiero%20asegurar%20una%20pieza%20o%20encargar%20una%20similar.%20%C2%BFLo%20vemos%20por%20aqu%C3%AD%3F";
 
 const trustPoints = [
-  "Plata 950 trabajada a mano",
-  "Piezas unicas y series limitadas",
-  "Envios a todo Chile",
+  { icon: "✦", text: "Plata 950 trabajada a mano" },
+  { icon: "◈", text: "Piezas unicas y series limitadas" },
+  { icon: "→", text: "Envios a todo Chile" },
+  { icon: "◉", text: "Certificado de autenticidad" },
 ];
 
 const categoryTiles = [
@@ -67,7 +68,7 @@ function CollectionCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/producto/${product.id}`}
-      className="group cp-surface flex h-full flex-col overflow-hidden rounded-[1.75rem] transition-transform duration-300 hover:-translate-y-1"
+      className="group cp-surface flex h-full flex-col overflow-hidden rounded-[1.75rem] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_32px_72px_rgba(36,55,70,0.13)]"
     >
       <div className="relative aspect-[4/5] overflow-hidden bg-[#edf0f2]">
         <Image
@@ -77,6 +78,12 @@ function CollectionCard({ product }: { product: Product }) {
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
         />
+        {/* Badge */}
+        <div className="absolute left-3 top-3">
+          <span className="rounded-full border border-[rgba(176,143,90,0.35)] bg-white/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--cp-gold)] backdrop-blur-sm">
+            Regalo ideal
+          </span>
+        </div>
       </div>
 
       <div className="flex flex-1 flex-col gap-3 px-5 py-5">
@@ -84,19 +91,19 @@ function CollectionCard({ product }: { product: Product }) {
           <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-[var(--cp-accent)]">
             Dia de la Madre
           </p>
-          <h3 className="text-2xl font-semibold leading-tight tracking-[-0.03em] text-slate-900">
+          <h3 className="text-xl font-semibold leading-tight tracking-[-0.03em] text-slate-900">
             {product.nombre}
           </h3>
         </div>
 
-        <p className="text-sm leading-6 text-slate-600">{product.descripcionCorta}</p>
+        <p className="text-sm leading-6 text-slate-500 line-clamp-2">{product.descripcionCorta}</p>
 
-        <div className="mt-auto flex items-center justify-between gap-3 pt-2">
-          <span className="text-base font-semibold text-slate-900">
+        <div className="mt-auto flex items-center justify-between gap-3 pt-2 border-t border-[var(--cp-line)]">
+          <span className="text-lg font-semibold tracking-[-0.02em] text-slate-900">
             {formatCLP(product.precio)}
           </span>
-          <span className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--cp-deep)]">
-            Ver pieza
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-900 px-4 py-2 text-xs font-medium text-white transition-colors group-hover:bg-slate-700">
+            Ver pieza →
           </span>
         </div>
       </div>
@@ -198,7 +205,12 @@ export default function HomePage() {
         <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.95fr)] lg:items-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <p className="cp-kicker">Dia de la Madre · 11 de mayo</p>
+              <div className="flex flex-wrap items-center gap-2">
+                <p className="cp-kicker">Dia de la Madre · 11 de mayo</p>
+                <span className="rounded-full border border-[rgba(176,143,90,0.35)] bg-[rgba(176,143,90,0.08)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--cp-gold)]">
+                  Solo 30 dias
+                </span>
+              </div>
               <h1 className="max-w-3xl text-4xl font-semibold leading-[0.95] tracking-[-0.045em] text-slate-900 sm:text-5xl lg:text-6xl">
                 Joyas de plata 950 para regalar a mama
               </h1>
@@ -225,13 +237,14 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-3">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {trustPoints.map((point) => (
                 <div
-                  key={point}
-                  className="rounded-[1.25rem] border border-white/60 bg-white/50 px-4 py-4 text-sm text-slate-700"
+                  key={point.text}
+                  className="flex items-center gap-3 rounded-[1.25rem] border border-white/60 bg-white/50 px-4 py-3.5"
                 >
-                  {point}
+                  <span className="text-base text-[var(--cp-gold)]">{point.icon}</span>
+                  <span className="text-sm text-slate-700">{point.text}</span>
                 </div>
               ))}
             </div>
