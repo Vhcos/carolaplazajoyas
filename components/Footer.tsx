@@ -9,12 +9,12 @@ export default function Footer() {
     <footer className="mt-20 border-t border-[var(--cp-line)] bg-[rgba(255,255,255,0.88)] backdrop-blur">
       <div className="mx-auto grid max-w-[1180px] gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_auto] lg:px-8">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-          <div className="relative h-28 w-28 overflow-hidden rounded-2xl border border-white/70 bg-white/70 shadow-sm sm:h-32 sm:w-32">
+          <div className="relative h-32 w-32 overflow-hidden rounded-2xl border border-white/70 bg-white/70 shadow-sm sm:h-36 sm:w-36">
             <Image
               src="/logo-carola-plaza.svg"
               alt="Carola Plaza Joyas"
               fill
-              className="object-contain scale-[1.22]"
+              className="object-contain scale-[1.35]"
             />
           </div>
 

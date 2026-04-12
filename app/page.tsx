@@ -74,6 +74,28 @@ function getDaysUntilMothersDay(): number {
   return Math.max(0, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
 }
 
+function FloralVineCorner({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 120 120"
+      aria-hidden
+      className={`pointer-events-none absolute ${className}`}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M8 112C17 84 34 58 62 37C78 25 97 14 112 10" strokeWidth="1.8" />
+      <path d="M26 108C30 89 40 74 55 61" strokeWidth="1.6" />
+      <path d="M52 60C57 52 65 49 72 52C77 55 79 63 75 69C70 77 60 78 52 72" strokeWidth="1.6" />
+      <path d="M62 37C64 29 71 24 79 24C84 24 88 28 88 33C88 41 80 47 72 46" strokeWidth="1.6" />
+      <circle cx="80" cy="24" r="4.2" fill="currentColor" fillOpacity="0.18" strokeWidth="1.2" />
+      <circle cx="60" cy="54" r="3.6" fill="currentColor" fillOpacity="0.18" strokeWidth="1.2" />
+      <circle cx="42" cy="78" r="3.2" fill="currentColor" fillOpacity="0.18" strokeWidth="1.2" />
+    </svg>
+  );
+}
+
 function CollectionCard({ product }: { product: Product }) {
   return (
     <Link
@@ -218,23 +240,10 @@ export default async function HomePage() {
         <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(340px,0.95fr)] lg:items-center">
           <div className="space-y-8">
             <div className="cp-mothersday-card rounded-[2rem] border border-[rgba(174,81,117,0.2)] px-5 py-6 sm:px-6 sm:py-7">
-              <div className="pointer-events-none absolute right-3 top-3 text-rose-300/70">
-                <svg viewBox="0 0 24 24" className="h-9 w-9" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 4c1.5 2.2 1.5 4.8 0 7-1.5-2.2-1.5-4.8 0-7Z" />
-                  <path d="M20 12c-2.2 1.5-4.8 1.5-7 0 2.2-1.5 4.8-1.5 7 0Z" />
-                  <path d="M12 20c-1.5-2.2-1.5-4.8 0-7 1.5 2.2 1.5 4.8 0 7Z" />
-                  <path d="M4 12c2.2-1.5 4.8-1.5 7 0-2.2 1.5-4.8 1.5-7 0Z" />
-                  <circle cx="12" cy="12" r="1.5" />
-                </svg>
-              </div>
-
-              <div className="pointer-events-none absolute bottom-2 left-3 text-rose-200/65">
-                <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.4">
-                  <path d="M12 3v18" />
-                  <path d="M12 8c2.5-2.5 5.2-2.5 7.5 0-2.3 2.5-5 2.5-7.5 0Z" />
-                  <path d="M12 12c-2.5-2.5-5.2-2.5-7.5 0 2.3 2.5 5 2.5 7.5 0Z" />
-                </svg>
-              </div>
+              <FloralVineCorner className="left-1 top-1 h-20 w-20 text-rose-500/60 sm:h-24 sm:w-24" />
+              <FloralVineCorner className="right-1 top-1 h-20 w-20 -scale-x-100 text-rose-500/60 sm:h-24 sm:w-24" />
+              <FloralVineCorner className="left-1 bottom-1 h-20 w-20 -scale-y-100 text-rose-400/55 sm:h-24 sm:w-24" />
+              <FloralVineCorner className="right-1 bottom-1 h-20 w-20 -scale-x-100 -scale-y-100 text-rose-400/55 sm:h-24 sm:w-24" />
 
               <div className="relative z-10 space-y-5">
                 <div className="flex flex-wrap items-center gap-2">
