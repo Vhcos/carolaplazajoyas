@@ -65,6 +65,15 @@ const categoryTiles = [
 
 const formatCLP = (amount: number) => `$${amount.toLocaleString("es-CL")}`;
 
+function getDaysUntilMothersDay(): number {
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const currentYearTarget = new Date(now.getFullYear(), 4, 11);
+  const target = today > currentYearTarget ? new Date(now.getFullYear() + 1, 4, 11) : currentYearTarget;
+  const diffMs = target.getTime() - today.getTime();
+  return Math.max(0, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
+}
+
 function CollectionCard({ product }: { product: Product }) {
   return (
     <Link
@@ -190,6 +199,7 @@ function CategoryTile({
 
 export default async function HomePage() {
   const PRODUCTS = await getAllProducts();
+  const daysUntilMothersDay = getDaysUntilMothersDay();
 
   const diaMadrePieces = DIA_MADRE_IDS.map((id) => PRODUCTS.find((product) => product.id === id)).filter(
     (product): product is Product => Boolean(product)
@@ -211,7 +221,9 @@ export default async function HomePage() {
               <div className="flex flex-wrap items-center gap-2">
                 <p className="cp-kicker">Día de la Madre · 11 de mayo</p>
                 <span className="rounded-full border border-[rgba(176,143,90,0.35)] bg-[rgba(176,143,90,0.08)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--cp-gold)]">
-                  Solo 30 días
+                  {daysUntilMothersDay === 0
+                    ? "Hoy"
+                    : `${daysUntilMothersDay} ${daysUntilMothersDay === 1 ? "día" : "días"}`}
                 </span>
               </div>
               <h1 className="max-w-3xl text-4xl font-semibold leading-[1.05] text-slate-900 sm:text-5xl lg:text-6xl">

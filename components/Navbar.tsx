@@ -37,12 +37,12 @@ export default function Navbar() {
     >
       <div className="mx-auto flex max-w-[1180px] flex-col gap-4 px-4 py-3 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
         <Link href="/" className="flex items-center gap-3 sm:gap-4">
-          <div className="relative h-12 w-32 overflow-hidden rounded-2xl border border-white/70 bg-white/70 shadow-sm sm:h-14 sm:w-40 lg:h-16 lg:w-48">
+          <div className="relative h-14 w-40 overflow-hidden rounded-2xl border border-white/70 bg-white/70 shadow-sm sm:h-16 sm:w-48 lg:h-20 lg:w-60">
             <Image
               src="/logo-carola-plaza.svg"
               alt="Carola Plaza Joyas"
               fill
-              className="object-contain p-2"
+              className="object-contain"
               priority
             />
           </div>
