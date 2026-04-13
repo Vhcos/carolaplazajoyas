@@ -3,7 +3,7 @@ export const runtime = "nodejs";
 
 import { NextResponse } from "next/server";
 import { webpayCreateTransaction } from "@/lib/webpay";
-import { PRODUCTS } from "@/data/products";
+import { getAllProducts } from "@/lib/products-store";
 import { SITE_URL } from "@/lib/config";
 import { getPromoPrice } from "@/lib/promo";
 
@@ -32,7 +32,8 @@ export async function POST(req: Request) {
       );
     }
 
-    const product = PRODUCTS.find((p) => p.id === productId);
+    const products = await getAllProducts();
+    const product = products.find((p) => p.id === productId);
 
     if (!product) {
       return NextResponse.json(
@@ -55,7 +56,7 @@ export async function POST(req: Request) {
     const amount = getPromoPrice(baseAmount);
 
     const WEBPAY_RETURN_URL =
-      process.env.WEBPAY_RETURN_URL || `${SITE_URL}/webpay/resultado`;
+      process.env.WEBPAY_RETURN_URL || `${SITE_URL}/api/webpay/commit`;
 
     const shortSlug = product.id.slice(0, 10); // recorto el id para que no se pase
     const timePart = Date.now().toString().slice(-6); // últimos 6 dígitos del timestamp
