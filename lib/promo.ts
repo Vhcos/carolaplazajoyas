@@ -12,7 +12,7 @@ const DISCOUNT_PERCENT = 10;
 function getPromoWindow(baseDate = new Date()) {
   const year = baseDate.getFullYear();
   const currentYearStart = new Date(year, 4, 4, 0, 0, 0);
-  const currentYearEnd = new Date(year, 4, 11, 23, 59, 59);
+  const currentYearEnd = new Date(year, 4, 10, 23, 59, 59);
 
   if (baseDate <= currentYearEnd) {
     return { start: currentYearStart, end: currentYearEnd };
@@ -20,7 +20,7 @@ function getPromoWindow(baseDate = new Date()) {
 
   return {
     start: new Date(year + 1, 4, 4, 0, 0, 0),
-    end: new Date(year + 1, 4, 11, 23, 59, 59),
+    end: new Date(year + 1, 4, 10, 23, 59, 59),
   };
 }
 
