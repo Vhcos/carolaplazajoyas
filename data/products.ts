@@ -1037,22 +1037,6 @@ vendido: false,
   categoria: "anillos",
   vendido: false,
 },
-{
-  id: "anillo-prueba-webpay-50",
-  nombre: "Anillo Prueba Webpay",
-  precio: 50,
-  descripcionCorta:
-    "Anillo de prueba para validar el flujo de pago con Webpay.",
-  descripcionLarga:
-    "Producto de prueba creado para testear el proceso completo de compra y confirmación con Webpay. No corresponde a una pieza comercial.",
-  fotos: [
-    "/joyas/anillo-duo-luz-1.jpeg"
-  ],
-  destacado: false,
-  tipo: "unica",
-  categoria: "anillos",
-  vendido: false,
-},
 
 
 ];
