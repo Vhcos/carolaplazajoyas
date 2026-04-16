@@ -3,6 +3,7 @@ export const runtime = "nodejs";
 
 import { NextResponse } from "next/server";
 import { webpayCommitTransaction } from "@/lib/webpay";
+import { notifyPaymentSuccess } from "@/lib/payment-notify";
 import { SITE_URL } from "@/lib/config";
 
 const FINAL_URL =
@@ -56,6 +57,17 @@ async function handleCommit(req: Request) {
     const responseCode = result.response_code ?? result.responseCode;
     const isAuthorized =
       status === "AUTHORIZED" || status === "Aceptado" || responseCode === 0;
+
+    if (isAuthorized) {
+      await notifyPaymentSuccess({
+        buyOrder: String(result.buy_order ?? ""),
+        amount:
+          typeof result.amount === "number" ? result.amount : Number(result.amount ?? 0),
+        status: String(status ?? "AUTHORIZED"),
+        responseCode: responseCode ?? 0,
+        rawResult: result,
+      });
+    }
 
     const redirect = buildRedirectUrl({
       status: isAuthorized ? "success" : "fail",
