@@ -1040,7 +1040,7 @@ vendido: false,
 {
   id: "anillo-prueba-webpay-50",
   nombre: "Anillo Prueba Webpay",
-  precio: 60000,
+  precio: 90000,
   descripcionCorta:
     "Anillo de prueba para validar el flujo de pago con Webpay.",
   descripcionLarga:
