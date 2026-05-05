@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { getPromoInfo } from "@/lib/promo";
+import { getPromoInfo, isPromoActive } from "@/lib/promo";
 
 function getDaysUntilPromoEnd(endDate: Date): number {
   const now = new Date();
@@ -12,6 +12,8 @@ function getDaysUntilPromoEnd(endDate: Date): number {
 }
 
 export function PromoBanner() {
+  if (!isPromoActive()) return null;
+
   const promo = getPromoInfo();
   const days = getDaysUntilPromoEnd(promo.end);
   const promoDateLabel = promo.end.toLocaleDateString("es-CL", {

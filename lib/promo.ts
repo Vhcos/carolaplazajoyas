@@ -7,7 +7,8 @@ type PromoConfig = {
   end: Date;
 };
 
-const DISCOUNT_PERCENT = 10;
+const PROMO_ENABLED = false;
+const DISCOUNT_PERCENT = 0;
 
 function getPromoWindow(baseDate = new Date()) {
   const year = baseDate.getFullYear();
@@ -28,13 +29,14 @@ export function getPromoInfo(date = new Date()): PromoConfig {
   const { start, end } = getPromoWindow(date);
   return {
     name: "Día de la Madre",
-    discountPercent: DISCOUNT_PERCENT,
+    discountPercent: PROMO_ENABLED ? DISCOUNT_PERCENT : 0,
     start,
     end,
   };
 }
 
 export function isPromoActive(date = new Date()): boolean {
+  if (!PROMO_ENABLED) return false;
   const { start, end } = getPromoInfo(date);
   return date >= start && date <= end;
 }
