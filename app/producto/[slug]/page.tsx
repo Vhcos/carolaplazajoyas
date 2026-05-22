@@ -89,7 +89,7 @@ export default async function ProductPage(props: ProductPageProps) {
       foto.startsWith("http") ? foto : `${SITE_URL}${foto}`
     ) ?? [`${SITE_URL}/joyas/prendedor-ginko-bronce.jpg`];
 
-  // Promo Día de la Madre
+  // Promo comercial centralizada.
   const promoActive = isPromoActive();
   const finalPrice = getPromoPrice(product.precio);
 

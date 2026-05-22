@@ -52,7 +52,7 @@ export async function POST(req: Request) {
       );
     }
 
-    // Aplica descuento activo de campaña (según rango en lib/promo.ts)
+    // Mantiene el monto alineado con la lógica comercial central.
     const amount = getPromoPrice(baseAmount);
 
     const WEBPAY_RETURN_URL =

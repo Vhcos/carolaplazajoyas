@@ -14,7 +14,7 @@ export default function AnnouncementBar() {
           href="/producto"
           className="text-[var(--cp-gold)] underline underline-offset-2 transition-opacity hover:opacity-80"
         >
-          Día de la Madre — 10 mayo
+          Colorea tu invierno
         </Link>
         <span className="hidden sm:inline text-white/60">·</span>
       </div>

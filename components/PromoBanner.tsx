@@ -47,8 +47,9 @@ export function PromoBanner() {
               </div>
 
               <p className="max-w-xl text-sm leading-6 text-slate-700 sm:text-base">
-                Joyas de autor en plata 950 para regalar a mamá. Series limitadas,
-                certificado de autenticidad y envíos a todo Chile.
+                Joyas de autor en plata 950 para sumar color, textura y luz a
+                los días fríos. Series limitadas, certificado de autenticidad y
+                envíos a todo Chile.
               </p>
             </div>
 
@@ -62,7 +63,7 @@ export function PromoBanner() {
                 href="/producto"
                 className="inline-flex items-center rounded-full bg-slate-900 px-5 py-2.5 text-xs font-medium text-white transition-colors hover:bg-slate-800"
               >
-                Ver regalos para mamá
+                Ver colección de invierno
               </Link>
               <Link
                 href="/contacto"
@@ -76,8 +77,8 @@ export function PromoBanner() {
           <div className="overflow-hidden rounded-[1.35rem] border border-[rgba(176,143,90,0.3)] bg-white/80 shadow-sm">
             <div className="relative h-40 w-full sm:h-44 lg:h-48">
               <Image
-                src="/decor/mothersday-roses-side.jpeg"
-                alt="Arreglo floral Día de la Madre"
+                src="/decor/winter-color-roses-side.jpeg"
+                alt="Detalle floral para la colección Colorea tu invierno"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 260px, 100vw"
@@ -86,7 +87,7 @@ export function PromoBanner() {
             </div>
             <div className="border-t border-[rgba(176,143,90,0.22)] px-3 py-2 text-center">
               <p className="text-xs font-semibold italic tracking-[0.08em] text-rose-700">
-                Día de la Madre
+                Colorea tu invierno
               </p>
             </div>
           </div>

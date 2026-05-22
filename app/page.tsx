@@ -4,7 +4,7 @@ import type { Product } from "@/data/products";
 import { getAllProducts } from "@/lib/products-store";
 
 const HERO_VIDEO_URL = "https://www.youtube-nocookie.com/embed/7BlmzJUWNic?rel=0";
-const DIA_MADRE_IDS = ["collar-corazon-amor", "anillo-nombres-personalizado", "colgante-inicial-colibri"] as const;
+const WINTER_COLLECTION_IDS = ["anillo-glaciar", "anillo-sirena", "collar-noche-rose"] as const;
 const WHATSAPP_HOME_URL =
   "https://wa.me/56996397495?text=Hola%20Carola,%20quiero%20asegurar%20una%20pieza%20o%20encargar%20una%20similar.%20%C2%BFLo%20vemos%20por%20aqu%C3%AD%3F";
 
@@ -90,7 +90,7 @@ function CollectionCard({ product }: { product: Product }) {
       <div className="flex flex-1 flex-col gap-3 px-5 py-5">
         <div className="space-y-1">
           <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-[var(--cp-accent)]">
-            Día de la Madre
+            Colorea tu invierno
           </p>
           <h3 className="text-xl font-semibold leading-tight tracking-[-0.03em] text-slate-900">
             {product.nombre}
@@ -191,12 +191,12 @@ function CategoryTile({
 export default async function HomePage() {
   const PRODUCTS = await getAllProducts();
 
-  const diaMadrePieces = DIA_MADRE_IDS.map((id) => PRODUCTS.find((product) => product.id === id)).filter(
+  const winterCollectionPieces = WINTER_COLLECTION_IDS.map((id) => PRODUCTS.find((product) => product.id === id)).filter(
     (product): product is Product => Boolean(product)
   );
 
   const destacados = PRODUCTS.filter(
-    (product) => product.destacado && !product.vendido && !DIA_MADRE_IDS.includes(product.id as (typeof DIA_MADRE_IDS)[number])
+    (product) => product.destacado && !product.vendido && !WINTER_COLLECTION_IDS.includes(product.id as (typeof WINTER_COLLECTION_IDS)[number])
   ).slice(0, 4);
 
   return (
@@ -224,8 +224,8 @@ export default async function HomePage() {
           <div className="space-y-8">
             <div className="relative overflow-hidden rounded-[2rem] border border-[rgba(174,81,117,0.2)]">
               <Image
-                src="/decor/mothersday-frame-left.jpeg"
-                alt="Fondo floral Día de la Madre"
+                src="/decor/winter-color-frame.jpeg"
+                alt="Fondo floral de la colección Colorea tu invierno"
                 fill
                 className="object-cover object-center"
                 sizes="(min-width: 1024px) 560px, 100vw"
@@ -251,7 +251,7 @@ export default async function HomePage() {
                 href="/producto"
                 className="cp-btn-fill inline-flex items-center rounded-full px-6 py-3 text-sm font-medium"
               >
-                Ver regalos para mamá
+                Ver colección de invierno
               </Link>
               <Link
                 href="/contacto"
@@ -295,7 +295,7 @@ export default async function HomePage() {
             <div className="cp-ring relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#e9eef1]">
               <Image
                 src="/joyas/Collar Corazon de  Plata.jpeg"
-                alt="Collar Corazón de Plata 950, regalo Día de la Madre"
+                alt="Collar de plata 950 para la colección Colorea tu invierno"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 460px, 100vw"
@@ -306,18 +306,18 @@ export default async function HomePage() {
                 <div className="rounded-2xl border border-white/20 bg-[rgba(8,8,8,0.18)] px-4 py-3 backdrop-blur-[10px]">
                   <p className="cp-kicker text-white/80">Hecho a mano en Chile</p>
                   <p className="mt-2 text-xl font-semibold tracking-[-0.03em] text-white lg:text-2xl">
-                    Plata 950, para mamá
+                    Plata 950 con color y textura
                   </p>
                 </div>
                 <span className="hidden rounded-full border border-white/30 bg-[rgba(8,8,8,0.18)] px-3 py-2 text-xs uppercase tracking-[0.18em] text-white backdrop-blur-[10px] sm:inline-flex">
-                  Día de la Madre
+                  Colorea tu invierno
                 </span>
               </div>
             </div>
 
             <div className="mt-3 rounded-2xl border border-[var(--cp-line)] bg-white/80 px-4 py-3 sm:hidden">
               <p className="cp-kicker text-[var(--cp-accent)]">Hecho a mano en Chile</p>
-              <p className="mt-1 text-base font-semibold text-slate-900">Plata 950, para mamá</p>
+              <p className="mt-1 text-base font-semibold text-slate-900">Plata 950 con color y textura</p>
             </div>
 
             <div className="cp-surface mt-4 overflow-hidden rounded-[1.6rem] lg:ml-auto lg:mt-5 lg:w-[78%]">
@@ -341,17 +341,17 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {diaMadrePieces.length > 0 && (
+      {winterCollectionPieces.length > 0 && (
         <section className="cp-reveal grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="space-y-4">
-            <p className="cp-kicker">Selección Día de la Madre</p>
+            <p className="cp-kicker">Colección de invierno</p>
             <h2 className="text-3xl font-semibold leading-tight tracking-[-0.04em] text-slate-900 sm:text-4xl">
-              Tres piezas pensadas para ella
+              Colorea tu invierno
             </h2>
             <p className="max-w-xl text-base leading-7 text-slate-700">
-              Un collar con corazón grabado, un anillo con sus nombres y un
-              colgante con su inicial. Piezas de plata 950 hechas a mano que
-              se convierten en recuerdo para siempre.
+              Una selección de plata 950 con azules, verdes profundos y brillos
+              suaves para levantar los días fríos. Piezas hechas a mano en Chile,
+              pensadas para usar como acento de color durante el invierno.
             </p>
             <Link
               href="/producto"
@@ -362,7 +362,7 @@ export default async function HomePage() {
           </div>
 
           <div className="grid gap-4 md:grid-cols-3">
-            {diaMadrePieces.map((product) => (
+            {winterCollectionPieces.map((product) => (
               <CollectionCard key={product.id} product={product} />
             ))}
           </div>

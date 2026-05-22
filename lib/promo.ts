@@ -28,7 +28,7 @@ function getPromoWindow(baseDate = new Date()) {
 export function getPromoInfo(date = new Date()): PromoConfig {
   const { start, end } = getPromoWindow(date);
   return {
-    name: "Día de la Madre",
+    name: "Colorea tu invierno",
     discountPercent: PROMO_ENABLED ? DISCOUNT_PERCENT : 0,
     start,
     end,
