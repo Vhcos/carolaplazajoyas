@@ -1038,6 +1038,27 @@ vendido: false,
   vendido: false,
 },
 {
+  id: "anillo-memoria-del-fuego",
+  nombre: "Memoria del Fuego",
+  precio: 90000,
+  descripcionCorta:
+    "Anillo de plata 950 de forma orgánica y textura profunda, inspirado en las marcas que deja el fuego sobre la materia.",
+  descripcionLarga:
+    "Anillo de plata 950 trabajado a mano con una superficie amplia, irregular y llena de textura. Su forma orgánica recuerda una hoja, una brasa apagada o una huella mineral marcada por el calor, con relieves oscuros y brillos pulidos que aparecen según la luz. Es una pieza escultórica y protagonista, pensada para usarse sola y sumar fuerza visual a cualquier look. Pertenece a la colección Colorea tu invierno.",
+  fotos: [
+    "/joyas/anillo-memoria-del-fuego-1.jpeg",
+    "/joyas/anillo-memoria-del-fuego-2.jpeg",
+    "/joyas/anillo-memoria-del-fuego-3.jpeg",
+    "/joyas/anillo-memoria-del-fuego-4.jpeg"
+  ],
+  metal: "Plata 950",
+  coleccion: "Colorea tu invierno",
+  destacado: false,
+  tipo: "unica",
+  categoria: "anillos",
+  vendido: false,
+},
+{
   id: "anillo-prueba-webpay-50",
   nombre: "Anillo Prueba Webpay",
   precio: 90000,
