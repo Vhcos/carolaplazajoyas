@@ -215,6 +215,25 @@ export const PRODUCTS: Product[] = [
   vendido: false,
 },
 {
+  id: "brisa-de-otono",
+  nombre: "Brisa de Otoño",
+  precio: 50000,
+  descripcionCorta:
+    "Aros colgantes con hojas doradas en cascada y placa superior texturada, livianos y con movimiento.",
+  descripcionLarga:
+    "Aros colgantes trabajados a mano con hojas doradas inspiradas en el movimiento suave del otoño. Cada hoja tiene nervaduras marcadas y bordes orgánicos que aportan textura, luz y movimiento al rostro, mientras la placa superior martillada suma contraste con un brillo más frío y elegante. Son una pieza protagonista, liviana y fácil de llevar, ideal para levantar un look simple o acompañar una ocasión especial con un acento cálido.",
+  fotos: [
+    "/joyas/aros-brisa-de-otono-1.jpeg",
+    "/joyas/aros-brisa-de-otono-2.jpeg",
+    "/joyas/aros-brisa-de-otono-3.jpeg"
+  ],
+  metal: "Bronce y plata 950",
+  destacado: false,
+  tipo: "unica",
+  categoria: "aros",
+  vendido: false,
+},
+{
   id: "colgante-alma-rosa",
   nombre: "Collar Alma Rosa",
   precio: 76900,
@@ -1028,9 +1047,9 @@ vendido: false,
   descripcionLarga:
     "Anillo de plata de cuerpo ancho y convexo, trabajado para abrazar el dedo con volumen y presencia. En el centro lleva un topacio azul oval facetado, montado en bisel de oro que realza el brillo frio y transparente de la piedra. A los lados, pequeños detalles metalicos acompañan la composicion y refuerzan su aire de joya de autor. Es una pieza protagonista, solida y elegante, ideal para quienes buscan un anillo con fuerza, luz y caracter. Disponible en talla 11.",
   fotos: [
-    "/joyas/anillo-glaciar-1.jpeg",
-    "/joyas/anillo-glaciar-2.jpeg",
-    "/joyas/anillo-glaciar-3.jpeg"
+    "/joyas/anillo-glaciar-nuevo-1.jpeg",
+    "/joyas/anillo-glaciar-nuevo-2.jpeg",
+    "/joyas/anillo-glaciar-nuevo-3.jpeg"
   ],
   destacado: false,
   tipo: "unica",
@@ -1044,7 +1063,7 @@ vendido: false,
   descripcionCorta:
     "Anillo de plata 950 de forma orgánica y textura profunda, inspirado en las marcas que deja el fuego sobre la materia.",
   descripcionLarga:
-    "Anillo de plata 950 trabajado a mano con una superficie amplia, irregular y llena de textura. Su forma orgánica recuerda una hoja, una brasa apagada o una huella mineral marcada por el calor, con relieves oscuros y brillos pulidos que aparecen según la luz. Es una pieza escultórica y protagonista, pensada para usarse sola y sumar fuerza visual a cualquier look. Pertenece a la colección Colorea tu invierno.",
+    "Anillo de plata 950 trabajado a mano con una superficie amplia, irregular y llena de textura. Su forma orgánica recuerda una hoja, una brasa apagada o una huella mineral marcada por el calor, con relieves oscuros y brillos pulidos que aparecen según la luz. Es una pieza escultórica y protagonista, pensada para usarse sola y sumar fuerza visual a cualquier look. Pertenece a la colección Abraza el invierno.",
   fotos: [
     "/joyas/anillo-memoria-del-fuego-1.jpeg",
     "/joyas/anillo-memoria-del-fuego-2.jpeg",
@@ -1052,7 +1071,7 @@ vendido: false,
     "/joyas/anillo-memoria-del-fuego-4.jpeg"
   ],
   metal: "Plata 950",
-  coleccion: "Colorea tu invierno",
+  coleccion: "Abraza el invierno",
   destacado: false,
   tipo: "unica",
   categoria: "anillos",

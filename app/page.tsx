@@ -19,7 +19,7 @@ const categoryTiles = [
   {
     title: "Anillos",
     href: "/producto?categoria=anillos",
-    image: "/joyas/anillo-glaciar-2.jpeg",
+    image: "/joyas/anillo-glaciar-nuevo-1.jpeg",
     alt: "Anillo de plata 950 con piedra azul",
     description:
       "Piezas protagonistas, curvas organicas y anillos pensados para quedarse en la mano todos los dias.",
@@ -90,7 +90,7 @@ function CollectionCard({ product }: { product: Product }) {
       <div className="flex flex-1 flex-col gap-3 px-5 py-5">
         <div className="space-y-1">
           <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-[var(--cp-accent)]">
-            Colorea tu invierno
+            Abraza el invierno
           </p>
           <h3 className="text-xl font-semibold leading-tight tracking-[-0.03em] text-slate-900">
             {product.nombre}
@@ -225,7 +225,7 @@ export default async function HomePage() {
             <div className="relative overflow-hidden rounded-[2rem] border border-[rgba(174,81,117,0.2)]">
               <Image
                 src="/decor/winter-color-frame.jpeg"
-                alt="Fondo floral de la colección Colorea tu invierno"
+                alt="Fondo floral de la colección Abraza el invierno"
                 fill
                 className="object-cover object-center"
                 sizes="(min-width: 1024px) 560px, 100vw"
@@ -251,7 +251,7 @@ export default async function HomePage() {
                 href="/producto"
                 className="cp-btn-fill inline-flex items-center rounded-full px-6 py-3 text-sm font-medium"
               >
-                Ver colección de invierno
+                Ver Abraza el invierno
               </Link>
               <Link
                 href="/contacto"
@@ -295,7 +295,7 @@ export default async function HomePage() {
             <div className="cp-ring relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#e9eef1]">
               <Image
                 src="/joyas/Collar Corazon de  Plata.jpeg"
-                alt="Collar de plata 950 para la colección Colorea tu invierno"
+                alt="Collar de plata 950 para la colección Abraza el invierno"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 460px, 100vw"
@@ -310,7 +310,7 @@ export default async function HomePage() {
                   </p>
                 </div>
                 <span className="hidden rounded-full border border-white/30 bg-[rgba(8,8,8,0.18)] px-3 py-2 text-xs uppercase tracking-[0.18em] text-white backdrop-blur-[10px] sm:inline-flex">
-                  Colorea tu invierno
+                  Abraza el invierno
                 </span>
               </div>
             </div>
@@ -344,9 +344,9 @@ export default async function HomePage() {
       {winterCollectionPieces.length > 0 && (
         <section className="cp-reveal grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="space-y-4">
-            <p className="cp-kicker">Colección de invierno</p>
+            <p className="cp-kicker">Colección Abraza el invierno</p>
             <h2 className="text-3xl font-semibold leading-tight tracking-[-0.04em] text-slate-900 sm:text-4xl">
-              Colorea tu invierno
+              Abraza el invierno
             </h2>
             <p className="max-w-xl text-base leading-7 text-slate-700">
               Una selección de plata 950 con azules, verdes profundos y brillos

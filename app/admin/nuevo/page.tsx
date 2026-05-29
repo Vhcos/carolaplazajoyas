@@ -263,7 +263,7 @@ function NuevoProductoForm() {
               type="text"
               value={form.coleccion ?? ""}
               onChange={(e) => set("coleccion", e.target.value)}
-              placeholder="Colorea tu invierno"
+              placeholder="Abraza el invierno"
               className={INPUT}
             />
           </Field>
