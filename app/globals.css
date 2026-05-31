@@ -141,7 +141,7 @@ body > div:first-child {
   pointer-events: none;
 }
 
-.cp-leaf-field {
+.cp-snow-field {
   position: fixed;
   inset: 0;
   z-index: 8;
@@ -149,77 +149,36 @@ body > div:first-child {
   pointer-events: none;
 }
 
-.cp-liquidambar-leaf {
+.cp-snowflake {
   position: absolute;
-  left: var(--leaf-left);
-  top: -12vh;
-  width: var(--leaf-size);
-  height: var(--leaf-size);
-  opacity: 0.82;
-  filter: saturate(1.22) contrast(1.08) drop-shadow(0 8px 7px rgba(72, 45, 25, 0.2));
-  animation: cp-leaf-fall var(--leaf-duration) linear infinite;
-  animation-delay: var(--leaf-delay);
+  left: var(--snow-left);
+  top: -6vh;
+  font-size: var(--snow-size);
+  color: var(--snow-color);
+  opacity: var(--snow-opacity);
+  line-height: 1;
+  user-select: none;
+  animation: cp-snow-fall var(--snow-duration) linear infinite;
+  animation-delay: var(--snow-delay);
 }
 
-.cp-liquidambar-leaf::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 42% 32%, rgba(255, 211, 120, 0.34), transparent 28%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.26), transparent 38%),
-    var(--leaf-color);
-  clip-path: polygon(
-    50% 0%,
-    60% 26%,
-    84% 14%,
-    72% 40%,
-    100% 48%,
-    70% 58%,
-    84% 84%,
-    58% 72%,
-    50% 100%,
-    42% 72%,
-    16% 84%,
-    30% 58%,
-    0% 48%,
-    28% 40%,
-    16% 14%,
-    40% 26%
-  );
-  transform: rotate(var(--leaf-rotate));
-  transform-origin: center;
-}
-
-.cp-liquidambar-leaf::after {
-  content: "";
-  position: absolute;
-  left: 49%;
-  top: 58%;
-  width: 1px;
-  height: 55%;
-  background: rgba(74, 36, 18, 0.62);
-  transform: rotate(calc(var(--leaf-rotate) + 8deg));
-  transform-origin: top;
-}
-
-@keyframes cp-leaf-fall {
+@keyframes cp-snow-fall {
   0% {
-    transform: translate3d(0, -12vh, 0) rotate(0deg);
+    transform: translate3d(0, -6vh, 0) rotate(0deg);
   }
-  28% {
-    transform: translate3d(var(--leaf-drift), 28vh, 0) rotate(112deg);
+  30% {
+    transform: translate3d(var(--snow-drift), 30vh, 0) rotate(108deg);
   }
-  62% {
-    transform: translate3d(0, 68vh, 0) rotate(245deg);
+  65% {
+    transform: translate3d(0, 68vh, 0) rotate(234deg);
   }
   100% {
-    transform: translate3d(var(--leaf-drift), 112vh, 0) rotate(360deg);
+    transform: translate3d(var(--snow-drift), 112vh, 0) rotate(360deg);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cp-leaf-field {
+  .cp-snow-field {
     display: none;
   }
 }

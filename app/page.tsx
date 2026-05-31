@@ -201,6 +201,37 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-16 pb-10 sm:space-y-20">
+      {/* ── BANNER COLECCIÓN INVIERNO ───────────────────────── */}
+      <section className="cp-reveal relative overflow-hidden rounded-[2.25rem]" style={{ minHeight: "420px" }}>
+        <Image
+          src="/decor/anillo-cafe-humeante.png"
+          alt="Colección Abraza el invierno — Carola Plaza Joyas"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/68 via-black/30 to-transparent" />
+
+        <div className="relative z-10 flex flex-col justify-end p-8 sm:p-10 lg:p-14" style={{ minHeight: "420px" }}>
+          <p className="cp-kicker text-white/55 mb-3">Nueva colección · Invierno 2026</p>
+          <h2 className="text-[clamp(3rem,8vw,6rem)] font-semibold leading-[0.92] tracking-[-0.025em] text-white">
+            Abraza<br />
+            <span className="text-[var(--cp-gold)]">el invierno</span>
+          </h2>
+          <p className="mt-4 max-w-sm text-sm leading-6 text-white/70">
+            Plata 950 con piedras en azules profundos y tonos rosados. Tres piezas únicas hechas a mano en Chile.
+          </p>
+          <div className="mt-6">
+            <Link
+              href="/abraza-el-invierno"
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/12 px-6 py-3 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/22"
+            >
+              Ver la colección →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="cp-reveal space-y-6">
         <div className="space-y-2">
           <p className="cp-kicker">Explora por categoría</p>
@@ -354,10 +385,10 @@ export default async function HomePage() {
               pensadas para usar como acento de color durante el invierno.
             </p>
             <Link
-              href="/producto"
+              href="/abraza-el-invierno"
               className="inline-flex items-center rounded-full border border-[var(--cp-line)] bg-white/70 px-5 py-3 text-sm font-medium text-[var(--cp-deep)] transition-colors hover:bg-white"
             >
-              Ver catálogo completo
+              Ver la colección completa →
             </Link>
           </div>
 
