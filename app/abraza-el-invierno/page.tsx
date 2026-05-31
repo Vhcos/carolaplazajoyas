@@ -38,12 +38,12 @@ const products = [
 ] as const;
 
 const moodImages = [
-  { src: "/joyas/anillo-glaciar-nuevo-1.jpeg", alt: "Anillo Glaciar" },
-  { src: "/joyas/anillo-duo-luz-1.jpeg", alt: "Anillo Duo Luz" },
-  { src: "/joyas/Anillo pirita gota 1.jpeg", alt: "Anillo Pirita Gota" },
-  { src: "/joyas/anillo-amatista-solitario-1.jpeg", alt: "Anillo Amatista Solitario" },
-  { src: "/joyas/anillo-granate-facetado-1.jpg", alt: "Anillo Granate Facetado" },
-  { src: "/joyas/anillo-personalizado-110000-1.jpeg", alt: "Anillo Personalizado" },
+  { src: "/joyas/anillo-glaciar-nuevo-1.jpeg",   alt: "Anillo Glaciar",           pos: "object-center", aspect: "16/9" },
+  { src: "/joyas/anillo-duo-luz-1.jpeg",          alt: "Anillo Duo Luz",           pos: "object-center", aspect: "1/1"  },
+  { src: "/joyas/Anillo pirita gota 1.jpeg",      alt: "Anillo Pirita Gota",       pos: "object-center", aspect: "1/1"  },
+  { src: "https://9sxkvs205ipfyljr.public.blob.vercel-storage.com/joyas/1000194894.png", alt: "Anillo Tres Citrinos", pos: "object-center", aspect: "3/4" },
+  { src: "/joyas/anillo-granate-facetado-1.jpg",  alt: "Anillo Granate Facetado",  pos: "object-center", aspect: "1/1"  },
+  { src: "/joyas/anillo-personalizado-110000-1.jpeg", alt: "Anillo Personalizado", pos: "object-center", aspect: "1/1"  },
 ];
 
 function cn(...classes: (string | undefined | null | false)[]) {
@@ -187,20 +187,20 @@ export default function AbrazaElInviernoPage() {
       </section>
 
       {/* ── STAGGERED MOOD BOARD ──────────────────────────────── */}
-      <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+      <section className="pt-6 pb-16 md:pt-8 md:pb-20 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1180px]">
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-12 text-center text-3xl font-semibold tracking-[-0.03em] text-slate-900 md:text-5xl"
+            className="mb-8 text-center text-3xl font-semibold tracking-[-0.03em] text-slate-900 md:text-5xl"
           >
             Inspiración invernal
           </motion.h2>
 
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-5">
             {moodImages.map((image, index) => {
-              const isLarge = index % 3 === 0;
+              const isLarge = image.aspect === "16/9";
               return (
                 <motion.div
                   key={index}
@@ -210,17 +210,15 @@ export default function AbrazaElInviernoPage() {
                   transition={{ delay: index * 0.1, duration: 0.7 }}
                   className={cn(
                     "cp-ring group relative cursor-pointer overflow-hidden rounded-[1.5rem] bg-[#edf0f2]",
-                    isLarge ? "col-span-2 md:col-span-2" : "",
-                    index === 1 ? "md:translate-y-10" : "",
-                    index === 4 ? "md:-translate-y-10" : ""
+                    isLarge ? "col-span-2 md:col-span-2" : ""
                   )}
-                  style={{ aspectRatio: isLarge ? "16/9" : "1/1" }}
+                  style={{ aspectRatio: image.aspect }}
                 >
                   <Image
                     src={image.src}
                     alt={image.alt}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                    className={`object-cover ${image.pos} transition-transform duration-700 group-hover:scale-[1.06]`}
                     sizes="(min-width: 768px) 40vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />

@@ -8,6 +8,8 @@ Sitio oficial de **Carola Plaza Joyas**, joyería de autor hecha a mano en Chile
 - React 19
 - TypeScript
 - Tailwind CSS 4
+- Framer Motion para animaciones
+- Lucide React para iconos
 - Vercel para hosting
 - Vercel Blob para catálogo dinámico e imágenes subidas desde admin
 - Webpay/Transbank para pagos
@@ -27,20 +29,21 @@ El sitio local corre en `http://localhost:3000`.
 
 ```text
 app/
-  page.tsx                    Home
-  producto/page.tsx           Catálogo con filtros
-  producto/[slug]/page.tsx    Ficha de producto
-  contacto/page.tsx           Contacto y WhatsApp
-  guias/                      Índice de guías
-  guia-*/                     Guías de compra y cuidado
-  admin/                      Gestión simple de productos
-  login/                      Login admin
-  api/admin/                  API de admin, productos y uploads
-  api/webpay/                 Creación y confirmación de pagos
-  webpay/resultado/           Resultado de pago
-  c/[id]/                     Certificados
-  sitemap.ts                  Sitemap dinámico
-  robots.ts                   Robots
+  page.tsx                        Home con banner de colección activa
+  abraza-el-invierno/page.tsx     Landing colección Invierno 2026
+  producto/page.tsx               Catálogo con filtros
+  producto/[slug]/page.tsx        Ficha de producto
+  contacto/page.tsx               Contacto y WhatsApp
+  guias/                          Índice de guías
+  guia-*/                         Guías de compra y cuidado
+  admin/                          Gestión simple de productos
+  login/                          Login admin
+  api/admin/                      API de admin, productos y uploads
+  api/webpay/                     Creación y confirmación de pagos
+  webpay/resultado/               Resultado de pago
+  c/[id]/                         Certificados
+  sitemap.ts                      Sitemap dinámico
+  robots.ts                       Robots
 
 components/
   Navbar.tsx
@@ -50,6 +53,7 @@ components/
   WebpayButton.tsx
   PromoBanner.tsx
   AnnouncementBar.tsx
+  FallingLiquidambarLeaves.tsx    Copos de nieve animados (temporada invierno)
 
 data/
   products.ts                 Catálogo estático base
@@ -176,8 +180,25 @@ http://localhost:3000/producto/[id]
 http://localhost:3000/admin/nuevo
 ```
 
+## Colección activa — Invierno 2026
+
+La landing de la colección vive en `app/abraza-el-invierno/page.tsx` y se accede desde:
+
+- **URL directa**: `carolaplazajoyas.cl/abraza-el-invierno` (para compartir en redes)
+- **Banner en el home**: bloque editorial al inicio de `app/page.tsx`
+
+La página incluye:
+- Hero a pantalla completa con parallax (framer-motion)
+- Strip horizontal con snap-scroll de 4 piezas de la colección
+- Mood board de 6 fotos con aspect ratios variables por imagen
+- CTA oscuro con gradiente dorado hacia el catálogo
+
+Imágenes de la colección que viven en Vercel Blob (no en `public/joyas/`):
+- Anillo Tres Citrinos → `9sxkvs205ipfyljr.public.blob.vercel-storage.com/joyas/1000194894.png`
+
 ## Notas actuales
 
-- La colección visible de invierno se llama **Abraza el invierno**.
+- Los copos de nieve que caen en toda la página se configuran en `components/FallingLiquidambarLeaves.tsx` y sus estilos en `app/globals.css` (clases `.cp-snow-field` y `.cp-snowflake`). Para volver a hojas de otoño, revertir ese componente.
 - Para evitar caché de imágenes, cuando se reemplaza una foto importante conviene usar nombres nuevos de archivo.
 - El sitio puede correr localmente sin Blob ni Webpay configurado, usando fallback y CTAs de WhatsApp.
+- Para ver el sitio en celular local: `npm run dev -- --hostname 0.0.0.0` y acceder por la IP local en el puerto 3000.
