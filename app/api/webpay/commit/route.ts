@@ -3,7 +3,7 @@ export const runtime = "nodejs";
 
 import { NextResponse } from "next/server";
 import { webpayCommitTransaction } from "@/lib/webpay";
-import { notifyPaymentSuccess } from "@/lib/payment-notify";
+import { notifyPaymentResult } from "@/lib/payment-notify";
 import { SITE_URL } from "@/lib/config";
 
 const FINAL_URL =
@@ -42,6 +42,11 @@ async function handleCommit(req: Request) {
     }
 
     if (!token) {
+      await notifyPaymentResult({
+        paymentStatus: "fail",
+        status: "missing_token",
+        error: "Webpay volvió sin token_ws. Puede corresponder a compra anulada o retorno incompleto.",
+      });
       const redirect = buildRedirectUrl({
         status: "fail",
         error: "missing_token",
@@ -50,34 +55,46 @@ async function handleCommit(req: Request) {
     }
 
     const result = await webpayCommitTransaction(token);
-    console.log("[TBK] token_ws recibido:", token);
-
 
     const status = result.status;
     const responseCode = result.response_code ?? result.responseCode;
+    const buyOrder = String(result.buy_order ?? "");
+    const amount =
+      typeof result.amount === "number" ? result.amount : Number(result.amount ?? 0);
     const isAuthorized =
       status === "AUTHORIZED" || status === "Aceptado" || responseCode === 0;
 
-    if (isAuthorized) {
-      await notifyPaymentSuccess({
-        buyOrder: String(result.buy_order ?? ""),
-        amount:
-          typeof result.amount === "number" ? result.amount : Number(result.amount ?? 0),
-        status: String(status ?? "AUTHORIZED"),
-        responseCode: responseCode ?? 0,
-        rawResult: result,
-      });
-    }
+    console.log("[TBK] commit result:", {
+      buyOrder,
+      amount,
+      status,
+      responseCode,
+      authorized: isAuthorized,
+    });
+
+    await notifyPaymentResult({
+      paymentStatus: isAuthorized ? "success" : "fail",
+      buyOrder,
+      amount,
+      status: String(status ?? (isAuthorized ? "AUTHORIZED" : "NOT_AUTHORIZED")),
+      responseCode: responseCode ?? (isAuthorized ? 0 : "sin código"),
+      rawResult: result,
+    });
 
     const redirect = buildRedirectUrl({
       status: isAuthorized ? "success" : "fail",
-      buyOrder: String(result.buy_order ?? ""),
+      buyOrder,
       amount: String(result.amount ?? ""),
     });
 
     return NextResponse.redirect(redirect, { status: 302 });
   } catch (err) {
     console.error("[API] /api/webpay/commit error", err);
+    await notifyPaymentResult({
+      paymentStatus: "fail",
+      status: "exception",
+      error: err instanceof Error ? err.message : "Error desconocido en commit Webpay",
+    });
     const redirect = buildRedirectUrl({
       status: "fail",
       error: "exception",

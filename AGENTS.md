@@ -101,6 +101,10 @@ Archivos principales:
 Variables usadas:
 
 ```bash
+RESEND_API_KEY
+PAYMENT_NOTIFY_EMAIL
+PAYMENT_NOTIFY_FROM
+PAYMENT_NOTIFY_WEBHOOK_URL
 NEXT_PUBLIC_WEBPAY_ENABLED
 TBK_ENV
 TBK_COMMERCE_CODE
@@ -109,7 +113,7 @@ WEBPAY_RETURN_URL
 WEBPAY_FINAL_URL
 ```
 
-No cambiar el flujo de pagos sin validar build y rutas relacionadas.
+No cambiar el flujo de pagos sin validar build y rutas relacionadas. Las notificaciones de Webpay deben informar tanto pagos aprobados como pagos no aprobados; si `PAYMENT_NOTIFY_EMAIL` no existe, el destinatario por defecto es `carolaplaza7@gmail.com`.
 
 ## Rutas clave para revisar
 

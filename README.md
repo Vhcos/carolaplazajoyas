@@ -148,10 +148,12 @@ Si `NEXT_PUBLIC_WEBPAY_ENABLED` no es `true`, las fichas pueden mostrar flujo al
 
 ```bash
 RESEND_API_KEY=
-PAYMENT_NOTIFY_EMAIL=
+PAYMENT_NOTIFY_EMAIL=carolaplaza7@gmail.com
 PAYMENT_NOTIFY_FROM=
 PAYMENT_NOTIFY_WEBHOOK_URL=
 ```
+
+Si `PAYMENT_NOTIFY_EMAIL` no está definido, el sitio usa `carolaplaza7@gmail.com` como destinatario por defecto. Las notificaciones se envían tanto para pagos aprobados como para pagos no aprobados, anulados o fallidos.
 
 ## SEO
 

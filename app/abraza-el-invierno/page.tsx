@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Snowflake, Sparkles, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
 
 const WHATSAPP_URL =
   "https://wa.me/56996397495?text=Hola%20Carola,%20quiero%20saber%20m%C3%A1s%20sobre%20la%20colecci%C3%B3n%20Abraza%20el%20invierno.";
