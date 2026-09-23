@@ -113,10 +113,10 @@ export default async function HomePage() {
       {/* ── BANNER DE TEMPORADA ─────────────────────────────── */}
       <section className="cp-reveal relative overflow-hidden rounded-[2.25rem]" style={{ minHeight: "420px" }}>
         <Image
-          src="/joyas/anillo-citrino-3.jpeg"
-          alt="Anillo de plata 950 con piedra citrino para Primavera 2026"
+          src="/decor/primavera-2026-hero.png"
+          alt="Mano con anillo de piedra azul entre flores para Primavera 2026"
           fill
-          className="object-cover object-center"
+          className="object-cover object-[78%_center] sm:object-center"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/68 via-black/30 to-transparent" />
