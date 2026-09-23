@@ -141,7 +141,7 @@ body > div:first-child {
   pointer-events: none;
 }
 
-.cp-snow-field {
+.cp-flower-field {
   position: fixed;
   inset: 0;
   z-index: 8;
@@ -149,36 +149,36 @@ body > div:first-child {
   pointer-events: none;
 }
 
-.cp-snowflake {
+.cp-falling-flower {
   position: absolute;
-  left: var(--snow-left);
+  left: var(--flower-left);
   top: -6vh;
-  font-size: var(--snow-size);
-  color: var(--snow-color);
-  opacity: var(--snow-opacity);
+  font-size: var(--flower-size);
+  color: var(--flower-color);
+  opacity: var(--flower-opacity);
   line-height: 1;
   user-select: none;
-  animation: cp-snow-fall var(--snow-duration) linear infinite;
-  animation-delay: var(--snow-delay);
+  animation: cp-flower-fall var(--flower-duration) linear infinite;
+  animation-delay: var(--flower-delay);
 }
 
-@keyframes cp-snow-fall {
+@keyframes cp-flower-fall {
   0% {
     transform: translate3d(0, -6vh, 0) rotate(0deg);
   }
   30% {
-    transform: translate3d(var(--snow-drift), 30vh, 0) rotate(108deg);
+    transform: translate3d(var(--flower-drift), 30vh, 0) rotate(108deg);
   }
   65% {
     transform: translate3d(0, 68vh, 0) rotate(234deg);
   }
   100% {
-    transform: translate3d(var(--snow-drift), 112vh, 0) rotate(360deg);
+    transform: translate3d(var(--flower-drift), 112vh, 0) rotate(360deg);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cp-snow-field {
+  .cp-flower-field {
     display: none;
   }
 }

@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { PromoBanner } from "@/components/PromoBanner";
 import AnnouncementBar from "@/components/AnnouncementBar";
+import FallingSpringFlowers from "@/components/FallingLiquidambarLeaves";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -88,6 +89,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <body className="flex min-h-screen flex-col text-slate-900 antialiased">
+        <FallingSpringFlowers />
         <AnnouncementBar />
         <Navbar />
         <main className="flex-1">
