@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Product } from "@/data/products";
-import { getAllProducts } from "@/lib/products-store";
+import ProductCard from "@/components/ProductCard";
+import { getPublicProducts } from "@/lib/products-store";
 
 const HERO_VIDEO_URL = "https://www.youtube-nocookie.com/embed/7BlmzJUWNic?rel=0";
-const WINTER_COLLECTION_IDS = ["anillo-glaciar", "anillo-sirena", "collar-noche-rose"] as const;
 const WHATSAPP_HOME_URL =
   "https://wa.me/56996397495?text=Hola%20Carola,%20quiero%20asegurar%20una%20pieza%20o%20encargar%20una%20similar.%20%C2%BFLo%20vemos%20por%20aqu%C3%AD%3F";
 
@@ -63,92 +62,6 @@ const categoryTiles = [
   },
 ];
 
-const formatCLP = (amount: number) => `$${amount.toLocaleString("es-CL")}`;
-
-function CollectionCard({ product }: { product: Product }) {
-  return (
-    <Link
-      href={`/producto/${product.id}`}
-      className="group cp-surface flex h-full flex-col overflow-hidden rounded-[1.75rem] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_32px_72px_rgba(36,55,70,0.13)]"
-    >
-      <div className="relative aspect-[4/5] overflow-hidden bg-[#edf0f2]">
-        <Image
-          src={product.fotos[0] ?? "/joyas/placeholder.jpg"}
-          alt={product.nombre}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-          sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
-        />
-        {/* Badge */}
-        <div className="absolute left-3 top-3">
-          <span className="rounded-full border border-[rgba(176,143,90,0.35)] bg-white/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--cp-gold)] backdrop-blur-sm">
-            Regalo ideal
-          </span>
-        </div>
-      </div>
-
-      <div className="flex flex-1 flex-col gap-3 px-5 py-5">
-        <div className="space-y-1">
-          <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-[var(--cp-accent)]">
-            Abraza el invierno
-          </p>
-          <h3 className="text-xl font-semibold leading-tight tracking-[-0.03em] text-slate-900">
-            {product.nombre}
-          </h3>
-        </div>
-
-        <p className="text-sm leading-6 text-slate-500 line-clamp-2">{product.descripcionCorta}</p>
-
-        <div className="mt-auto flex items-center justify-between gap-3 pt-2 border-t border-[var(--cp-line)]">
-          <span className="text-lg font-semibold tracking-[-0.02em] text-slate-900">
-            {formatCLP(product.precio)}
-          </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-900 px-4 py-2 text-xs font-medium text-white transition-colors group-hover:bg-slate-700">
-            Ver pieza →
-          </span>
-        </div>
-      </div>
-    </Link>
-  );
-}
-
-function FeaturedCard({ product }: { product: Product }) {
-  return (
-    <Link
-      href={`/producto/${product.id}`}
-      className="group cp-surface flex h-full flex-col overflow-hidden rounded-[1.75rem] transition-transform duration-300 hover:-translate-y-1"
-    >
-      <div className="relative aspect-[4/5] overflow-hidden bg-[#edf0f2]">
-        <Image
-          src={product.fotos[0] ?? "/joyas/placeholder.jpg"}
-          alt={product.nombre}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-          sizes="(min-width: 1024px) 260px, (min-width: 640px) 50vw, 100vw"
-        />
-      </div>
-
-      <div className="flex flex-1 flex-col gap-3 px-5 py-5">
-        <div className="space-y-1">
-          <h3 className="text-xl font-semibold leading-tight tracking-[-0.02em] text-slate-900">
-            {product.nombre}
-          </h3>
-          <p className="text-sm leading-6 text-slate-600">{product.descripcionCorta}</p>
-        </div>
-
-        <div className="mt-auto flex items-center justify-between gap-3 pt-2">
-          <span className="text-base font-semibold text-slate-900">
-            {formatCLP(product.precio)}
-          </span>
-          <span className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--cp-accent)]">
-            Ver pieza
-          </span>
-        </div>
-      </div>
-    </Link>
-  );
-}
-
 function CategoryTile({
   title,
   href,
@@ -189,23 +102,19 @@ function CategoryTile({
 }
 
 export default async function HomePage() {
-  const PRODUCTS = await getAllProducts();
-
-  const winterCollectionPieces = WINTER_COLLECTION_IDS.map((id) => PRODUCTS.find((product) => product.id === id)).filter(
-    (product): product is Product => Boolean(product)
-  );
+  const PRODUCTS = await getPublicProducts();
 
   const destacados = PRODUCTS.filter(
-    (product) => product.destacado && !product.vendido && !WINTER_COLLECTION_IDS.includes(product.id as (typeof WINTER_COLLECTION_IDS)[number])
-  ).slice(0, 4);
+    (product) => product.destacado && !product.vendido
+  ).slice(0, 8);
 
   return (
     <div className="space-y-16 pb-10 sm:space-y-20">
-      {/* ── BANNER COLECCIÓN INVIERNO ───────────────────────── */}
+      {/* ── BANNER DE TEMPORADA ─────────────────────────────── */}
       <section className="cp-reveal relative overflow-hidden rounded-[2.25rem]" style={{ minHeight: "420px" }}>
         <Image
-          src="/decor/anillo-cafe-humeante.png"
-          alt="Colección Abraza el invierno — Carola Plaza Joyas"
+          src="/joyas/anillo-citrino-3.jpeg"
+          alt="Anillo de plata 950 con piedra citrino para Primavera 2026"
           fill
           className="object-cover object-center"
           priority
@@ -213,20 +122,20 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/68 via-black/30 to-transparent" />
 
         <div className="relative z-10 flex flex-col justify-end p-8 sm:p-10 lg:p-14" style={{ minHeight: "420px" }}>
-          <p className="cp-kicker text-white/55 mb-3">Nueva colección · Invierno 2026</p>
+          <p className="cp-kicker text-white/55 mb-3">Nueva temporada · Primavera 2026</p>
           <h2 className="text-[clamp(3rem,8vw,6rem)] font-semibold leading-[0.92] tracking-[-0.025em] text-white">
-            Abraza<br />
-            <span className="text-[var(--cp-gold)]">el invierno</span>
+            Primavera<br />
+            <span className="text-[var(--cp-gold)]">2026</span>
           </h2>
           <p className="mt-4 max-w-sm text-sm leading-6 text-white/70">
-            Plata 950 con piedras en azules profundos y tonos rosados. Tres piezas únicas hechas a mano en Chile.
+            Joyas que acompañan una nueva temporada: plata 950, piedras naturales y piezas únicas hechas a mano en Chile.
           </p>
           <div className="mt-6">
             <Link
-              href="/abraza-el-invierno"
+              href="/producto"
               className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/12 px-6 py-3 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/22"
             >
-              Ver la colección →
+              Ver joyas disponibles →
             </Link>
           </div>
         </div>
@@ -256,7 +165,7 @@ export default async function HomePage() {
             <div className="relative overflow-hidden rounded-[2rem] border border-[rgba(174,81,117,0.2)]">
               <Image
                 src="/decor/winter-color-frame.jpeg"
-                alt="Fondo floral de la colección Abraza el invierno"
+                alt="Fondo floral para Primavera 2026"
                 fill
                 className="object-cover object-center"
                 sizes="(min-width: 1024px) 560px, 100vw"
@@ -282,7 +191,7 @@ export default async function HomePage() {
                 href="/producto"
                 className="cp-btn-fill inline-flex items-center rounded-full px-6 py-3 text-sm font-medium"
               >
-                Ver Abraza el invierno
+                Ver joyas disponibles
               </Link>
               <Link
                 href="/contacto"
@@ -326,7 +235,7 @@ export default async function HomePage() {
             <div className="cp-ring relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#e9eef1]">
               <Image
                 src="/joyas/Collar Corazon de  Plata.jpeg"
-                alt="Collar de plata 950 para la colección Abraza el invierno"
+                alt="Collar de plata 950 hecho a mano"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 460px, 100vw"
@@ -341,7 +250,7 @@ export default async function HomePage() {
                   </p>
                 </div>
                 <span className="hidden rounded-full border border-white/30 bg-[rgba(8,8,8,0.18)] px-3 py-2 text-xs uppercase tracking-[0.18em] text-white backdrop-blur-[10px] sm:inline-flex">
-                  Abraza el invierno
+                  Primavera 2026
                 </span>
               </div>
             </div>
@@ -372,41 +281,13 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {winterCollectionPieces.length > 0 && (
-        <section className="cp-reveal grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div className="space-y-4">
-            <p className="cp-kicker">Colección Abraza el invierno</p>
-            <h2 className="text-3xl font-semibold leading-tight tracking-[-0.04em] text-slate-900 sm:text-4xl">
-              Abraza el invierno
-            </h2>
-            <p className="max-w-xl text-base leading-7 text-slate-700">
-              Una selección de plata 950 con azules, verdes profundos y brillos
-              suaves para levantar los días fríos. Piezas hechas a mano en Chile,
-              pensadas para usar como acento de color durante el invierno.
-            </p>
-            <Link
-              href="/abraza-el-invierno"
-              className="inline-flex items-center rounded-full border border-[var(--cp-line)] bg-white/70 px-5 py-3 text-sm font-medium text-[var(--cp-deep)] transition-colors hover:bg-white"
-            >
-              Ver la colección completa →
-            </Link>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-3">
-            {winterCollectionPieces.map((product) => (
-              <CollectionCard key={product.id} product={product} />
-            ))}
-          </div>
-        </section>
-      )}
-
       {destacados.length > 0 && (
         <section className="cp-reveal space-y-6">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div className="space-y-2">
               <p className="cp-kicker">Joyas destacadas</p>
               <h2 className="text-3xl font-semibold tracking-[-0.04em] text-slate-900 sm:text-4xl">
-                Otras piezas que sostienen la colección
+                Piezas disponibles para esta temporada
               </h2>
             </div>
 
@@ -420,7 +301,7 @@ export default async function HomePage() {
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {destacados.map((product) => (
-              <FeaturedCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </section>

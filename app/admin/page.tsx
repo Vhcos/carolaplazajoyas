@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import type { Product } from "@/data/products";
 
+type AdminProduct = Product & { isDynamic: boolean; isBaseProduct: boolean };
+
 // ─── Login ─────────────────────────────────────────────────────────────────
 
 function LoginForm({ onLogin }: { onLogin: () => void }) {
@@ -59,13 +61,16 @@ function LoginForm({ onLogin }: { onLogin: () => void }) {
 // ─── Dashboard ─────────────────────────────────────────────────────────────
 
 function Dashboard() {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<AdminProduct[]>([]);
+  const [drafts, setDrafts] = useState<Record<string, { precio: string; vendido: boolean; oculto: boolean }>>({});
+  const [savingId, setSavingId] = useState<string | null>(null);
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
-  async function fetchProducts(): Promise<Product[]> {
+  async function fetchProducts(): Promise<AdminProduct[]> {
     const res = await fetch("/api/admin/products");
     if (!res.ok) return [];
-    return (await res.json()) as Product[];
+    return (await res.json()) as AdminProduct[];
   }
 
   async function loadProducts() {
@@ -73,6 +78,51 @@ function Dashboard() {
     const items = await fetchProducts();
     setProducts(items);
     setLoading(false);
+  }
+
+  function draftFor(product: AdminProduct) {
+    return drafts[product.id] ?? {
+      precio: String(product.precio),
+      vendido: product.vendido ?? false,
+      oculto: product.oculto ?? false,
+    };
+  }
+
+  function updateDraft(product: AdminProduct, changes: Partial<{ precio: string; vendido: boolean; oculto: boolean }>) {
+    setDrafts((current) => ({ ...current, [product.id]: { ...draftFor(product), ...changes } }));
+  }
+
+  async function saveQuickChanges(product: AdminProduct) {
+    const draft = draftFor(product);
+    const precio = Number(draft.precio);
+    if (!Number.isInteger(precio) || precio < 1) {
+      setError(`El precio de ${product.nombre} debe ser un número entero mayor que cero.`);
+      return;
+    }
+
+    setSavingId(product.id);
+    setError("");
+    const res = await fetch("/api/admin/products", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: product.id, precio, vendido: draft.vendido, oculto: draft.oculto }),
+    });
+    setSavingId(null);
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      setError(data.error ?? `No se pudo actualizar ${product.nombre}.`);
+      return;
+    }
+    setProducts((current) => current.map((item) => (
+      item.id === product.id
+        ? { ...item, precio, vendido: draft.vendido, oculto: draft.oculto, isDynamic: true }
+        : item
+    )));
+    setDrafts((current) => {
+      const remaining = { ...current };
+      delete remaining[product.id];
+      return remaining;
+    });
   }
 
   async function deleteProduct(id: string) {
@@ -135,9 +185,8 @@ function Dashboard() {
 
         {/* Info banner */}
         <div className="rounded-[1.25rem] border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-800">
-          <strong>Productos dinámicos</strong> — Aquí aparecen solo los productos subidos desde este panel.
-          Los productos del catálogo base (products.ts) se gestionan directamente en el código.
-          Los nuevos productos subidos aquí aparecen primero en la tienda.
+          <strong>Catálogo completo</strong> — Puedes actualizar el precio, disponibilidad y visibilidad de cualquier pieza.
+          Los cambios de productos base se guardan como una sobrescritura segura en el catálogo dinámico.
         </div>
 
         {/* Product list */}
@@ -146,7 +195,7 @@ function Dashboard() {
             <div className="px-6 py-12 text-center text-sm text-slate-400">Cargando productos...</div>
           ) : products.length === 0 ? (
             <div className="px-6 py-12 text-center">
-              <p className="text-sm text-slate-500">No hay productos dinámicos aún.</p>
+              <p className="text-sm text-slate-500">No hay productos en el catálogo aún.</p>
               <Link
                 href="/admin/nuevo"
                 className="mt-3 inline-block text-sm font-medium text-slate-900 underline underline-offset-2"
@@ -160,8 +209,7 @@ function Dashboard() {
                 <tr className="border-b border-slate-100 text-left text-xs font-medium uppercase tracking-wider text-slate-400">
                   <th className="px-6 py-4">Producto</th>
                   <th className="px-6 py-4">Categoría</th>
-                  <th className="px-6 py-4">Precio</th>
-                  <th className="px-6 py-4">Estado</th>
+                  <th className="px-6 py-4">Precio y disponibilidad</th>
                   <th className="px-6 py-4" />
                 </tr>
               </thead>
@@ -185,19 +233,42 @@ function Dashboard() {
                       </div>
                     </td>
                     <td className="px-6 py-4 capitalize text-slate-600">{p.categoria}</td>
-                    <td className="px-6 py-4 text-slate-900">
-                      ${p.precio.toLocaleString("es-CL")}
-                    </td>
                     <td className="px-6 py-4">
-                      <span
-                        className={`rounded-full px-2.5 py-1 text-xs font-medium ${
-                          p.vendido
-                            ? "bg-red-50 text-red-600"
-                            : "bg-green-50 text-green-700"
-                        }`}
-                      >
-                        {p.vendido ? "Vendido" : "Disponible"}
-                      </span>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="text-slate-400">$</span>
+                        <input
+                          aria-label={`Precio de ${p.nombre}`}
+                          type="number"
+                          min={1}
+                          step={1}
+                          value={draftFor(p).precio}
+                          onChange={(event) => updateDraft(p, { precio: event.target.value })}
+                          className="w-28 rounded-lg border border-slate-200 px-2 py-1.5 text-sm text-slate-900 outline-none focus:border-slate-400"
+                        />
+                        <label className="flex cursor-pointer items-center gap-1.5 text-xs font-medium text-slate-600">
+                          <input
+                            type="checkbox"
+                            checked={draftFor(p).vendido}
+                            onChange={(event) => updateDraft(p, { vendido: event.target.checked })}
+                          />
+                          Vendido
+                        </label>
+                        <label className="flex cursor-pointer items-center gap-1.5 text-xs font-medium text-slate-600">
+                          <input
+                            type="checkbox"
+                            checked={draftFor(p).oculto}
+                            onChange={(event) => updateDraft(p, { oculto: event.target.checked })}
+                          />
+                          Ocultar
+                        </label>
+                        <button
+                          onClick={() => saveQuickChanges(p)}
+                          disabled={savingId === p.id}
+                          className="rounded-lg bg-slate-900 px-3 py-1.5 text-xs font-medium text-white transition hover:bg-slate-800 disabled:opacity-50"
+                        >
+                          {savingId === p.id ? "Guardando..." : "Guardar"}
+                        </button>
+                      </div>
                     </td>
                     <td className="px-6 py-4 text-right">
                       <div className="flex items-center justify-end gap-2">
@@ -207,12 +278,14 @@ function Dashboard() {
                         >
                           Editar
                         </Link>
-                        <button
-                          onClick={() => deleteProduct(p.id)}
-                          className="rounded-lg border border-red-100 px-3 py-1.5 text-xs font-medium text-red-500 transition hover:bg-red-50"
-                        >
-                          Eliminar
-                        </button>
+                        {p.isDynamic && (
+                          <button
+                            onClick={() => deleteProduct(p.id)}
+                            className="rounded-lg border border-red-100 px-3 py-1.5 text-xs font-medium text-red-500 transition hover:bg-red-50"
+                          >
+                            {p.isBaseProduct ? "Restaurar base" : "Eliminar"}
+                          </button>
+                        )}
                       </div>
                     </td>
                   </tr>
@@ -221,6 +294,10 @@ function Dashboard() {
             </table>
           )}
         </div>
+
+        {error && (
+          <p role="alert" className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-600">{error}</p>
+        )}
 
         <p className="text-center text-xs text-slate-400">
           <Link href="/" className="underline underline-offset-2">Volver a la tienda</Link>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { WebpayButton } from "@/components/WebpayButton";
-import { getAllProducts } from "@/lib/products-store";
+import { getPublicProducts } from "@/lib/products-store";
 import ProductGallery from "@/components/ProductGallery";
 import { SITE_URL } from "@/lib/config";
 import { getPromoPrice, isPromoActive } from "@/lib/promo";
@@ -19,7 +19,7 @@ type ProductPageProps = {
 
 // --- Helper: buscar producto por slug (id) ---
 async function getProductFromSlug(slug: string) {
-  const products = await getAllProducts();
+  const products = await getPublicProducts();
   const clean = decodeURIComponent(slug).trim().toLowerCase();
   const product = products.find((p) => p.id.trim().toLowerCase() === clean);
   return product ?? null;
@@ -228,6 +228,12 @@ export default async function ProductPage(props: ProductPageProps) {
                   Muy pronto podrás pagar con Webpay directamente desde la web.
                 </p>
               )}
+
+              <div className="grid gap-2 rounded-2xl border border-slate-100 bg-slate-50 p-4 text-xs text-slate-600 sm:grid-cols-3">
+                <p><strong className="block text-slate-800">Pago seguro</strong>Webpay</p>
+                <p><strong className="block text-slate-800">Envíos</strong>A todo Chile</p>
+                <p><strong className="block text-slate-800">Material</strong>Plata 950, hecha a mano</p>
+              </div>
 
               {/* WhatsApp + Instagram */}
               <div className="flex flex-wrap items-center gap-3">

@@ -1,7 +1,7 @@
 // app/producto/page.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllProducts } from "@/lib/products-store";
+import { getPublicProducts } from "@/lib/products-store";
 import ProductCard from "@/components/ProductCard";
 import { SITE_URL } from "@/lib/config";
 
@@ -55,7 +55,7 @@ type CatalogPageProps = {
 export default async function CatalogPage({ searchParams }: CatalogPageProps) {
   // 👇 DESENROLLAMOS LA PROMESA
   const params = await searchParams;
-  const PRODUCTS = await getAllProducts();
+  const PRODUCTS = await getPublicProducts();
 
   const rawCategoria = params.categoria;
   const categoria =

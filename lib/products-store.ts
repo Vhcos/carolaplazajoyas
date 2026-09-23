@@ -84,6 +84,13 @@ export async function getAllProducts(): Promise<Product[]> {
   }
 }
 
+/** Productos visibles para clientes. Mantiene las piezas ocultas disponibles
+ * para operaciones internas como Webpay y administración. */
+export async function getPublicProducts(): Promise<Product[]> {
+  const products = await getAllProducts();
+  return products.filter((product) => !product.oculto);
+}
+
 export async function getDynamicProducts(): Promise<Product[]> {
   const blobProductsUrl = await getBlobProductsUrl();
   if (!blobProductsUrl) {

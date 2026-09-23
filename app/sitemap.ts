@@ -1,9 +1,9 @@
 // app/sitemap.ts
 import { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/config";
-import { PRODUCTS } from "@/data/products";
+import { getPublicProducts } from "@/lib/products-store";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: SITE_URL,
@@ -25,7 +25,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const productRoutes: MetadataRoute.Sitemap = PRODUCTS.map((p) => ({
+  const products = await getPublicProducts();
+  const productRoutes: MetadataRoute.Sitemap = products.map((p) => ({
     url: `${SITE_URL}/producto/${p.id}`,
     lastModified: new Date(),
     changeFrequency: "monthly",

@@ -15,6 +15,7 @@ export type Product = {
   tipo: "unica" | "serie"; // pieza única 1/1 o serie limitada
   serieTotal?: number; // solo para series: total de piezas (y en No. x/y)
   vendido?: boolean; // solo para series: si ya se vendió
+  oculto?: boolean; // no aparece en catálogo, fichas públicas ni sitemap
   categoria: "anillos" | "aros" | "collares" | "colgantes" | "pulseras-esclavas";
 };
 
@@ -1090,6 +1091,7 @@ vendido: false,
   tipo: "unica",
   categoria: "anillos",
   vendido: false,
+  oculto: true,
 },
 
 

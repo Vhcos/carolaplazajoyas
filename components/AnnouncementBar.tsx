@@ -14,7 +14,7 @@ export default function AnnouncementBar() {
           href="/producto"
           className="text-[var(--cp-gold)] underline underline-offset-2 transition-opacity hover:opacity-80"
         >
-          Abraza el invierno
+          Primavera 2026
         </Link>
         <span className="hidden sm:inline text-white/60">·</span>
       </div>
